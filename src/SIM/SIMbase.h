@@ -212,7 +212,7 @@ public:
   //! \brief Returns the model size in terms of number of DOFs.
   size_t getNoDOFs() const;
   //! \brief Returns the model size in terms of number of (unique) nodes.
-  size_t getNoNodes(bool unique = false) const;
+  size_t getNoNodes(bool unique = false, char basis = 0) const;
   //! \brief Returns the model size in terms of number of elements.
   //! \param[in] includeXElms If \e true, include any extra-ordinary elements
   size_t getNoElms(bool includeXElms = false) const;
