@@ -990,6 +990,39 @@ void ASMbase::extractNodeVec (const Vector& globRes, Vector& nodeVec,
 }
 
 
+void ASMbase::injectNodeVec (const Vector& nodeVec, Vector& globVec,
+                             const std::vector<int>& madof, int basis) const
+{
+  size_t ldof = 0;
+  char bType = basis == 1 ? 'D' : 'P'+basis-2;
+  for (size_t i = 0; i < MLGN.size(); i++)
+    if (basis == 0 || this->getNodeType(i+1) == bType)
+    {
+      int inod = MLGN[i];
+      int idof = madof[inod-1] - 1;
+      int ndof = madof[inod] - 1 - idof;
+#ifdef INDEX_CHECK
+      bool ok = false;
+      if (inod < 1 || inod > (int)madof.size())
+        std::cerr <<" *** ASMbase::injectNodeVec: Node "<< inod
+                  <<" is out of range [1,"<< madof.size() <<"]."<< std::endl;
+      else if (ldof+ndof > nodeVec.size())
+        std::cerr <<" *** ASMbase::injectNodeVec: Local DOF "<< ldof+ndof
+                  <<" is out of range [1,"<< nodeVec.size() <<"]"<< std::endl;
+      else if (idof+ndof > (int)globVec.size())
+        std::cerr <<" *** ASMbase::injectNodeVec: Global DOF "<< idof+ndof
+                  <<" is out of range [1,"<< globVec.size() <<"]"<< std::endl;
+      else
+        ok = true;
+      if (!ok) continue;
+#endif
+      std::copy(nodeVec.begin()+ldof, nodeVec.begin()+ldof+ndof,
+                globVec.begin()+idof);
+      ldof += ndof;
+    }
+}
+
+
 void ASMbase::extractNodeVec (const Vector& globRes, Vector& nodeVec,
 			      unsigned char nndof, int basis) const
 {
