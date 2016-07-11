@@ -54,17 +54,19 @@ bool BlockElmMats::redimOffDiag (size_t blkIndex, char symm)
   if (blkIndex <= nDiagB || blkIndex > A.size())
     return false; // Not an off-diagonal sub-matrix
 
-  size_t kb = nDiagB;
+  size_t kb = nDiagB+1;
   for (size_t ib = 0; ib < nDiagB; ib++)
-    for (size_t jb = ib+1; jb < nDiagB; jb++, kb++)
-      if (kb == blkIndex)
+    for (size_t jb = 0; jb < nDiagB; jb++, kb++)
+      if (jb == ib)
+        kb--;
+      else if (kb == blkIndex)
       {
         A[kb].resize(blockInfo[ib].nen*blockInfo[ib].ncmp,
                      blockInfo[jb].nen*blockInfo[jb].ncmp);
         kb -= nDiagB;
-        if (symmetry.size() <= kb)
-          symmetry.resize(kb+1,0);
-        symmetry[kb] = symm;
+        if (symmetry.size() < kb)
+          symmetry.resize(kb,0);
+        symmetry[kb-1] = symm;
         return true;
       }
 
@@ -127,10 +129,15 @@ const Matrix& BlockElmMats::getNewtonMatrix () const
         for (size_t jn = 0; jn < neni; jn++)
           for (size_t id = 0; id < nci; id++)
             for (size_t jd = 0; jd < nci; jd++)
-              N(idof+ndi*in+id,idof+ndi*jn+jd) = Aii(nci*in+id,nci*jn+jd);
+              N(idof+ndi*in+id,idof+ndi*jn+jd) = Aii(nci*in+id+1,nci*jn+jd+1);
 
-    for (j = i+1; j < nDiagB; i++, k++)
+    for (j = 0; j < nDiagB; j++, k++)
     {
+      if (j == i) {
+        k--;
+        continue;
+      }
+
       size_t jbas = blockInfo[j].basis-1;
       size_t nenj = basisInfo[jbas].nen;
       size_t ndj  = basisInfo[jbas].ncmp;
@@ -138,19 +145,20 @@ const Matrix& BlockElmMats::getNewtonMatrix () const
       size_t jdof = blockInfo[j].idof;
 
       // Insert the off-diagonal block matrix
-      const Matrix& Aij = A[1+k];
-      if (!Aij.empty())
+      if (A.size() > 1+k && !A[1+k].empty()) {
+        const Matrix& Aij = A[1+k];
         for (size_t in = 0; in < neni; in++)
           for (size_t jn = 0; jn < nenj; jn++)
             for (size_t id = 0; id < nci; id++)
               for (size_t jd = 0; jd < ncj; jd++)
               {
-                N(idof+ndi*in+id,jdof+ndj*jn+jd) = Aij(nci*in+id,ncj*jn+jd);
+                N(idof+ndi*in+id,jdof+ndj*jn+jd) = Aij(nci*in+id+1,ncj*jn+jd+1);
                 if (symmetry[k-nDiagB] > 0)
-                  N(jdof+ndj*jn+jd,idof+ndi*in+id) = Aij(nci*in+id,ncj*jn+jd);
+                  N(jdof+ndj*jn+jd,idof+ndi*in+id) = Aij(nci*in+id+1,ncj*jn+jd+1);
                 else if (symmetry[k-nDiagB] < 0)
-                  N(jdof+ndj*jn+jd,idof+ndi*in+id) = -Aij(nci*in+id,ncj*jn+jd);
+                  N(jdof+ndj*jn+jd,idof+ndi*in+id) = -Aij(nci*in+id+1,ncj*jn+jd+1);
               }
+      }
     }
   }
 
@@ -173,7 +181,7 @@ const Vector& BlockElmMats::getRHSVector () const
     const Vector& bi = b[1+i];
     for (size_t in = 0; in < neni; in++)
       for (size_t id = 0; id < nci; id++)
-        R(idof+ndi*in+id) = bi(nci*in+id);
+        R(idof+ndi*in+id) = bi(nci*in+id+1);
   }
 
   return b.front();
