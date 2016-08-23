@@ -462,7 +462,7 @@ bool SparseMatrix::truncate (Real threshold)
 
   if (nnz > elem.size())
     IFEM::cout <<"SparseMatrix: Truncated "<< nnz-elem.size()
-              <<" matrix elements smaller than "<< tol <<" to zero"<< std::endl;
+               <<" elements smaller than "<< tol <<" to zero"<< std::endl;
   return true;
 }
 
@@ -680,15 +680,17 @@ void SparseMatrix::initAssembly (const SAM& sam, bool delayLocking)
   if (!sam.getDofCouplings(dofc))
     return;
 
-  if (delayLocking) {
+  // If we are not locking the sparsity pattern yet, the index pair map over
+  // the non-zero matrix elements needs to be initialized before the assembly.
+  // This is used when SAM::getDofCouplings does not return all connectivities
+  if (delayLocking) // that will exist in the final matrix.
     for (size_t i = 0; i < dofc.size(); i++)
       for (const int& it : dofc[i])
         (*this)(i+1,it) = 0.0;
 
-    editable = 'V'; // Temporarily lock the sparsity pattern
-    return;
-  }
   editable = 'V'; // Temporarily lock the sparsity pattern
+  if (delayLocking)
+    return; // The final sparsity pattern is not fixed yet
 
   IFEM::cout <<"\nPre-computing sparsity pattern for system matrix ("
              << nrow <<"x"<< ncol <<"): "<< std::flush;
@@ -896,6 +898,10 @@ bool SparseMatrix::optimiseSLU ()
 }
 
 
+/*!
+  This method does not use the internal index-pair to value map \a elem.
+*/
+
 bool SparseMatrix::optimiseSLU (const std::vector<IntSet>& dofc)
 {
   if (!editable) return false;
@@ -906,7 +912,7 @@ bool SparseMatrix::optimiseSLU (const std::vector<IntSet>& dofc)
   for (i = 0; i < dofc.size(); i++)
   {
     nnz += dofc[i].size();
-    for (const auto& it : dofc[i])
+    for (const int& it : dofc[i])
       if (i < nrow && it <= (int)ncol)
         IA[it-1]++;
       else
@@ -923,7 +929,7 @@ bool SparseMatrix::optimiseSLU (const std::vector<IntSet>& dofc)
   // Initialize the array of row indices
   JA.resize(nnz);
   for (i = 0; i < dofc.size(); i++)
-    for (const auto& it : dofc[i])
+    for (const int& it : dofc[i])
       JA[IA[it-1]++] = i;
 
   // Reset the column pointers to the beginning of each column
