@@ -2515,15 +2515,10 @@ size_t SIMbase::extractPatchSolution (const Vector& sol, Vector& vec,
   ASMbase* pch = pindx >= 0 ? this->getPatch(pindx+1) : nullptr;
   if (!pch || sol.empty()) return 0;
 
-  // Need an additional MADOF
   if (basis != 0 && nndof != 0 &&
-      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0) {
-    int key = basis << 16 + nndof;
-    if (addMADOFs.find(key) == addMADOFs.end())
-      this->setupAdditionalMADOF(basis, nndof, addMADOFs[key]);
-
-    pch->extractNodeVec(sol,vec,&addMADOFs[key][0]);
-  }
+      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0)
+    // Need an additional MADOF
+    pch->extractNodeVec(sol,vec,this->getMADOF(basis,nndof).data());
   else
     pch->extractNodeVec(sol,vec,nndof,basis);
 
@@ -2538,16 +2533,10 @@ bool SIMbase::injectPatchSolution (Vector& sol, const Vector& vec,
   ASMbase* pch = pindx >= 0 ? this->getPatch(pindx+1) : nullptr;
   if (!pch) return false;
 
-  // Need an additional MADOF
-  if (basis != 0 && nndof != 0 &&
-      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0) {
-    int key = basis << 16 + nndof;
-    if (addMADOFs.find(key) == addMADOFs.end())
-      this->setupAdditionalMADOF(basis, nndof, addMADOFs[key]);
-
-    pch->injectNodeVec(vec, sol, addMADOFs[key], basis);
-    return true;
-  }
+  if (basis > 0 && nndof > 0 &&
+      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0)
+    // Need an additional MADOF
+    return pch->injectNodeVec(vec,sol,this->getMADOF(basis,nndof),basis);
   else
     return pch->injectNodeVec(vec,sol,nndof);
 }
@@ -2640,12 +2629,18 @@ bool SIMbase::refine (const LR::RefineData& prm,
 }
 
 
-void SIMbase::setupAdditionalMADOF (unsigned char basis, unsigned char nndof,
-                                    std::vector<int>& madof) const
+std::vector<int>& SIMbase::getMADOF (unsigned char basis,
+                                     unsigned char nndof) const
 {
-  char nType = basis <= 1 ? 'D' : 'P' + basis-2;
+  int key = basis << 16 + nndof;
+  auto it = addMADOFs.find(key);
+  if (it != addMADOFs.end())
+    return it->second;
 
+  std::vector<int>& madof = addMADOFs[key];
   madof.resize(this->getNoNodes(true)+1,0);
+
+  char nType = basis <= 1 ? 'D' : 'P' + basis-2;
   for (size_t i = 0; i < myModel.size(); i++)
     for (size_t j = 0; j < myModel[i]->getNoNodes(); j++)
     {
@@ -2659,4 +2654,6 @@ void SIMbase::setupAdditionalMADOF (unsigned char basis, unsigned char nndof,
   madof[0] = 1;
   for (size_t n = 1; n < madof.size(); n++)
     madof[n] += madof[n-1];
+
+  return madof;
 }

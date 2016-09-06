@@ -698,6 +698,11 @@ protected:
   //! \param[in] silence If \e true, suppress threading group outprint
   void generateThreadGroups(const Property& p, bool silence = false);
 
+  //! \brief Returns a MADOF with an extraordinary number of DOFs on a basis.
+  //! \param[in] basis The basis to specify number of DOFs for
+  //! \param[in] nndof Number of nodal DOFs on the given basis
+  std::vector<int>& getMADOF(unsigned char basis, unsigned char nndof) const;
+
 public:
   static bool ignoreDirichlet; //!< Set to \e true for free vibration analysis
   static bool preserveNOrder;  //!< Set to \e true to preserve node ordering
@@ -756,14 +761,8 @@ private:
   size_t nIntGP; //!< Number of interior integration points in the whole model
   size_t nBouGP; //!< Number of boundary integration points in the whole model
 
-  //! \brief Setup a MADOF with an extraordinary amount of DOFs on a basis.
-  //! \param[in] basis The basis to specify number of DOFs for
-  //! \param[in] nndof Number of DOFs on given basis
-  //! \param[out] madof Generated MADOF array
-  void setupAdditionalMADOF(unsigned char basis, unsigned char nndof,
-                            std::vector<int>& madof) const;
-
-  mutable std::map<int, std::vector<int> > addMADOFs; //!< Additional MADOF arrays.
+  //! Additional MADOF arrays for the different bases
+  mutable std::map<int, std::vector<int> > addMADOFs;
 };
 
 #endif
