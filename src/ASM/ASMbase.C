@@ -990,7 +990,7 @@ void ASMbase::extractNodeVec (const Vector& globRes, Vector& nodeVec,
 }
 
 
-void ASMbase::injectNodeVec (const Vector& nodeVec, Vector& globVec,
+bool ASMbase::injectNodeVec (const Vector& nodeVec, Vector& globVec,
                              const std::vector<int>& madof, int basis) const
 {
   size_t ldof = 0;
@@ -1020,6 +1020,8 @@ void ASMbase::injectNodeVec (const Vector& nodeVec, Vector& globVec,
                 globVec.begin()+idof);
       ldof += ndof;
     }
+
+  return true;
 }
 
 

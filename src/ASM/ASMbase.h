@@ -565,7 +565,7 @@ public:
   //! \param globVec Global solution vector in DOF-order
   //! \param[in] madof Global Matrix of Accumulated DOFs
   //! \param[in] basis Which basis to inject nodal values for (mixed methods)
-  void injectNodeVec(const Vector& nodeVec, Vector& globVec,
+  bool injectNodeVec(const Vector& nodeVec, Vector& globVec,
                      const std::vector<int>& madof, int basis = 0) const;
 
   //! \brief Creates and adds a two-point constraint to this patch.
