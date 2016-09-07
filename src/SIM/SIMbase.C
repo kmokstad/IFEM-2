@@ -2516,10 +2516,13 @@ size_t SIMbase::extractPatchSolution (const Vector& sol, Vector& vec,
   if (!pch || sol.empty()) return 0;
 
   if (basis != 0 && nndof != 0 &&
-      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0)
+      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0) {
     // Need an additional MADOF
-    pch->extractNodeVec(sol,vec,this->getMADOF(basis,nndof).data());
-  else
+    const std::vector<int>* madof;
+    if (!(madof = this->getMADOF(basis,nndof)))
+      return 0;
+    pch->extractNodeVec(sol,vec,madof->data());
+  } else
     pch->extractNodeVec(sol,vec,nndof,basis);
 
   return vec.size();
@@ -2534,10 +2537,13 @@ bool SIMbase::injectPatchSolution (Vector& sol, const Vector& vec,
   if (!pch) return false;
 
   if (basis > 0 && nndof > 0 &&
-      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0)
+      nndof != this->getNoFields(basis) && this->getNoFields(2) > 0) {
     // Need an additional MADOF
-    return pch->injectNodeVec(vec,sol,this->getMADOF(basis,nndof),basis);
-  else
+    const std::vector<int>* madof;
+    if (!(madof = this->getMADOF(basis,nndof)))
+      return false;
+    return pch->injectNodeVec(vec,sol,*madof,basis);
+  } else
     return pch->injectNodeVec(vec,sol,nndof);
 }
 
@@ -2629,15 +2635,15 @@ bool SIMbase::refine (const LR::RefineData& prm,
 }
 
 
-std::vector<int>& SIMbase::getMADOF (unsigned char basis,
-                                     unsigned char nndof) const
+bool SIMbase::addMADOF (unsigned char basis,
+                        unsigned char nndof)
 {
   int key = basis << 16 + nndof;
-  auto it = addMADOFs.find(key);
-  if (it != addMADOFs.end())
-    return it->second;
+  auto it = mixedMADOFs.find(key);
+  if (it != mixedMADOFs.end())
+    return false;
 
-  std::vector<int>& madof = addMADOFs[key];
+  std::vector<int>& madof = mixedMADOFs[key];
   madof.resize(this->getNoNodes(true)+1,0);
 
   char nType = basis <= 1 ? 'D' : 'P' + basis-2;
@@ -2655,5 +2661,17 @@ std::vector<int>& SIMbase::getMADOF (unsigned char basis,
   for (size_t n = 1; n < madof.size(); n++)
     madof[n] += madof[n-1];
 
-  return madof;
+  return true;
+}
+
+
+const std::vector<int>* SIMbase::getMADOF (unsigned char basis,
+                                           unsigned char nndof) const
+{
+  int key = basis << 16 + nndof;
+  auto it = mixedMADOFs.find(key);
+  if (it == mixedMADOFs.end())
+    return nullptr;
+
+  return &it->second;
 }
