@@ -12,10 +12,10 @@
 //==============================================================================
 
 #include "MultiPatchModelGenerator.h"
+#include "SIMinput.h"
 #include "ASMs2D.h"
 #include "ASMs3D.h"
 #include "IFEM.h"
-#include "SIMbase.h"
 #include "Utilities.h"
 #include "Vec3.h"
 #include "Vec3Oper.h"
@@ -108,8 +108,11 @@ std::string MultiPatchModelGenerator2D::createG2 (int nsd) const
 }
 
 
-bool MultiPatchModelGenerator2D::createTopology (SIMbase& sim) const
+bool MultiPatchModelGenerator2D::createTopology (SIMinput& sim) const
 {
+  if (!sim.createFEMmodel())
+    return false;
+
   auto&& IJ = [this](int i, int j) { return 1 + j*nx + i; };
 
   for (int j = 0; j < ny; ++j)
@@ -153,7 +156,7 @@ bool MultiPatchModelGenerator2D::createTopology (SIMbase& sim) const
 
 
 TopologySet
-MultiPatchModelGenerator2D::createTopologySets (const SIMbase& sim) const
+MultiPatchModelGenerator2D::createTopologySets (const SIMinput& sim) const
 {
   TopologySet result;
   if (!this->topologySets())
@@ -296,7 +299,7 @@ std::string MultiPatchModelGenerator3D::createG2 (int) const
 }
 
 
-bool MultiPatchModelGenerator3D::createTopology (SIMbase& sim) const
+bool MultiPatchModelGenerator3D::createTopology (SIMinput& sim) const
 {
   auto&& IJK = [this](int i, int j, int k) { return 1 + (k*ny+j)*nx + i; };
 
@@ -362,7 +365,7 @@ bool MultiPatchModelGenerator3D::createTopology (SIMbase& sim) const
 }
 
 TopologySet
-MultiPatchModelGenerator3D::createTopologySets (const SIMbase& sim) const
+MultiPatchModelGenerator3D::createTopologySets (const SIMinput& sim) const
 {
   TopologySet result;
   if (!this->topologySets())
