@@ -38,16 +38,16 @@ public:
   struct ICInfo
   {
     int file_level; //!< The time level for the field in the file
-    int geo_level;  //!< The time level for the geometry in the file
+    int geo_level;  //!< The time level for the (adapted) geometry in the file
     char basis;     //!< The basis to inject field into (for mixed)
     char component; //!< Component for field (for functions)
     std::string sim_field;  //!< The name of the field in the SIM class
     std::string file_field; //!< The field name in the file or type of function
     std::string function;   //!< Function if given in function form
     //! \brief Default constructor.
-    ICInfo() : file_level(-1), geo_level(-1), basis(1), component(0) {}
+    ICInfo() : file_level(-1), geo_level(0), basis(1), component(0) {}
     //! \brief Constructor providing the field name.
-    ICInfo(const std::string& f) : file_level(-1), geo_level(-1),
+    ICInfo(const std::string& f) : file_level(-1), geo_level(0),
                                    basis(0), component(0),
                                    sim_field(f), file_field(f) {}
   };

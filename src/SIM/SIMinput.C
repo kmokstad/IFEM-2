@@ -405,7 +405,7 @@ bool SIMinput::parseICTag (const TiXmlElement* elem)
     IFEM::cout <<" on basis "<< (int)info.basis;
   if (type == "file")
     IFEM::cout <<" (on file \""<< info.file_field
-               <<"\" with basis "<< info.geo_level <<")";
+               <<"\" at time level "<< info.geo_level <<")";
   else
     IFEM::cout <<" (component "<< (int)info.component <<")";
 
