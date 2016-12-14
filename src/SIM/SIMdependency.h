@@ -93,6 +93,8 @@ public:
   ASMbase* getDependentPatch(const std::string& name, int pindx) const;
   //! \brief Registers a named field with associated nodal vector in this SIM.
   void registerField(const std::string& name, const utl::vector<double>& vec);
+  //! \brief Checks whether a named initial condition is present.
+  virtual bool hasIC(const std::string& name) const { return false; }
 
 private:
   //! \brief Returns an iterator pointing to a named dependency.

@@ -823,7 +823,7 @@ int SIMinput::getUniquePropertyCode (const std::string& setName, int code)
     if (trial > 0) code += cinc;
     pit = std::find_if(myProps.begin(),myProps.end(),
                        [code](const Property& p)
-                       { return abs(p.pindx) == code; });
+                       { return abs(p.pindx) == abs(code); });
   }
 
   return this->createPropertySet(setName,code) ? code : 0;
