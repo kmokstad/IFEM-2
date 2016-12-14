@@ -48,7 +48,7 @@ public:
     ICInfo() : file_level(-1), geo_level(0), basis(1), component(0) {}
     //! \brief Constructor providing the field name.
     ICInfo(const std::string& f) : file_level(-1), geo_level(0),
-                                   basis(0), component(0),
+                                   basis(1), component(0),
                                    sim_field(f), file_field(f) {}
   };
   typedef std::vector<ICInfo> InitialCondVec; //!< Initial condition container
@@ -98,11 +98,6 @@ public:
                        TractionFunc* field = nullptr);
 
 private:
-  //! \brief Creates a set of Property objects.
-  //! \param[in] setName Name of the topology set the property is defined on
-  //! \param[in] pc The property code to be associated with this set
-  bool createPropertySet(const std::string& setName, int pc);
-
   //! \brief Parses a subelement of the \a geometry XML-tag.
   bool parseGeometryTag(const TiXmlElement* elem);
   //! \brief Parses a subelement of the \a boundaryconditions XML-tag.
@@ -113,6 +108,11 @@ private:
   bool parseLinSolTag(const TiXmlElement* elem);
 
 protected:
+  //! \brief Creates a set of Property objects.
+  //! \param[in] setName Name of the topology set the property is defined on
+  //! \param[in] pc The property code to be associated with this set
+  bool createPropertySet(const std::string& setName, int pc);
+
   //! \brief Parses a subelement of the \a resultoutput XML-tag.
   virtual bool parseOutputTag(const TiXmlElement* elem);
   //! \brief Parses the "set" attribute of a material XML-tag.

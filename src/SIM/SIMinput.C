@@ -404,7 +404,7 @@ bool SIMinput::parseICTag (const TiXmlElement* elem)
   if (info.basis > 0)
     IFEM::cout <<" on basis "<< (int)info.basis;
   if (type == "file")
-    IFEM::cout <<" (on file \""<< info.file_field
+    IFEM::cout <<" (on file \""<< file
                <<"\" at time level "<< info.geo_level <<")";
   else
     IFEM::cout <<" (component "<< (int)info.component <<")";
@@ -823,7 +823,7 @@ int SIMinput::getUniquePropertyCode (const std::string& setName, int code)
     if (trial > 0) code += cinc;
     pit = std::find_if(myProps.begin(),myProps.end(),
                        [code](const Property& p)
-                       { return abs(p.pindx) == code; });
+                       { return abs(p.pindx) == abs(code); });
   }
 
   return this->createPropertySet(setName,code) ? code : 0;
