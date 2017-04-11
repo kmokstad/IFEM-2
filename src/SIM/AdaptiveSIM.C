@@ -185,7 +185,7 @@ bool AdaptiveSIM::initAdaptor (size_t indxProj, size_t nNormProj)
 
 bool AdaptiveSIM::solveStep (const char* inputfile, int iStep)
 {
-  model.getProcessAdm().cout <<"\nAdaptive step "<< iStep << std::endl;
+  model.getLogStream() <<"\nAdaptive step "<< iStep << std::endl;
   if (iStep > 1)
   {
     SIMoptions oldOpt(opt);
@@ -231,15 +231,14 @@ bool AdaptiveSIM::solveStep (const char* inputfile, int iStep)
   }
 
   if (msgLevel > 1 && !projs.empty())
-    model.getProcessAdm().cout << std::endl;
+    model.getLogStream() << std::endl;
 
   // Evaluate solution norms
   model.setQuadratureRule(opt.nGauss[1]);
   if (!model.solutionNorms(solution,projs,eNorm,gNorm))
     return false;
 
-  return model.dumpResults(solution.front(),0.0,
-                           model.getProcessAdm().cout,true,6);
+  return model.dumpResults(solution.front(),0.0,model.getLogStream(),true,6);
 }
 
 

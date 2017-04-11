@@ -1,3 +1,4 @@
+// $Id$
 //==============================================================================
 //!
 //! \file SIMExplicitRKE.h
@@ -13,7 +14,8 @@
 #ifndef SIM_EXPLICIT_RKE_H_
 #define SIM_EXPLICIT_RKE_H_
 
-#include "TimeIntUtils.h"
+#include "SIMExplicitRK.h"
+
 
 namespace TimeIntegration {
 
@@ -26,12 +28,13 @@ class SIMExplicitRKE : public SIMExplicitRK<Solver>
 public:
   //! \brief Constructor
   //! \param solv The simulator to do time stepping for
-  //! \param type The Runge-Kutta scheme to use
-  //! \param tol Tolerance for ERK truncation error control
+  //! \param[in] type The Runge-Kutta scheme to use
+  //! \param[in] tol Tolerance for ERK truncation error control
   SIMExplicitRKE(Solver& solv, Method type, double tol) :
     SIMExplicitRK<Solver>(solv, NONE), errTol(tol)
   {
-    if (type == HEUNEULER) {
+    switch (type) {
+    case HEUNEULER:
       this->RK.order = 1;
       this->RK.b.push_back(1.0);
       this->RK.b.push_back(0.0);
@@ -41,8 +44,8 @@ public:
       this->RK.c.push_back(1.0);
       this->RK.A.redim(2,2);
       this->RK.A(2,1) = 1.0;
-    }
-    if (type == BOGACKISHAMPINE) {
+      break;
+    case BOGACKISHAMPINE:
       this->RK.order = 2;
       this->RK.b.push_back(7.0/24.0);
       this->RK.b.push_back(1.0/4.0);
@@ -62,8 +65,8 @@ public:
       this->RK.A(4,1) = 2.0/9.0;
       this->RK.A(4,2) = 1.0/3.0;
       this->RK.A(4,3) = 4.0/9.0;
-    }
-    if (type == FEHLBERG) {
+      break;
+    case FEHLBERG:
       this->RK.order = 4;
       this->RK.b.push_back(25.0/216.0);
       this->RK.b.push_back(0.0);
@@ -99,15 +102,19 @@ public:
       this->RK.A(6,3) = -3544.0/2565.0;
       this->RK.A(6,4) = 1859.0/4104.0;
       this->RK.A(6,5) = -11.0/40.0;
+      break;
+    default:
+      break;
     }
   }
 
   //! \copydoc ISolver::solveStep(TimeStep&)
-  bool solveStep(TimeStep& tp)
+  virtual bool solveStep(TimeStep& tp)
   {
-    this->solver.getProcessAdm().cout <<"\n  step = "<< tp.step <<"  time = "<< tp.time.t << std::endl;
+    this->solver.getLogStream() <<"\n  step = "<< tp.step
+                                <<"  time = "<< tp.time.t << std::endl;
 
-    std::vector<Vector> stages;
+    Vectors stages;
     Vector prevSol = this->solver.getSolution();
     bool ok = this->solveRK(stages, tp);
     double prevEst = 1.0;
@@ -123,7 +130,7 @@ public:
       size_t iMax[nf];
       double dMax[nf];
       prevEst = this->solver.solutionNorms(error,dMax,iMax,nf);
-      this->solver.getProcessAdm().cout << "Error estimate: " << prevEst << std::endl;
+      this->solver.getLogStream() <<"  Error estimate: "<< prevEst << std::endl;
       if (prevEst > errTol) {
         if (!tp.cutback())
           return false;
@@ -134,11 +141,13 @@ public:
 
     if (ok && prevEst > 0.0) {
       tp.time.dt = tp.time.dt * pow(errTol/prevEst,1.0/(this->RK.order+1));
-      this->solver.getProcessAdm().cout << "adjusting step size to " << tp.time.dt << std::endl;
+      this->solver.getLogStream() <<"  Adjusting step size to "
+                                  << tp.time.dt << std::endl;
     }
 
     return ok;
   }
+
 private:
   std::vector<double> bs; //!< Runge-Kutta coefficients for embedded method
   double errTol; //!< Truncation error tolerance

@@ -117,3 +117,9 @@ bool SIMadmin::parse (char*, std::istream&)
             <<"     Use the XML format instead."<< std::endl;
   return false;
 }
+
+
+utl::LogStream& SIMadmin::getLogStream () const
+{
+  return adm.cout;
+}

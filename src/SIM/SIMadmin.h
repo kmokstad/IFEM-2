@@ -50,6 +50,8 @@ public:
 
   //! \brief Returns the parallel process administrator.
   const ProcessAdm& getProcessAdm() const { return adm; }
+  //! \brief Returns the logging stream for this simulator.
+  utl::LogStream& getLogStream() const;
 
   //! \brief Returns the global process ID.
   //! \note May be different from the process ID used in the equation solver.

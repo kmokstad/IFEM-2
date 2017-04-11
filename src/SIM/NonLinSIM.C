@@ -13,11 +13,11 @@
 
 #include "NonLinSIM.h"
 #include "SIMoutput.h"
-#include "IFEM.h"
 #include "IntegrandBase.h"
 #include "TimeStep.h"
 #include "Profiler.h"
 #include "Utilities.h"
+#include "IFEM.h"
 #include "tinyxml.h"
 #include <sstream>
 #include <iomanip>
@@ -47,7 +47,7 @@ NonLinSIM::~NonLinSIM ()
 {
   if (slowNodes.empty()) return;
 
-  utl::LogStream& cout = model.getProcessAdm().cout;
+  utl::LogStream& cout = model.getLogStream();
 
   std::map<int,int>::const_iterator nit;
   cout <<"\n *** Here are the nodal points flagged with slow convergence"
@@ -203,7 +203,7 @@ ConvStatus NonLinSIM::solveStep (TimeStep& param, SolutionMode mode,
 
   if (msgLevel >= 0)
   {
-    utl::LogStream& cout = model.getProcessAdm().cout;
+    utl::LogStream& cout = model.getLogStream();
     double digits = log10(param.time.t)-log10(param.time.dt);
     std::streamsize oldPrec = digits > 6.0 ? cout.precision(ceil(digits)) : 0;
     cout <<"\n  step="<< param.step <<"  time="<< param.time.t;
@@ -447,7 +447,7 @@ ConvStatus NonLinSIM::checkConvergence (TimeStep& param)
   if (msgLevel > 0)
   {
     // Print convergence history
-    utl::LogStream& cout = model.getProcessAdm().cout;
+    utl::LogStream& cout = model.getLogStream();
     std::ios::fmtflags oldFlags = cout.flags(std::ios::scientific);
     std::streamsize oldPrec = cout.precision(3);
     cout <<"  iter="<< param.iter

@@ -14,6 +14,7 @@
 #include "MultiStepSIM.h"
 #include "SIMoutput.h"
 #include "TimeStep.h"
+#include "LogStream.h"
 #include "Profiler.h"
 
 

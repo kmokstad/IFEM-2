@@ -45,8 +45,8 @@ template<class PlaneSolver>
 class SIMSemi3D : public SIMadmin, public SIMdependency
 {
 public:
-  typedef typename PlaneSolver::SetupProps SetupProps;
-  enum { dimension = 2 };
+  typedef typename PlaneSolver::SetupProps SetupProps; //!< Convenience typedef
+  enum { dimension = 2 }; //!< Enum announcing the dimensionality
 
   //! \brief The constructor initializes the setup properties.
   SIMSemi3D(const SetupProps& props_) :
@@ -122,7 +122,7 @@ public:
   }
 
   //! \brief Returns the name of this simulator (for use in the HDF5 export).
-  std::string getName() const { return "Semi3D"; }
+  virtual std::string getName() const { return "Semi3D"; }
 
   //! \brief Adds fields to a data exporter.
   void registerFields(DataExporter& exporter)
@@ -177,7 +177,7 @@ public:
   {
     bool ok = true;
     for (size_t i = 0; i < m_planes.size() && ok; i++) {
-      m_planes[i]->getProcessAdm().cout <<"\n  Plane = "<< startCtx+i+1 <<":";
+      m_planes[i]->getLogStream() <<"\n  Plane = "<< startCtx+i+1 <<":";
       ok = m_planes[i]->solveStep(tp);
     }
 
@@ -244,13 +244,13 @@ public:
           std::shared_ptr<std::ostream> file(new std::ofstream(str.str()));
           plane_log_files.push_back(file);
         }
-        m_planes[i]->getProcessAdm().cout.addExtraLog(plane_log_files[i],true);
-        m_planes[i]->getProcessAdm().cout.setPIDs(0, pid);
+        m_planes[i]->getLogStream().addExtraLog(plane_log_files[i],true);
+        m_planes[i]->getLogStream().setPIDs(0,pid);
       }
       if (output_plane != -1 && output_plane != (int)(i+startCtx+1))
-        m_planes[i]->getProcessAdm().cout.setNull();
+        m_planes[i]->getLogStream().setNull();
       else
-        m_planes[i]->getProcessAdm().cout.setStream(std::cout);
+        m_planes[i]->getLogStream().setStream(std::cout);
     }
 
     return true;

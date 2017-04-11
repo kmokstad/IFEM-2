@@ -15,9 +15,9 @@
 #include "SIMoutput.h"
 #include "AlgEqSystem.h"
 #include "TimeStep.h"
-#include "IFEM.h"
 #include "Profiler.h"
 #include "Utilities.h"
+#include "IFEM.h"
 #include "tinyxml.h"
 
 const char* NewmarkSIM::inputContext = "newmarksolver";
@@ -166,7 +166,7 @@ bool NewmarkSIM::initAcc (double zero_tolerance, std::streamsize outPrec)
   double aMax[nf];
   double accL2 = model.solutionNorms(solution[iA],aMax,kMax,nf);
 
-  utl::LogStream& cout = model.getProcessAdm().cout;
+  utl::LogStream& cout = model.getLogStream();
   std::streamsize stdPrec = outPrec > 0 ? cout.precision(outPrec) : 0;
   double old_tol = utl::zero_print_tol;
   utl::zero_print_tol = zero_tolerance;
@@ -314,7 +314,7 @@ SIM::ConvStatus NewmarkSIM::solveStep (TimeStep& param, SIM::SolutionMode,
 
   if (msgLevel >= 0)
   {
-    utl::LogStream& cout = model.getProcessAdm().cout;
+    utl::LogStream& cout = model.getLogStream();
     double digits = log10(param.time.t)-log10(param.time.dt);
     size_t stdPrec = digits > 6.0 ? cout.precision(ceil(digits)) : 0;
     cout <<"\n  step="<< param.step <<"  time="<< param.time.t << std::endl;
@@ -357,8 +357,8 @@ SIM::ConvStatus NewmarkSIM::solveStep (TimeStep& param, SIM::SolutionMode,
         return SIM::CONVERGED;
 
       case SIM::DIVERGED:
-        model.getProcessAdm().cout <<" *** Iterations diverged, terminating..."
-                                   << std::endl;
+        model.getLogStream() <<" *** Iterations diverged, terminating..."
+                             << std::endl;
         return SIM::DIVERGED;
 
       default:
@@ -390,8 +390,8 @@ SIM::ConvStatus NewmarkSIM::solveStep (TimeStep& param, SIM::SolutionMode,
           return SIM::FAILURE;
       }
 
-  model.getProcessAdm().cout <<" *** No convergence in "<< maxit
-                             <<" iterations, terminating..."<< std::endl;
+  model.getLogStream() <<" *** No convergence in "<< maxit
+                       <<" iterations, terminating..."<< std::endl;
   return SIM::DIVERGED;
 }
 
@@ -471,7 +471,7 @@ SIM::ConvStatus NewmarkSIM::checkConvergence (TimeStep& param)
   if (msgLevel > 0)
   {
     // Print convergence history
-    utl::LogStream& cout = model.getProcessAdm().cout;
+    utl::LogStream& cout = model.getLogStream();
     std::ios::fmtflags stdFlags = cout.flags(std::ios::scientific);
     std::streamsize stdPrec = cout.precision(3);
     cout <<"  iter="<< param.iter
@@ -515,7 +515,7 @@ bool NewmarkSIM::solutionNorms (const TimeDomain&,
   double velL2 = model.solutionNorms(solution[v],vMax,jMax,nf);
   double accL2 = model.solutionNorms(solution[a],aMax,kMax,nf);
 
-  utl::LogStream& cout = model.getProcessAdm().cout;
+  utl::LogStream& cout = model.getLogStream();
   std::streamsize stdPrec = outPrec > 0 ? cout.precision(outPrec) : 0;
   double old_tol = utl::zero_print_tol;
   utl::zero_print_tol = zero_tolerance;

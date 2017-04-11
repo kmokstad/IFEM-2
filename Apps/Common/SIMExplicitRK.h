@@ -1,3 +1,4 @@
+// $Id$
 //==============================================================================
 //!
 //! \file SIMExplicitRK.h
@@ -16,6 +17,7 @@
 #include "TimeIntUtils.h"
 #include "TimeStep.h"
 
+
 namespace TimeIntegration {
 
   //! \brief Explicit Runge-Kutta based time stepping for SIM classes
@@ -27,16 +29,17 @@ class SIMExplicitRK
 public:
   //! \brief Constructor
   //! \param solv The simulator to do time stepping for
-  //! \param type The Runge-Kutta scheme to use
+  //! \param[in] type The Runge-Kutta scheme to use
   SIMExplicitRK(Solver& solv, Method type) : solver(solv)
   {
-    if (type == EULER) {
+    switch (type) {
+    case EULER:
       RK.order = 1;
       RK.b.push_back(1.0);
       RK.c.push_back(0.0);
       RK.A.redim(1,1);
-    }
-    if (type == HEUN) {
+      break;
+    case HEUN:
       RK.order = 2;
       RK.b.push_back(0.5);
       RK.b.push_back(0.5);
@@ -44,8 +47,8 @@ public:
       RK.c.push_back(1.0);
       RK.A.redim(2,2);
       RK.A(2,1) = 1.0;
-    }
-    if (type == RK3) {
+      break;
+    case RK3:
       RK.order = 3;
       RK.b.push_back(1.0/6.0);
       RK.b.push_back(2.0/3.0);
@@ -57,8 +60,8 @@ public:
       RK.A(2,1) =  0.5;
       RK.A(3,1) = -1.0;
       RK.A(3,2) =  2.0;
-    }
-    if (type == RK4) {
+      break;
+    case RK4:
       RK.order = 4;
       RK.b.push_back(1.0/6.0);
       RK.b.push_back(1.0/3.0);
@@ -72,24 +75,26 @@ public:
       RK.A(2,1) = 0.5;
       RK.A(3,2) = 0.5;
       RK.A(4,3) = 1.0;
+      break;
+    default:
+      break;
     }
   }
 
   //! \copydoc ISolver::solveStep(TimeStep&)
-  bool solveStep(TimeStep& tp)
+  virtual bool solveStep(TimeStep& tp)
   {
-    std::cout <<"\n  step = "<< tp.step <<"  time = "<< tp.time.t << std::endl;
+    solver.getLogStream() <<"\n  step = "<< tp.step
+                          <<"  time = "<< tp.time.t << std::endl;
 
-    std::vector<Vector> stages;
-    return solveRK(stages, tp);
-
-    return true;
+    Vectors stages;
+    return this->solveRK(stages, tp);
   }
 
   //! \brief Apply the Runge-Kutta scheme
   //! \param stages Vector of stage vectors
   //! \param tp Time stepping information
-  bool solveRK(std::vector<Vector>& stages, TimeStep& tp)
+  bool solveRK(Vectors& stages, TimeStep& tp)
   {
     TimeDomain time(tp.time);
     Vector dum;
