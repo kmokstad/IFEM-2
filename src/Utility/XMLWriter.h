@@ -47,7 +47,8 @@ public:
 
   //! \brief The constructor assigns the file name storing this field.
   //! \param[in] name The name (file name without extension) of data file
-  XMLWriter(const std::string& name, const ProcessAdm& adm);
+  //! \param[in] adm The parallel process administrator
+  XMLWriter(const std::string& name, const ProcessAdm* adm = nullptr);
 
   //! \brief Empty destructor.
   virtual ~XMLWriter() {}

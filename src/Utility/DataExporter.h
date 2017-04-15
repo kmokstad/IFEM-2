@@ -137,10 +137,11 @@ public:
   //! \brief Returns context name for callback for external controller.
   virtual std::string GetContext() const { return "datawriter"; }
 
-  //! \brief Return name from data writer
+  //! \brief Returns the name from data writer.
   std::string getName() const;
-
+  //! \brief Returns the ime level stride for dumping.
   int getStride() const { return m_ndump; }
+  //! \brief Returns the temporal order for restart.
   int getOrder() const { return m_order; }
 
 protected:
@@ -177,7 +178,7 @@ class DataWriter
 {
 protected:
   //! \brief Protected constructor as this is a purely virtual class.
-  DataWriter(const std::string& name, const ProcessAdm& adm,
+  DataWriter(const std::string& name, const ProcessAdm* adm = nullptr,
              const char* defaultExt = nullptr);
 
 public:

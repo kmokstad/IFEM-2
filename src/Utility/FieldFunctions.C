@@ -12,10 +12,8 @@
 //==============================================================================
 
 #include "FieldFunctions.h"
-#include "ASMbase.h"
-#include "ASM2D.h"
+#include "ASMs2D.h"
 #include "Field.h"
-#include "ProcessAdm.h"
 #include "Vec3.h"
 #ifdef HAS_HDF5
 #include "HDF5Writer.h"
@@ -28,14 +26,14 @@ FieldFunction::FieldFunction (const std::string& fileName,
                               const std::string& fieldName)
 {
 #ifdef HAS_HDF5
-  HDF5Writer hdf5(fileName,ProcessAdm(),true,true);
+  HDF5Writer hdf5(fileName,nullptr,true,true);
 
   std::string g2;
   std::stringstream str;
   hdf5.readString("0/basis/"+basisName+"/1",g2);
   str << g2;
 
-  pch = ASM2D::create(ASM::Spline);
+  pch = new ASMs2D(2,1);
   pch->read(str);
 
   Vector coefs;

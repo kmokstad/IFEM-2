@@ -16,9 +16,13 @@
 
 #include "XMLInputBase.h"
 #include "SIMoptions.h"
-#include "ProcessAdm.h"
 #include <iostream>
 #include <string>
+
+class ProcessAdm;
+namespace utl {
+  class LogStream;
+}
 
 
 /*!
@@ -37,8 +41,8 @@ protected:
   SIMadmin(SIMadmin& anotherSIM);
 
 public:
-  //! \brief Empty destructor.
-  virtual ~SIMadmin() {}
+  //! \brief The destructor deleted the parallel process administrator.
+  virtual ~SIMadmin();
 
   //! \brief Reads model data from the specified input file \a *fileName.
   virtual bool read(const char* fileName);
@@ -49,10 +53,13 @@ public:
   virtual bool parse(char* keyWord, std::istream& is);
 
   //! \brief Returns the parallel process administrator.
-  const ProcessAdm& getProcessAdm() const { return adm; }
+  const ProcessAdm* getProcAdmPtr() const { return adm; }
+  //! \brief Returns the parallel process administrator.
+  const ProcessAdm& getProcessAdm() const;
   //! \brief Returns the logging stream for this simulator.
   utl::LogStream& getLogStream() const;
-
+  //! \brief Returns the process ID of this simulator w.r.t. equation solving.
+  int getProcId() const;
   //! \brief Returns the global process ID.
   //! \note May be different from the process ID used in the equation solver.
   int getGlobalProcessID() const { return myPid; }
@@ -77,7 +84,7 @@ private:
   SIMoptions  myOpts;    //!< Actual control parameters owned by this simulator
 
 protected:
-  ProcessAdm  adm;       //!< Parallel administrator
+  ProcessAdm* adm;       //!< Parallel process administrator
   int         myPid;     //!< Processor ID in parallel simulations
   int         nProc;     //!< Number of processors in parallel simulations
   std::string myHeading; //!< Heading written before reading the input file

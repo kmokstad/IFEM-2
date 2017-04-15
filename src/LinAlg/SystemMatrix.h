@@ -33,7 +33,7 @@ public:
   enum Type { STD = 0, PETSC = 1, ISTL = 2 };
 
   //! \brief Static method creating a vector of the given type.
-  static SystemVector* create(const ProcessAdm& padm, Type vectorType = STD);
+  static SystemVector* create(const ProcessAdm* adm, Type vectorType = STD);
 
 protected:
   //! \brief The default constructor is protected to allow sub-classes only.
@@ -145,9 +145,6 @@ public:
   //! \brief Returns the dimension of the system vector.
   virtual size_t dim() const { return this->std::vector<Real>::size(); }
 
-  //! \brief Returns the dimension of the system vector.
-  virtual size_t size() const { return this->std::vector<Real>::size(); }
-
   //! \brief Sets the dimension of the system vector.
   virtual void redim(size_t n) { this->std::vector<Real>::resize(n,Real(0)); }
 
@@ -190,6 +187,7 @@ protected:
   { return os << static_cast<const utl::vector<Real>&>(*this); }
 };
 
+
 /*!
   \brief Base class for representing a system matrix on different formats.
   \details The purpose of this class is to define a clean interface for the
@@ -206,11 +204,11 @@ public:
               PETSC = 4, ISTL = 5 };
 
   //! \brief Static method creating a matrix of the given type.
-  static SystemMatrix* create(const ProcessAdm& padm, Type matrixType,
+  static SystemMatrix* create(const ProcessAdm* adm, Type matrixType,
                               LinAlg::LinearSystemType ltype,
                               int num_thread_SLU = 1);
   //! \brief Static method creating a matrix of the given type.
-  static SystemMatrix* create(const ProcessAdm& padm, Type matrixType,
+  static SystemMatrix* create(const ProcessAdm* adm, Type matrixType,
                               const LinSolParams& spar,
                               LinAlg::LinearSystemType ltype);
 
@@ -300,7 +298,8 @@ public:
   //! \param b Right-hand-side vector on input, solution vector on output
   //! \param[in] newLHS \e true if the left-hand-side matrix has been updated
   //! \param[out] rc Reciprocal condition number of the LHS-matrix (optional)
-  virtual bool solve(SystemVector& b, bool newLHS = true, Real* rc = nullptr) = 0;
+  virtual bool solve(SystemVector& b,
+                     bool newLHS = true, Real* rc = nullptr) = 0;
 
   //! \brief Solves the linear system of equations for a given right-hand-side.
   //! \param[in] b Right-hand-side vector
@@ -317,11 +316,11 @@ public:
   //! \brief Dumps the system matrix on a specified format.
   virtual void dump(std::ostream&, char, const char* = nullptr) {}
 
-  //! \brief Matrix-vector product
-  StdVector operator*(const StdVector& b) const ;
+  //! \brief Performs the matrix-vector product.
+  StdVector operator*(const StdVector& b) const;
 
-  //! \brief Solve linear system
-  StdVector operator/(const StdVector& b) ;
+  //! \brief Solves the linear system of equations.
+  StdVector operator/(const StdVector& b);
 
 protected:
   //! \brief Writes the system matrix to the given output stream.

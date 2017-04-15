@@ -12,12 +12,10 @@
 //==============================================================================
 
 #include "SIMadmin.h"
+#include "ProcessAdm.h"
 #include "Utilities.h"
 #include "IFEM.h"
 #include "tinyxml.h"
-#ifdef HAVE_MPI
-#include <mpi.h>
-#endif
 #include <fstream>
 
 #if defined(__MINGW32__) || defined(__MINGW64__)
@@ -27,15 +25,16 @@
 int SIMadmin::msgLevel = 2;
 
 
-SIMadmin::SIMadmin (const char* heading) : opt(myOpts)
-#ifdef HAS_PETSC
-  , adm(PETSC_COMM_WORLD)
-#elif defined(HAVE_MPI)
-  , adm(true)
-#endif
+SIMadmin::SIMadmin (const char* heading) : opt(myOpts), adm(nullptr)
 {
-  myPid = adm.getProcId();
-  nProc = adm.getNoProcs();
+#if defined(HAS_PETSC) || defined(HAVE_MPI)
+  adm   = new ProcessAdm(true);
+  myPid = adm->getProcId();
+  nProc = adm->getNoProcs();
+#else
+  myPid = 0;
+  nProc = 1;
+#endif
 
   myOpts = IFEM::getOptions(); // Initialize options from command-line arguments
 
@@ -43,11 +42,18 @@ SIMadmin::SIMadmin (const char* heading) : opt(myOpts)
 }
 
 
-SIMadmin::SIMadmin (SIMadmin& anotherSIM) : opt(anotherSIM.myOpts)
+SIMadmin::SIMadmin (SIMadmin& anotherSIM) : opt(anotherSIM.myOpts), adm(nullptr)
 {
-  adm = anotherSIM.adm;
+  if (anotherSIM.adm)
+    adm = new ProcessAdm(*anotherSIM.adm); //TODO: Consider sharing the adm too
   myPid = anotherSIM.myPid;
   nProc = anotherSIM.nProc;
+}
+
+
+SIMadmin::~SIMadmin ()
+{
+  if (adm) delete adm;
 }
 
 
@@ -119,7 +125,31 @@ bool SIMadmin::parse (char*, std::istream&)
 }
 
 
+const ProcessAdm& SIMadmin::getProcessAdm () const
+{
+  if (adm) return *adm;
+
+  // This is a serial build - no parallel administrator needed, return a dummy
+#ifdef SP_DEBUG
+  std::cerr <<"  ** SIMadmin::getProcessAdm: Process administrator requested"
+            <<" in a serial build. Check logic.."<< std::endl;
+#endif
+  static ProcessAdm dummy;
+  return dummy;
+}
+
+
 utl::LogStream& SIMadmin::getLogStream () const
 {
-  return adm.cout;
+  if (adm) return adm->cout;
+
+  // When no parallel administrator, the log stream defaults to std::cout
+  static utl::LogStream sout(std::cout);
+  return sout;
+}
+
+
+int SIMadmin::getProcId () const
+{
+  return adm ? adm->getProcId() : 0;
 }

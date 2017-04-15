@@ -18,12 +18,9 @@
 #include "ASM3D.h"
 #include "ASMbase.h"
 #include "ElementBlock.h"
-#include "ProcessAdm.h"
 #include "VTU.h"
 #include <sstream>
 #include <cstdlib>
-
-bool isLR = false;
 
 //! \brief Maps from basis name -> fields
 typedef std::map< std::string,std::vector<XMLWriter::Entry> > ProcessList;
@@ -43,23 +40,26 @@ typedef std::map<std::string,int> VTFFieldBlocks;
 
 //! \brief Struct encapsulating information for a given basis
 struct BasisInfo {
-  std::vector<ASMbase*>   Patch;     //!< Vector with spline bases
-  std::vector<RealArray*> FakeModel; //!< Vector with fake FE model evaluation points
-  int                     StartPart; //!< Starting part for fake FE model
+  ASMVec    Patch;     //!< Vector with spline bases
+  Real3DMat FakeModel; //!< Vector with fake FE model evaluation points
+  int       StartPart; //!< Starting part for fake FE model
 };
 
 //! \brief Maps from (basis name -> basis info)
 typedef std::map<std::string,BasisInfo> PatchMap;
 
 
-//! \brief Read a basis from HDF5 into a vector of patch objects
-//! \param result The resulting vector of patch objects
-//! \param name The name of the basis
-//! \param patches The number of patches to read
+//! \brief Flag for whether LR B-splines are used or not
+ASM::Discretization ptype = ASM::Spline;
+
+//! \brief Reads a basis from HDF5 into a vector of patch objects.
+//! \param[out] result The resulting vector of patch objects
+//! \param[in] name The name of the basis
+//! \param[in] patches The number of patches to read
 //! \param hdf The HDF5 reader to read from
-//! \param dim The dimensionality of the basis
-//! \param level The level the basis is stored at in the file
-bool readBasis (std::vector<ASMbase*>& result, const std::string& name,
+//! \param[in] dim The dimensionality of the basis
+//! \param[in] level The level the basis is stored at in the file
+bool readBasis (ASMVec& result, const std::string& name,
                 int patches, HDF5Writer& hdf, int dim, int level)
 {
   result.clear();
@@ -70,37 +70,33 @@ bool readBasis (std::vector<ASMbase*>& result, const std::string& name,
   }
 
   result.reserve(patches);
-  ASM::Discretization ptype;
   for (int i=0;i<patches;++i) {
-    std::stringstream geom, basis;
-    geom << '/' << level << "/basis/";
-    geom << name;
-    geom << "/";
-    geom << i+1;
     std::string out;
+    std::stringstream geom, basis;
+    geom << '/' << level << "/basis/" << name << "/" << i+1;
     hdf.readString(geom.str(),out);
     ptype = out.substr(0,10) == "# LRSPLINE" ? ASM::LRSpline : ASM::Spline;
-    isLR = ptype == ASM::LRSpline;
     basis << out;
-    if (!isLR && out.substr(0,3) != (dim==3?"700":dim==2?"200":"100")) {
-      std::cerr << "Basis dimensionality for " << name
-                << " does not match dimension, ignoring" << std::endl;
-      continue;
-    }
-    if (isLR) {
+    int gdim = 0;
+    if (ptype == ASM::LRSpline) {
       std::stringstream str;
       str << out;
       std::string line;
-      int gdim = 0;
       line = out.substr(11);
       line = line.substr(0,line.find('\n'));
       if (line == "SURFACE")
         gdim = 2;
-      if (gdim != dim) {
-        std::cerr << "Basis dimensionality for " << name
-                  << " does not match dimension, ignoring" << std::endl;
-        continue;
-      }
+    }
+    else if (out.substr(0,3) == "700")
+      gdim = 3;
+    else if (out.substr(0,3) == "200")
+      gdim = 2;
+    else if (out.substr(0,3) == "100")
+      gdim = 1;
+    if (gdim != dim) {
+      std::cerr <<"  ** Basis dimensionality for "<< name
+                <<" does not match dimension, ignoring..."<< std::endl;
+      continue;
     }
     if (dim == 1)
       result.push_back(ASM1D::create(ptype));
@@ -116,25 +112,29 @@ bool readBasis (std::vector<ASMbase*>& result, const std::string& name,
 }
 
 
-//! \brief Write a field to VTF/VTU file
-//! \param locvec The patch-level basis coefficients
-//! \param components Number of components in field
-//! \param patch The patch the field is defined on
-//! \param model The evaluation points for this part of the fake FE model
-//! \param geomID The ID associated with this patch
-//! \param name Name of field
+//! \brief Writes a field to VTF/VTU file.
+//! \param[in] locvec The patch-level basis coefficients of the field
+//! \param[in] components Number of components in field
+//! \param[in] patch The patch the field is defined on
+//! \param[in] model The evaluation points for this part of the fake FE model
+//! \param[in] geomID The ID associated with this patch
+//! \param nBlock Running result block counter
+//! \param[in] name Name of field
 //! \param vlist List of vector fields stored in VTF/VTU
 //! \param slist List of scalar fields stored in VTF/VTU
 //! \param myVtf The VTF/VTU file to write to
+//! \param[in] description Description of field
+//! \param[in] type Type of field
 bool writeFieldPatch(const Vector& locvec, int components,
-                     ASMbase& patch, RealArray* model, int geomID, int& nBlock,
-                     const std::string& name, VTFList& vlist, VTFList& slist,
-                     VTF& myVtf, const std::string& description, const std::string& type)
+                     const ASMbase& patch, const Real2DMat& model,
+                     int geomID, int& nBlock, const std::string& name,
+                     VTFList& vlist, VTFList& slist, VTF& myVtf,
+                     const std::string& description, const std::string& type)
 {
   if (dynamic_cast<VTU*>(&myVtf) && type == "displacement")
     return true;
   Matrix field;
-  if (!patch.evalSolution(field, locvec, model))
+  if (!patch.evalSolution(field, locvec, model.data()))
     return false;
 
   if (components > 1 || type == "eigenmodes") {
@@ -173,17 +173,16 @@ bool writeFieldPatch(const Vector& locvec, int components,
 }
 
 
-//! \brief Write a per-element field to VTF/VTU file
-//! \param patch The patch the field is defined on
-//! \param grid The (fake) finite elements associated with this patch
-//! \param geomID The ID associated with this patch
+//! \brief Writes a per-element field to VTF/VTU file.
+//! \param[in] locvec The patch-level basis coefficients of the field
+//! \param[in] grid The (fake) finite elements associated with this patch
+//! \param[in] geomID The ID associated with this patch
 //! \param nBlock Running VTF block counter
-//! \param name Name of field
-//! \param description Description of field
+//! \param[in] description Description of field
+//! \param[in] name Name of field
 //! \param elist List of per-element fields stored in VTF/VTU
 //! \param myVtf The VTF/VTU file to write to
-bool writeElmPatch(const Vector& locvec,
-                   ASMbase& patch, const ElementBlock* grid,
+bool writeElmPatch(const Vector& locvec, const ElementBlock* grid,
                    int geomID, int& nBlock, const std::string& description,
                    const std::string& name, VTFList& elist, VTF& myVtf)
 {
@@ -210,11 +209,12 @@ bool writeElmPatch(const Vector& locvec,
 }
 
 
-//! \brief Write field blocks to VTF/VTU file
+//! \brief Writes field blocks to VTF/VTU file.
 //! \param vlist List of vector fields
 //! \param slist List of scalar fields
 //! \param myvtf The VTF/VTU file to write to
-//! \param iStep The level in file to write
+//! \param[in] iStep The level in file to write
+//! \param fieldBlocks Field block name mapping
 void writeFieldBlocks(VTFList& vlist, VTFList& slist, VTF& myvtf,
                       int iStep, VTFFieldBlocks& fieldBlocks)
 {
@@ -238,12 +238,12 @@ void writeFieldBlocks(VTFList& vlist, VTFList& slist, VTF& myvtf,
 }
 
 
-//! \brief Write a fake FE model to VTU/VTF file
+//! \brief Writes a fake FE model to VTU/VTF file.
 //! \param patch The patch the fake FE model is associated with
-//! \param id The ID associated with this patch
+//! \param[in] id The ID associated with this patch
 //! \param myVtf The VTF/VTU file to write to
-//! \param nViz The number of visualization points per knot-span
-//! \param block Running VTF block counter
+//! \param[in] nViz The number of visualization points per knot-span
+//! \param[in] block Running VTF block counter
 void writePatchGeometry(ASMbase* patch, int id, VTF& myVtf, int* nViz, int block)
 {
   std::stringstream str;
@@ -256,24 +256,23 @@ void writePatchGeometry(ASMbase* patch, int id, VTF& myVtf, int* nViz, int block
 }
 
 
-//! \brief Generate evaluation points for fake FE model
-//! \param result The resulting evaluation points
-//! \param patches The patches to generate the fake FE model for
-//! \param dims The dimensionality of the patches
-//! \param nViz The number of visualization points per knot-span
-void generateFEModel (std::vector<RealArray*>& result,
-                      const std::vector<ASMbase*>& patches, int dims, int* nViz)
+//! \brief Generates evaluation points for the fake FE model.
+//! \param[out] result The resulting evaluation points
+//! \param[in] patches The patches to generate the fake FE model for
+//! \param[in] nViz The number of visualization points per knot-span
+void generateFEModel (Real3DMat& result, const ASMVec& patches, int* nViz)
 {
-  result.clear();
-  result.reserve(patches.size());
+  result.resize(patches.size());
   for (size_t i=0;i<patches.size();++i) {
-    RealArray* gpar = new RealArray[dims];
-    for (int k=0;k<dims;++k) {
+    int dims = patches[i]->getNoParamDim();
+    Real2DMat& gpar = result[i];
+    gpar.resize(dims);
+    for (int k=0;k<dims;++k)
       if (dims == 1) {
         ASM1D* patch = dynamic_cast<ASM1D*>(patches[i]);
         if (patch) patch->getGridParameters(gpar[k],nViz[k]-1);
       }
-      if (dims == 2) {
+      else if (dims == 2) {
         ASM2D* patch = dynamic_cast<ASM2D*>(patches[i]);
         if (patch) patch->getGridParameters(gpar[k],k,nViz[k]-1);
       }
@@ -281,41 +280,20 @@ void generateFEModel (std::vector<RealArray*>& result,
         ASM3D* patch = dynamic_cast<ASM3D*>(patches[i]);
         if (patch) patch->getGridParameters(gpar[k],k,nViz[k]-1);
       }
-    }
-    result.push_back(gpar);
   }
-}
-
-
-//! \brief Free up the memory allocated in the PatchMap, making sure to avoid double free's
-//! \param map The map to free up
-void freePatchMap(PatchMap& map)
-{
-  std::vector<RealArray*> free;
-  for (PatchMap::iterator it = map.begin(); it != map.end(); ++it) {
-    for (size_t i = 0; i < it->second.Patch.size(); ++i)
-      delete it->second.Patch[i];
-    free.insert(free.end(), it->second.FakeModel.begin(), it->second.FakeModel.end());
-  }
-
-  std::vector<RealArray*>::iterator it = std::unique(free.begin(), free.end());
-  for (std::vector<RealArray*>::iterator it2 = free.begin(); it2 != it; ++it2)
-    delete *it2;
-
-  map.clear();
 }
 
 
 //! \brief Setup up for our basis.
 //! \details Bases with the same size is collapsed to one, while different sized bases are appended
-//! \param plist The process list with bases and fields
-//! \param level The file level to load bases from
+//! \param[in] plist The process list with bases and fields
+//! \param[in] level The file level to load bases from
 //! \param hdf The HDF5 file reader to use
-//! \param dims The dimensionality of the basis
-//! \param n The number of points in each direction per knot span in the tesselation
+//! \param[in] dims The dimensionality of the basis
+//! \param[in] n The number of points in each direction per knot span in the tesselation
 //! \param vtf The VTF/VTU file to write to
 //! \param block Running VTF block counter
-//! \param vtflevel The time level / load case in the VTF file
+//! \param[in] vtflevel The time level / load case in the VTF file
 PatchMap setupPatchMap(const ProcessList& plist, int level, HDF5Writer& hdf, int dims, int* n,
                        VTF& vtf, int& block, int vtflevel)
 {
@@ -331,7 +309,7 @@ PatchMap setupPatchMap(const ProcessList& plist, int level, HDF5Writer& hdf, int
     std::map<int, BasisInfo>::iterator loc = created.find(it->second[0].patches);
     // tesselate some more patches
     if (loc == created.end()) {
-      generateFEModel(created[it->second[0].patches].FakeModel, result[it->first].Patch, dims, n);
+      generateFEModel(created[it->second[0].patches].FakeModel, result[it->first].Patch, n);
       loc = created.find(it->second[0].patches);
       loc->second.StartPart = start;
       for (size_t l=0;l<result[it->first].Patch.size();++l)
@@ -407,9 +385,8 @@ int main (int argc, char** argv)
 
   std::cout <<"\n >>> IFEM HDF5 to VT[F|U] converter <<<"
             <<"\n ==================================\n"
-            <<"\nInput file: " << infile;
-
-  std::cout <<"\nOutput file: "<< vtffile
+            <<"\nInput file: " << infile
+            <<"\nOutput file: "<< vtffile
             <<"\nNumber of visualization points: "
             << n[0] <<" "<< n[1] << " " << n[2] << std::endl;
 
@@ -422,8 +399,8 @@ int main (int argc, char** argv)
   // Process XML - establish fields and collapse bases
   PatchMap patches;
 
-  HDF5Writer hdf(strtok(infile,"."),ProcessAdm(),true,true);
-  XMLWriter xml(infile,ProcessAdm());
+  HDF5Writer hdf(strtok(infile,"."),nullptr,true,true);
+  XMLWriter xml(infile);
   xml.readInfo();
 
   int levels = xml.getLastTimeLevel();
@@ -484,7 +461,7 @@ int main (int argc, char** argv)
     VTFList vlist, slist;
     bool geomWritten=false;
 
-    if ((isLR && hdf.hasGeometries(i)) || patches.empty()) {
+    if ((ptype == ASM::LRSpline && hdf.hasGeometries(i)) || patches.empty()) {
       patches = setupPatchMap(processlist, hdf.hasGeometries(i)?i:0, hdf, dims, n, *myVtf, block, k);
       geomWritten = true;
     }
@@ -548,7 +525,7 @@ int main (int argc, char** argv)
           }
           else {
             if (it->type == "knotspan") {
-              ok &= writeElmPatch(vec,*patches[pit->first].Patch[j],myVtf->getBlock(j+1),
+              ok &= writeElmPatch(vec,myVtf->getBlock(j+1),
                                   patches[pit->first].StartPart+j,block,
                                   it->description, it->name, slist, *myVtf);
             } else if (it->type == "eigenmodes") {

@@ -49,8 +49,8 @@ namespace SIM
                      int interval = 1, int steps = 1)
   {
     DataExporter reader(true,interval,steps);
-    XMLWriter* xml = new XMLWriter(restartfile,solver.getProcessAdm());
-    HDF5Writer* hdf = new HDF5Writer(restartfile,solver.getProcessAdm(),true);
+    XMLWriter* xml = new XMLWriter(restartfile,solver.getProcAdmPtr());
+    HDF5Writer* hdf = new HDF5Writer(restartfile,solver.getProcAdmPtr(),true);
     reader.registerWriter(xml);
     reader.registerWriter(hdf);
     simulator.registerFields(reader);
@@ -84,8 +84,8 @@ namespace SIM
                                  int interval = 1, int steps = 1)
   {
     DataExporter* writer = new DataExporter(true,interval,steps);
-    XMLWriter* xml = new XMLWriter(hdf5file,solver.getProcessAdm());
-    HDF5Writer* hdf = new HDF5Writer(hdf5file,solver.getProcessAdm(),append);
+    XMLWriter* xml = new XMLWriter(hdf5file,solver.getProcAdmPtr());
+    HDF5Writer* hdf = new HDF5Writer(hdf5file,solver.getProcAdmPtr(),append);
     writer->registerWriter(xml);
     writer->registerWriter(hdf);
     simulator.registerFields(*writer);

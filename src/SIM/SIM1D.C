@@ -14,6 +14,7 @@
 #include "SIM1D.h"
 #include "ModelGenerator.h"
 #include "ASMs1D.h"
+#include "ProcessAdm.h"
 #include "Functions.h"
 #include "Utilities.h"
 #include "Vec3Oper.h"
@@ -71,10 +72,10 @@ bool SIM1D::addConnection (int master, int slave, int mIdx, int sIdx,
     if (!spch->connectPatch(sIdx,*mpch,mIdx,thick))
       return false;
   }
-  else
-    adm.dd.ghostConnections.insert(DomainDecomposition::Interface{master, slave,
-                                                                  mIdx, sIdx, 0,
-                                                                  dim, basis, thick});
+  else if (adm)
+    adm->dd.ghostConnections.insert(DomainDecomposition::Interface{master, slave,
+                                                                   mIdx, sIdx, 0,
+                                                                   dim, basis, thick});
 
   return true;
 }

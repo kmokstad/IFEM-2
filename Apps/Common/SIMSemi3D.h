@@ -136,9 +136,9 @@ public:
         std::stringstream str;
         str << "_plane" << plane;
         XMLWriter* xml = new XMLWriter(name+str.str(),
-                                       m_planes[i]->getProcessAdm());
+                                       m_planes[i]->getProcAdmPtr());
         HDF5Writer* hdf = new HDF5Writer(name+str.str(),
-                                         m_planes[i]->getProcessAdm(),false);
+                                         m_planes[i]->getProcAdmPtr(),false);
         exp->registerWriter(xml);
         exp->registerWriter(hdf);
         plane_exporters.push_back(exp);

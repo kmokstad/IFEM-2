@@ -19,6 +19,7 @@
 #else
 #include "SAMpatch.h"
 #endif
+#include "ProcessAdm.h"
 #include "IntegrandBase.h"
 #include "AlgEqSystem.h"
 #include "LinSolParams.h"
@@ -145,7 +146,7 @@ bool SIMbase::preprocess (const IntVec& ignored, bool fixDup)
     return false;
   }
 
-  if (nProc > 1 && myPatches.empty() && adm.isParallel())
+  if (nProc > 1 && myPatches.empty() && adm && adm->isParallel())
   {
     std::cerr <<" *** SIMbase::preprocess: No partitioning information for "
               << nProc <<" processors found."<< std::endl;
@@ -340,7 +341,7 @@ bool SIMbase::preprocess (const IntVec& ignored, bool fixDup)
   if (mySam) delete mySam;
 #ifdef HAS_PETSC
   if (opt.solver == SystemMatrix::PETSC)
-    mySam = new SAMpatchPETSc(*g2l,adm);
+    mySam = new SAMpatchPETSc(*g2l,*adm);
   else
     mySam = new SAMpatch();
 #else
@@ -349,7 +350,7 @@ bool SIMbase::preprocess (const IntVec& ignored, bool fixDup)
   if (!static_cast<SAMpatch*>(mySam)->init(myModel,ngnod))
     return false;
 
-  if (!adm.dd.setup(adm,*this))
+  if (adm && !adm->dd.setup(*adm,*this))
   {
     std::cerr <<"\n *** SIMbase::preprocess(): Failed to establish "
               <<" domain decomposition data."<< std::endl;
@@ -999,25 +1000,26 @@ void SIMbase::printSolutionSummary (const Vector& solution, int printSol,
   double dMax[nf > 0 ? nf : nsd];
   double dNorm = this->solutionNorms(solution,dMax,iMax,nf);
 
-  int oldPrec = adm.cout.precision();
+  utl::LogStream& sout = this->getLogStream();
+  int oldPrec = sout.precision();
   if (outPrec > 0)
-    adm.cout << std::setprecision(outPrec);
+    sout << std::setprecision(outPrec);
 
   if (compName)
-    adm.cout <<"\n >>> Solution summary <<<\n\nL2-norm            : ";
+    sout <<"\n >>> Solution summary <<<\n\nL2-norm            : ";
   else if (nf > 1)
-    adm.cout <<"  Primary solution summary: L2-norm         : ";
+    sout <<"  Primary solution summary: L2-norm         : ";
   else
-    adm.cout <<"  Primary solution summary: L2-norm      : ";
-  adm.cout << utl::trunc(dNorm);
+    sout <<"  Primary solution summary: L2-norm      : ";
+  sout << utl::trunc(dNorm);
 
   if (nf == 1 && utl::trunc(dMax[0]) != 0.0)
   {
     if (compName)
-      adm.cout <<"\nMax "<< compName <<"   : ";
+      sout <<"\nMax "<< compName <<"   : ";
     else
-      adm.cout <<"\n                            Max value    : ";
-    adm.cout << dMax[0] <<" node "<< iMax[0];
+      sout <<"\n                            Max value    : ";
+    sout << dMax[0] <<" node "<< iMax[0];
   }
   else if (nf > 1)
   {
@@ -1026,27 +1028,27 @@ void SIMbase::printSolutionSummary (const Vector& solution, int printSol,
       if (utl::trunc(dMax[d]) != 0.0)
       {
         if (compName)
-          adm.cout <<"\nMax "<< D <<'-'<< compName <<" : ";
+          sout <<"\nMax "<< D <<'-'<< compName <<" : ";
         else
-          adm.cout <<"\n                            Max "<< D <<"-component : ";
-        adm.cout << dMax[d] <<" node "<< iMax[d];
+          sout <<"\n                            Max "<< D <<"-component : ";
+        sout << dMax[d] <<" node "<< iMax[d];
       }
   }
-  adm.cout << std::endl;
-  adm.cout << std::setprecision(oldPrec);
+  sout << std::endl;
+  sout << std::setprecision(oldPrec);
 
   // Print entire solution vector if it is small enough
   if (mySam->getNoEquations() < printSol)
   {
-    adm.cout <<"\nSolution vector:";
+    sout <<"\nSolution vector:";
     for (int inod = 1; inod <= mySam->getNoNodes(); inod++)
     {
-      adm.cout <<"\nNode "<< inod <<":";
+      sout <<"\nNode "<< inod <<":";
       std::pair<int,int> dofs = mySam->getNodeDOFs(inod);
       for (int d = dofs.first-1; d < dofs.second; d++)
-        adm.cout <<" "<< utl::trunc(solution[d]);
+        sout <<" "<< utl::trunc(solution[d]);
     }
-    adm.cout << std::endl;
+    sout << std::endl;
   }
 #if SP_DEBUG > 2
   else
@@ -1351,8 +1353,9 @@ bool SIMbase::solutionNorms (const TimeDomain& time,
 
   delete norm;
 
-  for (k = 0; k < gNorm.size(); k++)
-    adm.allReduceAsSum(gNorm[k]);
+  if (adm)
+    for (k = 0; k < gNorm.size(); k++)
+      adm->allReduceAsSum(gNorm[k]);
 
   return ok;
 }

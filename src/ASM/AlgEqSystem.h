@@ -32,7 +32,7 @@ class AlgEqSystem : public GlobalIntegral
 {
 public:
   //! \brief The constructor sets its reference to SAM and ProcessAdm objects.
-  AlgEqSystem(const SAM& s, const ProcessAdm& a);
+  AlgEqSystem(const SAM& s, const ProcessAdm* a);
 
   //! \brief The destructor frees the dynamically allocated objects.
   virtual ~AlgEqSystem() { this->clear(); }
@@ -105,7 +105,7 @@ private:
   Vector                     R; //!< Nodal reaction forces
 
   const SAM&        sam; //!< Data for FE assembly management
-  const ProcessAdm& adm; //!< Parallel process administrator
+  const ProcessAdm* adm; //!< Parallel process administrator
 };
 
 #endif

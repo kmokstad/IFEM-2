@@ -1,3 +1,4 @@
+// $Id$
 //==============================================================================
 //!
 //! \file ProcessAdm.C
@@ -11,10 +12,10 @@
 //!
 //==============================================================================
 
-#include "IFEM.h"
 #include "ProcessAdm.h"
 #include "LinAlgInit.h"
-#include <iostream>
+#include "IFEM.h"
+
 
 ProcessAdm::ProcessAdm() : cout(std::cout)
 {
@@ -27,12 +28,13 @@ ProcessAdm::ProcessAdm() : cout(std::cout)
   parallel = false;
 }
 
+
 #if defined(HAS_PETSC) || defined(HAVE_MPI)
-ProcessAdm::ProcessAdm(MPI_Comm& mpi_comm) : cout(std::cout)
+ProcessAdm::ProcessAdm(bool) : cout(std::cout)
 {
   LinAlgInit::increfs();
 #ifdef HAVE_MPI
-  MPI_Comm_dup(mpi_comm,&comm);
+  MPI_Comm_dup(MPI_COMM_WORLD,&comm);
   MPI_Comm_rank(comm,&myPid);
   MPI_Comm_size(comm,&nProc);
   cout = IFEM::cout;
@@ -47,23 +49,10 @@ ProcessAdm::ProcessAdm(MPI_Comm& mpi_comm) : cout(std::cout)
 #endif
 
 
-#ifdef HAVE_MPI
-ProcessAdm::ProcessAdm(bool) : cout(std::cout)
-{
-  LinAlgInit::increfs();
-  MPI_Comm_dup(MPI_COMM_WORLD,&comm);
-  MPI_Comm_rank(comm,&myPid);
-  MPI_Comm_size(comm,&nProc);
-  cout = IFEM::cout;
-  parallel = nProc > 1;
-}
-#endif
-
-
 ProcessAdm::~ProcessAdm()
 {
   myPid = nProc = 0;
-#ifdef HAS_PETSC
+#if defined(HAS_PETSC) || defined(HAVE_MPI)
   if (parallel)
     MPI_Comm_free(&comm);
 #endif
@@ -86,9 +75,7 @@ void ProcessAdm::setCommunicator(const MPI_Comm* comm2)
 
 ProcessAdm& ProcessAdm::operator=(const ProcessAdm& adm2)
 {
-#if defined(HAS_PETSC) || defined(HAVE_MPI)
   MPI_Comm_dup(adm2.comm,&comm);
-#endif
   myPid = adm2.myPid;
   nProc = adm2.nProc;
   parallel = adm2.parallel;
@@ -202,6 +189,7 @@ void ProcessAdm::allReduce(std::vector<int>& ivec, MPI_Op oper) const
   ivec = tmp;
 #endif
 }
+
 
 double ProcessAdm::allReduce(double value, MPI_Op oper) const
 {

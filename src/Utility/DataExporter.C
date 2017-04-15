@@ -17,11 +17,10 @@
 #include "TimeStep.h"
 #include "tinyxml.h"
 #include <iostream>
-#include <algorithm>
 
 
 DataWriter::DataWriter (const std::string& name,
-                        const ProcessAdm& adm,
+                        const ProcessAdm* adm,
                         const char* defaultExt)
 {
   if (defaultExt && name.find(defaultExt) == std::string::npos)
@@ -31,8 +30,8 @@ DataWriter::DataWriter (const std::string& name,
 
   m_prefix = nullptr;
 
-  m_size = adm.getNoProcs();
-  m_rank = adm.getProcId();
+  m_size = adm ? adm->getNoProcs() : 1;
+  m_rank = adm ? adm->getProcId() : 0;
 }
 
 

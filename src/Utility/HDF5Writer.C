@@ -16,6 +16,7 @@
 #include "SIMbase.h"
 #include "ASMbase.h"
 #include "IntegrandBase.h"
+#include "ProcessAdm.h"
 #include "TimeStep.h"
 #include "Vec3.h"
 #include <sstream>
@@ -36,12 +37,9 @@
 #define HDF5_SANITY_LIMIT 10*1024*1024LL // 10MB
 
 
-HDF5Writer::HDF5Writer (const std::string& name, const ProcessAdm& adm,
+HDF5Writer::HDF5Writer (const std::string& name, const ProcessAdm* adm,
                         bool append, bool keepOpen)
-  : DataWriter(name,adm,".hdf5"), m_file(0), m_keepOpen(keepOpen)
-#ifdef HAVE_MPI
-  , m_adm(adm)
-#endif
+  : DataWriter(name,adm,".hdf5"), m_file(0), m_keepOpen(keepOpen), m_adm(adm)
 {
 #ifdef HAS_HDF5
   struct stat temp;
@@ -98,7 +96,7 @@ void HDF5Writer::openFile(int level)
 #ifdef HAVE_MPI
   MPI_Info info = MPI_INFO_NULL;
   acc_tpl = H5Pcreate(H5P_FILE_ACCESS);
-  H5Pset_fapl_mpio(acc_tpl, *m_adm.getCommunicator(), info);
+  H5Pset_fapl_mpio(acc_tpl, *m_adm->getCommunicator(), info);
 #endif
 
   if (m_flag == H5F_ACC_TRUNC)
@@ -218,7 +216,7 @@ void HDF5Writer::writeArray(int group, const std::string& name,
 #ifdef HAVE_MPI
   int lens[m_size], lens2[m_size];
   std::fill(lens,lens+m_size,len);
-  MPI_Alltoall(lens,1,MPI_INT,lens2,1,MPI_INT,*m_adm.getCommunicator());
+  MPI_Alltoall(lens,1,MPI_INT,lens2,1,MPI_INT,*m_adm->getCommunicator());
   hsize_t siz   = (hsize_t)std::accumulate(lens2,lens2+m_size,0);
   hsize_t start = (hsize_t)std::accumulate(lens2,lens2+m_rank,0);
 #else
@@ -261,7 +259,7 @@ void HDF5Writer::writeVector(int level, const DataEntry& entry)
   int rank = 0;
 #ifdef HAVE_MPI
   if (entry.second.results & DataExporter::REDUNDANT)
-    MPI_Comm_rank(*m_adm.getCommunicator(), &rank);
+    MPI_Comm_rank(*m_adm->getCommunicator(), &rank);
 #endif
   std::stringstream str;
   str << level;

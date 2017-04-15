@@ -15,6 +15,7 @@
 #include "ModelGenerator.h"
 #include "ASMs2DC1.h"
 #include "ImmersedBoundaries.h"
+#include "ProcessAdm.h"
 #include "Functions.h"
 #include "Utilities.h"
 #include "Vec3Oper.h"
@@ -102,10 +103,10 @@ bool SIM2D::addConnection (int master, int slave, int mIdx,
       if (!spch->connectPatch(sIdx,*mpch,mIdx,orient,b,coordCheck,thick))
         return false;
   }
-  else
-    adm.dd.ghostConnections.insert(DomainDecomposition::Interface{master, slave,
-                                                                  mIdx, sIdx, orient,
-                                                                  dim, basis, thick});
+  else if (adm)
+    adm->dd.ghostConnections.insert(DomainDecomposition::Interface{master, slave,
+                                                                   mIdx, sIdx, orient,
+                                                                   dim, basis, thick});
 
   return true;
 }

@@ -1,3 +1,4 @@
+// $Id$
 //==============================================================================
 //!
 //! \file ProcessAdm.h
@@ -44,20 +45,13 @@ public:
 
   DomainDecomposition dd; //!< Decomain decomposition
 
-  //! \brief Construct an empty (serial) process administrator.
+  //! \brief Constructor for serial applications.
   ProcessAdm();
 #if defined(HAS_PETSC) || defined(HAVE_MPI)
-  //! \brief Construct a parallel process administrator.
-  ProcessAdm(MPI_Comm& mpi_comm);
+  //! \brief Constructor for parallel applications.
+  ProcessAdm(bool);
 #endif
-
-#ifdef HAVE_MPI
-  //! \brief Construct a parallel process administrator.
-  //! \details This overload is necessary due to MPI_COMM_WORLD being .. ickily.
-  ProcessAdm(bool hack);
-#endif
-
-  //! \brief The destructor releases the process administrator.
+  //! \brief The destructor releases the MPI communicator.
   ~ProcessAdm();
 
   //! \brief Return process id
@@ -136,7 +130,7 @@ public:
   //! \brief AllReduce with MPI_SUM for a vector.
   template<class T> void allReduceAsSum(std::vector<T>& vec) const
   {
-#ifdef HAS_PETSC
+#if defined(HAS_PETSC) || defined(HAVE_MPI)
     if (parallel)
       this->allReduce(vec,MPI_SUM);
 #endif

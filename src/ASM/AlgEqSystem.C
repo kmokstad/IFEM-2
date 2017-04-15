@@ -19,7 +19,7 @@
 #endif
 
 
-AlgEqSystem::AlgEqSystem (const SAM& s, const ProcessAdm& a) : sam(s), adm(a)
+AlgEqSystem::AlgEqSystem (const SAM& s, const ProcessAdm* a) : sam(s), adm(a)
 {
   d = &c;
 }

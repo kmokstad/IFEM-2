@@ -16,6 +16,7 @@
 #include "ModelGenerator.h"
 #include "ASMstruct.h"
 #include "ASMunstruct.h"
+#include "ProcessAdm.h"
 #include "LinSolParams.h"
 #include "Functions.h"
 #include "Utilities.h"
@@ -73,7 +74,7 @@ bool SIMinput::parseGeometryTag (const TiXmlElement* elem)
     else if (strstr(file,".hdf5"))
     {
       IFEM::cout <<"\tReading global node numbers from "<< file << std::endl;
-      HDF5Writer hdf5(file,ProcessAdm(),true,true);
+      HDF5Writer hdf5(file,nullptr,true,true);
       const char* field = elem->Attribute("field");
       for (int i = 1; i <= nGlPatches; i++)
       {
@@ -86,12 +87,12 @@ bool SIMinput::parseGeometryTag (const TiXmlElement* elem)
     }
   }
 
-  else if (!strcasecmp(elem->Value(),"partitioning"))
+  else if (adm && !strcasecmp(elem->Value(),"partitioning"))
   {
     int proc = 0;
     if (!utl::getAttribute(elem,"procs",proc))
       return false;
-    else if (proc != adm.getNoProcs()) // silently ignore
+    else if (proc != adm->getNoProcs()) // silently ignore
       return true;
     IFEM::cout <<"\tNumber of partitions: "<< proc << std::endl;
 
@@ -107,24 +108,24 @@ bool SIMinput::parseGeometryTag (const TiXmlElement* elem)
       if (last > nGlPatches)
         nGlPatches = last;
 
-      if (proc == adm.getProcId())
+      if (proc == adm->getProcId())
       {
         myPatches.reserve(last-first+1);
         for (int j = first; j <= last && j > -1; j++)
           myPatches.push_back(j);
       }
       for (int i = first; i <= last; i++)
-        adm.dd.setPatchOwner(i,proc);
+        adm->dd.setPatchOwner(i,proc);
     }
 
     // If equal number of blocks per processor
     if (myPatches.empty() && utl::getAttribute(elem,"nperproc",proc))
     {
       for (int j = 1; j <= proc; j++)
-        myPatches.push_back(adm.getProcId()*proc+j);
-      nGlPatches = adm.getNoProcs()*proc;
+        myPatches.push_back(adm->getProcId()*proc+j);
+      nGlPatches = adm->getNoProcs()*proc;
       for (int i = 1; i <= nGlPatches; i++)
-        adm.dd.setPatchOwner(i,(i-1)/proc);
+        adm->dd.setPatchOwner(i,(i-1)/proc);
     }
   }
 

@@ -32,10 +32,11 @@ class HDF5Writer : public DataWriter
 public:
   //! \brief The constructor opens a named HDF5-file.
   //! \param[in] name The name (filename without extension) of data file
+  //! \param[in] adm The parallel process administrator
   //! \param[in] append Whether to append to or overwrite an existing file
   //! \param[in] keepopen Whether to always keep the HDF5 open
-  HDF5Writer(const std::string& name, const ProcessAdm& adm, bool append = false,
-             bool keepopen = false);
+  HDF5Writer(const std::string& name, const ProcessAdm* adm = nullptr,
+             bool append = false, bool keepopen = false);
 
   //! \brief Empty destructor.
   virtual ~HDF5Writer() {}
@@ -158,7 +159,7 @@ protected:
   //! \param[in] level The time level to write the basis at
   //! \param[in] redundant Whether or not basis is redundant across processes
   void writeBasis(SIMbase* SIM, const std::string& name, int basis,
-                  int level, bool redundant=false);
+                  int level, bool redundant = false);
 
   //! \brief Internal helper function. Reads an array into a array of doubles.
   //! \param[in] group The HDF5 group to read data from
@@ -184,9 +185,8 @@ private:
   int          m_file; //!< The HDF5 handle for our file
   unsigned int m_flag; //!< The file flags to open HDF5 file with
   bool     m_keepOpen; //!< If \e true, we always keep the file open
-#ifdef HAVE_MPI
-  const ProcessAdm& m_adm;   //!< Pointer to process adm in use
-#endif
+
+  const ProcessAdm* m_adm; //!< Pointer to the process administrator in use
 };
 
 #endif
