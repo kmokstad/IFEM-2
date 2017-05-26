@@ -44,7 +44,7 @@ static void expandTensorGrid (const RealArray* in, RealArray* out)
 
 bool ASMu2Dmx::assembleL2matrices (SparseMatrix& A, StdVector& B,
                                    const IntegrandBase& integrand,
-                                   bool continuous) const
+                                   bool continuous, bool) const
 {
   const int p1 = m_basis[0]->order(0);
   const int p2 = m_basis[0]->order(1);
@@ -165,7 +165,7 @@ bool ASMu2Dmx::assembleL2matrices (SparseMatrix& A, StdVector& B,
 
 bool ASMu2Dmx::globalL2projection (Matrix& sField,
                                    const IntegrandBase& integrand,
-                                   bool continuous) const
+                                   bool continuous, bool enforceEnds) const
 {
   for (size_t b = 0; b < m_basis.size(); b++)
     if (!m_basis[b]) return true; // silently ignore empty patches
@@ -178,7 +178,7 @@ bool ASMu2Dmx::globalL2projection (Matrix& sField,
   StdVector B(nnod);
   A.redim(nnod,nnod);
 
-  if (!this->assembleL2matrices(A,B,integrand,continuous))
+  if (!this->assembleL2matrices(A,B,integrand,continuous,enforceEnds))
     return false;
 
 #if SP_DEBUG > 1

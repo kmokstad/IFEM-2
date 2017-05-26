@@ -160,9 +160,10 @@ public:
   //! \param[out] sField Secondary solution field control point values
   //! \param[in] integrand Object with problem-specific data and methods
   //! \param[in] continuous If \e true, a continuous L2-projection is used
+  //! \param[in] enforceEnds If \e true, enforce corner point value equality
   virtual bool globalL2projection(Matrix& sField,
                                   const IntegrandBase& integrand,
-                                  bool continuous = false) const;
+                                  bool continuous, bool enforceEnds) const;
 
   using ASMu2D::refine;
   //! \brief Refines the mesh adaptively.
@@ -190,7 +191,7 @@ protected:
   //! \param[in] continuous If \e false, a discrete L2-projection is used
   virtual bool assembleL2matrices(SparseMatrix& A, StdVector& B,
                                   const IntegrandBase& integrand,
-                                  bool continuous) const;
+                                  bool continuous, bool) const;
 
   using ASMu2D::generateThreadGroups;
   //! \brief Generates element groups for multi-threading of interior integrals.

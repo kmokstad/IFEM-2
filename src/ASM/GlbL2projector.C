@@ -202,7 +202,7 @@ bool ASMbase::L2projection (Matrix& sField,
 
 bool ASMbase::globalL2projection (Matrix& sField,
                                   const IntegrandBase& integrand,
-                                  bool continuous) const
+                                  bool continuous, bool enforceEnds) const
 {
   if (this->empty()) return true; // silently ignore empty patches
 
@@ -238,5 +238,30 @@ bool ASMbase::globalL2projection (Matrix& sField,
   std::cout <<"- Solution Vector -"<< sField
             <<"-------------------"<< std::endl;
 #endif
+  if (!enforceEnds) return true;
+
+  // Get parameter and node numbers for the domain corners
+  std::vector<RealArray> u;
+  std::vector<int> corners;
+  if (!this->getParameterDomain(u,corners))
+    return true; // Silently ignore if corner points are not provided
+
+  // Evaluate the solution at the corners
+  Matrix sCorner;
+  if (!this->evalSolution(sCorner,integrand,u.data()))
+    return false;
+
+  // Enforce the corner values in the projected field
+  for (i = 0; i < corners.size(); i++)
+  {
+#if SP_DEBUG > 1
+    std::cout <<"Replacing end point values of projected field at node "
+              << corners[i] <<"\nfrom"<< sField.getColumn(corners[i])
+              <<"to"<< sCorner.getColumn(1+i);
+#endif
+    for (j = 1; j <= ncomp; j++)
+      sField(j,corners[i]) = sCorner(j,1+i);
+  }
+
   return true;
 }
