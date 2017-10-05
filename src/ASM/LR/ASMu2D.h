@@ -325,19 +325,20 @@ private:
   //! \brief Struct representing an inhomogeneous Dirichlet boundary condition.
   struct DirichletEdge
   {
-    LR::LRSplineSurface *lr;       //!< Pointer to the right object (in case of multiple bases)
+    LR::LRSplineSurface* lr;       //!< Pointer to the right object (in case of multiple bases)
     LR::parameterEdge   edg;       //!< Which edge is this
     IntVec              MLGE;      //!< Local-to-Global Element numbers
     IntVec              MLGN;      //!< Local-to-Global Nodal numbers
     IntMat              MNPC;      //!< Matrix of Nodal-Point Correpondanse
     int                 dof;       //!< Local DOF to constrain along the boundary
     int                 code;      //!< Inhomogeneous Dirichlet condition code
-    int                 basis;     //!< Index to the basis used
     int                 corners[2];//!< Index of the two end-points of this line
 
-    //! \brief Default constructor.
-    DirichletEdge(int numbBasis, int numbElements, int d = 0, int c = 0, int b = 1)
-    : MLGE(numbElements), MNPC(numbElements), dof(d), code(c), basis(b) {}
+    //! \brief The constructor detects the edge end points.
+    DirichletEdge(LR::LRSplineSurface* sf, int dir,
+                  int d = 0, int c = 0, int offset = 1);
+    //! \brief Returns \e true if basis function \a b is at a corner point.
+    bool isCorner(int b) const { return b == corners[0] || b == corners[1]; }
   };
 
   //! \brief Projects the secondary solution field onto the primary basis.
