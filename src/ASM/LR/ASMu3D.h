@@ -92,9 +92,6 @@ public:
   //! \param[in] displ Incremental displacements to update the coordinates with
   virtual bool updateCoords(const Vector& displ);
 
-  //! \brief Returns the node indices for a given face.
-  std::vector<int> getFaceNodes(int face, int basis = 1, int orient = -1) const;
-
   //! \brief Finds the global (or patch-local) node numbers on a patch boundary.
   //! \param[in] lIndex Local index of the boundary face
   //! \param nodes Array of node numbers
@@ -464,6 +461,15 @@ protected:
   //! \param[out] XC Coordinates of the element corners
   //! \return Characteristic element size
   double getElementCorners(int iel, std::vector<Vec3>& XC) const;
+
+  //! \brief Returns the node indices for a given face.
+  //! \param nodes Array of node numbers
+  //! \param[in] face Local index of the boundary face
+  //! \param[in] basis Which basis to grab nodes for
+  //! \param[in] orient Orientation of boundary (used for sorting)
+  //! \param[in] local If \e true, return patch-local node numbers
+  void getFaceNodes(IntVec& nodes, int face, int basis,
+                    int orient = 0, bool local = true) const;
 
   //! \brief Evaluate all basis functions and first derivatives on one element
   void evaluateBasis(int iel, double u, double v, double w,

@@ -291,12 +291,14 @@ bool ASMu3D::connectBasis (int face, ASMu3D& neighbor, int nface, int norient,
   }
 
   // Set up the slave node numbers for this volume patch
-  IntVec slaveNodes = this->getFaceNodes(face, basis, 0);
+  IntVec slaveNodes;
+  this->getBoundaryNodes(face,slaveNodes,basis,thick,0,true);
   for (int& it : slaveNodes)
     it += slave;
 
   // Set up the master node numbers for the neighboring volume patch
-  IntVec masterNodes = neighbor.getFaceNodes(nface, basis, norient);
+  IntVec masterNodes;
+  neighbor.getBoundaryNodes(nface,masterNodes,basis,thick,norient,true);
   for (int& it : masterNodes)
     it += master;
 
@@ -308,25 +310,21 @@ bool ASMu3D::connectBasis (int face, ASMu3D& neighbor, int nface, int norient,
   }
 
   const double xtol = 1.0e-4;
-  for (size_t node = 0; node < masterNodes.size(); ++node)
+  for (size_t i = 0; i < masterNodes.size(); ++i)
   {
-    for (int t = 0; t < thick; ++t)
+    int node = masterNodes[i];
+    int slave = slaveNodes[i];
+    if (!coordCheck)
+      ASMbase::collapseNodes(neighbor,node,*this,slave);
+    else if (neighbor.getCoord(node).equal(this->getCoord(slave),xtol))
+      ASMbase::collapseNodes(neighbor,node,*this,slave);
+    else
     {
-      int node2 = masterNodes[node*thick+t];
-      int slave = slaveNodes[node*thick+t];
-
-      if (!coordCheck)
-        ASMbase::collapseNodes(neighbor,node2,*this,slave);
-      else if (neighbor.getCoord(node2).equal(this->getCoord(slave),xtol))
-        ASMbase::collapseNodes(neighbor,node2,*this,slave);
-      else
-      {
-          std::cerr <<" *** ASMu3D::connectPatch: Non-matching nodes "
-                    << node2 <<": "<< neighbor.getCoord(node2)
-                    <<"\n                                          and "
-                    << slave <<": "<< this->getCoord(slave) << std::endl;
-        return false;
-      }
+      std::cerr <<" *** ASMu3D::connectPatch: Non-matching nodes "
+                << node <<": "<< neighbor.getCoord(node)
+                <<"\n                                          and "
+                << slave <<": "<< this->getCoord(slave) << std::endl;
+      return false;
     }
   }
 
@@ -506,7 +504,7 @@ size_t ASMu3D::constrainFaceLocal(int dir, bool open, int dof, int code, bool pr
 }
 
 
-std::vector<int> ASMu3D::getEdge(int lEdge, bool open, int basis, int orient) const
+IntVec ASMu3D::getEdge(int lEdge, bool open, int basis, int orient) const
 {
   // lEdge = 1-4, running index is u (vmin,wmin), (vmax,wmin), (vmin,wmax), (vmax,wmax)
   // lEdge = 5-8, running index is v (umin,wmin), (umax,wmin), (umin,wmax), (umax,wmax)
@@ -553,7 +551,7 @@ std::vector<int> ASMu3D::getEdge(int lEdge, bool open, int basis, int orient) co
     ASMunstruct::Sort(u, v, orient, thisEdge);
   }
 
-  std::vector<int> result;
+  IntVec result;
   for (LR::Basisfunction* b : thisEdge)
     result.push_back(b->getId()+ofs);
 
@@ -2044,37 +2042,27 @@ bool ASMu3D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 }
 
 
-std::vector<int> ASMu3D::getFaceNodes (int face, int basis, int orient) const
+void ASMu3D::getFaceNodes (IntVec& nodes, int face, int basis,
+                           int orient, bool local) const
 {
+  const LR::LRSplineVolume* vol = this->getBasis(basis);
+  if (!vol) return; // silently ignore empty patches
+
   size_t ofs = 1;
   for (int i = 1; i < basis; i++)
     ofs += this->getNoNodes(i);
 
-  LR::parameterEdge edge;
-  switch (face) {
-  case 1: edge = LR::WEST; break;
-  case 2: edge = LR::EAST; break;
-  case 3: edge = LR::SOUTH; break;
-  case 4: edge = LR::NORTH; break;
-  case 5: edge = LR::BOTTOM; break;
-  case 6: edge = LR::TOP; break;
-  default: return std::vector<int>();
-  }
-
-  std::vector<LR::Basisfunction*> edgeFunctions;
-  this->getBasis(basis)->getEdgeFunctions(edgeFunctions, edge);
+  std::vector<LR::Basisfunction*> faceFunctions;
+  vol->getEdgeFunctions(faceFunctions,static_cast<LR::parameterEdge>(face));
   if (orient > -1) {
     int dir = (face-1)/2;
     int u = dir == 0;
     int v = 1 + (dir != 2);
-    ASMunstruct::Sort(u, v, orient, edgeFunctions);
+    ASMunstruct::Sort(u, v, orient, faceFunctions);
   }
 
-  std::vector<int> result(edgeFunctions.size());
-  std::transform(edgeFunctions.begin(), edgeFunctions.end(), result.begin(),
-                 [ofs](LR::Basisfunction* a) { return a->getId()+ofs; });
-
-  return result;
+  for (LR::Basisfunction* b : faceFunctions)
+    nodes.push_back(local ? b->getId()+ofs : this->getNodeID(b->getId()+ofs));
 }
 
 
@@ -2084,20 +2072,21 @@ void ASMu3D::getBoundaryNodes (int lIndex, IntVec& nodes, int basis,
   if (basis == 0)
     basis = 1;
 
-  if (!this->getBasis(basis)) return; // silently ignore empty patches
-
-  nodes = this->getFaceNodes(lIndex, basis, orient);
+  switch (lIndex) {
+  case 1: this->getFaceNodes(nodes,LR::WEST  ,basis,orient,local); break;
+  case 2: this->getFaceNodes(nodes,LR::EAST  ,basis,orient,local); break;
+  case 3: this->getFaceNodes(nodes,LR::SOUTH ,basis,orient,local); break;
+  case 4: this->getFaceNodes(nodes,LR::NORTH ,basis,orient,local); break;
+  case 5: this->getFaceNodes(nodes,LR::BOTTOM,basis,orient,local); break;
+  case 6: this->getFaceNodes(nodes,LR::TOP   ,basis,orient,local); break;
+  default: return;
+  }
 
 #if SP_DEBUG > 1
   std::cout <<"Boundary nodes in patch "<< idx+1 <<" edge "<< lIndex <<":";
-  for (size_t i = 0; i < nodes.size(); i++)
-    std::cout <<" "<< nodes[i];
+  for (int node : nodes) std::cout <<" "<< node;
   std::cout << std::endl;
 #endif
-
-  if (!local)
-    for (int& node : nodes)
-      node = this->getNodeID(node);
 }
 
 

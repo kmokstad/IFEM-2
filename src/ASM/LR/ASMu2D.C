@@ -293,7 +293,7 @@ bool ASMu2D::refine (int dir, const RealArray& xi, double scale)
 bool ASMu2D::refine (const RealFunc& refC, double refTol)
 {
   Go::Point X0;
-  std::vector<int> elements;
+  IntVec elements;
   std::vector<LR::Element*>::const_iterator eit = lrspline->elementBegin();
   for (int iel = 0; eit != lrspline->elementEnd(); iel++, ++eit)
   {
@@ -500,13 +500,13 @@ bool ASMu2D::connectBasis (int edge, ASMu2D& neighbor, int nedge, bool revers,
 
   // Set up the slave node numbers for this surface patch
   IntVec slaveNodes;
-  this->getBoundaryNodes(edge, slaveNodes, basis, thick, 0, true);
+  this->getBoundaryNodes(edge,slaveNodes,basis,thick,0,true);
   for (int& it : slaveNodes)
     it += slave;
 
   // Set up the master node numbers for the neighboring surface patch
   IntVec masterNodes;
-  neighbor.getBoundaryNodes(nedge, masterNodes, basis, thick, 0, true);
+  neighbor.getBoundaryNodes(nedge,masterNodes,basis,thick,0,true);
   for (int& it : masterNodes)
     it += master;
 
@@ -561,27 +561,6 @@ void ASMu2D::closeEdges (int dir, int basis, int master)
     }
 }
 */
-
-
-std::vector<int> ASMu2D::getEdgeNodes (int edge, int basis, int orient) const
-{
-  size_t ofs = 1;
-  for (int i = 1; i < basis; i++)
-    ofs += this->getNoNodes(i);
-
-  std::vector<LR::Basisfunction*> edgeFunctions;
-  this->getBasis(basis)->getEdgeFunctions(edgeFunctions,
-                                          static_cast<LR::parameterEdge>(edge));
-
-  int v = (edge == 1 || edge == 2) ? 0 : 1;
-  int u = 1-v;
-  ASMunstruct::Sort(u, v, orient, edgeFunctions);
-  std::vector<int> result(edgeFunctions.size());
-  std::transform(edgeFunctions.begin(), edgeFunctions.end(), result.begin(),
-                 [ofs](LR::Basisfunction* a) { return a->getId()+ofs; });
-
-  return result;
-}
 
 
 ASMu2D::DirichletEdge::DirichletEdge (LR::LRSplineSurface* sf,
@@ -1830,28 +1809,40 @@ bool ASMu2D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 }
 
 
+void ASMu2D::getEdgeNodes (IntVec& nodes, int edge, int basis,
+                           int orient, bool local) const
+{
+  const LR::LRSplineSurface* srf = this->getBasis(basis);
+  if (!srf) return; // silently ignore empty patches
+
+  size_t ofs = 1;
+  for (int i = 1; i < basis; i++)
+    ofs += this->getNoNodes(i);
+
+  std::vector<LR::Basisfunction*> edgeFunctions;
+  srf->getEdgeFunctions(edgeFunctions,static_cast<LR::parameterEdge>(edge));
+  if (orient >= 0) {
+    int u = (edge == 1 || edge == 2) ? 0 : 1;
+    ASMunstruct::Sort(u, 1-u, orient, edgeFunctions);
+  }
+
+  for (LR::Basisfunction* b : edgeFunctions)
+    nodes.push_back(local ? b->getId()+ofs : this->getNodeID(b->getId()+ofs));
+}
+
+
 void ASMu2D::getBoundaryNodes (int lIndex, IntVec& nodes, int basis,
                                int, int orient, bool local) const
 {
   if (basis == 0)
     basis = 1;
 
-  if (!this->getBasis(basis)) return; // silently ignore empty patches
-
-  LR::parameterEdge edge;
   switch (lIndex) {
-  case 1: edge = LR::WEST; break;
-  case 2: edge = LR::EAST; break;
-  case 3: edge = LR::SOUTH; break;
-  case 4: edge = LR::NORTH; break;
+  case 1: this->getEdgeNodes(nodes,LR::WEST ,basis,orient,local); break;
+  case 2: this->getEdgeNodes(nodes,LR::EAST ,basis,orient,local); break;
+  case 3: this->getEdgeNodes(nodes,LR::SOUTH,basis,orient,local); break;
+  case 4: this->getEdgeNodes(nodes,LR::NORTH,basis,orient,local); break;
   default: return;
-  }
-
-  if (nodes.empty())
-    nodes = this->getEdgeNodes(edge, basis, 0);
-  else {
-    IntVec nodes2 = this->getEdgeNodes(edge, basis, 0);
-    nodes.insert(nodes.end(), nodes2.begin(), nodes2.end());
   }
 
 #if SP_DEBUG > 1
