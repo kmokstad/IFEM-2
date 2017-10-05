@@ -318,7 +318,7 @@ public:
   virtual bool evalSolution(Matrix& sField, const IntegrandBase& integrand,
                             const int* npe, char project = '\0') const;
 
-private:
+protected:
   //! \brief Struct representing an inhomogeneous Dirichlet boundary condition.
   struct DirichletEdge
   {
