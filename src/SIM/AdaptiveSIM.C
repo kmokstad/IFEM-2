@@ -287,6 +287,7 @@ bool AdaptiveSIM::solveStep (const char* inputfile, int iStep, bool withRF,
     model.getProcessAdm().cout << std::endl;
 
   // Evaluate solution norms
+  model.setMode(SIM::NORMS);
   model.setQuadratureRule(opt.nGauss[1]);
   if (!model.solutionNorms(solution.front(),projs,eNorm,gNorm))
     return false;
@@ -600,6 +601,7 @@ bool AdaptiveSIM::writeGlv (const char* infile, int iStep)
     return false;
 
   // Write solution fields
+  model.setMode(SIM::RECOVERY);
   if (!model.writeGlvS(solution.front(),iStep,nBlock))
     return false;
 
