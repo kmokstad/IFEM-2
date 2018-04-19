@@ -42,23 +42,31 @@ class EvalFunc : public ScalarFunc
 
   std::vector<Real*> arg; //!< Function argument values
 
+  Real dx; //!< Domain increment for calculation of numerical derivative
+
 public:
+  static int numError; //!< Error counter - set by the exception handler
+
   //! \brief The constructor parses the expression string.
-  EvalFunc(const char* function, const char* x = "x" );
+  EvalFunc(const char* function, const char* x = "x", Real eps = Real(1.0e-8));
   //! \brief The destructor frees the dynamically allocated objects.
   virtual ~EvalFunc();
 
-  static int numError; //!< Error counter - set by the exception handler
+  //! \brief Returns whether the function is time-independent or not.
+  virtual bool isConstant() const { return false; }
+
+  //! \brief Returns the first-derivative of the function.
+  virtual Real deriv(Real x) const;
 
 protected:
   //! \brief Non-implemented copy constructor to disallow copying.
   EvalFunc(const EvalFunc&);
-  //! \brief Non-implemented assigment operator to disallow copying.
+  //! \brief Non-implemented assignment operator to disallow copying.
   EvalFunc& operator=(const EvalFunc&);
   //! \brief Evaluates the function expression.
   virtual Real evaluate(const Real& x) const;
 
-  //! \brief Cleanup allocated data.
+  //! \brief Cleans up the allocated data.
   void cleanup();
 };
 
@@ -108,14 +116,14 @@ public:
   virtual Real dderiv(const Vec3& X, int dir1, int dir2) const;
 
 protected:
-  //! \brief Evaluates the function expression.
-  virtual Real evaluate(const Vec3& X) const;
   //! \brief Non-implemented copy constructor to disallow copying.
   EvalFunction(const EvalFunction&);
   //! \brief Non-implemented assignment operator to disallow copying.
   EvalFunction& operator=(const EvalFunction&);
+  //! \brief Evaluates the function expression.
+  virtual Real evaluate(const Vec3& X) const;
 
-  //! \brief Cleanup allocated data.
+  //! \brief Cleans up the allocated data.
   void cleanup();
 };
 

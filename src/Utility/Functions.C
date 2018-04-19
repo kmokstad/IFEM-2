@@ -34,6 +34,12 @@ Real RampFunc::evaluate (const Real& x) const
 }
 
 
+Real RampFunc::deriv (Real x) const
+{
+  return x < xmax ? fval/xmax : Real(0);
+}
+
+
 Real DiracFunc::evaluate (const Real& x) const
 {
   return fabs(x-xmax) < 1.0e-4 ? amp : Real(0);
@@ -49,6 +55,12 @@ Real StepFunc::evaluate (const Real& x) const
 Real SineFunc::evaluate (const Real& x) const
 {
   return scale*sin(freq*x+phase);
+}
+
+
+Real SineFunc::deriv (Real x) const
+{
+  return freq*scale*cos(freq*x+phase);
 }
 
 
