@@ -41,7 +41,8 @@ class IntegrandBase : public Integrand
 {
 protected:
   //! \brief The default constructor is protected to allow sub-classes only.
-  explicit IntegrandBase(unsigned short int n = 0) : nsd(n), npv(1), m_mode(SIM::INIT) {}
+  explicit IntegrandBase(unsigned short int n = 0) : nsd(n), npv(1),
+                                                     m_mode(SIM::INIT) {}
 
 public:
   //! \brief Empty destructor.
@@ -121,6 +122,11 @@ public:
   virtual bool initElement(const std::vector<int>& MNPC,
                            const std::vector<size_t>& elem_sizes,
                            const std::vector<size_t>& basis_sizes,
+                           LocalIntegral& elmInt);
+  //! \brief Initializes current element for numerical integration.
+  //! \param[in] Xnod Matrix of nodal point coordinates for current element
+  //! \param elmInt Local integral for element
+  virtual bool initElement(const std::vector<double>& Xnod,
                            LocalIntegral& elmInt);
 
   //! \brief Initializes current element for boundary integration.

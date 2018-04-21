@@ -1649,6 +1649,14 @@ bool ASMs2D::integrate (Integrand& integrand,
           break;
         }
 
+        if (integrand.getIntegrandType() & Integrand::UPDATED_NODES)
+          if (!integrand.initElement(Xnod,*A))
+          {
+            A->destruct();
+            ok = false;
+            break;
+          }
+
         if (xr)
         {
           // --- Selective reduced integration loop ----------------------------
@@ -1883,6 +1891,14 @@ bool ASMs2D::integrate (Integrand& integrand,
           ok = false;
           break;
         }
+
+        if (integrand.getIntegrandType() & Integrand::UPDATED_NODES)
+          if (!integrand.initElement(Xnod,*A))
+          {
+            A->destruct();
+            ok = false;
+            break;
+          }
 
 
         // --- Integration loop over all quadrature points in this element -----

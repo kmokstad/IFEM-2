@@ -121,6 +121,11 @@ public:
                            const std::vector<size_t>& elem_sizes,
                            const std::vector<size_t>& basis_sizes,
                            LocalIntegral& elmInt) = 0;
+  //! \brief Initializes current element for numerical integration.
+  //! \details Reimplement this method for nonlinear integrands
+  //! when the updated nodal configuration is needed.
+  virtual bool initElement(const std::vector<double>&,
+                           LocalIntegral&) { return true; }
 
   //! \brief Initializes current element for boundary integration.
   //! \param[in] MNPC Matrix of nodal point correspondance for current element
@@ -153,7 +158,8 @@ public:
     NODAL_ROTATIONS   = 64, //!< Integrand wants nodal rotation tensors
     XO_ELEMENTS      = 128, //!< Integrand is defined on extraordinary elements
     INTERFACE_TERMS  = 256, //!< Integrand has element interface terms
-    NORMAL_DERIVS    = 512  //!< Integrand p'th order normal derivatives
+    NORMAL_DERIVS    = 512, //!< Integrand p'th order normal derivatives
+    UPDATED_NODES    = 1024 //!< Integrand wants updated nodal coordinates
   };
 
   //! \brief Defines which FE quantities are needed by the integrand.

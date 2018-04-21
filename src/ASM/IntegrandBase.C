@@ -96,6 +96,46 @@ bool IntegrandBase::initElement (const std::vector<int>& MNPC,
 
 
 /*!
+  This method calculates the updated (control point) coordinates of current
+  element by adding the current displacement vector stored as the first vector
+  in \a elmInt.vec to the nodal coordinates of the reference configuration.
+  The result is stored as the last vector in \a elmInt.vec.
+*/
+
+bool IntegrandBase::initElement (const std::vector<double>& Xnod,
+                                 LocalIntegral& elmInt)
+{
+  if (elmInt.vec.empty() || elmInt.vec.front().empty())
+    return true; // No primary solution yet, silently OK
+
+  const Vector& eV = elmInt.vec.front();
+  if (eV.size()/npv != Xnod.size()/nsd || npv < nsd)
+  {
+    std::cerr <<" *** IntegrandBase::initElement: Inconsistent "
+              <<" size of nodal coordinate and displacement arrays "
+              << eV.size() <<", "<< Xnod.size() << std::endl;
+    return false;
+  }
+
+  Vector Xdef(Xnod.data(),Xnod.size());
+  if (npv == nsd)
+    Xdef.add(eV);
+  else
+  {
+    size_t i, j;
+    for (i = j = 0; i < Xdef.size(); i++)
+    {
+      Xdef[i] += eV[j+i%nsd];
+      if ((i+1)%nsd == 0) j += npv;
+    }
+  }
+
+  elmInt.vec.push_back(Xdef);
+  return true;
+}
+
+
+/*!
   The default implementation forwards to the single-basis version.
 */
 
