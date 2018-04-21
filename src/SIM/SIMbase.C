@@ -1448,7 +1448,7 @@ bool SIMbase::solutionNorms (const TimeDomain& time,
   }
 
   // Add problem-dependent external norm contributions
-  norm->addBoundaryTerms(gNorm,this->externalEnergy(psol));
+  norm->addBoundaryTerms(gNorm,this->externalEnergy(psol,time));
 
   delete norm;
 
@@ -1462,7 +1462,7 @@ bool SIMbase::solutionNorms (const TimeDomain& time,
 }
 
 
-double SIMbase::externalEnergy (const Vectors& psol) const
+double SIMbase::externalEnergy (const Vectors& psol, const TimeDomain&) const
 {
   const Vector* reactionForces = this->getReactionForces();
   if (!reactionForces || !mySam || psol.empty()) return 0.0;

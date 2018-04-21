@@ -630,7 +630,7 @@ protected:
                                      const TimeDomain&) { return true; }
 
   //! \brief Computes (possibly problem-dependent) external energy contribution.
-  virtual double externalEnergy(const Vectors& psol) const;
+  virtual double externalEnergy(const Vectors& psol, const TimeDomain&) const;
 
   //! \brief Generates element groups for multi-threading of boundary integrals.
   //! \param[in] p Property object identifying a patch boundary
