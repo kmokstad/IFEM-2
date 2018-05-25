@@ -62,6 +62,18 @@ TEST(TestThreadGroups, Groups2D)
   CHECK_INTMATRICES_EQUAL(groups[0], "src/Utility/Test/refdata/ThreadGroups_2D_1.ref");
 #endif
 
+  std::vector<bool> b14(4, true);
+  std::vector<bool> b24(4, true);
+
+  std::string ref1 = "src/Utility/Test/refdata/ThreadGroups_2D_strip1_p1.ref";
+  std::string ref2 = "src/Utility/Test/refdata/ThreadGroups_2D_strip1_p2.ref";
+  for (int i = 0; i < 2; ++i, ++ref1[ref1.size()-8], ++ref2[ref2.size()-8]) {
+    ThreadGroups group((ThreadGroups::StripDirection)i);
+    group.calcGroups(b14, b24, 1, 1);
+    CHECK_INTMATRICES_EQUAL(group[0], ref1);
+    CHECK_INTMATRICES_EQUAL(group[1], ref2);
+  }
+
 #ifdef USE_OPENMP
   omp_set_num_threads(3);
 #endif
