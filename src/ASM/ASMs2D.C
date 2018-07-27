@@ -2334,6 +2334,28 @@ bool ASMs2D::integrate (Integrand& integrand, int lIndex,
 }
 
 
+bool ASMs2D::diracPoint (Integrand& integrand, GlobalIntegral& glInt,
+                         const double* u, const Vec3& pval)
+{
+  if (!surf) return false;
+
+  FiniteElement fe;
+  fe.iel = this->findElementContaining(u);
+  fe.u   = u[0];
+  fe.v   = u[1];
+  this->extractBasis(u[0], u[1], fe.N, fe.dNdX);
+
+  LocalIntegral* A = integrand.getLocalIntegral(MNPC[fe.iel-1].size(),
+                                                fe.iel,true);
+
+  bool ok = integrand.evalPoint(*A,fe,pval) && glInt.assemble(A,fe.iel);
+
+  A->destruct();
+
+  return ok;
+}
+
+
 int ASMs2D::evalPoint (const double* xi, double* param, Vec3& X) const
 {
   if (!surf) return -2;
@@ -2345,6 +2367,19 @@ int ASMs2D::evalPoint (const double* xi, double* param, Vec3& X) const
   // Check if this point matches any of the control points (nodes)
   return this->searchCtrlPt(surf->coefs_begin(),surf->coefs_end(),
                             X,surf->dimension());
+}
+
+
+int ASMs2D::findElementContaining (const double* param) const
+{
+  if (!surf)
+    return -2;
+
+  int uEl = surf->basis_u().knotInterval(param[0]);
+  int vEl = surf->basis_v().knotInterval(param[1]);
+  int nel1, nel2;
+  this->getNoStructElms(nel1, nel2, nel2);
+  return 1 + vEl * nel1 + uEl;
 }
 
 

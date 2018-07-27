@@ -2589,6 +2589,29 @@ bool ASMs3D::integrateEdge (Integrand& integrand, int lEdge,
 }
 
 
+bool ASMs3D::diracPoint (Integrand& integrand, GlobalIntegral& glInt,
+                         const double* u, const Vec3& pval)
+{
+  if (!svol) return false;
+
+  FiniteElement fe;
+  fe.iel = this->findElementContaining(u);
+  fe.u   = u[0];
+  fe.v   = u[1];
+  fe.w   = u[2];
+  this->extractBasis(u[0], u[1], u[2], fe.N, fe.dNdX);
+
+  LocalIntegral* A = integrand.getLocalIntegral(MNPC[fe.iel-1].size(),
+                                                fe.iel,true);
+
+  bool ok = integrand.evalPoint(*A,fe,pval) && glInt.assemble(A,fe.iel);
+
+  A->destruct();
+
+  return ok;
+}
+
+
 int ASMs3D::evalPoint (const double* xi, double* param, Vec3& X) const
 {
   if (!svol) return -3;
@@ -2602,6 +2625,20 @@ int ASMs3D::evalPoint (const double* xi, double* param, Vec3& X) const
   // Check if this point matches any of the control points (nodes)
   return this->searchCtrlPt(svol->coefs_begin(),svol->coefs_end(),
                             X,svol->dimension());
+}
+
+
+int ASMs3D::findElementContaining (const double* param) const
+{
+  if (!svol)
+    return -2;
+
+  int uEl = svol->basis(0).knotInterval(param[0]);
+  int vEl = svol->basis(1).knotInterval(param[1]);
+  int wEl = svol->basis(2).knotInterval(param[2]);
+  int nel1, nel2, nel3;
+  this->getNoStructElms(nel1, nel2, nel3);
+  return 1 + uEl + (vEl + wEl*nel2)*nel1;
 }
 
 
