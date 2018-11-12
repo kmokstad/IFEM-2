@@ -41,24 +41,26 @@ std::ostream& FiniteElement::write (std::ostream& os) const
 MxFiniteElement::MxFiniteElement (const std::vector<size_t>& n, size_t ip)
   : FiniteElement(n.front(),ip)
 {
-  Nx.resize(n.size()-1);
+  M.resize(n.size()-1);
   for (size_t b = 1; b < n.size(); b++)
-    Nx[b-1].resize(n[b]);
+    M[b-1].resize(n[b]);
 
-  dNxdX.resize(Nx.size());
-  d2NxdX2.resize(Nx.size());
+  dMdX.resize(M.size());
+  d2MdX2.resize(M.size());
+  d3MdX3.resize(M.size());
 }
 
 
 std::ostream& MxFiniteElement::write (std::ostream& os) const
 {
   this->FiniteElement::write(os);
-  for (size_t b = 0; b < Nx.size(); b++)
+  for (size_t b = 0; b < M.size(); b++)
   {
     os <<"Basis "<< b+2 <<":\n";
-    if (!Nx[b].empty())      os <<"N:"<< Nx[b];
-    if (!dNxdX[b].empty())   os <<"dNdX:"<< dNxdX[b];
-    if (!d2NxdX2[b].empty()) os <<"d2NdX2:"<< d2NxdX2[b];
+    if (!M[b].empty())      os <<"N:"<< M[b];
+    if (!dMdX[b].empty())   os <<"dNdX:"<< dMdX[b];
+    if (!d2MdX2[b].empty()) os <<"d2NdX2:"<< d2MdX2[b];
+    if (!d3MdX3[b].empty()) os <<"d3NdX3:"<< d3MdX3[b];
   }
   return os;
 }
