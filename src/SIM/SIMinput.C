@@ -16,6 +16,9 @@
 #include "ModelGenerator.h"
 #include "ASMstruct.h"
 #include "ASMunstruct.h"
+#ifdef HAS_LRSPLINE
+#include "ASMLRSpline.h"
+#endif
 #include "GlbL2projector.h"
 #include "LinSolParams.h"
 #include "Functions.h"
@@ -1073,10 +1076,10 @@ IntVec SIMinput::getFunctionsForElements (const IntVec& elements)
 {
   IntSet functions;
 #ifdef HAS_LRSPLINE
-  for (size_t i = 0; i < myModel.size(); i++) {
-    ASMunstruct* pch;
-    if ((pch = dynamic_cast<ASMunstruct*>(myModel[i])))
-      pch->getFunctionsForElements(functions,elements);
+  for (ASMbase* pch : myModel)
+  {
+    ASMLRSpline* lrPch = dynamic_cast<ASMLRSpline*>(pch);
+    if (lrPch) lrPch->getFunctionsForElements(functions,elements);
   }
 #ifdef SP_DEBUG
   size_t j = 0, k = 0;
@@ -1114,7 +1117,6 @@ bool SIMinput::refine (const LR::RefineData& prm,
 bool SIMinput::refine (const LR::RefineData& prm,
                        Vectors& sol, const char* fName)
 {
-#ifdef HAS_LRSPLINE
   ASMunstruct* pch = nullptr;
   for (size_t i = 0; i < myModel.size(); i++)
     if (!(pch = dynamic_cast<ASMunstruct*>(myModel[i])))
@@ -1149,7 +1151,7 @@ bool SIMinput::refine (const LR::RefineData& prm,
 
     // fetch all boundary nodes covered (may need to pass this to other patches)
     pch = dynamic_cast<ASMunstruct*>(myModel[i]);
-    IntVec bndry_nodes = pch->getBoundaryNodesCovered(refineIndices[i]);
+    IntVec bndry_nodes = pch->getBoundaryCovered(refineIndices[i]);
 
     // DESIGN NOTE: It is tempting here to use patch connectivity information.
     // However, this does not account (in the general case)
@@ -1200,9 +1202,6 @@ bool SIMinput::refine (const LR::RefineData& prm,
   sol = lsols;
 
   return (isRefined = true);
-#else
-  return false;
-#endif
 }
 
 
