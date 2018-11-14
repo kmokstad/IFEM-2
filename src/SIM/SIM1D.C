@@ -557,7 +557,7 @@ bool SIM1D::readPatches (std::istream& isp, PatchVec& patches,
 bool SIM1D::createFEMmodel (char)
 {
   bool ok = true;
-  ASMstruct::resetNumbering();
+  ASMbase::resetNumbering();
   for (size_t i = 0; i < myModel.size() && ok; i++)
     if (twist)
       ok = static_cast<ASMs1D*>(myModel[i])->generateTwistedFEModel(*twist,XZp);
