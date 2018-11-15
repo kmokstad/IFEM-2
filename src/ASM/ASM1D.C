@@ -12,10 +12,12 @@
 //==============================================================================
 
 #include "ASM1D.h"
+#include "ASMu1D.h"
 #include "ASMs1DC1.h"
 #include "ASMs1DLag.h"
 #include "ASMs1DSpec.h"
 #include "Vec3Oper.h"
+#include <numeric>
 
 
 ASMbase* ASM1D::create (ASM::Discretization discretization, unsigned char nf)
@@ -37,6 +39,9 @@ ASMbase* ASM1D::create (ASM::Discretization discretization,
   case ASM::Spectral:
     return new ASMs1DSpec(nd,nf);
 
+  case ASM::LRSpline:
+    return new ASMu1D(nd,nf);
+
   default:
     return new ASMs1D(nd,nf);
   }
@@ -54,6 +59,7 @@ ASMbase* ASM1D::clone (unsigned char* nf) const
   TRY_CLONE1(ASMs1DLag,nf)
   TRY_CLONE1(ASMs1DC1,nf)
   TRY_CLONE1(ASMs1D,nf)
+  TRY_CLONE1(ASMu1D,nf)
 
   std::cerr <<" *** ASM1D::clone: Failure, probably not a 1D patch"<< std::endl;
   return 0;
@@ -66,4 +72,11 @@ double ASM1D::getElementSize (const std::vector<Vec3>& XC)
 {
   // Find the element length
   return (XC.back() - XC.front()).length() / ASMbase::modelSize;
+}
+
+
+void ASM1D::scatterInd (int n, int start, std::vector<int>& index)
+{
+  index.resize(n);
+  std::iota(index.begin(),index.end(),start-n+1);
 }

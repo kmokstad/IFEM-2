@@ -83,6 +83,19 @@ public:
   virtual int constrainNode(double xi, int dof,
                             int code = 0, char basis = 1) = 0;
 
+  //! \brief Connects matching nodes on two adjacent vertices.
+  //! \param[in] vertex Local vertex index of this patch, in range [1,2]
+  //! \param neighbor The neighbor patch
+  //! \param[in] nvertex Local vertex index of neighbor patch, in range [1,2]
+  //! \param[in] thick Thickness of connection
+  virtual bool connectPatch(int vertex, ASM1D& neighbor, int nvertex,
+                            int thick = 1) = 0;
+
+  //! \brief Makes the two end vertices of the curve periodic.
+  //! \param[in] basis Which basis to connect (mixed methods), 0 means both
+  //! \param[in] master 1-based index of the first master node in this basis
+  virtual void closeEnds(int basis = 0, int master = 1) = 0;
+
   //! \brief Calculates parameter values for visualization nodal points.
   //! \param[out] prm Parameter values for all points
   //! \param[in] nSegSpan Number of visualization segments over each knot-span
@@ -91,6 +104,10 @@ public:
 
   //! \brief Returns characteristic element size based on end point coordinates.
   static double getElementSize(const std::vector<Vec3>& XC);
+
+protected:
+  //! \brief Auxilliary function for computation of basis function indices.
+  static void scatterInd(int n, int start, std::vector<int>& index);
 };
 
 #endif

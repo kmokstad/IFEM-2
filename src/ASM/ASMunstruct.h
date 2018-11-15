@@ -81,9 +81,8 @@ public:
   //! \brief Remaps element-wise errors from geometry mesh to refinement mesh.
   //! \param[out] errors The remapped errors
   //! \param[in] orig The element-wise errors on the geometry mesh
-  //! \param[in] elemErrors If true, map to elements instead of basis functions
   virtual void remapErrors(RealArray& errors, const RealArray& orig,
-                           bool elemErrors = false) const = 0;
+                           bool = false) const { errors = orig; }
 
   //! \brief Refines the parametrization based on a mesh density function.
   //! \param[in] refC Mesh refinement criteria function
