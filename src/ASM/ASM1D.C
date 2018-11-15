@@ -12,7 +12,6 @@
 //==============================================================================
 
 #include "ASM1D.h"
-#include "ASMu1D.h"
 #include "ASMs1DC1.h"
 #include "ASMs1DLag.h"
 #include "ASMs1DSpec.h"

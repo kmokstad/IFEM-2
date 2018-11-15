@@ -31,25 +31,25 @@
 #include "Vec3Oper.h"
 
 
-ASMs1D::ASMs1D (unsigned char n_s, unsigned char n_f)
-  : ASMstruct(1,n_s,n_f), curv(nullptr), elmCS(myCS), nodalT(myT)
+ASMs1Dbase::ASMs1Dbase (unsigned char n_s, unsigned char n_f, ASMbase* base)
+  : myBase(base), curv(nullptr), elmCS(myCS), nodalT(myT)
 {
 }
 
 
-ASMs1D::ASMs1D (const ASMs1D& patch, unsigned char n_f)
-  : ASMstruct(patch,n_f), curv(patch.curv), elmCS(patch.myCS), nodalT(patch.myT)
+ASMs1Dbase::ASMs1Dbase (const ASMs1Dbase& patch, unsigned char n_f, ASMbase* base)
+  : myBase(base), curv(patch.curv), elmCS(patch.myCS), nodalT(patch.myT)
 {
   // Need to set nnod here,
   // as hasXNodes might be invoked before the FE data is generated
-  if (nnod == 0 && curv)
-    nnod = curv->numCoefs();
+  if (myBase->nnod == 0 && curv)
+    myBase->nnod = curv->numCoefs();
 }
 
 
-bool ASMs1D::read (std::istream& is)
+bool ASMs1Dbase::read (std::istream& is)
 {
-  if (shareFE) return true;
+  if (myBase->shareFE) return true;
   if (curv) delete curv;
 
   Go::ObjectHeader head;
@@ -80,21 +80,20 @@ bool ASMs1D::read (std::istream& is)
     curv = nullptr;
     return false;
   }
-  else if (curv->dimension() < nsd)
+  else if (curv->dimension() < myBase->nsd)
   {
     std::cout <<"  ** ASMs1D::read: The dimension of this curve patch "
-	      << curv->dimension() <<" is less than nsd="<< (int)nsd
+	      << curv->dimension() <<" is less than nsd="<< (int)myBase->nsd
 	      <<".\n                   Resetting nsd to "<< curv->dimension()
 	      <<" for this patch."<< std::endl;
-    nsd = curv->dimension();
+    myBase->nsd = curv->dimension();
   }
 
-  geo = curv;
   return true;
 }
 
 
-bool ASMs1D::write (std::ostream& os, int) const
+bool ASMs1Dbase::write (std::ostream& os) const
 {
   if (!curv) return false;
 
@@ -105,25 +104,25 @@ bool ASMs1D::write (std::ostream& os, int) const
 }
 
 
-void ASMs1D::clear (bool retainGeometry)
+void ASMs1Dbase::clear (bool retainGeometry)
 {
   if (!retainGeometry)
   {
     // Erase spline data
-    if (curv && !shareFE) delete curv;
-    geo = curv = nullptr;
+    if (curv && !myBase->shareFE) delete curv;
+    curv = nullptr;
   }
 
   // Erase the FE data
-  this->ASMbase::clear(retainGeometry);
+  myBase->clear(retainGeometry);
 }
 
 
-bool ASMs1D::refine (const RealArray& xi)
+bool ASMs1Dbase::refine (const RealArray& xi)
 {
   if (!curv || xi.empty()) return false;
   if (xi.front() < 0.0 || xi.back() > 1.0) return false;
-  if (shareFE) return true;
+  if (myBase->shareFE) return true;
 
   RealArray extraKnots;
   RealArray::const_iterator uit = curv->basis().begin();
@@ -146,10 +145,10 @@ bool ASMs1D::refine (const RealArray& xi)
 }
 
 
-bool ASMs1D::uniformRefine (int nInsert)
+bool ASMs1Dbase::uniformRefine (int nInsert)
 {
   if (!curv || nInsert < 1) return false;
-  if (shareFE) return true;
+  if (myBase->shareFE) return true;
 
   RealArray extraKnots;
   RealArray::const_iterator uit = curv->basis().begin();
@@ -171,44 +170,39 @@ bool ASMs1D::uniformRefine (int nInsert)
 }
 
 
-bool ASMs1D::raiseOrder (int ru)
+bool ASMs1Dbase::raiseOrder (int ru)
 {
   if (!curv) return false;
-  if (shareFE) return true;
+  if (myBase->shareFE) return true;
 
   curv->raiseOrder(ru);
   return true;
 }
 
 
-bool ASMs1D::generateFEMTopology ()
-{
-  return this->generateOrientedFEModel(Vec3());
-}
 
-
-bool ASMs1D::generateOrientedFEModel (const Vec3& Zaxis)
+bool ASMs1Dbase::generateOrientedFEModel (const Vec3& Zaxis, int& gEl, int& gNod)
 {
   if (!curv) return false;
 
   const int n1 = curv->numCoefs();
   const int p1 = curv->order();
 
-  if (!MLGN.empty())
+  if (!myBase->MLGN.empty())
   {
-    nnod = n1;
-    if (MLGN.size() != (size_t)nnod)
+    myBase->nnod = n1;
+    if (myBase->MLGN.size() != (size_t)myBase->nnod)
     {
       std::cerr <<" *** ASMs1D::generateFEMTopology: Inconsistency between the"
-                <<" number of FE nodes "<< MLGN.size()
-                <<"\n     and the number of spline coefficients "<< nnod
+                <<" number of FE nodes "<< myBase->MLGN.size()
+                <<"\n     and the number of spline coefficients "<< myBase->nnod
                 <<" in the patch."<< std::endl;
       return false;
     }
-    nel = n1-p1+1;
+    myBase->nel = n1-p1+1;
     return true;
   }
-  else if (shareFE)
+  else if (myBase->shareFE)
     return true;
 
 #ifdef SP_DEBUG
@@ -224,10 +218,10 @@ bool ASMs1D::generateOrientedFEModel (const Vec3& Zaxis)
   if (p1 <  1) return false;
   if (p1 > n1) return false;
 
-  myMLGE.resize(n1-p1+1,0);
-  myMLGN.resize(n1);
-  myMNPC.resize(myMLGE.size());
-  if (nsd == 3 && nf == 6)
+  myBase->myMLGE.resize(n1-p1+1,0);
+  myBase->myMLGN.resize(n1);
+  myBase->myMNPC.resize(myBase->myMLGE.size());
+  if (myBase->nsd == 3 && myBase->nf == 6)
   {
     // This is a 3D beam problem, allocate the element/nodal rotation tensors.
     // The nodal rotations are updated during the simulation according to the
@@ -236,24 +230,24 @@ bool ASMs1D::generateOrientedFEModel (const Vec3& Zaxis)
     myT.resize(n1,Tensor(3,true)); // Initialize nodal rotations to unity
   }
 
-  nnod = nel = 0;
+  myBase->nnod = myBase->nel = 0;
   for (int i1 = 1; i1 <= n1; i1++)
   {
     if (i1 >= p1)
     {
       if (this->getKnotSpan(i1-1) > 0.0)
       {
-	myMLGE[nel] = ++gEl; // global element number over all patches
-	myMNPC[nel].resize(p1,0);
+	myBase->myMLGE[myBase->nel] = ++gEl; // global element number over all patches
+	myBase->myMNPC[myBase->nel].resize(p1,0);
 
 	int lnod = 0;
 	for (int j1 = p1-1; j1 >= 0; j1--)
-	  myMNPC[nel][lnod++] = nnod - j1;
+	  myBase->myMNPC[myBase->nel][lnod++] = myBase->nnod - j1;
       }
 
-      nel++;
+      myBase->nel++;
     }
-    myMLGN[nnod++] = ++gNod; // global node number over all patches
+    myBase->myMLGN[myBase->nnod++] = ++gNod; // global node number over all patches
   }
 
 #ifdef SP_DEBUG
@@ -264,14 +258,14 @@ bool ASMs1D::generateOrientedFEModel (const Vec3& Zaxis)
 }
 
 
-bool ASMs1D::initLocalElementAxes (const Vec3& Zaxis)
+bool ASMs1Dbase::initLocalElementAxes (const Vec3& Zaxis)
 {
   // Calculate local element axes for 3D beam elements
   for (size_t i = 0; i < myCS.size(); i++)
-    if (MLGE[i] > 0)
+    if (myBase->MLGE[i] > 0)
     {
-      Vec3 X1 = this->getCoord(1+MNPC[i].front());
-      Vec3 X2 = this->getCoord(1+MNPC[i][curv->order()-1]);
+      Vec3 X1 = this->getCoord(1+myBase->MNPC[i].front());
+      Vec3 X2 = this->getCoord(1+myBase->MNPC[i][curv->order()-1]);
       if (Zaxis.isZero())
         myCS[i] = Tensor(X2-X1,true);
       else
@@ -286,22 +280,22 @@ bool ASMs1D::initLocalElementAxes (const Vec3& Zaxis)
 }
 
 
-bool ASMs1D::generateTwistedFEModel (const RealFunc& twist, const Vec3& Zaxis)
+bool ASMs1Dbase::generateTwistedFEModel (const RealFunc& twist, const Vec3& Zaxis, int& gEl, int& gNod)
 {
-  if (!this->generateOrientedFEModel(Zaxis))
+  if (!this->generateOrientedFEModel(Zaxis,gEl,gNod))
     return false;
 
   // Update the local element axes for 3D beam elements
   Tensor rotX(3);
   for (size_t i = 0; i < myCS.size(); i++)
-    if (MLGE[i] > 0)
+    if (myBase->MLGE[i] > 0)
     {
-      Vec3 X1 = this->getCoord(1+MNPC[i].front());
-      Vec3 X2 = this->getCoord(1+MNPC[i][curv->order()-1]);
+      Vec3 X1 = this->getCoord(1+myBase->MNPC[i].front());
+      Vec3 X2 = this->getCoord(1+myBase->MNPC[i][curv->order()-1]);
       double alpha = twist(0.5*(X1+X2)); // twist angle in the element mid-point
       myCS[i] *= Tensor(alpha*M_PI/180.0,1); // rotate about local X-axis
 #ifdef SP_DEBUG
-      std::cout <<"Twisted axes for beam element "<< MLGE[i]
+      std::cout <<"Twisted axes for beam element "<< myBase->MLGE[i]
                 <<", from "<< X1 <<" to "<< X2 <<":\n"<< myCS[i];
 #endif
     }
@@ -310,9 +304,9 @@ bool ASMs1D::generateTwistedFEModel (const RealFunc& twist, const Vec3& Zaxis)
 }
 
 
-bool ASMs1D::connectPatch (int vertex, ASM1D& neighbor, int nvertex, int thick)
+bool ASMs1Dbase::connectPatch (int vertex, ASM1D& neighbor, int nvertex, int thick)
 {
-  ASMs1D* neighS = dynamic_cast<ASMs1D*>(&neighbor);
+  ASMs1Dbase* neighS = dynamic_cast<ASMs1Dbase*>(&neighbor);
   if (!neighS)
     return false;
 
@@ -321,17 +315,17 @@ bool ASMs1D::connectPatch (int vertex, ASM1D& neighbor, int nvertex, int thick)
   if (!this->connectBasis(vertex,*neighS,nvertex,1,slave,master,thick))
     return false;
 
-  this->addNeighbor(neighS);
+  myBase->addNeighbor(neighS->myBase);
   return true;
 }
 
 
-bool ASMs1D::connectBasis (int vertex, ASMs1D& neighbor, int nvertex,
+bool ASMs1Dbase::connectBasis (int vertex, ASMs1Dbase& neighbor, int nvertex,
                            int basis, int slave, int master, int thick)
 {
-  if (shareFE && neighbor.shareFE)
+  if (myBase->shareFE && neighbor.myBase->shareFE)
     return true;
-  else if (shareFE || neighbor.shareFE)
+  else if (myBase->shareFE || neighbor.myBase->shareFE)
   {
     std::cerr <<" *** ASMs1D::connectBasis: Logic error, cannot"
 	      <<" connect a sharedFE patch with an unshared one"<< std::endl;
@@ -359,22 +353,22 @@ bool ASMs1D::connectBasis (int vertex, ASMs1D& neighbor, int nvertex,
       return false;
     }
     else
-      ASMbase::collapseNodes(neighbor,master,*this,slave);
+      ASMbase::collapseNodes(*neighbor.myBase,master,*myBase,slave);
   }
 
   return true;
 }
 
 
-void ASMs1D::closeEnds (int basis, int master)
+void ASMs1Dbase::closeEnds (int basis, int master)
 {
   if (basis < 1) basis = 1;
   int n1 = this->getSize(basis);
-  this->makePeriodic(1,master+n1-1);
+  myBase->makePeriodic(1,master+n1-1);
 }
 
 
-int ASMs1D::constrainNode (double xi, int dof, int code, char basis)
+int ASMs1Dbase::constrainNode (double xi, int dof, int code, char basis)
 {
   if (xi < 0.0 || xi > 1.0) return 0;
 
@@ -386,7 +380,7 @@ int ASMs1D::constrainNode (double xi, int dof, int code, char basis)
 
   if (xi > 0.0) node += int(0.5+(n1-1)*xi);
 
-  this->prescribe(node,dof,code);
+  myBase->prescribe(node,dof,code);
 
   return node;
 }
@@ -394,25 +388,25 @@ int ASMs1D::constrainNode (double xi, int dof, int code, char basis)
 
 #define DERR -999.99
 
-double ASMs1D::getParametricLength (int iel) const
+double ASMs1Dbase::getParametricLength (int iel) const
 {
 #ifdef INDEX_CHECK
-  if (iel < 1 || (size_t)iel > MNPC.size())
+  if (iel < 1 || (size_t)iel > myBase->MNPC.size())
   {
     std::cerr <<" *** ASMs1D::getParametricLength: Element index "<< iel
-	      <<" out of range [1,"<< MNPC.size() <<"]."<< std::endl;
+	      <<" out of range [1,"<< myBase->MNPC.size() <<"]."<< std::endl;
     return DERR;
   }
 #endif
-  if (MNPC[iel-1].empty())
+  if (myBase->MNPC[iel-1].empty())
     return 0.0;
 
-  int inod1 = MNPC[iel-1][curv->order()-1];
+  int inod1 = myBase->MNPC[iel-1][curv->order()-1];
 #ifdef INDEX_CHECK
-  if (inod1 < 0 || (size_t)inod1 >= MLGN.size())
+  if (inod1 < 0 || (size_t)inod1 >= myBase->MLGN.size())
   {
     std::cerr <<" *** ASMs1D::getParametricLength: Node index "<< inod1
-	      <<" out of range [0,"<< MLGN.size() <<">."<< std::endl;
+	      <<" out of range [0,"<< myBase->MLGN.size() <<">."<< std::endl;
     return DERR;
   }
 #endif
@@ -421,7 +415,7 @@ double ASMs1D::getParametricLength (int iel) const
 }
 
 
-double ASMs1D::getKnotSpan (int i) const
+double ASMs1Dbase::getKnotSpan (int i) const
 {
   if (i < 0 || i >= curv->numCoefs() + curv->order() - 1)
     return 0.0;
@@ -431,41 +425,41 @@ double ASMs1D::getKnotSpan (int i) const
 }
 
 
-Vec3 ASMs1D::getCoord (size_t inod) const
+Vec3 ASMs1Dbase::getCoord (size_t inod) const
 {
   int ip = (inod-1)*curv->dimension();
   if (ip < 0) return Vec3();
 
-  return Vec3(&(*(curv->coefs_begin()+ip)),nsd);
+  return Vec3(&(*(curv->coefs_begin()+ip)),myBase->nsd);
 }
 
 
-Tensor ASMs1D::getRotation (size_t inod) const
+Tensor ASMs1Dbase::getRotation (size_t inod) const
 {
-  return inod < 1 || inod > nodalT.size() ? Tensor(nsd,true) : nodalT[inod-1];
+  return inod < 1 || inod > nodalT.size() ? Tensor(myBase->nsd,true) : nodalT[inod-1];
 }
 
 
-bool ASMs1D::getElementCoordinates (Matrix& X, int iel) const
+bool ASMs1Dbase::getElementCoordinates (Matrix& X, int iel) const
 {
 #ifdef INDEX_CHECK
-  if (iel < 1 || (size_t)iel > MNPC.size())
+  if (iel < 1 || (size_t)iel > myBase->MNPC.size())
   {
     std::cerr <<" *** ASMs1D::getElementCoordinates: Element index "<< iel
-	      <<" out of range [1,"<< MNPC.size() <<"]."<< std::endl;
+	      <<" out of range [1,"<< myBase->MNPC.size() <<"]."<< std::endl;
     return false;
   }
 #endif
 
-  X.resize(nsd,curv->order());
+  X.resize(myBase->nsd,curv->order());
 
   RealArray::const_iterator cit = curv->coefs_begin();
   for (size_t n = 0; n < X.cols(); n++)
   {
-    int ip = MNPC[iel-1][n]*curv->dimension();
+    int ip = myBase->MNPC[iel-1][n]*curv->dimension();
     if (ip < 0) return false;
 
-    for (size_t i = 0; i < nsd; i++)
+    for (size_t i = 0; i < myBase->nsd; i++)
       X(i+1,n+1) = *(cit+(ip+i));
   }
 
@@ -476,13 +470,13 @@ bool ASMs1D::getElementCoordinates (Matrix& X, int iel) const
 }
 
 
-bool ASMs1D::getElementNodalRotations (TensorVec& T, size_t iel) const
+bool ASMs1Dbase::getElementNodalRotations (TensorVec& T, size_t iel) const
 {
 #ifdef INDEX_CHECK
-  if (iel >= MNPC.size())
+  if (iel >= myBase->MNPC.size())
   {
     std::cerr <<" *** ASMs1D::getElementNodalRotations: Element index "<< iel
-	      <<" out of range [0,"<< MNPC.size() <<">."<< std::endl;
+	      <<" out of range [0,"<< myBase->MNPC.size() <<">."<< std::endl;
     return false;
   }
 #endif
@@ -491,7 +485,7 @@ bool ASMs1D::getElementNodalRotations (TensorVec& T, size_t iel) const
   if (nodalT.empty())
     return true;
 
-  const IntVec& mnpc = MNPC[iel];
+  const IntVec& mnpc = myBase->MNPC[iel];
   Tensor Tgl(elmCS[iel],true);
 
   T.reserve(mnpc.size());
@@ -502,43 +496,43 @@ bool ASMs1D::getElementNodalRotations (TensorVec& T, size_t iel) const
 }
 
 
-void ASMs1D::getNodalCoordinates (Matrix& X) const
+void ASMs1Dbase::getNodalCoordinates (Matrix& X) const
 {
   const int n1 = curv->numCoefs();
 
-  X.resize(nsd,n1);
+  X.resize(myBase->nsd,n1);
 
   RealArray::const_iterator cit = curv->coefs_begin();
   for (int inod = 0; inod < n1; inod++)
   {
     int ip = inod*curv->dimension();
-    for (size_t i = 0; i < nsd; i++)
+    for (size_t i = 0; i < myBase->nsd; i++)
       X(i+1,inod+1) = *(cit+(ip+i));
   }
 }
 
 
-bool ASMs1D::updateCoords (const Vector& displ)
+bool ASMs1Dbase::updateCoords (const Vector& displ)
 {
   if (!curv) return true; // silently ignore empty patches
-  if (shareFE) return true;
+  if (myBase->shareFE) return true;
 
-  if (displ.size() != nsd*MLGN.size())
+  if (displ.size() != myBase->nsd*myBase->MLGN.size())
   {
     std::cerr <<" *** ASMs1D::updateCoords: Invalid dimension "
 	      << displ.size() <<" on displ, should be "
-	      << nsd*MLGN.size() << std::endl;
+	      << myBase->nsd*myBase->MLGN.size() << std::endl;
     return false;
   }
 
-  curv->deform(displ,nsd);
+  curv->deform(displ,myBase->nsd);
   return true;
 }
 
 
-bool ASMs1D::updateRotations (const Vector& displ, bool reInit)
+bool ASMs1Dbase::updateRotations (const Vector& displ, bool reInit)
 {
-  if (shareFE || nf != 6) return true;
+  if (myBase->shareFE || myBase->nf != 6) return true;
 
   if (displ.size() != 6*myT.size())
   {
@@ -567,25 +561,25 @@ bool ASMs1D::updateRotations (const Vector& displ, bool reInit)
 }
 
 
-void ASMs1D::getBoundaryNodes (int lIndex, IntVec& nodes,
-                               int, int thick, int, bool local) const
+void ASMs1Dbase::getBoundaryNodes (int lIndex, IntVec& nodes,
+                                   int, int thick, int, bool local) const
 {
   if (!curv) return; // silently ignore empty patches
 
-  size_t iel = lIndex == 1 ? 0 : nel-1;
-  if (MLGE[iel] > 0 && (lIndex == 1 || lIndex == 2))
+  size_t iel = lIndex == 1 ? 0 : myBase->nel-1;
+  if (myBase->MLGE[iel] > 0 && (lIndex == 1 || lIndex == 2))
   {
     int offset = lIndex == 1 ? 0 : curv->order() - thick;
     for (int i = 0; i < thick; i++)
     {
-      int node = MNPC[iel][offset+i];
-      nodes.push_back(local ? node+1 : MLGN[node]);
+      int node = myBase->MNPC[iel][offset+i];
+      nodes.push_back(local ? node+1 : myBase->MLGN[node]);
     }
   }
 }
 
 
-std::pair<size_t,double> ASMs1D::findClosestNode (const Vec3& X) const
+std::pair<size_t,double> ASMs1Dbase::findClosestNode (const Vec3& X) const
 {
   if (!curv) return std::make_pair(0,-1.0); // silently ignore empty patches
 
@@ -598,7 +592,7 @@ std::pair<size_t,double> ASMs1D::findClosestNode (const Vec3& X) const
   if (param <= curv->startparam())
     return std::make_pair(1,dist);
   else if (param >= curv->endparam())
-    return std::make_pair(this->getNoNodes(),dist);
+    return std::make_pair(myBase->getNoNodes(),dist);
 
   // We are inside, now find which knot-span we are in and find closest node
   RealArray::iterator u0 = curv->basis().begin();
@@ -624,7 +618,7 @@ std::pair<size_t,double> ASMs1D::findClosestNode (const Vec3& X) const
 }
 
 
-bool ASMs1D::getOrder (int& p1, int& p2, int& p3) const
+bool ASMs1Dbase::getOrder (int& p1, int& p2, int& p3) const
 {
   p2 = p3 = 0;
   if (!curv) return false;
@@ -634,7 +628,7 @@ bool ASMs1D::getOrder (int& p1, int& p2, int& p3) const
 }
 
 
-bool ASMs1D::getSize (int& n1, int& n2, int& n3, int basis) const
+bool ASMs1Dbase::getSize (int& n1, int& n2, int& n3, int basis) const
 {
   n1 = this->getSize(basis);
   n2 = n3 = 0;
@@ -642,7 +636,7 @@ bool ASMs1D::getSize (int& n1, int& n2, int& n3, int basis) const
 }
 
 
-int ASMs1D::getSize (int) const
+int ASMs1Dbase::getSize (int) const
 {
   if (!curv) return 0;
 
@@ -650,7 +644,7 @@ int ASMs1D::getSize (int) const
 }
 
 
-bool ASMs1D::getParameterDomain (Real2DMat& u, IntVec* corners) const
+bool ASMs1Dbase::getParameterDomain (Real2DMat& u, IntVec* corners) const
 {
   u.resize(1,RealArray(2));
   u.front().front() = curv->basis().startparam();
@@ -667,7 +661,7 @@ bool ASMs1D::getParameterDomain (Real2DMat& u, IntVec* corners) const
 }
 
 
-const Vector& ASMs1D::getGaussPointParameters (Matrix& uGP, int nGauss,
+const Vector& ASMs1Dbase::getGaussPointParameters (Matrix& uGP, int nGauss,
 					       const double* xi) const
 {
   int pm1 = curv->order() - 1;
@@ -689,7 +683,7 @@ const Vector& ASMs1D::getGaussPointParameters (Matrix& uGP, int nGauss,
 }
 
 
-void ASMs1D::getElementBorders (int iel, double* ub) const
+void ASMs1Dbase::getElementBorders (int iel, double* ub) const
 {
   RealArray::const_iterator uit = curv->basis().begin();
 
@@ -700,7 +694,7 @@ void ASMs1D::getElementBorders (int iel, double* ub) const
 }
 
 
-double ASMs1D::getElementEnds (int i, Vec3Vec& XC) const
+double ASMs1Dbase::getElementEnds (int i, Vec3Vec& XC) const
 {
   RealArray::const_iterator uit = curv->basis().begin();
 
@@ -718,7 +712,7 @@ double ASMs1D::getElementEnds (int i, Vec3Vec& XC) const
   XC.reserve(elmCS.empty() ? 2 : 3);
   const double* pt = &XYZ.front();
   for (int j = 0; j < 2; j++, pt += dim)
-    XC.push_back(Vec3(pt,nsd));
+    XC.push_back(Vec3(pt,myBase->nsd));
 
   // Calculate the characteristic element size
   double h = getElementSize(XC);
@@ -731,13 +725,13 @@ double ASMs1D::getElementEnds (int i, Vec3Vec& XC) const
 }
 
 
-void ASMs1D::evaluateBasis (double u, double, double, Vector& N) const
+void ASMs1Dbase::evaluateBasis (double u, double, double, Vector& N) const
 {
   this->extractBasis(u,N);
 }
 
 
-void ASMs1D::extractBasis (double u, Vector& N) const
+void ASMs1Dbase::extractBasis (double u, Vector& N) const
 {
   N.resize(curv->order());
   RealArray basisDerivs;
@@ -745,7 +739,7 @@ void ASMs1D::extractBasis (double u, Vector& N) const
 }
 
 
-void ASMs1D::extractBasis (double u, Vector& N, Matrix& dNdu) const
+void ASMs1Dbase::extractBasis (double u, Vector& N, Matrix& dNdu) const
 {
   int p1 = curv->order();
 
@@ -758,7 +752,7 @@ void ASMs1D::extractBasis (double u, Vector& N, Matrix& dNdu) const
 }
 
 
-void ASMs1D::extractBasis (double u, Vector& N, Matrix& dNdu,
+void ASMs1Dbase::extractBasis (double u, Vector& N, Matrix& dNdu,
 			   Matrix3D& d2Ndu2) const
 {
   int p1 = curv->order();
@@ -778,7 +772,7 @@ void ASMs1D::extractBasis (double u, Vector& N, Matrix& dNdu,
 }
 
 
-bool ASMs1D::integrate (Integrand& integrand,
+bool ASMs1Dbase::integrate (Integrand& integrand,
 			GlobalIntegral& glInt,
 			const TimeDomain& time)
 {
@@ -787,7 +781,7 @@ bool ASMs1D::integrate (Integrand& integrand,
   const int p1 = curv->order();
 
   // Get Gaussian quadrature points and weights
-  const int     ng = this->getNoGaussPt(p1);
+  const int     ng = myBase->getNoGaussPt(p1);
   const double* xg = GaussQuadrature::getCoord(ng);
   const double* wg = GaussQuadrature::getWeight(ng);
   if (!xg || !wg) return false;
@@ -825,15 +819,15 @@ bool ASMs1D::integrate (Integrand& integrand,
   double   param[3] = { 0.0, 0.0, 0.0 };
   Vec4     X(param);
 
-  if (nsd > 1 && (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES))
-    fe.G.resize(nsd,2); // For storing d{X}/du and d2{X}/du2
+  if (myBase->nsd > 1 && (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES))
+    fe.G.resize(myBase->nsd,2); // For storing d{X}/du and d2{X}/du2
 
 
   // === Assembly loop over all elements in the patch ==========================
 
-  for (size_t iel = 0; iel < nel; iel++)
+  for (size_t iel = 0; iel < myBase->nel; iel++)
   {
-    fe.iel = MLGE[iel];
+    fe.iel = myBase->MLGE[iel];
     if (fe.iel < 1) continue; // zero-length element
 
     // Check that the current element has nonzero length
@@ -854,7 +848,7 @@ bool ASMs1D::integrate (Integrand& integrand,
 
     // Initialize element matrices
     LocalIntegral* A = integrand.getLocalIntegral(fe.N.size(),fe.iel);
-    bool ok = integrand.initElement(MNPC[iel],fe,X,nRed,*A);
+    bool ok = integrand.initElement(myBase->MNPC[iel],fe,X,nRed,*A);
 
     if (xr)
     {
@@ -892,7 +886,7 @@ bool ASMs1D::integrate (Integrand& integrand,
     // --- Integration loop over all Gauss points in current element -----------
 
     int jp = iel*ng;
-    fe.iGP = firstIp + jp; // Global integration point counter
+    fe.iGP = myBase->firstIp + jp; // Global integration point counter
 
     for (int i = 0; i < ng && ok; i++, fe.iGP++)
     {
@@ -943,7 +937,7 @@ bool ASMs1D::integrate (Integrand& integrand,
     }
 
     // Finalize the element quantities
-    if (ok && !integrand.finalizeElement(*A,fe,time,firstIp+jp))
+    if (ok && !integrand.finalizeElement(*A,fe,time,myBase->firstIp+jp))
       ok = false;
 
     // Assembly of global system integral
@@ -959,7 +953,7 @@ bool ASMs1D::integrate (Integrand& integrand,
 }
 
 
-bool ASMs1D::integrate (Integrand& integrand, int lIndex,
+bool ASMs1Dbase::integrate (Integrand& integrand, int lIndex,
 			GlobalIntegral& glInt,
 			const TimeDomain& time)
 {
@@ -982,16 +976,16 @@ bool ASMs1D::integrate (Integrand& integrand, int lIndex,
     case 2:
       fe.xi = 1.0;
       fe.u = curv->endparam();
-      iel = nel-1;
+      iel = myBase->nel-1;
       break;
 
     default:
       return false;
     }
 
-  std::map<char,size_t>::const_iterator iit = firstBp.find(lIndex%10);
-  fe.iGP = iit == firstBp.end() ? 0 : iit->second;
-  fe.iel = MLGE[iel];
+  std::map<char,size_t>::const_iterator iit = myBase->firstBp.find(lIndex%10);
+  fe.iGP = iit == myBase->firstBp.end() ? 0 : iit->second;
+  fe.iel = myBase->MLGE[iel];
   if (fe.iel < 1) return true; // zero-length element
 
   // Set up control point coordinates for current element
@@ -1008,7 +1002,7 @@ bool ASMs1D::integrate (Integrand& integrand, int lIndex,
 
   // Initialize element matrices
   LocalIntegral* A = integrand.getLocalIntegral(fe.N.size(),fe.iel,true);
-  bool ok = integrand.initElementBou(MNPC[iel],*A);
+  bool ok = integrand.initElementBou(myBase->MNPC[iel],*A);
 
   Vec3 normal;
 
@@ -1045,7 +1039,7 @@ bool ASMs1D::integrate (Integrand& integrand, int lIndex,
 }
 
 
-int ASMs1D::evalPoint (const double* xi, double* param, Vec3& X) const
+int ASMs1Dbase::evalPoint (const double* xi, double* param, Vec3& X) const
 {
   if (!curv) return -1;
 
@@ -1053,18 +1047,18 @@ int ASMs1D::evalPoint (const double* xi, double* param, Vec3& X) const
   SplineUtils::point(X,param[0],curv);
 
   // Check if this point matches any of the control points (nodes)
-  return this->searchCtrlPt(curv->coefs_begin(),curv->coefs_end(),
+  return myBase->searchCtrlPt(curv->coefs_begin(),curv->coefs_end(),
                             X,curv->dimension());
 }
 
 
-int ASMs1D::findElementContaining (const double* param) const
+int ASMs1Dbase::findElementContaining (const double* param) const
 {
   return curv ? 2 + curv->basis().knotInterval(param[0]) - curv->order() : -1;
 }
 
 
-bool ASMs1D::getGridParameters (RealArray& prm, int nSegPerSpan) const
+bool ASMs1Dbase::getGridParameters (RealArray& prm, int nSegPerSpan) const
 {
   if (!curv) return false;
 
@@ -1098,7 +1092,7 @@ bool ASMs1D::getGridParameters (RealArray& prm, int nSegPerSpan) const
 }
 
 
-bool ASMs1D::getGrevilleParameters (RealArray& prm) const
+bool ASMs1Dbase::getGrevilleParameters (RealArray& prm) const
 {
   if (!curv) return false;
 
@@ -1112,7 +1106,7 @@ bool ASMs1D::getGrevilleParameters (RealArray& prm) const
 }
 
 
-bool ASMs1D::tesselate (ElementBlock& grid, const int* npe) const
+bool ASMs1Dbase::tesselate (ElementBlock& grid, const int* npe) const
 {
   // Compute parameter values of the nodal points
   RealArray gpar;
@@ -1128,7 +1122,7 @@ bool ASMs1D::tesselate (ElementBlock& grid, const int* npe) const
   size_t i, j, l;
   grid.resize(nx);
   for (i = l = 0; i < grid.getNoNodes(); i++, l += curv->dimension())
-    for (j = 0; j < nsd; j++)
+    for (j = 0; j < myBase->nsd; j++)
       grid.setCoor(i,j,XYZ[l+j]);
 
   // Establish the block grid topology
@@ -1149,12 +1143,12 @@ bool ASMs1D::tesselate (ElementBlock& grid, const int* npe) const
 }
 
 
-bool ASMs1D::getSolution (Matrix& sField, const Vector& locSol,
-                          const IntVec& nodes) const
+bool ASMs1Dbase::getSolution (Matrix& sField, const Vector& locSol,
+                              const IntVec& nodes) const
 {
-  if (!this->ASMbase::getSolution(sField,locSol,nodes))
+  if (!myBase->ASMbase::getSolution(sField,locSol,nodes))
     return false;
-  else if (nf < 6)
+  else if (myBase->nf < 6)
     return true;
 
   // Extract the total angular rotations as components 4-6
@@ -1171,7 +1165,7 @@ bool ASMs1D::getSolution (Matrix& sField, const Vector& locSol,
 }
 
 
-bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
+bool ASMs1Dbase::evalSolution (Matrix& sField, const Vector& locSol,
                            const int* npe, int) const
 {
   // Compute parameter values of the result sampling points
@@ -1184,7 +1178,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
 }
 
 
-bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
+bool ASMs1Dbase::evalSolution (Matrix& sField, const Vector& locSol,
                            const RealArray* gpar, bool, int deriv, int) const
 {
   const int p1 = curv->order();
@@ -1200,7 +1194,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
   // Evaluate the primary solution field at each point
   const RealArray& upar = *gpar;
   size_t nPoints = upar.size();
-  sField.resize(nComp*int(pow(nsd,deriv)),nPoints);
+  sField.resize(nComp*int(pow(myBase->nsd,deriv)),nPoints);
   for (size_t i = 0; i < nPoints; i++)
   {
     IntVec ip;
@@ -1217,7 +1211,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
     case 1: // Evaluate first derivatives of the solution
       this->extractBasis(upar[i],basis,dNdu);
       scatterInd(p1,curv->basis().lastKnotInterval(),ip);
-      utl::gather(ip,nsd,Xnod,Xtmp);
+      utl::gather(ip,myBase->nsd,Xnod,Xtmp);
       utl::Jacobian(Jac,dNdX,Xtmp,dNdu);
       utl::gather(ip,nComp,locSol,Xtmp);
       ptDer.multiply(Xtmp,dNdX);
@@ -1227,7 +1221,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
     case 2: // Evaluate second derivatives of the solution
       this->extractBasis(upar[i],basis,dNdu,d2Ndu2);
       scatterInd(p1,curv->basis().lastKnotInterval(),ip);
-      utl::gather(ip,nsd,Xnod,Xtmp);
+      utl::gather(ip,myBase->nsd,Xnod,Xtmp);
       utl::Jacobian(Jac,dNdX,Xtmp,dNdu);
       utl::Hessian(Hess,d2NdX2,Jac,Xtmp,d2Ndu2,dNdX);
       utl::gather(ip,nComp,locSol,Xtmp);
@@ -1241,7 +1235,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const Vector& locSol,
 }
 
 
-bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
+bool ASMs1Dbase::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 			   const int* npe, char project) const
 {
   if (npe)
@@ -1286,13 +1280,13 @@ bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 }
 
 
-Go::GeomObject* ASMs1D::evalSolution (const IntegrandBase& integrand) const
+Go::GeomObject* ASMs1Dbase::evalSolution (const IntegrandBase& integrand) const
 {
   return this->projectSolution(integrand);
 }
 
 
-Go::SplineCurve* ASMs1D::projectSolution (const IntegrandBase& integrand) const
+Go::SplineCurve* ASMs1Dbase::projectSolution (const IntegrandBase& integrand) const
 {
   // Compute parameter values of the result sampling points (Greville points)
   RealArray gpar;
@@ -1324,7 +1318,7 @@ Go::SplineCurve* ASMs1D::projectSolution (const IntegrandBase& integrand) const
 }
 
 
-bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
+bool ASMs1Dbase::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 			   const RealArray* gpar, bool) const
 {
   sField.resize(0,0);
@@ -1332,15 +1326,15 @@ bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
   const int p1 = curv->order();
 
   // Fetch nodal (control point) coordinates
-  FiniteElement fe(p1,firstIp);
+  FiniteElement fe(p1,myBase->firstIp);
   this->getNodalCoordinates(fe.Xn);
 
   Vector   solPt;
   Matrix   dNdu, Jac, Xtmp;
   Matrix3D d2Ndu2, Hess;
 
-  if (nsd > 1 && (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES))
-    fe.G.resize(nsd,2); // For storing d{X}/du and d2{X}/du2
+  if (myBase->nsd > 1 && (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES))
+    fe.G.resize(myBase->nsd,2); // For storing d{X}/du and d2{X}/du2
 
   // Evaluate the secondary solution field at each point
   const RealArray& upar = *gpar;
@@ -1362,7 +1356,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
     scatterInd(p1,curv->basis().lastKnotInterval(),ip);
 
     // Fetch associated control point coordinates
-    utl::gather(ip,nsd,fe.Xn,Xtmp);
+    utl::gather(ip,myBase->nsd,fe.Xn,Xtmp);
 
     if (!dNdu.empty())
     {
@@ -1397,15 +1391,15 @@ bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 }
 
 
-bool ASMs1D::assembleL2matrices (SparseMatrix& A, StdVector& B,
+bool ASMs1Dbase::assembleL2matrices (SparseMatrix& A, StdVector& B,
                                  const IntegrandBase& integrand,
                                  bool continuous) const
 {
-  const size_t nnod = this->getNoNodes();
+  const size_t nnod = myBase->getNoNodes();
   const int p1 = curv->order();
 
   // Get Gaussian quadrature point coordinates (and weights if continuous)
-  const int     ng = continuous ? this->getNoGaussPt(p1,true) : p1 - 1;
+  const int     ng = continuous ? myBase->getNoGaussPt(p1,true) : p1 - 1;
   const double* xg = GaussQuadrature::getCoord(ng);
   const double* wg = continuous ? GaussQuadrature::getWeight(ng) : nullptr;
   if (!xg) return false;
@@ -1417,7 +1411,7 @@ bool ASMs1D::assembleL2matrices (SparseMatrix& A, StdVector& B,
   RealArray gpar = this->getGaussPointParameters(gp,ng,xg);
   if (!this->evalSolution(sField,integrand,&gpar))
   {
-    std::cerr <<" *** ASMs1D::assembleL2matrices: Failed for patch "<< idx+1
+    std::cerr <<" *** ASMs1D::assembleL2matrices: Failed for patch "<< myBase->idx+1
               <<" nPoints="<< gpar.size() << std::endl;
     return false;
   }
@@ -1430,9 +1424,9 @@ bool ASMs1D::assembleL2matrices (SparseMatrix& A, StdVector& B,
   // === Assembly loop over all elements in the patch ==========================
 
   int ip = 0;
-  for (size_t iel = 0; iel < nel; iel++)
+  for (size_t iel = 0; iel < myBase->nel; iel++)
   {
-    if (MLGE[iel] < 1) continue; // zero-area element
+    if (myBase->MLGE[iel] < 1) continue; // zero-area element
 
     if (continuous)
     {
@@ -1464,10 +1458,10 @@ bool ASMs1D::assembleL2matrices (SparseMatrix& A, StdVector& B,
       // Integrate the linear system A*x=B
       for (size_t ii = 0; ii < phi.size(); ii++)
       {
-	int inod = MNPC[iel][ii]+1;
+	int inod = myBase->MNPC[iel][ii]+1;
 	for (size_t jj = 0; jj < phi.size(); jj++)
 	{
-	  int jnod = MNPC[iel][jj]+1;
+	  int jnod = myBase->MNPC[iel][jj]+1;
 	  A(inod,jnod) += phi[ii]*phi[jj]*dJw;
 	}
 	for (size_t r = 1; r <= sField.rows(); r++)
@@ -1480,16 +1474,16 @@ bool ASMs1D::assembleL2matrices (SparseMatrix& A, StdVector& B,
 }
 
 
-bool ASMs1D::getNoStructElms (int& n1, int& n2, int& n3) const
+bool ASMs1Dbase::getNoStructElms (int& n1, int& n2, int& n3) const
 {
-  n1 = nel;
+  n1 = myBase->nel;
   n2 = n3 = 0;
 
   return true;
 }
 
 
-bool ASMs1D::evaluate (const FunctionBase* func, RealArray& values,
+bool ASMs1Dbase::evaluate (const FunctionBase* func, RealArray& values,
                        int, double time) const
 {
   Go::SplineCurve* scrv = SplineUtils::project(curv,*func,func->dim(),time);
@@ -1502,5 +1496,55 @@ bool ASMs1D::evaluate (const FunctionBase* func, RealArray& values,
   values.assign(scrv->coefs_begin(),scrv->coefs_end());
   delete scrv;
 
+  return true;
+}
+
+bool ASMs1Dbase::diracPoint (Integrand& integr, GlobalIntegral& glInt,
+                         const double* u, const Vec3& pval)
+{
+  FiniteElement fe;
+  fe.iel = this->findElementContaining(u);
+  fe.u = *u;
+  if (fe.iel < 1 || fe.iel > (int)myBase->nel)
+  {
+    std::cerr <<" *** ASMu1D::diracPoint: The point "<< fe.u
+              <<" is outside the patch domain."<< std::endl;
+    return false;
+  }
+
+#ifdef INDEX_CHECK
+  // Fetch parameter values of the element ends (knots)
+  int i1 = fe.iel-1 + curv->order();
+  RealArray::const_iterator uit = curv->basis().begin();
+  double u0 = uit[i1-1];
+  double u1 = uit[i1]; // Er dette riktig nå ?
+  if (fe.u < u0 || fe.u > u1)
+  {
+    std::cerr <<" *** ASMu1D::diracPoint: The point "<< fe.u
+              <<" is not within the domain of the found element "<< fe.iel
+              <<" which is ["<< u0 <<", "<< u1 <<"]"<< std::endl;
+    return false;
+  }
+#if SP_DEBUG > 1
+  else
+    std::cerr <<"   * The point "<< fe.u
+              <<" is within the domain of element "<< fe.iel <<" which is ["
+              << u0 <<","<< u1 <<"]"<< std::endl;
+#endif
+#endif
+
+  this->extractBasis(fe.u,fe.N);
+
+  LocalIntegral* A = integr.getLocalIntegral(myBase->MNPC[fe.iel-1].size(),fe.iel,true);
+  bool ok = integr.evalPoint(*A,fe,pval) && glInt.assemble(A,fe.iel);
+  A->destruct();
+
+  return ok;
+}
+
+template<>
+bool ASMx1D<ASMstruct>::setGeo()
+{
+  geo = curv;
   return true;
 }

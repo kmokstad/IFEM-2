@@ -313,7 +313,7 @@ bool SIM1D::parse (char* keyWord, std::istream& is)
 	    for (size_t i = 0; i < xi.size(); i++)
 	      IFEM::cout <<" "<< xi[i];
 	    IFEM::cout << std::endl;
-	    static_cast<ASMs1D*>(myModel[j])->refine(xi);
+	    dynamic_cast<ASM1D*>(myModel[j])->refine(xi);
 	  }
       }
     }

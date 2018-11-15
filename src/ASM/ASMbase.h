@@ -59,6 +59,7 @@ typedef std::vector<ASMbase*> ASMVec; //!< Spline patch container
 
 class ASMbase
 {
+  friend class ASMs1Dbase;
 public:
   //! \brief Struct for boundary condition codes.
   struct BC
