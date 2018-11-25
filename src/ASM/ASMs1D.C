@@ -942,7 +942,7 @@ bool ASMs1D::integrate (Integrand& integrand,
         if (integrand.getIntegrandType() & Integrand::THIRD_DERIVATIVES)
         {
           d3Ndu3.multiply(0.125*dL*dL*dL); // 3rd derivatives w.r.t. xi=[-1,1]
-          ok &= utl::Hessian2(fe.d3NdX3,Jac,fe.Xn,d3Ndu3,fe.dNdX);
+          ok &= utl::Hessian2(fe.d3NdX3,Jac,d3Ndu3);
         }
       }
 
@@ -1408,8 +1408,7 @@ bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
       }
 
       if (integrand.getIntegrandType() & Integrand::THIRD_DERIVATIVES)
-        if (!utl::Hessian2(fe.d3NdX3,Jac,Xtmp,d3Ndu3,fe.dNdX))
-          continue;
+        utl::Hessian2(fe.d3NdX3,Jac,d3Ndu3);
     }
 
     // Now evaluate the solution field

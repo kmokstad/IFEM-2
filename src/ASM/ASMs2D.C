@@ -1777,9 +1777,9 @@ bool ASMs2D::integrate (Integrand& integrand,
                 utl::Hessian(Hess,fe.H);
             }
 
+            // Compute 3rd order derivatives
             if (use3rdDer)
-              if (!utl::Hessian2(fe.d3NdX3,Jac,Xnod,d3Ndu3,fe.dNdX))
-                ok = false;
+              ok &= utl::Hessian2(fe.d3NdX3,Jac,d3Ndu3);
 
             // Compute G-matrix
             if (integrand.getIntegrandType() & Integrand::G_MATRIX)
@@ -2780,9 +2780,9 @@ bool ASMs2D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
         utl::Hessian(Hess,fe.H);
     }
 
+    // Compute 3rd order derivatives
     if (use3rdDer)
-      if (!utl::Hessian2(fe.d3NdX3,Jac,Xtmp,d3Ndu3,fe.dNdX))
-        continue;
+      utl::Hessian2(fe.d3NdX3,Jac,d3Ndu3);
 
     // Store tangent vectors in fe.G for shells
     if (nsd > 2) fe.G = Jac;

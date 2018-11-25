@@ -85,13 +85,10 @@ namespace utl
   //! \brief Set up third-order derivatives of the coordinate mapping.
   //! \param[out] d3NdX3 Third order derivatives of basis functions, w.r.t. X
   //! \param[in] Ji The inverse of the Jacobian matrix
-  //! \param[in] X Matrix of element nodal coordinates
   //! \param[in] d3Ndu3 Third order derivatives of basis functions
-  //! \param[in] dNdX First order derivatives of basis functions
   //! \return \e false if matrix dimensions are incompatible, otherwise \e true
   bool Hessian2(matrix4d<Real>& d3NdX3,
-                const matrix<Real>& Ji, const matrix<Real>& X,
-                const matrix4d<Real>& d3Ndu3, const matrix<Real>& dNdX);
+                const matrix<Real>& Ji, const matrix4d<Real>& d3Ndu3);
 }
 
 #endif
