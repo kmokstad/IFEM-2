@@ -128,6 +128,7 @@ void SplineUtils::extractBasis (const Go::BasisDerivsSf3& spline,
     d3Ndu3(n,1,1,2) = spline.basisDerivs_uuv[jp];
     d3Ndu3(n,2,1,1) = spline.basisDerivs_uuv[jp];
     d3Ndu3(n,2,2,1) = spline.basisDerivs_uvv[jp];
+    d3Ndu3(n,1,2,2) = spline.basisDerivs_uvv[jp];
     d3Ndu3(n,2,1,2) = spline.basisDerivs_uvv[jp];
     d3Ndu3(n,2,2,2) = spline.basisDerivs_vvv[jp];
   }

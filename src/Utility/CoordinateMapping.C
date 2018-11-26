@@ -274,7 +274,7 @@ bool utl::Hessian2 (matrix4d<Real>& d3NdX3,
                          d3Ndu3(i,1,2,2)*Ji(2,2)*Ji(2,2)*Ji(1,2) +
                        2*d3Ndu3(i,1,1,2)*Ji(1,2)*Ji(1,2)*Ji(2,2) +
                          d3Ndu3(i,1,1,2)*Ji(1,2)*Ji(1,2)*Ji(2,2) +
-                         d3Ndu3(i,2,2,2)*Ji(1,2)*Ji(1,2)*Ji(1,2) +
+                         d3Ndu3(i,2,2,2)*Ji(2,2)*Ji(2,2)*Ji(2,2) +
                        2*d3Ndu3(i,1,2,2)*Ji(1,2)*Ji(2,2)*Ji(2,2);
 
     d3NdX3(i,1,1,2) =    d3Ndu3(i,1,1,1)*Ji(1,1)*Ji(1,1)*Ji(1,2) +
