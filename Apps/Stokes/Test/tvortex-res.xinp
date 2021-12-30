@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<simulation>
+
+  <geometry sets="true" scale="6.28318530717959">
+    <refine type="uniform" patch="1" u="1" v="1" w="1"/>
+  </geometry>
+
+  <discretization>
+    <nGauss>3</nGauss>
+  </discretization>
+
+  <stokes formulation="mixed" adaptive="exact">
+    <boundaryconditions>
+      <dirichlet set="Boundary" basis="1" comp="123" type="anasol"/>
+    </boundaryconditions>
+    <constrain_integrated_pressure>779.273</constrain_integrated_pressure>
+    <source type="expression"
+            variables="uxx = -cos(x)*sin(y)*sin(z);
+                       uyy = -cos(x)*sin(y)*sin(z);
+                       uzz = -cos(x)*sin(y)*sin(z);
+                       vxx = -sin(x)*cos(y)*sin(z);
+                       vyy = -sin(x)*cos(y)*sin(z);
+                       vzz = -sin(x)*cos(y)*sin(z);
+                       wxx =  2*sin(x)*sin(y)*cos(z);
+                       wyy =  2*sin(x)*sin(y)*cos(z);
+                       wzz =  2*sin(x)*sin(y)*cos(z);
+                        px = 1;
+                        py = 0;
+                        pz = 0;">
+      -(uxx+uyy+uzz) + px | -(vxx+vyy+vzz) + py | -(wxx+wyy+wzz) + pz
+    </source>
+    <fluidproperties Re="1" mu="1.0" rho="1.0"/>
+    <anasol type="expression">
+      <variables>
+         u =  cos(x)*sin(y)*sin(z);
+        ux = -sin(x)*sin(y)*sin(z);
+        uy =  cos(x)*cos(y)*sin(z);
+        uz =  cos(x)*sin(y)*cos(z);
+         v =  sin(x)*cos(y)*sin(z);
+        vx =  cos(x)*cos(y)*sin(z);
+        vy = -sin(x)*sin(y)*sin(z);
+        vz =  sin(x)*cos(y)*cos(z);
+         w =  -2*sin(x)*sin(y)*cos(z);
+        wx =  -2*cos(x)*sin(y)*cos(z);
+        wy =  -2*sin(x)*cos(y)*cos(z);
+        wz =  2*sin(x)*sin(y)*sin(z);
+         p = x;
+        px = 1;
+        py = 0;
+        pz = 0;
+      </variables>
+      <primary>u|v|w</primary>
+      <secondary>ux|uy|uz|vx|vy|vz|wx|wy|wz</secondary>
+      <scalarprimary>p</scalarprimary>
+      <scalarsecondary>px|py|pz</scalarsecondary>
+    </anasol>
+  </stokes>
+
+  <postprocessing>
+    <projection>
+      <residual/>
+      <CGL2/>
+    </projection>
+  </postprocessing>
+
+  <adaptive>
+    <maxstep value="3"/>
+    <beta type="truebeta" value="2"/>
+    <errtol value="0.000001"/>
+    <scheme value="isotropic_function"/>
+  </adaptive>
+
+</simulation>
