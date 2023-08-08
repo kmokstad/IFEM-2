@@ -603,7 +603,7 @@ bool ASMs3DmxLag::evalSolution (Matrix& sField, const IntegrandBase& integrand,
 
           // Compute Jacobian inverse of the coordinate mapping and
           // basis function derivatives w.r.t. Cartesian coordinates
-          //if (!fe.Jacobian(Jac,Xnod,dNxdu,geoBasis))
+          if (!fe.Jacobian(Jac,Xnod,geoBasis,nullptr,&dNxdu))
             continue; // skip singular points
 
 	  // Now evaluate the solution field
