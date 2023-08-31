@@ -574,13 +574,8 @@ bool ASMu2Dmx::integrate (Integrand& integrand, int lIndex,
 
       // Compute Jacobian inverse of the coordinate mapping and
       // basis function derivatives w.r.t. Cartesian coordinates
-      fe.detJxW = utl::Jacobian(Jac,normal,fe.grad(itgBasis),Xnod,
-                                dNxdu[itgBasis-1],t1,t2);
-      if (fe.detJxW == 0.0) continue; // skip singular points
-
-      for (size_t b = 1; b <= m_basis.size(); ++b)
-        if ((int)b != itgBasis)
-          fe.grad(b).multiply(dNxdu[b-1],Jac);
+      if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,dNxdu,t1,t2))
+        continue; // skip singular points
 
       if (edgeDir < 0)
         normal *= -1.0;

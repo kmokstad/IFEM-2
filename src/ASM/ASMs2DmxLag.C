@@ -428,13 +428,8 @@ bool ASMs2DmxLag::integrate (Integrand& integrand, int lIndex,
             ok = false;
 
         // Compute basis function derivatives and the edge normal
-        fe.detJxW = utl::Jacobian(Jac,normal,fe.grad(itgBasis),Xnod,
-                                  dNxdu[itgBasis-1],t1,t2);
-        if (fe.detJxW == 0.0) continue; // skip singular points
-
-        for (size_t b = 0; b < nxx.size(); ++b)
-          if (b != (size_t)itgBasis-1)
-            fe.grad(b+1).multiply(dNxdu[b],Jac);
+        if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,dNxdu,t1,t2))
+          continue; // skip singular points
 
 	if (edgeDir < 0) normal *= -1.0;
 

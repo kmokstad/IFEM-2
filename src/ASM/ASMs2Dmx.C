@@ -708,15 +708,10 @@ bool ASMs2Dmx::integrate (Integrand& integrand, int lIndex,
         for (size_t b = 0; b < m_basis.size(); ++b)
           SplineUtils::extractBasis(splinex[b][ip],fe.basis(b+1),dNxdu[b]);
 
-	// Compute Jacobian inverse of the coordinate mapping and
-	// basis function derivatives w.r.t. Cartesian coordinates
-        fe.detJxW = utl::Jacobian(Jac,normal,fe.grad(itgBasis),Xnod,
-                                  dNxdu[itgBasis-1],t1,t2);
-        if (fe.detJxW == 0.0) continue; // skip singular points
-
-        for (size_t b = 0; b < m_basis.size(); ++b)
-          if (b != (size_t)itgBasis-1)
-            fe.grad(b+1).multiply(dNxdu[b],Jac);
+        // Compute Jacobian inverse of the coordinate mapping and
+        // basis function derivatives w.r.t. Cartesian coordinates
+        if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,dNxdu,t1,t2))
+          continue; // skip singular points
 
 	if (edgeDir < 0) normal *= -1.0;
 

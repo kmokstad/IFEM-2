@@ -634,13 +634,8 @@ bool ASMu3Dmx::integrate (Integrand& integrand, int lIndex,
           this->evaluateBasis(iEl, fe, dNxdu[b-1], b);
 
         // Compute basis function derivatives and the face normal
-        fe.detJxW = utl::Jacobian(Jac, normal, fe.grad(itgBasis), Xnod,
-                                  dNxdu[itgBasis-1], t1, t2);
-        if (fe.detJxW == 0.0) continue; // skip singular points
-
-        for (size_t b = 1; b <= m_basis.size(); ++b)
-          if ((int)b != itgBasis)
-            fe.grad(b).multiply(dNxdu[b-1],Jac);
+        if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,dNxdu,t1,t2))
+          continue; // skip singular points
 
         if (faceDir < 0) normal *= -1.0;
 
