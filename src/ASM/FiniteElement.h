@@ -64,6 +64,9 @@ protected:
     return fe.write(os);
   }
 
+  //! \brief Returns a reference to the basis function 2nd-derivatives.
+  virtual Matrix3D& hess(char) { return d2NdX2; }
+
 public:
   // Gauss point quantities
   double   detJxW; //!< Weighted determinant of the coordinate mapping
@@ -144,6 +147,9 @@ public:
 protected:
   //! \brief Writes the finite element object to the given output stream.
   virtual std::ostream& write(std::ostream& os) const;
+
+  //! \brief Returns a reference to the basis function 2nd-derivatives.
+  virtual Matrix3D& hess(char b) { return b < 2 ? d2NdX2 : d2MdX2[b-2]; }
 
 private:
   std::vector<Vector>     M;    //!< Basis function values
