@@ -376,6 +376,7 @@ bool ASMu3Dmx::integrate (Integrand& integrand,
       {
         // --- Compute average value of basis functions over the element -----
 
+        Matrix dNdX;
         fe.Navg.resize(elem_sizes[0],true);
         double vol = 0.0;
         size_t jp = 0;
@@ -388,8 +389,7 @@ bool ASMu3Dmx::integrate (Integrand& integrand,
 
               // Compute Jacobian determinant of coordinate mapping
               // and multiply by weight of current integration point
-              double detJac = utl::Jacobian(Jac,fe.grad(itgBasis),
-                                            Xnod,bfs.dNdu,false);
+              double detJac = utl::Jacobian(Jac,dNdX,Xnod,bfs.dNdu,false);
               double weight = dV*wg[0][i]*wg[1][j]*wg[2][k];
 
               // Numerical quadrature

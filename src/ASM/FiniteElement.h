@@ -46,15 +46,17 @@ public:
 
   //! \brief Returns a const reference to the basis function derivatives.
   virtual const Matrix& grad(char) const { return dNdX; }
-  //! \brief Returns a reference to the basis function derivatives.
-  virtual Matrix& grad(char) { return dNdX; }
-
   //! \brief Returns a const reference to the basis function 2nd-derivatives.
   virtual const Matrix3D& hess(char) const { return d2NdX2; }
   //! \brief Returns a const reference to the basis function 3nd-derivatives.
   virtual const Matrix4D& hess2(char) const { return d3NdX3; }
 
 protected:
+  //! \brief Returns a reference to the basis function derivatives.
+  virtual Matrix& grad(char) { return dNdX; }
+  //! \brief Returns a reference to the basis function 2nd-derivatives.
+  virtual Matrix3D& hess(char) { return d2NdX2; }
+
   //! \brief Writes the finite element object to the given output stream.
   virtual std::ostream& write(std::ostream& os) const;
 
@@ -63,9 +65,6 @@ protected:
   {
     return fe.write(os);
   }
-
-  //! \brief Returns a reference to the basis function 2nd-derivatives.
-  virtual Matrix3D& hess(char) { return d2NdX2; }
 
 public:
   // Gauss point quantities
@@ -113,9 +112,6 @@ public:
 
   //! \brief Returns a const reference to the basis function derivatives.
   virtual const Matrix& grad(char b) const { return b < 2 ? dNdX : dMdX[b-2]; }
-  //! \brief Returns a reference to the basis function derivatives.
-  virtual Matrix& grad(char b) { return b < 2 ? dNdX : dMdX[b-2]; }
-
   //! \brief Returns a const reference to the basis function 2nd-derivatives.
   virtual const Matrix3D& hess(char b) const { return b < 2 ? d2NdX2 : d2MdX2[b-2]; }
   //! \brief Returns a const reference to the basis function 3rd-derivatives.
@@ -132,7 +128,7 @@ public:
                 const std::vector<const BasisFunctionVals*>* bf,
                 const std::vector<Matrix>* dNxdu = nullptr);
 
-  //! \brief Set up the Jacobian matrix of the coordinate mapping on a boundary.
+  //! \brief Sets up the Jacobian matrix of the coordinate mapping on a boundary.
   //! \param[out] Jac The inverse of the Jacobian matrix
   //! \param[out] n Outward-directed unit normal vector on the boundary
   //! \param[in] Xnod Matrix of element nodal coordinates
@@ -140,10 +136,13 @@ public:
   //! \param[in] dNxdu First order derivatives of basis functions
   //! \param[in] t1 First parametric tangent direction of the boundary
   //! \param[in] t2 Second parametric tangent direction of the boundary
+  //! \param[in] nBasis Number of basis functions
+  //! \param[in] Xnod2 Matrix of element nodal coordinates for neighbor element
   bool Jacobian(Matrix& Jac, Vec3& n, const Matrix& Xnod,
                 unsigned short int gBasis,
                 const std::vector<Matrix>& dNxdu,
-                size_t t1, size_t t2);
+                size_t t1, size_t t2, size_t nBasis = 0,
+                const Matrix* Xnod2 = nullptr);
 
   //! \brief Sets up the Hessian matrix of the coordinate mapping.
   //! \param[out] Hess The Hessian matrix
@@ -158,11 +157,13 @@ public:
                const std::vector<Matrix3D>* d2Nxdu2 = nullptr);
 
 protected:
-  //! \brief Writes the finite element object to the given output stream.
-  virtual std::ostream& write(std::ostream& os) const;
-
+  //! \brief Returns a reference to the basis function derivatives.
+  virtual Matrix& grad(char b) { return b < 2 ? dNdX : dMdX[b-2]; }
   //! \brief Returns a reference to the basis function 2nd-derivatives.
   virtual Matrix3D& hess(char b) { return b < 2 ? d2NdX2 : d2MdX2[b-2]; }
+
+  //! \brief Writes the finite element object to the given output stream.
+  virtual std::ostream& write(std::ostream& os) const;
 
 private:
   std::vector<Vector>     M;    //!< Basis function values

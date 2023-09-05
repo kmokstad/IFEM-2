@@ -493,18 +493,18 @@ bool ASMs3DmxLag::integrate (Integrand& integrand, int lIndex,
                                           elem_sizes[b][2],xi[2]))
                 ok = false;
 
-        // Compute basis function derivatives and the edge normal
-        if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,dNxdu,t1,t2))
-          continue; // skip singular points
+            // Compute basis function derivatives and the edge normal
+            if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,dNxdu,t1,t2))
+              continue; // skip singular points
 
-        if (faceDir < 0) normal *= -1.0;
+            if (faceDir < 0) normal *= -1.0;
 
-	    // Cartesian coordinates of current integration point
-        X.assign(Xnod * fe.basis(itgBasis));
+            // Cartesian coordinates of current integration point
+            X.assign(Xnod * fe.basis(itgBasis));
 
 	    // Evaluate the integrand and accumulate element contributions
 	    fe.detJxW *= wg[i]*wg[j];
-	    if (!integrand.evalBouMx(*A,fe,time,X,normal))
+	    if (ok && !integrand.evalBouMx(*A,fe,time,X,normal))
               ok = false;
 	  }
 

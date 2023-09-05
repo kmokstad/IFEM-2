@@ -433,8 +433,8 @@ bool ASMs2DmxLag::integrate (Integrand& integrand, int lIndex,
 
 	if (edgeDir < 0) normal *= -1.0;
 
-	// Cartesian coordinates of current integration point
-    X.assign(Xnod * fe.basis(itgBasis));
+        // Cartesian coordinates of current integration point
+        X.assign(Xnod * fe.basis(itgBasis));
 
 	// Evaluate the integrand and accumulate element contributions
 	fe.detJxW *= wg[i];
