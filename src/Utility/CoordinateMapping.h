@@ -89,6 +89,13 @@ namespace utl
   //! \return \e false if matrix dimensions are incompatible, otherwise \e true
   bool Hessian2(matrix4d<Real>& d3NdX3,
                 const matrix<Real>& Ji, const matrix4d<Real>& d3Ndu3);
+
+  void JacobianGradient(const matrix<Real>& dudX,
+                        const matrix3d<Real>& d2Xdu2,
+                        std::vector<matrix<Real>>& dJdX);
+
+  void detJacGradient(const matrix<Real>& J, const matrix<Real>& Ji,
+                      const matrix3d<Real>& H, std::vector<Real>& ddet);
 }
 
 #endif

@@ -51,6 +51,16 @@ public:
   //! \brief Returns a const reference to the basis function 3nd-derivatives.
   virtual const Matrix4D& hess2(char) const { return d3NdX3; }
 
+  void piolaMapping(const double detJ,
+                    const Matrix& J, const Matrix& Ji,
+                    const std::vector<Matrix>& dNdu, const Matrix3D& H);
+
+  void piolaBasis(const Matrix& J);
+
+  void piolaGradient(const double detJ,
+                     const Matrix& J, const Matrix& Ji,
+                     const std::vector<Matrix>& dNdu, const Matrix3D& H);
+
 protected:
   //! \brief Returns a reference to the basis function derivatives.
   virtual Matrix& grad(char) { return dNdX; }
@@ -76,19 +86,25 @@ public:
   Matrix     G;    //!< Covariant basis / Matrix used for stabilized methods
   Matrix     H;    //!< Hessian
 
-  //! \brief Struct holding Piola mapped basis functions and derivatives.
-  //! \details The index i is cummulative, e.g. for N1 functions for basis
-  //!          1 and N2 functions for basis 2, 1 <= i <= N1 for the first basis
-  //!          and  N1+1 <= i <= N1+N2 for the second basis.
-  //!          The N matrix is then 2 x (N1 + N2), while the dNdX matrix is 4 x (N1 + N2)
-  //!          where the two first rows is the X derivatives
-  //!          and the two last is the Y derivatives.
-  struct Piola {
-    Matrix N; //!< Piola basis functions
-    Matrix dNdX; //!< Piola basis derivatives
-  };
+  //! \brief Matrix holding Piola-mapped basis function values.
+  //! \details The column index \a i is cummulative, e.g., if
+  //! N1 is the number of functions in basis 1 and
+  //! N2 is the number of functions in basis 2, then
+  //! 1 &le; \a i &le; N1 for the first basis and
+  //! N1+1 &le; \a i &le; N1+N2 or the second basis.
+  //! This matrix is therefore of dimension 2&times;(N1+N2).
+  Matrix P;
 
-  Piola piola; //!< Piola mapping
+  //! \brief Matrix holding Piola-mapped basis derivatives.
+  //! \details The column index \a i is cummulative, e.g., if
+  //! N1 is the number of functions in basis 1 and
+  //! N2 is the number of functions in basis 2, then
+  //! 1 &le; \a i &le; N1 for the first basis and
+  //! N1+1 &le; \a i &le; N1+N2 or the second basis.
+  //! This matrix is therefore of dimension 4&times;(N1+N2),
+  //! where the two first rows are the X-derivatives
+  //! and the two last rows are the Y-derivatives.
+  Matrix dPdX;
 
   // Element quantities
   short int           p;    //!< Polynomial order of the basis in u-direction

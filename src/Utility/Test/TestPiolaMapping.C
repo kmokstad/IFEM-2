@@ -17,7 +17,6 @@
 #include "ASMs3Dmx.h"
 #include "CoordinateMapping.h"
 #include "FiniteElement.h"
-#include "PiolaMapping.h"
 #include "SplineUtils.h"
 #include "Vec3.h"
 
@@ -27,6 +26,27 @@
 #include "GoTools/trivariate/SplineVolume.h"
 
 #include <sstream>
+
+
+namespace utl
+{
+  std::vector<matrix<Real>> jacobianGradient(const matrix<Real>& dudX,
+                                             const matrix3d<Real>& d2Xdu2)
+  {
+    std::vector<matrix<Real>> dJ;
+    utl::JacobianGradient(dudX,d2Xdu2,dJ);
+    return dJ;
+  }
+
+  utl::vector<Real> determinantGradient(const matrix<Real>& J,
+                                        const matrix<Real>& Ji,
+                                        const matrix3d<Real>& H)
+  {
+    utl::vector<Real> dJ;
+    utl::detJacGradient(J,Ji,H,dJ);
+    return dJ;
+  }
+}
 
 
 static const char* spline2D = R"(200 1 0 0
@@ -182,19 +202,19 @@ TEST(TestPiolaMapping2D, Basis)
   };
 
   fe.detJxW = detJ;
-  utl::piolaBasis(fe, J);
+  fe.piolaBasis(J);
 
   size_t k = 1;
   for (size_t j = 0; j < 3; ++j)
     for (size_t i = 0; i < 4; ++i, ++k) {
-      EXPECT_NEAR(fe.piola.N(1,k), (3.0*v + 4.0) * c[i](u) * q[j](v) / detJ, 1e-13);
-      EXPECT_NEAR(fe.piola.N(2,k),    (-v - 1.0) * c[i](u) * q[j](v) / detJ, 1e-13);
+      EXPECT_NEAR(fe.P(1,k), (3.0*v + 4.0) * c[i](u) * q[j](v) / detJ, 1e-13);
+      EXPECT_NEAR(fe.P(2,k),    (-v - 1.0) * c[i](u) * q[j](v) / detJ, 1e-13);
     }
 
   for (size_t j = 0; j < 4; ++j)
     for (size_t i = 0; i < 3; ++i, ++k) {
-      EXPECT_NEAR(fe.piola.N(1,k), (3.0*v - 1.0) * q[i](u) * c[j](v) / detJ, 1e-13);
-      EXPECT_NEAR(fe.piola.N(2,k),    (-u + 5.0) * q[i](u) * c[j](v) / detJ, 1e-13);
+      EXPECT_NEAR(fe.P(1,k), (3.0*v - 1.0) * q[i](u) * c[j](v) / detJ, 1e-13);
+      EXPECT_NEAR(fe.P(2,k),    (-u + 5.0) * q[i](u) * c[j](v) / detJ, 1e-13);
     }
 }
 
@@ -262,7 +282,7 @@ TEST(TestPiolaMapping2D, Gradient)
     [](double x) { return 3.0 * x * x; },
   };
 
-  utl::piolaGradient(fe, detJ, J, Ji, dNxdu, H);
+  fe.piolaGradient(detJ, J, Ji, dNxdu, H);
   std::vector<Real> det = utl::determinantGradient(J, Ji, H);
   Matrices dJdX = utl::jacobianGradient(Ji, H);
 
@@ -271,7 +291,7 @@ TEST(TestPiolaMapping2D, Gradient)
     for (size_t i = 0; i < 4; ++i, ++k)
       for (size_t d1 = 1; d1 <= 2; ++d1)
         for (size_t d2 = 1; d2 <= 2; ++d2)
-              EXPECT_NEAR(fe.piola.dNdX((d1 + 2 * (d2 - 1)),k),
+              EXPECT_NEAR(fe.dPdX((d1 + 2 * (d2 - 1)),k),
                           (-det[d2-1] / (detJ * detJ) * J(d1,1) +
                            dJdX[d2-1](d1,1) / detJ) * c[i](u)*q[j](v) +
                            J(d1,1) * (cd[i](u) * q[j](v) * Ji(1,d2) +
@@ -281,7 +301,7 @@ TEST(TestPiolaMapping2D, Gradient)
     for (size_t i = 0; i < 3; ++i, ++k)
       for (size_t d1 = 1; d1 <= 2; ++d1)
         for (size_t d2 = 1; d2 <= 2; ++d2)
-              EXPECT_NEAR(fe.piola.dNdX(d1 + 2 * (d2 - 1),k),
+              EXPECT_NEAR(fe.dPdX(d1 + 2 * (d2 - 1),k),
                           (-det[d2-1] / (detJ * detJ) * J(d1,2) +
                           dJdX[d2-1](d1,2) / detJ) * q[i](u) * c[j](v) +
                           J(d1,2) * (qd[i](u) * c[j](v) * Ji(1,d2) +
@@ -432,31 +452,31 @@ TEST(TestPiolaMapping3D, Basis)
   };
 
   fe.detJxW = detJ;
-  utl::piolaBasis(fe, J);
+  fe.piolaBasis(J);
 
   size_t n = 1;
   for (size_t k = 0; k < 3; ++k)
     for (size_t j = 0; j < 3; ++j)
       for (size_t i = 0; i < 4; ++i, ++n) {
-        EXPECT_NEAR(fe.piola.N(1,n), 2.0 * u * c[i](u) * q[j](v) * q[k](w) / detJ, 1e-13);
-        EXPECT_NEAR(fe.piola.N(2,n),     0.0 * c[i](u) * q[j](v) * q[k](w) / detJ, 1e-13);
-        EXPECT_NEAR(fe.piola.N(3,n), 2.0 * u * c[i](u) * q[j](v) * q[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(1,n), 2.0 * u * c[i](u) * q[j](v) * q[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(2,n),     0.0 * c[i](u) * q[j](v) * q[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(3,n), 2.0 * u * c[i](u) * q[j](v) * q[k](w) / detJ, 1e-13);
       }
 
   for (size_t k = 0; k < 3; ++k)
     for (size_t j = 0; j < 4; ++j)
       for (size_t i = 0; i < 3; ++i, ++n) {
-        EXPECT_NEAR(fe.piola.N(1,n), 2.0 * v * w * q[i](u) * c[j](v) * q[k](w) / detJ, 1e-13);
-        EXPECT_NEAR(fe.piola.N(2,n),         2.0 * q[i](u) * c[j](v) * q[k](w) / detJ, 1e-13);
-        EXPECT_NEAR(fe.piola.N(3,n),         0.0 * q[i](u) * c[j](v) * q[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(1,n), 2.0 * v * w * q[i](u) * c[j](v) * q[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(2,n),         2.0 * q[i](u) * c[j](v) * q[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(3,n),         0.0 * q[i](u) * c[j](v) * q[k](w) / detJ, 1e-13);
       }
 
   for (size_t k = 0; k < 4; ++k)
     for (size_t j = 0; j < 3; ++j)
       for (size_t i = 0; i < 3; ++i, ++n) {
-        EXPECT_NEAR(fe.piola.N(1,n),       v * v * q[i](u) * q[j](v) * c[k](w) / detJ, 1e-13);
-        EXPECT_NEAR(fe.piola.N(2,n), 3.0 * w * w * q[i](u) * q[j](v) * c[k](w) / detJ, 1e-13);
-        EXPECT_NEAR(fe.piola.N(3,n),         3.0 * q[i](u) * q[j](v) * c[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(1,n),       v * v * q[i](u) * q[j](v) * c[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(2,n), 3.0 * w * w * q[i](u) * q[j](v) * c[k](w) / detJ, 1e-13);
+        EXPECT_NEAR(fe.P(3,n),         3.0 * q[i](u) * q[j](v) * c[k](w) / detJ, 1e-13);
       }
 }
 
@@ -529,7 +549,7 @@ TEST(TestPiolaMapping3D, Gradient)
     [](double x) { return 3.0 * x * x; },
   };
 
-  utl::piolaGradient(fe, detJ, J, Ji, dNxdu, H);
+  fe.piolaGradient(detJ, J, Ji, dNxdu, H);
   std::vector<Real> det = utl::determinantGradient(J, Ji, H);
   Matrices dJdX = utl::jacobianGradient(Ji, H);
 
@@ -539,7 +559,7 @@ TEST(TestPiolaMapping3D, Gradient)
       for (size_t i = 0; i < 4; ++i, ++n)
         for (size_t d1 = 1; d1 <= 3; ++d1)
           for (size_t d2 = 1; d2 <= 3; ++d2)
-            EXPECT_NEAR(fe.piola.dNdX(d1 + 3 * (d2-1),n),
+            EXPECT_NEAR(fe.dPdX(d1 + 3 * (d2-1),n),
                          (-det[d2-1] / (detJ * detJ) * J(d1,1) +
                          dJdX[d2-1](d1,1) / detJ) * c[i](u) * q[j](v) * q[k](w) +
                          J(d1,1) * (cd[i](u) * q[j](v) * q[k](w) * Ji(1,d2) +
@@ -551,7 +571,7 @@ TEST(TestPiolaMapping3D, Gradient)
       for (size_t i = 0; i < 3; ++i, ++n)
         for (size_t d1 = 1; d1 <= 3; ++d1)
           for (size_t d2 = 1; d2 <= 3; ++d2)
-            EXPECT_NEAR(fe.piola.dNdX(d1 + 3 * (d2-1),n),
+            EXPECT_NEAR(fe.dPdX(d1 + 3 * (d2-1),n),
                          (-det[d2-1] / (detJ * detJ) * J(d1,2) +
                          dJdX[d2-1](d1,2) / detJ) * q[i](u) * c[j](v) * q[k](w) +
                          J(d1,2) * (qd[i](u) * c[j](v) * q[k](w) * Ji(1,d2) +
@@ -563,7 +583,7 @@ TEST(TestPiolaMapping3D, Gradient)
       for (size_t i = 0; i < 3; ++i, ++n)
         for (size_t d1 = 1; d1 <= 3; ++d1)
           for (size_t d2 = 1; d2 <= 3; ++d2)
-            EXPECT_NEAR(fe.piola.dNdX(d1 + 3 * (d2-1),n),
+            EXPECT_NEAR(fe.dPdX(d1 + 3 * (d2-1),n),
                          (-det[d2-1] / (detJ * detJ) * J(d1,3) +
                          dJdX[d2-1](d1,3) / detJ) * q[i](u) * q[j](v) * c[k](w) +
                          J(d1,3) * (qd[i](u) * q[j](v) * c[k](w) * Ji(1,d2) +
