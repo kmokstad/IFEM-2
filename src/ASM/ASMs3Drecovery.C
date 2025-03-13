@@ -189,11 +189,10 @@ bool ASMs3D::assembleL2matrices (SparseMatrix& A, StdVector& B,
   if (continuous && !wg) return false;
 
   // Compute parameter values of the Gauss points over the whole patch
-  Matrix gp;
   std::array<RealArray,3> gpar;
-  gpar[0] = this->getGaussPointParameters(gp,0,ng1,xg,proj);
-  gpar[1] = this->getGaussPointParameters(gp,1,ng2,yg,proj);
-  gpar[2] = this->getGaussPointParameters(gp,2,ng3,zg,proj);
+  this->getGaussPointParameters(gpar[0],0,ng1,xg,proj);
+  this->getGaussPointParameters(gpar[1],1,ng2,yg,proj);
+  this->getGaussPointParameters(gpar[2],2,ng3,zg,proj);
 
   // Evaluate basis functions at all integration points
   std::vector<Go::BasisPts>    spl1;

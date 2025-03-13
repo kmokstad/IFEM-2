@@ -390,11 +390,10 @@ protected:
   //! \param[in] xi Dimensionless Gauss point coordinates [-1,1]
   //! \param[in] crv Spline curve with element structure
   //! \param[in] skipNullSpans If \e true, consider non-zero knot spans only
-  //! \return The parameter value matrix casted into a one-dimensional vector
-  const RealArray& getGaussPointParameters(Matrix& uGP, int nGauss,
-                                           const double* xi,
-                                           const Go::SplineCurve* crv = nullptr,
-                                           bool skipNullSpans = false) const;
+  bool getGaussPointParameters(RealArray& uGP,
+                               int nGauss, const double* xi,
+                               const Go::SplineCurve* crv = nullptr,
+                               bool skipNullSpans = false) const;
 
   //! \brief Calculates parameter values for the Greville points.
   //! \param[out] prm Parameter values for all points
