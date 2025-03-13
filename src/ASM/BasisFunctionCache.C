@@ -51,7 +51,7 @@ bool BasisFunctionCache<Dim>::init (int nd)
   }
 
   values.resize(nTotal);
-  if (this->hasReduced())
+  if (!reducedQ->gpar.front().empty())
     valuesRed.resize(nTotalRed);
   if (ASM::cachePolicy != ASM::ON_THE_FLY)
     this->calculateAll();
@@ -99,7 +99,8 @@ double BasisFunctionCache<Dim>::getParam (int dir, size_t el,
                                           size_t gp, bool reduced) const
 {
   const Quadrature& q = reduced ? *reducedQ : *mainQ;
-  return q.gpar[dir](gp+1,el+1);
+
+  return q.gpar[dir][gp+q.ng[dir]*el];
 }
 
 
@@ -108,7 +109,9 @@ size_t BasisFunctionCache<Dim>::index (size_t el, size_t gp, bool reduced) const
 {
   const Quadrature& q = reduced ? *reducedQ : *mainQ;
 
-  if constexpr (Dim == 2)
+  if constexpr (Dim == 1)
+    return el*q.ng[0] + gp;
+  else if constexpr (Dim == 2)
     return el*q.ng[0]*q.ng[1] + gp;
   else if constexpr (Dim == 3)
     return el*q.ng[0]*q.ng[1]*q.ng[2] + gp;
@@ -120,8 +123,9 @@ std::array<size_t,Dim>
 BasisFunctionCache<Dim>::gpIndex (size_t gp, bool reduced) const
 {
   const Quadrature& q = reduced ? *reducedQ : *mainQ;
+
   if constexpr (Dim == 1)
-    return {gp};
+    return { gp };
   else if constexpr (Dim == 2)
     return { gp % q.ng[0], gp / q.ng[0] };
   else if constexpr (Dim == 3)
@@ -139,7 +143,7 @@ void BasisFunctionCache<Dim>::resizeThreadBuffers ()
     size_t size = 1;
 #endif
     values.resize(size);
-    if (this->hasReduced())
+    if (!reducedQ->gpar.front().empty())
       valuesRed.resize(size);
   }
 }

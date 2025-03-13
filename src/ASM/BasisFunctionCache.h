@@ -72,9 +72,6 @@ public:
   const std::array<const double*,Dim>& coord(bool reduced = false) const
   { return reduced ? reducedQ->xg : mainQ->xg; }
 
-  //! \brief Returns whether or not a reduced quadrature is enabled.
-  bool hasReduced() const { return !reducedQ->gpar[0].empty(); }
-
   //! \brief Obtain a single integration point parameter.
   //! \param dir Direction of for integration point
   //! \param el Element number in given direction
@@ -90,7 +87,7 @@ public:
 protected:
   //! \brief Template struct holding information about a quadrature.
   struct Quadrature {
-    std::array<Matrix,Dim> gpar; //!< Array with global integration point parameters
+    std::array<RealArray,Dim> gpar; //!< Array with global integration point parameters
     std::array<int,Dim> ng; //!< Number of integration point in each dimension
     std::array<const double*,Dim> wg; //!< Integration scheme weights in each dimension
     std::array<const double*,Dim> xg; //!< Integration scheme nodes in each dimension
@@ -98,8 +95,7 @@ protected:
     //! \brief Clears out configured quadrature.
     void reset()
     {
-      for (Matrix& g : gpar)
-        g.clear();
+      gpar.fill({});
       ng.fill(0);
       xg.fill(nullptr);
       wg.fill(nullptr);
