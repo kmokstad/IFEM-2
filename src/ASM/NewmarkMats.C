@@ -61,7 +61,13 @@ const Matrix& NewmarkMats::getNewtonMatrix () const
     std::cout <<"Element stiffness matrix"<< A[2];
   if (A.size() > 3)
     std::cout <<"Element damping matrix"<< A[3];
-  std::cout <<"Resulting Newton matrix"<< A[0];
+  const double dscale = slvDisp ? 1.0/(beta*h*h) : 1.0;
+  std::cout <<"scale(M) = "<< (alpha_m + alpha_f*alpha1*gamma*h)*dscale;
+  if (A.size() > 3)
+    std::cout <<"  scale(C) = "<< alpha_f*gamma*h*dscale;
+  if (A.size() > 2)
+    std::cout <<"  scale(K) = "<< alpha_f*(alpha2*gamma + beta*h)*h*dscale;
+  std::cout <<"\nResulting Newton matrix"<< A[0];
 #endif
 
   return A.front();
