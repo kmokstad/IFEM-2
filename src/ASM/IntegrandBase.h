@@ -345,6 +345,11 @@ public:
   //! \brief Returns nodal DOF flags for monolithic coupled integrands.
   virtual void getNodalDofTypes(std::vector<char>&) const {}
 
+  //! \brief Advances the time step scheme one step (for transient problems).
+  virtual bool advanceStep() { return false; }
+  //! \brief Advances the time step scheme one step (for transient problems).
+  virtual bool advanceStep(const TimeDomain&) { return this->advanceStep(); }
+
   //! \brief Returns current time/load parameter for 2ndary solution evaluation.
   double getTimeLevel() const { return myTime; }
 
