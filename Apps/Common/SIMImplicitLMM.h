@@ -51,6 +51,8 @@ public:
       order = 1;
 
     loads.resize(order, nullptr);
+
+    Solver::msgLevel = 1; // prints primary solution summary only
   }
 
   //! \brief Destructor frees up the load vectors.
@@ -60,8 +62,7 @@ public:
       delete v;
   }
 
-  //! \brief Returns the parallel process administrator.
-  //! \copydoc ISolver::getProcessAdm
+  //! \copydoc ISolver::getProcessAdm()
   const ProcessAdm& getProcessAdm() const { return solver.getProcessAdm(); }
 
   //! \copydoc ISolver::solveStep(TimeStep&)
@@ -77,7 +78,7 @@ public:
        {1.0/24.0, -5.0/24, 19.0/24.0, 9.0/24.0},
        {-19.0/720.0, 106.0/720.0, -264.0/720.0, 646.0/720.0, 251.0/720.0}};
 
-    int c_order = hasICs? order-1 : std::min(order-1, tp.step-1);
+    const int c_order = hasICs ? order-1 : std::min(order-1, tp.step-1);
     nSim.setCoefs(AM_coefs[c_order]);
 
     nSim.initSol(2);
