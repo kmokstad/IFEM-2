@@ -610,12 +610,9 @@ bool SIMbase::initSystem (LinAlg::MatrixType mType,
     mType = LinAlg::DENSE;
   }
 
-  bool forcePA = false;
   // Force pre-assembly of sparse matrices if not all elements are active at the
   // start of the simulation to ensure the final sparsity pattern is established
-  if (mType == LinAlg::SPARSE)
-    forcePA = std::any_of(myModel.begin(), myModel.end(),
-                          [](ASMbase* p){ return p->getElementActivator(); });
+  const bool forcePA = mType == LinAlg::SPARSE && this->hasElementActivator();
 
   return myEqSys->init(mType, mySolParams, nMats, nVec, nScl,
                        withRF, opt.num_threads_SLU, forcePA);
@@ -975,12 +972,40 @@ bool SIMbase::updateGrid (const std::string& field)
 }
 
 
-bool SIMbase::hasElementActivator () const
+/*!
+  If \a t1 > \a t0 this method returns \e true only if some elements are
+  activated within the time range (\a t0,\a t1]. If \a t1 < \a t0, it returns
+  \e true if at least one patch has an element activation function defined.
+  If \a t1 equals \a t0, the method always returns \e false.
+*/
+
+bool SIMbase::hasElementActivator (double t1, double t0) const
 {
-  return std::any_of(myModel.begin(), myModel.end(),
-                     [](const ASMbase* p){ return p->getElementActivator(); });
+  if (std::none_of(myModel.begin(), myModel.end(),
+                   [](const ASMbase* p){ return p->getElementActivator(); }))
+    return false;
+  else if (t1 < t0-1.0e-12)
+    return true;
+  else if (t1 < t0+1.0e-12)
+    return false;
+
+  // Check for newly activated elements
+  for (const ASMbase* pch : myModel)
+    if (pch->getElementActivator())
+      for (size_t iel = 0; iel < pch->getNoElms(true); iel++)
+        if (pch->isElementActive(iel,t1) && !pch->isElementActive(iel,t0))
+          return true;
+
+  return false;
 }
 
+
+/*!
+  The nodes that are connected only to elements that are activated in
+  the current (not yet calculated) step, are assigned initial values
+  equal to the mean of the other already activated nodes, that are
+  connected to the newly activated element.
+*/
 
 void SIMbase::updateForNewElements (Vector& solution,
                                     const TimeDomain& time) const
@@ -1017,10 +1042,12 @@ void SIMbase::updateForNewElements (Vector& solution,
           const IntVec& elmNodes = pch->getElementNodes(iel);
           for (int inod : elmNodes)
             if (oldNodes.find(pch->getNodeID(1+inod)) != oldNodes.end())
+            {
               if (++count == 1)
                 oldSol.fill(solution.ptr()+nf*inod);
               else
                 oldSol.add(Vector(solution.ptr()+nf*inod,nf));
+            }
           if (count > 1) oldSol /= static_cast<double>(count);
 #ifdef SP_DEBUG
           std::cout <<"\nAverage solution of new active element "

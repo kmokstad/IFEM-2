@@ -266,7 +266,9 @@ public:
   int getRefined() const { return isRefined; }
 
   //! \brief Returns \e true if an element activation function is specified.
-  bool hasElementActivator() const;
+  //! \param[in] t1 Check if elements are activated in the range (\a t0,\a t1]
+  //! \param[in] t0 Check if elements are activated in the range (\a t0,\a t1]
+  bool hasElementActivator(double t1 = -1.0, double t0 = 0.0) const;
 
   //! \brief Modifies the current solution vector when activating elements.
   //! \param solution Current primary solution vector
