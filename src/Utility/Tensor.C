@@ -1027,6 +1027,38 @@ SymmTensor& SymmTensor::rightCauchyGreen (const Tensor& F)
 }
 
 
+SymmTensor& SymmTensor::leftCauchyGreen (const Tensor& F)
+{
+  this->redim(F.dim());
+
+  switch (n) {
+  case 1:
+    v[0] = F(1,1)*F(1,1);
+    break;
+
+  case 2:
+    v[0] = F(1,1)*F(1,1) + F(1,2)*F(1,2);
+    v[1] = F(2,1)*F(2,1) + F(2,2)*F(2,2);
+    v[2] = F(1,1)*F(2,1) + F(1,2)*F(2,2);
+    break;
+
+  case 3:
+    v[0] = F(1,1)*F(1,1) + F(1,2)*F(1,2) + F(1,3)*F(1,3);
+    v[1] = F(2,1)*F(2,1) + F(2,2)*F(2,2) + F(2,3)*F(2,3);
+    v[2] = F(3,1)*F(3,1) + F(3,2)*F(3,2) + F(3,3)*F(3,3);
+    v[3] = F(1,1)*F(2,1) + F(1,2)*F(2,2) + F(1,3)*F(2,3);
+    v[4] = F(2,1)*F(3,1) + F(2,2)*F(3,2) + F(2,3)*F(3,3);
+    v[5] = F(1,1)*F(3,1) + F(1,2)*F(3,2) + F(1,3)*F(3,3);
+    break;
+
+  default:
+    break;
+  }
+
+  return *this;
+}
+
+
 SymmTensor& SymmTensor::outerProd (const Vec3& u)
 {
   switch (n) {

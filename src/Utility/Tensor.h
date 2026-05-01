@@ -74,7 +74,7 @@ public:
   operator std::vector<Real>&() { return v; }
 
   //! \brief Reference through a pointer.
-  const Real* ptr() const { return &v.front(); }
+  const Real* ptr() const { return v.data(); }
 
   //! \brief Index-1 based component reference.
   const Real& operator()(t_ind i, t_ind j) const { return v[this->index(i,j)]; }
@@ -251,6 +251,8 @@ public:
 
   //! \brief Constructs the right Cauchy-Green tensor from a deformation tensor.
   SymmTensor& rightCauchyGreen(const Tensor& F);
+  //! \brief Constructs the left Cauchy-Green tensor from a deformation tensor.
+  SymmTensor& leftCauchyGreen(const Tensor& F);
 
   //! \brief Dyadic (outer) product between two identical vectors.
   SymmTensor& outerProd(const Vec3& u);
