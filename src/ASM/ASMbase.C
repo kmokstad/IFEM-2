@@ -770,6 +770,28 @@ void ASMbase::makePeriodic (size_t master, size_t slave, int dirs)
 }
 
 
+bool ASMbase::selfInterconnect (const std::vector<Ipair>& nodes)
+{
+  size_t nonMatching = 0;
+  for (const Ipair& np : nodes)
+    else if (this->getCoord(np.first).equal(this->getCoord(np.second),xtol))
+      ASMbase::collapseNodes(*this,np.first,*this,np.second);
+    else if (++nonMatching <= 20)
+      std::cerr <<" *** ASMbase::selfInterconnect: Non-matching nodes "
+                << np.first <<": "<< this->getCoord(np.first)
+                <<"\n                                          and "
+                << np.second <<": "<< this->getCoord(np.second) << std::endl;
+    else if (nonMatching == 21)
+      std::cerr <<"     ..."<< std::endl;
+
+  if (nonMatching > 20)
+    std::cerr <<" *** ASMbase::selfInterconnect: A total of "<< nonMatching
+              <<" nodes were detected."<< std::endl;
+
+  return nonMatching == 0;
+}
+
+
 void ASMbase::constrainPatch (int dof, int code)
 {
   if (code > 0)

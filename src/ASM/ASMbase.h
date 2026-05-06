@@ -24,6 +24,7 @@
 
 using IntVec = std::vector<int>;    //!< General integer vector
 using IntMat = std::vector<IntVec>; //!< General 2D integer matrix
+using Ipair  = std::pair<int,int>;  //!< A pair of integers
 
 using MPCMap  = std::map<MPC*,int,MPCLess>; //!< MPC-to-function code mapping
 using MPCSet  = std::set<MPC*,MPCLess>; //!< Sorted set of MPC-equations
@@ -997,6 +998,9 @@ public:
   //! \param[in] dof Local indices of the DOFs to check
   //! \param[in] all Returns \e true only if all DOFs are fixed
   bool isFixed(int node, int dof, bool all = false) const;
+  //! \brief Connects a list of node pairs to each other.
+  //! \param[in] nodes list of node pairs that should share common DOFs.
+  bool selfInterconnect(const std::vector<Ipair>& nodes);
 
 protected:
   //! \brief Returns \e true if \a dirs constains all local DOFs in the patch.
