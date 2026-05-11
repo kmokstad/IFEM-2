@@ -25,10 +25,14 @@ bool utl::parseIntegers (std::vector<int>& values, const char* argv)
 
   size_t old = values.size();
   char* endp = const_cast<char*>(argv);
-  while (endp && strlen(endp) > 0)
+  while (strlen(endp) > 0)
   {
     values.push_back(strtol(endp,&endp,10));
-    if (endp && *endp == ':')
+    if (!endp)
+      break;
+    else if (*endp == ',')
+      ++endp;
+    else if (*endp == ':')
     {
       int endVal = strtol(endp+1,&endp,10);
       while (values.back() < endVal)
