@@ -2631,13 +2631,75 @@ bool SIMbase::fieldProjections () const
 }
 
 
-bool SIMbase::extractPatchElmRes (const Matrix& glbRes, Matrix& elRes,
-				  int pindx) const
-{
-  ASMbase* pch = pindx >= 0 ? this->getPatch(pindx+1) : nullptr;
-  if (!pch || glbRes.empty()) return false;
+/*!
+  This method is used in the HDF5 exporter, to extract the patch-level element
+  results from the global norm array together with the associated component name
+  from the underlying NormBase object of the integrand. If \a pindx is negative,
+  only the component name is extracted and no results data.
+*/
 
-  pch->extractElmRes(glbRes,elRes);
+bool SIMbase::extractElmRes (const Matrix& glbRes, Vector& elRes,
+                             size_t row, int pindx, std::string& name) const
+{
+  const size_t nEfield = myProblem->getNoFields(4);
+  if (nEfield > 0 && row <= nEfield)
+    name = myProblem->getEFieldName(row);
+  else if (NormBase* norm = myProblem->getNormIntegrand(mySol); norm)
+  {
+    const size_t normGrp = std::max(norm->getNoFields(0), 1+opt.project.size());
+    SIMoptions::ProjectionMap::const_iterator pit = opt.project.end();
+
+    // Find the name of this result component from the NormBase object
+    bool found = false;
+    for (size_t j = 1; j <= normGrp && !found; j++)
+    {
+      for (size_t k = 1; k <= norm->getNoFields(j) && !found; k++)
+        if (nEfield+k == row && norm->hasElementContributions(j,k))
+        {
+          found = true;
+          if (pit != opt.project.end())
+            name = norm->getName(j, k, pit->second.c_str());
+          else
+            name = norm->getName(j, k);
+        }
+
+      if (j == 1)
+        pit = opt.project.begin();
+      else if (pit != opt.project.end())
+	++pit;
+    }
+
+    delete norm;
+    if (!found)
+      return false; // No element contribution for this component
+  }
+  else
+    name = "norm_" + std::to_string(row);
+
+  return pindx >= 0 ? this->extractElmRes(glbRes,elRes,row,pindx) : true;
+}
+
+
+bool SIMbase::extractElmRes (const Matrix& glbRes, Vector& elRes,
+                             size_t row, int pindx) const
+{
+  if (row > glbRes.rows()) return false;
+
+  ASMbase* pch = this->getPatch(pindx+1);
+  if (!pch) return false;
+
+  pch->getOutputMaster()->extractElmRes(glbRes,elRes,row);
+  return true;
+}
+
+
+bool SIMbase::extractElmRes (const Vector& glbRes, Vector& elRes,
+                             int pindx) const
+{
+  ASMbase* pch = this->getPatch(pindx+1);
+  if (!pch) return false;
+
+  pch->getOutputMaster()->extractElmRes(glbRes,elRes);
   return true;
 }
 

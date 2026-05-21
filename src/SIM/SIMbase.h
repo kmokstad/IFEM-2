@@ -673,8 +673,23 @@ public:
   //! \brief Extracts element results for a specified patch.
   //! \param[in] glbRes Global element result array
   //! \param[out] elRes Patch-level element result array
+  //! \param[in] row Index of the row the extract from \a glbRes
   //! \param[in] pindx Local patch index to extract element results for
-  bool extractPatchElmRes(const Matrix& glbRes, Matrix& elRes, int pindx) const;
+  //! \param[out] name Name of the result component associated with row \a row
+  bool extractElmRes(const Matrix& glbRes, Vector& elRes,
+                     size_t row, int pindx, std::string& name) const;
+  //! \brief Extracts element results for a specified patch.
+  //! \param[in] glbRes Global element result array
+  //! \param[out] elRes Patch-level element result array
+  //! \param[in] row Index of the row the extract from \a glbRes
+  //! \param[in] pindx Local patch index to extract element results for
+  bool extractElmRes(const Matrix& glbRes, Vector& elRes,
+                     size_t row, int pindx) const;
+  //! \brief Extracts element results for a specified patch.
+  //! \param[in] glbRes Global element result array
+  //! \param[out] elRes Patch-level element result array
+  //! \param[in] pindx Local patch index to extract element results for
+  bool extractElmRes(const Vector& glbRes, Vector& elRes, int pindx) const;
 
   //! \brief Returns the local patch index for the given global patch number.
   //! \details For serial applications this is an identity mapping only, whereas
