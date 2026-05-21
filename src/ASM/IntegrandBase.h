@@ -301,6 +301,9 @@ public:
   //! \param[in] idx Field component index
   //! \param[in] prefix Name prefix for all components
   virtual std::string getField2Name(size_t idx, const char* prefix = 0) const;
+  //! \brief Returns the name of an element-wise solution field component.
+  //! \param[in] idx Field component index
+  virtual std::string getEFieldName(size_t idx) const;
   //! \brief Filters a result components for output.
   virtual bool suppressOutput(size_t, ASM::ResultClass) const { return false; }
 
