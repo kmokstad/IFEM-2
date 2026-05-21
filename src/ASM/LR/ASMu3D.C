@@ -2445,16 +2445,6 @@ void ASMu3D::generateProjThreadGroupsFromElms (const IntVec& elms)
 }
 
 
-void ASMu3D::extractElmRes (const Matrix& globRes, Matrix& elmRes,
-                            size_t internalFirst) const
-{
-  if (outputMaster)
-    outputMaster->extractElmRes(globRes, elmRes, internalFirst);
-  else
-    this->ASMbase::extractElmRes(globRes, elmRes, internalFirst);
-}
-
-
 void ASMu3D::copyRefinement (LR::LRSplineVolume* basis, int multiplicity) const
 {
   const LR::LRSplineVolume* from = this->getBasis(ASM::REFINEMENT_BASIS);

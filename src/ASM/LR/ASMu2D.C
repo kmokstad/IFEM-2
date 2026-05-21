@@ -3061,16 +3061,6 @@ void ASMu2D::storeMesh (const std::string& fName, int fType) const
 }
 
 
-void ASMu2D::extractElmRes (const Matrix& globRes, Matrix& elmRes,
-                            size_t internalFirst) const
-{
-  if (outputMaster)
-    outputMaster->extractElmRes(globRes, elmRes, internalFirst);
-  else
-    this->ASMbase::extractElmRes(globRes, elmRes, internalFirst);
-}
-
-
 void ASMu2D::copyRefinement (LR::LRSplineSurface* basis, int multiplicity) const
 {
   const LR::LRSplineSurface* from = this->getBasis(ASM::REFINEMENT_BASIS);
