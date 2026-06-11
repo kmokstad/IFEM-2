@@ -1,0 +1,54 @@
+name: Deploy to github pages
+
+on:
+  push:
+    tags:
+      - "release/*.*"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-doc:
+    name: Build API documentation
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install doxygen
+        run: |
+          sudo apt -y install doxygen graphviz
+
+      - name: Checkout source code repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout latest release tag
+        run: |
+          echo "MY_TAG=`git tag -l --sort=version:refname 'release/*.*' | tail -1`" >> $GITHUB_ENV
+          git checkout ${{ env.MY_TAG }}
+
+      - name: Configure for build
+        run: cmake . -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build the documentation
+        run: make doc
+
+      - name: Check build status
+        run: |
+          set +e
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          .github/scripts/check_doc.sh
+          echo "NEW_DOC=$?" >> $GITHUB_ENV
+
+      - name: Push updated documentation
+        if: env.NEW_DOC != 0
+        run: |
+          git commit -m"Update source code documentation"
+          git push origin HEAD
