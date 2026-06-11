@@ -2327,9 +2327,17 @@ bool Mode::computeDamping (const SystemMatrix& mat)
 }
 
 
+/*!
+  If \a updNewPt is \e true and the model uses element activation,
+  control point values connected to not-yet activated elements only
+  are initialized to the average of the other control points
+  connected to the same element, before the projection is performed.
+  See extractPatchSolution().
+*/
+
 bool SIMbase::project (Matrix& ssol, const Vector& psol,
-		       SIMoptions::ProjectionMethod method,
-		       const TimeDomain& time) const
+                       SIMoptions::ProjectionMethod method,
+                       const TimeDomain& time, bool updNewPt) const
 {
   PROFILE1("Solution projection");
 
@@ -2338,6 +2346,7 @@ bool SIMbase::project (Matrix& ssol, const Vector& psol,
 
   ssol.clear();
 
+  const double extrTime = updNewPt ? time.t : 0.0;
   size_t ngNodes = this->fieldProjections() ? 0 : this->getNoNodes(1);
   Vector count(myModel.size() > 1 ? ngNodes : 0);
   Matrix values;
@@ -2382,7 +2391,7 @@ bool SIMbase::project (Matrix& ssol, const Vector& psol,
       continue; // skip empty or inactive patches
 
     // Extract the primary solution control point values for this patch
-    if (!this->extractPatchSolution(myProblem,{psol},idx-1,time.t))
+    if (!this->extractPatchSolution(myProblem,{psol},idx-1,extrTime))
       return false;
 
     // Initialize material properties for this patch in case of multiple regions
@@ -2668,6 +2677,11 @@ bool SIMbase::extractPatchSolution (IntegrandBase* problem, const Vectors& sol,
     else
       problem->getSolution(i).clear();
 
+#if SP_DEBUG > 1
+  for (size_t i = 0; i < problem->getNoSolutions(); i++)
+    std::cout <<"\nSolution vector "<< i+1 <<" for Patch "<< pch->idx+1
+              << problem->getSolution(i);
+#endif
   return this->extractPatchDependencies(problem,myModel,pindx);
 }
 
