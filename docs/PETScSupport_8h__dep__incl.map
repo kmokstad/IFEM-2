@@ -1,0 +1,12 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSupport.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSupport.h">
+<area shape="rect" id="node1" title="IFEM PETSc support." alt="" coords="224,5,480,47"/>
+<area shape="rect" id="node2" href="$SAMpatchPETSc_8h.html" title="Evaluation of global norms for distributed models." alt="" coords="5,206,267,247"/>
+<area shape="rect" id="node4" href="$LinAlgInit_8C.html" title="Initializer for linear algebra packages." alt="" coords="161,102,391,143"/>
+<area shape="rect" id="node5" href="$PETScMatrix_8h.html" title="Representation of the system matrix in PETSc format with interface to PETSc routines for assembling a..." alt="" coords="297,206,545,247"/>
+<area shape="rect" id="node9" href="$PETScSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="466,95,681,151"/>
+<area shape="rect" id="node3" href="$SAMpatchPETSc_8C.html" title="Evaluation of global norms for distributed models." alt="" coords="59,303,322,344"/>
+<area shape="rect" id="node6" href="$PETScMatrix_8C.html" title="Representation of the system matrix in PETSc format." alt="" coords="266,392,515,433"/>
+<area shape="rect" id="node7" href="$PETScSchurPC_8h.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="428,303,687,344"/>
+<area shape="rect" id="node8" href="$PETScSchurPC_8C.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="539,392,799,433"/>
+<area shape="rect" id="node10" href="$PETScSolParams_8C.html" title="Linear solver parameters for PETSc." alt="" coords="570,199,785,255"/>
+</map>

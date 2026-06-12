@@ -1,0 +1,10 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/LR/LRSplineField.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/LR/LRSplineField.h">
+<area shape="rect" id="node1" title="Utility class for LR spline&#45;based finite element fields." alt="" coords="737,5,957,61"/>
+<area shape="rect" id="node2" href="$LRSplineField_8C.html" title="Utility class for LR spline&#45;based finite element fields." alt="" coords="5,109,225,165"/>
+<area shape="rect" id="node3" href="$LRSplineField2D_8C.html" title="Class for LR spline&#45;based finite element scalar field in 2D." alt="" coords="249,109,469,165"/>
+<area shape="rect" id="node4" href="$LRSplineField3D_8C.html" title="Class for LR spline&#45;based finite element scalar field in 3D." alt="" coords="493,109,713,165"/>
+<area shape="rect" id="node5" href="$LRSplineFields2D_8C.html" title="Class for LR spline&#45;based finite element vector fields in 2D." alt="" coords="737,109,957,165"/>
+<area shape="rect" id="node6" href="$LRSplineFields2Dmx_8C.html" title="Class for mixed LR spline&#45;based finite element vector fields in 2D." alt="" coords="981,109,1201,165"/>
+<area shape="rect" id="node7" href="$LRSplineFields3D_8C.html" title="Class for LR spline&#45;based finite element vector fields in 3D." alt="" coords="1225,109,1445,165"/>
+<area shape="rect" id="node8" href="$LRSplineFields3Dmx_8C.html" title="Class for LR spline&#45;based finite element mixed vector fields in 3D." alt="" coords="1469,109,1689,165"/>
+</map>

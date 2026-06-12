@@ -1,0 +1,10 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/LinAlgInit.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/LinAlgInit.h">
+<area shape="rect" id="node1" title="Initializer for linear algebra packages." alt="" coords="761,5,989,47"/>
+<area shape="rect" id="node2" href="$IFEM_8C.html" title="Initialization of the IFEM library." alt="" coords="5,102,187,143"/>
+<area shape="rect" id="node3" href="$SAMpatchPETSc_8C.html" title="Evaluation of global norms for distributed models." alt="" coords="211,102,474,143"/>
+<area shape="rect" id="node4" href="$ISTLMatrix_8C.html" title="Representation of the system matrix in ISTL format." alt="" coords="499,102,736,143"/>
+<area shape="rect" id="node5" href="$LinAlgInit_8C.html" title="Initializer for linear algebra packages." alt="" coords="760,102,989,143"/>
+<area shape="rect" id="node6" href="$PETScMatrix_8C.html" title="Representation of the system matrix in PETSc format." alt="" coords="1014,102,1263,143"/>
+<area shape="rect" id="node7" href="$ProcessAdm_8C.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="1287,102,1535,143"/>
+<area shape="rect" id="node8" href="$Profiler_8C.html" title="Simple profiling of computational tasks." alt="" coords="1559,95,1740,151"/>
+</map>

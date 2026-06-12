@@ -1,0 +1,15 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs1D.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs1D.h">
+<area shape="rect" id="node1" title="Driver for assembly of structured 1D spline FE models." alt="" coords="795,5,1005,47"/>
+<area shape="rect" id="node2" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="292,102,503,143"/>
+<area shape="rect" id="node3" href="$ASMs1DC1_8h.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="787,102,1013,143"/>
+<area shape="rect" id="node6" href="$ASMs1DLag_8h.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="527,102,761,143"/>
+<area shape="rect" id="node12" href="$MultiPatchModelGenerator_8C.html" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="1037,95,1264,151"/>
+<area shape="rect" id="node13" href="$SIMNodalConstraint_8C.html" title="Base class for simulators constraining a topologyset to a given node." alt="" coords="1289,95,1509,151"/>
+<area shape="rect" id="node4" href="$ASM1D_8C.html" title="Abstract interface for 1D patches." alt="" coords="666,288,870,329"/>
+<area shape="rect" id="node5" href="$ASMs1DC1_8C.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="789,199,1017,240"/>
+<area shape="rect" id="node7" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="264,199,499,240"/>
+<area shape="rect" id="node8" href="$ASMs1DSpec_8h.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="523,199,765,240"/>
+<area shape="rect" id="node10" href="$ASMu1DLag_8h.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="5,199,240,240"/>
+<area shape="rect" id="node9" href="$ASMs1DSpec_8C.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="399,288,641,329"/>
+<area shape="rect" id="node11" href="$ASMu1DLag_8C.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="5,288,240,329"/>
+</map>

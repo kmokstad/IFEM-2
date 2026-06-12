@@ -1,0 +1,21 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/SAM.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/SAM.C">
+<area shape="rect" id="node1" title="Assembly of FE matrices into system matrices." alt="" coords="375,5,573,47"/>
+<area shape="rect" id="node2" href="$SAM_8h.html" title="Assembly of FE matrices into system matrices." alt="" coords="262,95,326,121"/>
+<area shape="rect" id="node16" href="$SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="350,95,475,121"/>
+<area shape="rect" id="node18" title=" " alt="" coords="499,95,574,121"/>
+<area shape="rect" id="node19" title=" " alt="" coords="598,95,673,121"/>
+<area shape="rect" id="node3" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="343,169,426,196"/>
+<area shape="rect" id="node14" title=" " alt="" coords="202,169,245,196"/>
+<area shape="rect" id="node15" title=" " alt="" coords="269,169,319,196"/>
+<area shape="rect" id="node4" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="338,244,431,271"/>
+<area shape="rect" id="node5" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="346,319,423,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,393,68,420"/>
+<area shape="rect" id="node7" title=" " alt="" coords="93,393,173,420"/>
+<area shape="rect" id="node8" title=" " alt="" coords="197,393,282,420"/>
+<area shape="rect" id="node9" title=" " alt="" coords="306,393,373,420"/>
+<area shape="rect" id="node10" title=" " alt="" coords="397,393,463,420"/>
+<area shape="rect" id="node11" title=" " alt="" coords="487,393,549,420"/>
+<area shape="rect" id="node12" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="573,393,641,420"/>
+<area shape="rect" id="node13" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="666,393,754,420"/>
+<area shape="rect" id="node17" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="451,169,569,196"/>
+</map>

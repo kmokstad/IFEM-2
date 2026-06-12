@@ -1,0 +1,18 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/HHTMats.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/HHTMats.C">
+<area shape="rect" id="node1" title="Representation of the element matrices for a dynamic FEM problem." alt="" coords="276,5,493,47"/>
+<area shape="rect" id="node2" href="$HHTMats_8h.html" title="Representation of the element matrices for a dynamic FEM problem." alt="" coords="337,95,432,121"/>
+<area shape="rect" id="node3" href="$NewmarkMats_8h.html" title="Representation of the element matrices for a dynamic FEM problem." alt="" coords="320,169,449,196"/>
+<area shape="rect" id="node4" href="$ElmMats_8h.html" title="Representation of the element matrices for a FEM problem." alt="" coords="339,244,430,271"/>
+<area shape="rect" id="node5" href="$LocalIntegral_8h.html" title="Abstract interface for classes representing integrated quantities." alt="" coords="277,319,396,345"/>
+<area shape="rect" id="node6" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="343,393,426,420"/>
+<area shape="rect" id="node7" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="338,468,431,495"/>
+<area shape="rect" id="node8" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="346,543,423,569"/>
+<area shape="rect" id="node9" title=" " alt="" coords="5,617,68,644"/>
+<area shape="rect" id="node10" title=" " alt="" coords="93,617,173,644"/>
+<area shape="rect" id="node11" title=" " alt="" coords="197,617,282,644"/>
+<area shape="rect" id="node12" title=" " alt="" coords="306,617,373,644"/>
+<area shape="rect" id="node13" title=" " alt="" coords="397,617,463,644"/>
+<area shape="rect" id="node14" title=" " alt="" coords="487,617,549,644"/>
+<area shape="rect" id="node15" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="573,617,641,644"/>
+<area shape="rect" id="node16" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="666,617,754,644"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/LR/GlobalNodes.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/LR/GlobalNodes.h">
+<area shape="rect" id="node1" title="Simple global node establishment for unstructured FE models." alt="" coords="407,5,666,47"/>
+<area shape="rect" id="node2" href="$ASMLRSpline_8C.html" title="Base class for unstructured spline&#45;based FE assembly drivers." alt="" coords="5,95,268,136"/>
+<area shape="rect" id="node3" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="293,95,525,136"/>
+<area shape="rect" id="node4" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="549,95,781,136"/>
+<area shape="rect" id="node5" href="$GlobalNodes_8C.html" title="Simple global node establishment for unstructured FE models." alt="" coords="805,95,1065,136"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/SparseMatrix.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/SparseMatrix.h">
+<area shape="rect" id="node1" title="Representation of the system matrix on an unstructured sparse format." alt="" coords="1604,5,1857,47"/>
+<area shape="rect" id="node2" href="$AlgEqSystem_8C.html" title="Storage of an algebraic equation system for a FEM problem." alt="" coords="5,95,248,136"/>
+<area shape="rect" id="node3" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="272,95,483,136"/>
+<area shape="rect" id="node4" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="507,95,741,136"/>
+<area shape="rect" id="node5" href="$ASMs2Drecovery_8C.html" title="Recovery of secondary solutions for structured 2D spline FE models." alt="" coords="765,95,1032,136"/>
+<area shape="rect" id="node6" href="$ASMs3DLag_8C.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="1056,95,1291,136"/>
+<area shape="rect" id="node7" href="$ASMs3Drecovery_8C.html" title="Recovery of secondary solutions for structured 3D spline FE models." alt="" coords="1315,95,1581,136"/>
+<area shape="rect" id="node8" href="$GlbL2projector_8C.html" title="General integrand for L2&#45;projection of secondary solutions." alt="" coords="1605,95,1856,136"/>
+<area shape="rect" id="node9" href="$ASMu2Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="1881,95,2167,136"/>
+<area shape="rect" id="node10" href="$ASMu3Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="2191,95,2478,136"/>
+<area shape="rect" id="node11" href="$DenseMatrix_8C.html" title="Dense system matrix representation." alt="" coords="2503,95,2753,136"/>
+<area shape="rect" id="node12" href="$ISTLMatrix_8h.html" title="Representation of the system matrix in ISTL format with interface to ISTL routines for solving linear..." alt="" coords="2778,95,3014,136"/>
+<area shape="rect" id="node14" href="$SparseMatrix_8C.html" title="Representation of the system matrix on an unstructured sparse format." alt="" coords="3038,95,3293,136"/>
+<area shape="rect" id="node15" href="$SystemMatrix_8C.html" title="General representation of the system matrix on different forms." alt="" coords="3317,95,3576,136"/>
+<area shape="rect" id="node13" href="$ISTLMatrix_8C.html" title="Representation of the system matrix in ISTL format." alt="" coords="2777,184,3015,225"/>
+</map>

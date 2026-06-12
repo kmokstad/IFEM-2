@@ -1,0 +1,24 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/GaussQuadrature.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/GaussQuadrature.h">
+<area shape="rect" id="node1" title="Gaussian quadrature rules in one dimension." alt="" coords="2588,5,2769,61"/>
+<area shape="rect" id="node2" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="5,117,216,158"/>
+<area shape="rect" id="node3" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="240,117,475,158"/>
+<area shape="rect" id="node4" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="499,117,709,158"/>
+<area shape="rect" id="node5" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="733,117,968,158"/>
+<area shape="rect" id="node6" href="$ASMs2Dmx_8C.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="992,117,1224,158"/>
+<area shape="rect" id="node7" href="$ASMs2DmxLag_8C.html" title="Driver for assembly of structured 2D Lagrange mixed FE models." alt="" coords="1249,117,1503,158"/>
+<area shape="rect" id="node8" href="$ASMs2Drecovery_8C.html" title="Recovery of secondary solutions for structured 2D spline FE models." alt="" coords="1528,117,1795,158"/>
+<area shape="rect" id="node9" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="1819,117,2045,158"/>
+<area shape="rect" id="node10" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="2069,117,2280,158"/>
+<area shape="rect" id="node11" href="$ASMs3DLag_8C.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="2304,117,2539,158"/>
+<area shape="rect" id="node12" href="$ASMs3Dmx_8C.html" title="Driver for assembly of structured 3D spline mixed FE models." alt="" coords="2563,117,2795,158"/>
+<area shape="rect" id="node13" href="$ASMs3DmxLag_8C.html" title="Driver for assembly of structured 3D Lagrange mixed FE models." alt="" coords="2819,117,3074,158"/>
+<area shape="rect" id="node14" href="$ASMs3Drecovery_8C.html" title="Recovery of secondary solutions for structured 3D spline FE models." alt="" coords="3099,117,3365,158"/>
+<area shape="rect" id="node15" href="$ImmersedBoundaries_8C.html" title="Utilities for immersed boundary calculations." alt="" coords="3389,117,3685,158"/>
+<area shape="rect" id="node16" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="3709,117,3941,158"/>
+<area shape="rect" id="node17" href="$ASMu2Dmx_8C.html" title="Driver for assembly of unstructured 2D spline mixed FE models." alt="" coords="3965,117,4219,158"/>
+<area shape="rect" id="node18" href="$ASMu2Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="4243,117,4530,158"/>
+<area shape="rect" id="node19" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="4555,117,4787,158"/>
+<area shape="rect" id="node20" href="$ASMu3Dmx_8C.html" title="Driver for assembly of unstructured 3D spline mixed FE models." alt="" coords="4811,117,5064,158"/>
+<area shape="rect" id="node21" href="$ASMu3Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="5089,117,5375,158"/>
+<area shape="rect" id="node22" href="$GaussQuadrature_8C.html" title="Gaussian quadrature rules in one dimension." alt="" coords="5400,109,5581,165"/>
+</map>

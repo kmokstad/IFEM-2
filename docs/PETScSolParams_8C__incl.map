@@ -1,0 +1,21 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSolParams.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSolParams.C">
+<area shape="rect" id="node1" title="Linear solver parameters for PETSc." alt="" coords="305,5,520,61"/>
+<area shape="rect" id="node2" href="$PETScSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="266,109,407,136"/>
+<area shape="rect" id="node3" href="$LinSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="72,184,193,211"/>
+<area shape="rect" id="node10" href="$PETScPCPerm_8h_source.html" title=" " alt="" coords="832,109,956,136"/>
+<area shape="rect" id="node12" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="583,109,698,136"/>
+<area shape="rect" id="node6" title=" " alt="" coords="147,259,206,285"/>
+<area shape="rect" id="node7" title=" " alt="" coords="593,259,656,285"/>
+<area shape="rect" id="node8" href="$PETScSupport_8h.html" title="IFEM PETSc support." alt="" coords="527,184,650,211"/>
+<area shape="rect" id="node9" title=" " alt="" coords="305,259,347,285"/>
+<area shape="rect" id="node4" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="5,259,124,285"/>
+<area shape="rect" id="node5" title=" " alt="" coords="230,259,281,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="904,184,996,211"/>
+<area shape="rect" id="node13" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="320,184,503,211"/>
+<area shape="rect" id="node16" href="$LogStream_8h.html" title="Log stream class." alt="" coords="775,184,879,211"/>
+<area shape="rect" id="node14" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="372,259,464,285"/>
+<area shape="rect" id="node15" title=" " alt="" coords="488,259,559,285"/>
+<area shape="rect" id="node17" title=" " alt="" coords="686,259,766,285"/>
+<area shape="rect" id="node18" title=" " alt="" coords="790,259,865,285"/>
+<area shape="rect" id="node19" title=" " alt="" coords="889,259,966,285"/>
+</map>

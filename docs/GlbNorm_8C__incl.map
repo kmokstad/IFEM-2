@@ -1,0 +1,20 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlbNorm.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlbNorm.C">
+<area shape="rect" id="node1" title="Representation of integrated norm quantities over an element." alt="" coords="303,5,517,47"/>
+<area shape="rect" id="node2" href="$GlbNorm_8h.html" title="Representation of integrated global norm quantities." alt="" coords="235,95,327,121"/>
+<area shape="rect" id="node13" title=" " alt="" coords="692,468,755,495"/>
+<area shape="rect" id="node17" href="$ElmNorm_8h.html" title="Representation of integrated norm quantities over an element." alt="" coords="363,95,457,121"/>
+<area shape="rect" id="node3" href="$GlobalIntegral_8h.html" title="Abstract interface for classes representing integrated quantities." alt="" coords="25,169,152,196"/>
+<area shape="rect" id="node6" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="343,244,426,271"/>
+<area shape="rect" id="node16" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="177,169,283,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,468,68,495"/>
+<area shape="rect" id="node5" title=" " alt="" coords="201,244,272,271"/>
+<area shape="rect" id="node7" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="338,319,431,345"/>
+<area shape="rect" id="node8" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="346,393,423,420"/>
+<area shape="rect" id="node9" title=" " alt="" coords="93,468,173,495"/>
+<area shape="rect" id="node10" title=" " alt="" coords="197,468,282,495"/>
+<area shape="rect" id="node11" title=" " alt="" coords="306,468,373,495"/>
+<area shape="rect" id="node12" title=" " alt="" coords="397,468,463,495"/>
+<area shape="rect" id="node14" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="487,468,555,495"/>
+<area shape="rect" id="node15" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="579,468,667,495"/>
+<area shape="rect" id="node18" href="$LocalIntegral_8h.html" title="Abstract interface for classes representing integrated quantities." alt="" coords="409,169,528,196"/>
+</map>

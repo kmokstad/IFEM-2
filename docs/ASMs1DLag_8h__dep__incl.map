@@ -1,0 +1,9 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs1DLag.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs1DLag.h">
+<area shape="rect" id="node1" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="269,5,502,47"/>
+<area shape="rect" id="node2" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="5,95,240,136"/>
+<area shape="rect" id="node3" href="$ASMs1DSpec_8h.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="265,95,506,136"/>
+<area shape="rect" id="node6" href="$ASMu1DLag_8h.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="531,95,765,136"/>
+<area shape="rect" id="node4" href="$ASM1D_8C.html" title="Abstract interface for 1D patches." alt="" coords="417,184,621,225"/>
+<area shape="rect" id="node5" href="$ASMs1DSpec_8C.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="149,184,392,225"/>
+<area shape="rect" id="node7" href="$ASMu1DLag_8C.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="645,184,880,225"/>
+</map>

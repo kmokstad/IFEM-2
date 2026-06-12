@@ -1,0 +1,6 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/SplineField2D.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/SplineField2D.h">
+<area shape="rect" id="node1" title="Class for spline&#45;based finite element scalar fields in 2D." alt="" coords="212,5,457,47"/>
+<area shape="rect" id="node2" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="5,95,216,136"/>
+<area shape="rect" id="node3" href="$Field_8C.html" title="Base class for scalar fields." alt="" coords="241,95,429,136"/>
+<area shape="rect" id="node4" href="$SplineField2D_8C.html" title="Class for spline&#45;based finite element scalar field in 2D." alt="" coords="453,95,699,136"/>
+</map>

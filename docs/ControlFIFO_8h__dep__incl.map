@@ -1,0 +1,14 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ControlFIFO.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ControlFIFO.h">
+<area shape="rect" id="node1" title="Application control over a FIFO." alt="" coords="211,5,392,61"/>
+<area shape="rect" id="node2" href="$IFEM_8C.html" title="Initialization of the IFEM library." alt="" coords="5,117,187,158"/>
+<area shape="rect" id="node3" href="$ControlFIFO_8C.html" title="Application control over a FIFO." alt="" coords="211,109,392,165"/>
+<area shape="rect" id="node4" href="$DataExporter_8h.html" title="Administer and write data using DataWriters." alt="" coords="416,109,597,165"/>
+<area shape="rect" id="node5" href="$DataExporter_8C.html" title="Administer and write data using DataWriters." alt="" coords="147,213,328,269"/>
+<area shape="rect" id="node6" href="$HDF5Writer_8h.html" title="Output of model and results to HDF5 file." alt="" coords="352,213,533,269"/>
+<area shape="rect" id="node8" href="$SIMSemi3D_8h.html" title="Solution driver for plane&#45;decoupled solvers." alt="" coords="516,325,761,366"/>
+<area shape="rect" id="node12" href="$SIMSemi3D_8C.html" title="Solution driver for plane&#45;decoupled solvers." alt="" coords="607,221,854,262"/>
+<area shape="rect" id="node7" href="$HDF5Writer_8C.html" title="Output of model and results to HDF5 file." alt="" coords="52,317,233,373"/>
+<area shape="rect" id="node9" href="$SIMSolver_8h.html" title="SIM solver class template." alt="" coords="257,325,492,366"/>
+<area shape="rect" id="node10" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="133,421,355,477"/>
+<area shape="rect" id="node11" href="$SIMSolverTS_8h.html" title="Time&#45;slab adaptive SIM solver class template." alt="" coords="380,429,631,470"/>
+</map>

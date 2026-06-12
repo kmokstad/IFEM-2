@@ -1,0 +1,34 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs2D.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs2D.h">
+<area shape="rect" id="node1" title="Driver for assembly of structured 2D spline FE models." alt="" coords="3160,5,3371,47"/>
+<area shape="rect" id="node2" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="297,102,508,143"/>
+<area shape="rect" id="node3" href="$ASMs2DC1_8h.html" title="Driver for assembly of C1&#45;continuous structured 2D spline FE models." alt="" coords="532,102,759,143"/>
+<area shape="rect" id="node8" href="$ASMs2DIB_8h.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="1157,102,1379,143"/>
+<area shape="rect" id="node10" href="$ASMs2DLag_8h.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="2199,102,2433,143"/>
+<area shape="rect" id="node24" href="$ASMs2Dmx_8h.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="2877,102,3107,143"/>
+<area shape="rect" id="node27" href="$ASMs2Drecovery_8C.html" title="Recovery of secondary solutions for structured 2D spline FE models." alt="" coords="3132,102,3399,143"/>
+<area shape="rect" id="node28" href="$SplineField_8C.html" title="Utility class for spline&#45;based finite element fields." alt="" coords="3423,102,3651,143"/>
+<area shape="rect" id="node29" href="$SplineField2D_8C.html" title="Class for spline&#45;based finite element scalar field in 2D." alt="" coords="3675,102,3922,143"/>
+<area shape="rect" id="node30" href="$SplineFields2D_8C.html" title="Class for spline&#45;based finite element vector fields in 2D." alt="" coords="3947,102,4200,143"/>
+<area shape="rect" id="node31" href="$MultiPatchModelGenerator_8C.html" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="4224,95,4451,151"/>
+<area shape="rect" id="node32" href="$SIMNodalConstraint_8C.html" title="Base class for simulators constraining a topologyset to a given node." alt="" coords="4475,95,4695,151"/>
+<area shape="rect" id="node4" href="$SIM2D_8C.html" title="Solution driver for 2D NURBS&#45;based FEM analysis." alt="" coords="5,199,200,240"/>
+<area shape="rect" id="node5" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="225,199,431,240"/>
+<area shape="rect" id="node6" href="$ASM2D_8C.html" title="Abstract interface for 2D patches." alt="" coords="1289,288,1493,329"/>
+<area shape="rect" id="node7" href="$ASMs2DC1_8C.html" title="Driver for assembly of C1&#45;continuous structured 2D spline FE models." alt="" coords="455,199,683,240"/>
+<area shape="rect" id="node9" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="759,199,983,240"/>
+<area shape="rect" id="node11" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="1564,199,1799,240"/>
+<area shape="rect" id="node12" href="$ASMs2DmxLag_8h.html" title="Driver for assembly of structured 2D Lagrange mixed FE models." alt="" coords="2625,199,2879,240"/>
+<area shape="rect" id="node14" href="$ASMs2DSpec_8h.html" title="Driver for assembly of structured 2D Spectral FE models." alt="" coords="2903,199,3145,240"/>
+<area shape="rect" id="node16" href="$ASMs2DTri_8h.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="1006,199,1231,240"/>
+<area shape="rect" id="node18" href="$ASMu2DLag_8h.html" title="Assembly of unstructured 2D Lagrange FE models." alt="" coords="1305,199,1540,240"/>
+<area shape="rect" id="node20" href="$Field_8C.html" title="Base class for scalar fields." alt="" coords="1823,199,2011,240"/>
+<area shape="rect" id="node21" href="$Fields_8C.html" title="Base class for vector fields." alt="" coords="3169,199,3364,240"/>
+<area shape="rect" id="node22" href="$LagrangeField2D_8C.html" title="Class for Lagrange&#45;based finite element scalar field in 2D." alt="" coords="2036,199,2303,240"/>
+<area shape="rect" id="node23" href="$LagrangeFields2D_8C.html" title="Class for Lagrange&#45;based finite element vector fields in 2D." alt="" coords="2327,199,2601,240"/>
+<area shape="rect" id="node13" href="$ASMs2DmxLag_8C.html" title="Driver for assembly of structured 2D Lagrange mixed FE models." alt="" coords="2623,288,2878,329"/>
+<area shape="rect" id="node15" href="$ASMs2DSpec_8C.html" title="Driver for assembly of structured 2D Spectral FE models." alt="" coords="2903,288,3145,329"/>
+<area shape="rect" id="node17" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="1005,288,1232,329"/>
+<area shape="rect" id="node19" href="$ASMu2DLag_8C.html" title="Assembly of unstructured 2D Lagrange FE models." alt="" coords="1517,288,1752,329"/>
+<area shape="rect" id="node25" href="$ASMs2Dmx_8C.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="3439,199,3671,240"/>
+<area shape="rect" id="node26" href="$SplineFields2Dmx_8C.html" title="Class for mixed spline&#45;based finite element vector fields in 2D." alt="" coords="3695,199,3969,240"/>
+</map>

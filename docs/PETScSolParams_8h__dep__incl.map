@@ -1,0 +1,9 @@
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSolParams.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSolParams.h">
+<area shape="rect" id="node1" title="Linear solver parameters for PETSc matrices." alt="" coords="327,5,541,61"/>
+<area shape="rect" id="node2" href="$PETScMatrix_8h.html" title="Representation of the system matrix in PETSc format with interface to PETSc routines for assembling a..." alt="" coords="182,117,430,158"/>
+<area shape="rect" id="node7" href="$PETScSolParams_8C.html" title="Linear solver parameters for PETSc." alt="" coords="455,109,669,165"/>
+<area shape="rect" id="node3" href="$SAMpatchPETSc_8C.html" title="Evaluation of global norms for distributed models." alt="" coords="5,213,268,255"/>
+<area shape="rect" id="node4" href="$PETScMatrix_8C.html" title="Representation of the system matrix in PETSc format." alt="" coords="181,303,431,344"/>
+<area shape="rect" id="node5" href="$PETScSchurPC_8h.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="343,213,602,255"/>
+<area shape="rect" id="node6" href="$PETScSchurPC_8C.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="455,303,715,344"/>
+</map>
