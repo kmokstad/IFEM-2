@@ -1,11 +1,11 @@
-<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/ISTLSolParams.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/ISTLSolParams.h">
-<area shape="rect" id="node1" title="Linear solver parameters for ISTL matrices." alt="" coords="486,5,689,61"/>
-<area shape="rect" id="node2" href="$ISTLSupport_8h.html" title="IFEM ISTL support." alt="" coords="5,109,116,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="76,184,139,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="191,109,378,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="403,109,567,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="591,109,789,136"/>
-<area shape="rect" id="node7" title=" " alt="" coords="813,109,893,136"/>
-<area shape="rect" id="node8" title=" " alt="" coords="917,109,959,136"/>
-<area shape="rect" id="node9" title=" " alt="" coords="983,109,1042,136"/>
+<map id="src/LinAlg/ISTLSolParams.h" name="src/LinAlg/ISTLSolParams.h">
+<area shape="rect" id="node1" title="Linear solver parameters for ISTL matrices." alt="" coords="489,5,685,32"/>
+<area shape="rect" id="node2" href="$ISTLSupport_8h.html" title="IFEM ISTL support." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="76,155,139,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="191,80,378,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="403,80,567,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="591,80,789,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="813,80,893,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="917,80,959,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="983,80,1042,107"/>
 </map>

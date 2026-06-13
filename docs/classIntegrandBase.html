@@ -139,9 +139,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a61ecece6e0e04d810368e5829bd33b26"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classGlobalIntegral.html">GlobalIntegral</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#a61ecece6e0e04d810368e5829bd33b26">getGlobalInt</a> (<a class="el" href="classGlobalIntegral.html">GlobalIntegral</a> *gq) const</td></tr>
 <tr class="memdesc:a61ecece6e0e04d810368e5829bd33b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the system quantity to be integrated by <em>*this</em>.  <a href="classIntegrandBase.html#a61ecece6e0e04d810368e5829bd33b26">More...</a><br /></td></tr>
 <tr class="separator:a61ecece6e0e04d810368e5829bd33b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a894a858ea444b2e46761d065022a9a34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#a894a858ea444b2e46761d065022a9a34">initForPatch</a> (const <a class="el" href="classASMbase.html">ASMbase</a> *)</td></tr>
-<tr class="memdesc:a894a858ea444b2e46761d065022a9a34"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structInterface.html" title="A struct defining a patch interface for C1-continuous models.">Interface</a> for initialization of integrand with patch-specific data.  <a href="classIntegrandBase.html#a894a858ea444b2e46761d065022a9a34">More...</a><br /></td></tr>
-<tr class="separator:a894a858ea444b2e46761d065022a9a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac345f6b173492a20eacb66981775a2a5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#ac345f6b173492a20eacb66981775a2a5">initForPatch</a> (const <a class="el" href="classASMbase.html">ASMbase</a> *pch)</td></tr>
+<tr class="memdesc:ac345f6b173492a20eacb66981775a2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structInterface.html" title="A struct defining a patch interface for C1-continuous models.">Interface</a> for initialization of integrand with patch-specific data.  <a href="classIntegrandBase.html#ac345f6b173492a20eacb66981775a2a5">More...</a><br /></td></tr>
+<tr class="separator:ac345f6b173492a20eacb66981775a2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac67cc331fe45e064e4faa97d797140ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLocalIntegral.html">LocalIntegral</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#ac67cc331fe45e064e4faa97d797140ae">getLocalIntegral</a> (size_t nen, size_t iEl, bool neumann) const override</td></tr>
 <tr class="memdesc:ac67cc331fe45e064e4faa97d797140ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a local integral contribution object for the given element.  <a href="classIntegrandBase.html#ac67cc331fe45e064e4faa97d797140ae">More...</a><br /></td></tr>
 <tr class="separator:ac67cc331fe45e064e4faa97d797140ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,10 +248,6 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#a1449079121f63b4088d08545a1b6b352">getNoFields</a> (int=2) const</td></tr>
 <tr class="memdesc:a1449079121f63b4088d08545a1b6b352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of primary/secondary solution field components. <br /></td></tr>
 <tr class="separator:a1449079121f63b4088d08545a1b6b352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a485a9af50729d6cdfde58aa5443073c7"><td class="memItemLeft" align="right" valign="top"><a id="a485a9af50729d6cdfde58aa5443073c7"></a>
-virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#a485a9af50729d6cdfde58aa5443073c7">getNoElmFields</a> () const</td></tr>
-<tr class="memdesc:a485a9af50729d6cdfde58aa5443073c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of element-wise constant field components. <br /></td></tr>
-<tr class="separator:a485a9af50729d6cdfde58aa5443073c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a435920319344852076a4b1b195b1e27a"><td class="memItemLeft" align="right" valign="top"><a id="a435920319344852076a4b1b195b1e27a"></a>
 virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#a435920319344852076a4b1b195b1e27a">getNoGLMs</a> () const</td></tr>
 <tr class="memdesc:a435920319344852076a4b1b195b1e27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of global Lagrange multipliers in the model. <br /></td></tr>
@@ -262,9 +258,6 @@ virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memitem:a914d46296aa1711f1e21ad4ae69703c2"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#a914d46296aa1711f1e21ad4ae69703c2">getField2Name</a> (size_t idx, const char *prefix=0) const</td></tr>
 <tr class="memdesc:a914d46296aa1711f1e21ad4ae69703c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of a secondary solution field component.  <a href="classIntegrandBase.html#a914d46296aa1711f1e21ad4ae69703c2">More...</a><br /></td></tr>
 <tr class="separator:a914d46296aa1711f1e21ad4ae69703c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6524cb772a1011e2fbec160f7ac5a21"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#aa6524cb772a1011e2fbec160f7ac5a21">getEFieldName</a> (size_t idx) const</td></tr>
-<tr class="memdesc:aa6524cb772a1011e2fbec160f7ac5a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of an element-wise solution field component.  <a href="classIntegrandBase.html#aa6524cb772a1011e2fbec160f7ac5a21">More...</a><br /></td></tr>
-<tr class="separator:aa6524cb772a1011e2fbec160f7ac5a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a5f34ff53d55da4f4539d4e2b4cad6"><td class="memItemLeft" align="right" valign="top"><a id="ad6a5f34ff53d55da4f4539d4e2b4cad6"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrandBase.html#ad6a5f34ff53d55da4f4539d4e2b4cad6">suppressOutput</a> (size_t, <a class="el" href="namespaceASM.html#a0d6bbf3cb5880dda0ccb7f531402d470">ASM::ResultClass</a>) const</td></tr>
 <tr class="memdesc:ad6a5f34ff53d55da4f4539d4e2b4cad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a result components for output. <br /></td></tr>
@@ -333,6 +326,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a2d8624f8c4e5c083d59968b7f23d1790 inherit pub_methods_classIntegrand"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrand.html#a2d8624f8c4e5c083d59968b7f23d1790">setNeumannOrder</a> (char)</td></tr>
 <tr class="memdesc:a2d8624f8c4e5c083d59968b7f23d1790 inherit pub_methods_classIntegrand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the Neumann order that is the subject of integration.  <a href="classIntegrand.html#a2d8624f8c4e5c083d59968b7f23d1790">More...</a><br /></td></tr>
 <tr class="separator:a2d8624f8c4e5c083d59968b7f23d1790 inherit pub_methods_classIntegrand"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8899991b2a32308462930520eaac42b inherit pub_methods_classIntegrand"><td class="memItemLeft" align="right" valign="top"><a id="af8899991b2a32308462930520eaac42b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrand.html#af8899991b2a32308462930520eaac42b">initPatch</a> (size_t)</td></tr>
+<tr class="memdesc:af8899991b2a32308462930520eaac42b inherit pub_methods_classIntegrand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the index of the patch being processed. <br /></td></tr>
+<tr class="separator:af8899991b2a32308462930520eaac42b inherit pub_methods_classIntegrand"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41776288a22e5c979b50483ca9439f81 inherit pub_methods_classIntegrand"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLocalIntegral.html">LocalIntegral</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIntegrand.html#a41776288a22e5c979b50483ca9439f81">getLocalIntegral</a> (const std::vector&lt; size_t &gt; &amp;nen, size_t iEl, bool neumann=false) const</td></tr>
 <tr class="memdesc:a41776288a22e5c979b50483ca9439f81 inherit pub_methods_classIntegrand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a local integral contribution object for the given element.  <a href="classIntegrand.html#a41776288a22e5c979b50483ca9439f81">More...</a><br /></td></tr>
 <tr class="separator:a41776288a22e5c979b50483ca9439f81 inherit pub_methods_classIntegrand"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -926,42 +923,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa6524cb772a1011e2fbec160f7ac5a21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6524cb772a1011e2fbec160f7ac5a21">&#9670;&nbsp;</a></span>getEFieldName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string IntegrandBase::getEFieldName </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the name of an element-wise solution field component. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td><a class="el" href="classField.html" title="Interface class for scalar fields.">Field</a> component index (0-based) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="classSIMbase.html#ae96f50fa61cc77d552b8b2e4d84fa00b">SIMbase::extractElmRes()</a>.</p>
-
-</div>
-</div>
 <a id="a36dca4a0c97a07da1eb9bcc2878d0cbb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a36dca4a0c97a07da1eb9bcc2878d0cbb">&#9670;&nbsp;</a></span>getField1Name()</h2>
 
@@ -999,7 +960,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the name of a primary solution field component. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td><a class="el" href="classField.html" title="Interface class for scalar fields.">Field</a> component index (0-based) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td><a class="el" href="classField.html" title="Interface class for scalar fields.">Field</a> component index </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Name prefix for all components </td></tr>
   </table>
   </dd>
@@ -1046,7 +1007,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the name of a secondary solution field component. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td><a class="el" href="classField.html" title="Interface class for scalar fields.">Field</a> component index (0-based) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td><a class="el" href="classField.html" title="Interface class for scalar fields.">Field</a> component index </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>Name prefix for all components </td></tr>
   </table>
   </dd>
@@ -1723,8 +1684,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a894a858ea444b2e46761d065022a9a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a894a858ea444b2e46761d065022a9a34">&#9670;&nbsp;</a></span>initForPatch()</h2>
+<a id="ac345f6b173492a20eacb66981775a2a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac345f6b173492a20eacb66981775a2a5">&#9670;&nbsp;</a></span>initForPatch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1733,22 +1694,24 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void IntegrandBase::initForPatch </td>
+          <td class="memname">void IntegrandBase::initForPatch </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classASMbase.html">ASMbase</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>pch</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p><a class="el" href="structInterface.html" title="A struct defining a patch interface for C1-continuous models.">Interface</a> for initialization of integrand with patch-specific data. </p>
-<p>Override this method if the integrand needs some patch-specific data to be initialized before performing the numerical integration. </p>
+<p>Override this method if the integrand needs some patch-specific data to be initialized before performing the numerical integration. The default version only passes the patch index to the <a class="el" href="classIntegrand.html#af8899991b2a32308462930520eaac42b" title="Define the index of the patch being processed.">initPatch()</a> method. </p>
+
+<p class="reference">References <a class="el" href="classASMbase.html#a7508c72fda7ce2f0dc1cd3aa13fce521">ASMbase::idx</a>, and <a class="el" href="classIntegrand.html#af8899991b2a32308462930520eaac42b">Integrand::initPatch()</a>.</p>
 
 </div>
 </div>
@@ -1995,8 +1958,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/runner/work/IFEM-2/IFEM-2/src/ASM/<a class="el" href="IntegrandBase_8h_source.html">IntegrandBase.h</a></li>
-<li>/home/runner/work/IFEM-2/IFEM-2/src/ASM/<a class="el" href="IntegrandBase_8C.html">IntegrandBase.C</a></li>
+<li>src/ASM/<a class="el" href="IntegrandBase_8h_source.html">IntegrandBase.h</a></li>
+<li>src/ASM/<a class="el" href="IntegrandBase_8C.html">IntegrandBase.C</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

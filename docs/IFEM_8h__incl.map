@@ -1,5 +1,5 @@
-<map id="IFEM.h" name="IFEM.h">
-<area shape="rect" id="node1" title="Initialization of the IFEM library." alt="" coords="428,5,495,32"/>
+<map id="Release/IFEM.h" name="Release/IFEM.h">
+<area shape="rect" id="node1" title="Initialization of the IFEM library." alt="" coords="400,5,523,32"/>
 <area shape="rect" id="node2" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="255,80,361,107"/>
 <area shape="rect" id="node7" href="$LogStream_8h.html" title="Log stream class." alt="" coords="548,80,652,107"/>
 <area shape="rect" id="node12" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="399,80,523,107"/>

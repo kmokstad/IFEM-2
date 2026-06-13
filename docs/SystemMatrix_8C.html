@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IFEM: /home/runner/work/IFEM-2/IFEM-2/src/LinAlg/SystemMatrix.C File Reference</title>
+<title>IFEM: src/LinAlg/SystemMatrix.C File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,39 +62,37 @@ $(function() {
 <code>#include &quot;<a class="el" href="SPRMatrix_8h_source.html">SPRMatrix.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="SparseMatrix_8h_source.html">SparseMatrix.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="DiagMatrix_8h_source.html">DiagMatrix.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SAM_8h_source.html">SAM.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LinSolParams_8h_source.html">LinSolParams.h</a>&quot;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SystemMatrix.C:</div>
 <div class="dyncontent">
-<div class="center"><img src="SystemMatrix_8C__incl.png" border="0" usemap="#a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2LinAlg_2SystemMatrix_8C" alt=""/></div>
-<map name="a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2LinAlg_2SystemMatrix_8C" id="a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2LinAlg_2SystemMatrix_8C">
-<area shape="rect" title="General representation of the system matrix on different forms." alt="" coords="289,5,548,47"/>
-<area shape="rect" href="SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="237,169,362,196"/>
-<area shape="rect" href="DenseMatrix_8h.html" title="Dense system matrix representation." alt="" coords="30,95,148,121"/>
-<area shape="rect" href="SPRMatrix_8h.html" title="Representation of the system matrix on the SPR&#45;format with interface to a Fortran module for assembli..." alt="" coords="172,95,273,121"/>
-<area shape="rect" href="SparseMatrix_8h.html" title="Representation of the system matrix on an unstructured sparse format." alt="" coords="428,95,548,121"/>
-<area shape="rect" href="DiagMatrix_8h.html" title="Diagonal system matrix representation." alt="" coords="297,95,404,121"/>
-<area shape="rect" href="SAM_8h.html" title="Assembly of FE matrices into system matrices." alt="" coords="572,95,636,121"/>
-<area shape="rect" href="LinSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="660,95,782,121"/>
-<area shape="rect" title=" " alt="" coords="806,95,879,121"/>
-<area shape="rect" href="MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="428,244,510,271"/>
-<area shape="rect" href="LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="592,244,711,271"/>
-<area shape="rect" href="matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="422,319,516,345"/>
-<area shape="rect" href="matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="430,393,508,420"/>
-<area shape="rect" title=" " alt="" coords="774,468,836,495"/>
-<area shape="rect" title=" " alt="" coords="88,468,168,495"/>
-<area shape="rect" title=" " alt="" coords="192,468,277,495"/>
-<area shape="rect" title=" " alt="" coords="301,468,368,495"/>
-<area shape="rect" title=" " alt="" coords="392,468,458,495"/>
-<area shape="rect" title=" " alt="" coords="482,468,544,495"/>
-<area shape="rect" href="BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="568,468,636,495"/>
-<area shape="rect" href="print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="661,468,749,495"/>
-<area shape="rect" title=" " alt="" coords="533,169,584,196"/>
-<area shape="rect" title=" " alt="" coords="466,169,509,196"/>
-<area shape="rect" title=" " alt="" coords="386,169,442,196"/>
-<area shape="rect" title=" " alt="" coords="658,169,717,196"/>
+<div class="center"><img src="SystemMatrix_8C__incl.png" border="0" usemap="#asrc_2LinAlg_2SystemMatrix_8C" alt=""/></div>
+<map name="asrc_2LinAlg_2SystemMatrix_8C" id="asrc_2LinAlg_2SystemMatrix_8C">
+<area shape="rect" title="General representation of the system matrix on different forms." alt="" coords="282,5,475,32"/>
+<area shape="rect" href="SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="235,155,360,181"/>
+<area shape="rect" href="DenseMatrix_8h.html" title="Dense system matrix representation." alt="" coords="187,80,304,107"/>
+<area shape="rect" href="SPRMatrix_8h.html" title="Representation of the system matrix on the SPR&#45;format with interface to a Fortran module for assembli..." alt="" coords="328,80,429,107"/>
+<area shape="rect" href="SparseMatrix_8h.html" title="Representation of the system matrix on an unstructured sparse format." alt="" coords="453,80,573,107"/>
+<area shape="rect" href="DiagMatrix_8h.html" title="Diagonal system matrix representation." alt="" coords="5,80,112,107"/>
+<area shape="rect" href="LinSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="598,80,719,107"/>
+<area shape="rect" title=" " alt="" coords="743,80,817,107"/>
+<area shape="rect" href="MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="261,229,344,256"/>
+<area shape="rect" href="LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="466,229,585,256"/>
+<area shape="rect" href="matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="293,304,387,331"/>
+<area shape="rect" href="matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="320,379,397,405"/>
+<area shape="rect" title=" " alt="" coords="717,453,779,480"/>
+<area shape="rect" title=" " alt="" coords="21,453,101,480"/>
+<area shape="rect" title=" " alt="" coords="125,453,211,480"/>
+<area shape="rect" title=" " alt="" coords="235,453,301,480"/>
+<area shape="rect" title=" " alt="" coords="326,453,391,480"/>
+<area shape="rect" title=" " alt="" coords="415,453,478,480"/>
+<area shape="rect" href="BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="502,453,570,480"/>
+<area shape="rect" href="print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="595,453,683,480"/>
+<area shape="rect" title=" " alt="" coords="531,155,581,181"/>
+<area shape="rect" title=" " alt="" coords="464,155,507,181"/>
+<area shape="rect" title=" " alt="" coords="384,155,440,181"/>
+<area shape="rect" title=" " alt="" coords="656,155,715,181"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

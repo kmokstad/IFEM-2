@@ -1,6 +1,6 @@
-<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/SIMdependency.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/SIMdependency.h">
-<area shape="rect" id="node1" title="Administration of simulators with dependencies to other simulators." alt="" coords="5,5,257,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="17,95,75,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="100,95,163,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="187,95,238,121"/>
+<map id="src/SIM/SIMdependency.h" name="src/SIM/SIMdependency.h">
+<area shape="rect" id="node1" title="Administration of simulators with dependencies to other simulators." alt="" coords="27,5,213,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="89,80,151,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="176,80,227,107"/>
 </map>

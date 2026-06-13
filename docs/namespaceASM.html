@@ -71,13 +71,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a95a5c4ec13448e2fd31db2b5d0f16bd0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">NodeSet</a> = std::pair&lt; std::string, <a class="el" href="ASMbase_8h.html#a983456789eb7c97a9ddbae1e7cdb9465">IntVec</a> &gt;</td></tr>
-<tr class="memdesc:a95a5c4ec13448e2fd31db2b5d0f16bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named set container type.  <a href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">More...</a><br /></td></tr>
-<tr class="separator:a95a5c4ec13448e2fd31db2b5d0f16bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4ad0791f7684e97e49304993e69a9e8"><td class="memItemLeft" align="right" valign="top"><a id="af4ad0791f7684e97e49304993e69a9e8"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#af4ad0791f7684e97e49304993e69a9e8">PatchVec</a> = std::vector&lt; <a class="el" href="classASMbase.html">ASMbase</a> * &gt;</td></tr>
-<tr class="memdesc:af4ad0791f7684e97e49304993e69a9e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spline patch container type. <br /></td></tr>
-<tr class="separator:af4ad0791f7684e97e49304993e69a9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad894e84aa47a6b703ba42a667cdf99fc"><td class="memItemLeft" align="right" valign="top"><a id="ad894e84aa47a6b703ba42a667cdf99fc"></a>
+typedef std::pair&lt; std::string, <a class="el" href="ASMbase_8h.html#a983456789eb7c97a9ddbae1e7cdb9465">IntVec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">NodeSet</a></td></tr>
+<tr class="memdesc:ad894e84aa47a6b703ba42a667cdf99fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named node set container. <br /></td></tr>
+<tr class="separator:ad894e84aa47a6b703ba42a667cdf99fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -132,11 +129,11 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0f92933e2f2f6637f8a6edc70bd61b70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#a0f92933e2f2f6637f8a6edc70bd61b70">readMatlab</a> (std::istream &amp;is, <a class="el" href="ASMbase_8h.html#ac10d30c542fb57023e59b450f1ae83ad">IntMat</a> &amp;MNPC, std::vector&lt; <a class="el" href="classVec3.html">Vec3</a> &gt; &amp;nodes, std::vector&lt; <a class="el" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">NodeSet</a> &gt; &amp;nodeSets)</td></tr>
+<tr class="memitem:a0f92933e2f2f6637f8a6edc70bd61b70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#a0f92933e2f2f6637f8a6edc70bd61b70">readMatlab</a> (std::istream &amp;is, <a class="el" href="ASMbase_8h.html#ac10d30c542fb57023e59b450f1ae83ad">IntMat</a> &amp;MNPC, std::vector&lt; <a class="el" href="classVec3.html">Vec3</a> &gt; &amp;nodes, std::vector&lt; <a class="el" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">NodeSet</a> &gt; &amp;nodeSets)</td></tr>
 <tr class="memdesc:a0f92933e2f2f6637f8a6edc70bd61b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a mesh by reading Matlab commands from an input stream.  <a href="namespaceASM.html#a0f92933e2f2f6637f8a6edc70bd61b70">More...</a><br /></td></tr>
 <tr class="separator:a0f92933e2f2f6637f8a6edc70bd61b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0a855b2755116e7698d06e9222bbe57"><td class="memItemLeft" align="right" valign="top"><a id="af0a855b2755116e7698d06e9222bbe57"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#af0a855b2755116e7698d06e9222bbe57">readXML</a> (std::istream &amp;is, <a class="el" href="ASMbase_8h.html#ac10d30c542fb57023e59b450f1ae83ad">IntMat</a> &amp;MNPC, std::vector&lt; <a class="el" href="classVec3.html">Vec3</a> &gt; &amp;nodes, std::vector&lt; <a class="el" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">NodeSet</a> &gt; &amp;nodeSets, std::vector&lt; <a class="el" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">NodeSet</a> &gt; *elemSets=nullptr)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceASM.html#af0a855b2755116e7698d06e9222bbe57">readXML</a> (std::istream &amp;is, <a class="el" href="ASMbase_8h.html#ac10d30c542fb57023e59b450f1ae83ad">IntMat</a> &amp;MNPC, std::vector&lt; <a class="el" href="classVec3.html">Vec3</a> &gt; &amp;nodes, std::vector&lt; <a class="el" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">NodeSet</a> &gt; &amp;nodeSets, std::vector&lt; <a class="el" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">NodeSet</a> &gt; *elemSets=nullptr)</td></tr>
 <tr class="memdesc:af0a855b2755116e7698d06e9222bbe57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a mesh by reading XML tags from an input stream. <br /></td></tr>
 <tr class="separator:af0a855b2755116e7698d06e9222bbe57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -149,25 +146,7 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Assembly scope. </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a95a5c4ec13448e2fd31db2b5d0f16bd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95a5c4ec13448e2fd31db2b5d0f16bd0">&#9670;&nbsp;</a></span>NodeSet</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef std::pair&lt; std::string, <a class="el" href="ASMbase_8h.html#a983456789eb7c97a9ddbae1e7cdb9465">IntVec</a> &gt; <a class="el" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">ASM::NodeSet</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Named set container type. </p>
-<p>Named node set container. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a54a6ce23578f13fb5a1466cb6a1b1cf6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54a6ce23578f13fb5a1466cb6a1b1cf6">&#9670;&nbsp;</a></span>BasisType</h2>
 
@@ -251,7 +230,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">NodeSet</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">NodeSet</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>nodeSets</em>&#160;</td>
         </tr>
         <tr>

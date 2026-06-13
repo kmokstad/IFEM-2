@@ -122,8 +122,8 @@ static <a class="el" href="classLinAlgInit.html">LinAlgInit</a> *&#160;</td><td 
 <div class="textblock"><p>Initializer for linear algebra packages. </p>
 <p>This class is a reference-counted singleton. We need control over the destruction order since the destructor calls <em>PetscFinalize()</em> which shuts down MPI. Thus, the <a class="el" href="classLinAlgInit.html" title="Initializer for linear algebra packages.">LinAlgInit</a> object must be destroyed after all other objects that do MPI calls in their destructor. This cannot be guaranteed without the reference-counting since this class is instanciated as a local variable in the <em><a class="el" href="IFEM-test_8C.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main program for the IFEM unit tests.">main()</a></em> scope of the applications. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/runner/work/IFEM-2/IFEM-2/src/LinAlg/<a class="el" href="LinAlgInit_8h_source.html">LinAlgInit.h</a></li>
-<li>/home/runner/work/IFEM-2/IFEM-2/src/LinAlg/<a class="el" href="LinAlgInit_8C.html">LinAlgInit.C</a></li>
+<li>src/LinAlg/<a class="el" href="LinAlgInit_8h_source.html">LinAlgInit.h</a></li>
+<li>src/LinAlg/<a class="el" href="LinAlgInit_8C.html">LinAlgInit.C</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

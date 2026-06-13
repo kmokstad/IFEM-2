@@ -256,6 +256,7 @@ var menudata={children:[
 {text:"w",url:"globals_func.html#index_w"}]},
 {text:"Variables",url:"globals_vars.html"},
 {text:"Typedefs",url:"globals_type.html",children:[
+{text:"a",url:"globals_type.html#index_a"},
 {text:"b",url:"globals_type.html#index_b"},
 {text:"c",url:"globals_type.html#index_c"},
 {text:"d",url:"globals_type.html#index_d"},

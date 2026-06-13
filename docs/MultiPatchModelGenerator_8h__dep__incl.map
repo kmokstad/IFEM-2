@@ -1,5 +1,5 @@
-<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/MultiPatchModelGenerator.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/MultiPatchModelGenerator.h">
-<area shape="rect" id="node1" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="128,5,355,61"/>
-<area shape="rect" id="node2" href="$MultiPatchModelGenerator_8C.html" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="5,109,232,165"/>
-<area shape="rect" id="node3" href="$SIMMultiPatchModelGen_8C.html" title="Base class for simulators equipped with multi&#45;patch model generators." alt="" coords="257,109,471,165"/>
+<map id="Apps/Common/MultiPatchModelGenerator.h" name="Apps/Common/MultiPatchModelGenerator.h">
+<area shape="rect" id="node1" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="128,5,357,47"/>
+<area shape="rect" id="node2" href="$MultiPatchModelGenerator_8C.html" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="5,95,235,136"/>
+<area shape="rect" id="node3" href="$SIMMultiPatchModelGen_8C.html" title="Base class for simulators equipped with multi&#45;patch model generators." alt="" coords="259,95,472,136"/>
 </map>

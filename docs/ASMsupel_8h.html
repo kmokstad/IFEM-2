@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IFEM: /home/runner/work/IFEM-2/IFEM-2/src/ASM/ASMsupel.h File Reference</title>
+<title>IFEM: src/ASM/ASMsupel.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,46 +60,48 @@ $(function() {
 <p>Driver for assembly of general superelements.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ASMbase_8h_source.html">ASMbase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ASMutils_8h_source.html">ASMutils.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ElmMats_8h_source.html">ElmMats.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vec3_8h_source.html">Vec3.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ASMsupel.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="ASMsupel_8h__incl.png" border="0" usemap="#a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2ASM_2ASMsupel_8h" alt=""/></div>
-<map name="a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2ASM_2ASMsupel_8h" id="a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2ASM_2ASMsupel_8h">
-<area shape="rect" title="Driver for assembly of general superelements." alt="" coords="413,5,633,47"/>
-<area shape="rect" href="ASMbase_8h.html" title="Base class for spline&#45;based finite element (FE) assembly drivers." alt="" coords="476,95,571,121"/>
-<area shape="rect" href="ElmMats_8h.html" title="Representation of the element matrices for a FEM problem." alt="" coords="117,95,207,121"/>
-<area shape="rect" href="Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="732,393,797,420"/>
-<area shape="rect" href="ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="250,169,357,196"/>
-<area shape="rect" href="MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="146,244,229,271"/>
-<area shape="rect" href="MPCLess_8h.html" title="Comparison of two MPC objects in a std::set&lt;MPC*,MPCLess&gt; object." alt="" coords="381,169,473,196"/>
-<area shape="rect" title=" " alt="" coords="498,169,549,196"/>
-<area shape="rect" title=" " alt="" coords="573,169,615,196"/>
-<area shape="rect" title=" " alt="" coords="639,169,695,196"/>
-<area shape="rect" title=" " alt="" coords="719,169,778,196"/>
-<area shape="rect" href="matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="191,319,285,345"/>
-<area shape="rect" href="matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="373,393,450,420"/>
-<area shape="rect" title=" " alt="" coords="589,468,652,495"/>
-<area shape="rect" title=" " alt="" coords="677,468,757,495"/>
-<area shape="rect" title=" " alt="" coords="479,468,565,495"/>
-<area shape="rect" title=" " alt="" coords="94,468,161,495"/>
-<area shape="rect" title=" " alt="" coords="185,468,251,495"/>
-<area shape="rect" title=" " alt="" coords="781,468,844,495"/>
-<area shape="rect" href="BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="275,468,343,495"/>
-<area shape="rect" href="print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="367,468,455,495"/>
-<area shape="rect" href="LocalIntegral_8h.html" title="Abstract interface for classes representing integrated quantities." alt="" coords="5,169,124,196"/>
+<div class="center"><img src="ASMsupel_8h__incl.png" border="0" usemap="#asrc_2ASM_2ASMsupel_8h" alt=""/></div>
+<map name="asrc_2ASM_2ASMsupel_8h" id="asrc_2ASM_2ASMsupel_8h">
+<area shape="rect" title="Driver for assembly of general superelements." alt="" coords="535,5,689,32"/>
+<area shape="rect" href="ASMbase_8h.html" title="Base class for spline&#45;based finite element (FE) assembly drivers." alt="" coords="310,155,405,181"/>
+<area shape="rect" href="ASMutils_8h.html" title="Various utilities for assembly scope." alt="" coords="632,155,723,181"/>
+<area shape="rect" href="ElmMats_8h.html" title="Representation of the element matrices for a FEM problem." alt="" coords="503,80,593,107"/>
+<area shape="rect" href="Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="715,379,781,405"/>
+<area shape="rect" href="ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="5,229,112,256"/>
+<area shape="rect" href="MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="475,229,557,256"/>
+<area shape="rect" href="MPCLess_8h.html" title="Comparison of two MPC objects in a std::set&lt;MPC*,MPCLess&gt; object." alt="" coords="137,229,229,256"/>
+<area shape="rect" title=" " alt="" coords="253,229,304,256"/>
+<area shape="rect" title=" " alt="" coords="328,229,371,256"/>
+<area shape="rect" title=" " alt="" coords="395,229,451,256"/>
+<area shape="rect" title=" " alt="" coords="581,229,640,256"/>
+<area shape="rect" href="matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="469,304,563,331"/>
+<area shape="rect" href="matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="477,379,555,405"/>
+<area shape="rect" title=" " alt="" coords="691,453,754,480"/>
+<area shape="rect" title=" " alt="" coords="779,453,859,480"/>
+<area shape="rect" title=" " alt="" coords="495,453,580,480"/>
+<area shape="rect" title=" " alt="" coords="109,453,176,480"/>
+<area shape="rect" title=" " alt="" coords="201,453,266,480"/>
+<area shape="rect" title=" " alt="" coords="605,453,667,480"/>
+<area shape="rect" href="BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="290,453,358,480"/>
+<area shape="rect" href="print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="383,453,471,480"/>
+<area shape="rect" href="LocalIntegral_8h.html" title="Abstract interface for classes representing integrated quantities." alt="" coords="489,155,607,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="ASMsupel_8h__dep__incl.png" border="0" usemap="#a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2ASM_2ASMsupel_8hdep" alt=""/></div>
-<map name="a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2ASM_2ASMsupel_8hdep" id="a_2home_2runner_2work_2IFEM-2_2IFEM-2_2src_2ASM_2ASMsupel_8hdep">
-<area shape="rect" title="Driver for assembly of general superelements." alt="" coords="235,5,455,47"/>
-<area shape="rect" href="ASM3D_8C.html" title="Abstract interface for 3D patches." alt="" coords="5,102,209,143"/>
-<area shape="rect" href="ASMsupel_8C.html" title="Driver for assembly of general superelements." alt="" coords="234,102,455,143"/>
-<area shape="rect" href="HDF5Writer_8C.html" title="Output of model and results to HDF5 file." alt="" coords="479,95,661,151"/>
+<div class="center"><img src="ASMsupel_8h__dep__incl.png" border="0" usemap="#asrc_2ASM_2ASMsupel_8hdep" alt=""/></div>
+<map name="asrc_2ASM_2ASMsupel_8hdep" id="asrc_2ASM_2ASMsupel_8hdep">
+<area shape="rect" title="Driver for assembly of general superelements." alt="" coords="168,5,323,32"/>
+<area shape="rect" href="ASM3D_8C.html" title="Abstract interface for 3D patches." alt="" coords="5,80,144,107"/>
+<area shape="rect" href="ASMsupel_8C.html" title="Driver for assembly of general superelements." alt="" coords="168,80,323,107"/>
+<area shape="rect" href="HDF5Writer_8C.html" title="Output of model and results to HDF5 file." alt="" coords="347,80,525,107"/>
 </map>
 </div>
 </div>

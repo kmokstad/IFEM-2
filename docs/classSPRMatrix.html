@@ -218,14 +218,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystemMatrix.html#a3fcb1a4b108ceaf953bd093ebce6ae79">initNonZeroEqs</a> ()</td></tr>
 <tr class="memdesc:a3fcb1a4b108ceaf953bd093ebce6ae79 inherit pub_methods_classSystemMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="classSystemMatrix.html#ab6ddc4042288e442e3f6fbf4b58633a8">nonZeroEqs</a> flags. <br /></td></tr>
 <tr class="separator:a3fcb1a4b108ceaf953bd093ebce6ae79 inherit pub_methods_classSystemMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ec0458c23dc919d5a1fda91c85f72ae inherit pub_methods_classSystemMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a2ec0458c23dc919d5a1fda91c85f72ae"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystemMatrix.html#a2ec0458c23dc919d5a1fda91c85f72ae">flagNonZeroEq</a> (int ieq=0)</td></tr>
-<tr class="memdesc:a2ec0458c23dc919d5a1fda91c85f72ae inherit pub_methods_classSystemMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags equation <em>ieq</em> as pivot element with non-zero contributions. <br /></td></tr>
-<tr class="separator:a2ec0458c23dc919d5a1fda91c85f72ae inherit pub_methods_classSystemMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5091d2ad615b7fb38f1e237abba3a075 inherit pub_methods_classSystemMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a5091d2ad615b7fb38f1e237abba3a075"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystemMatrix.html#a5091d2ad615b7fb38f1e237abba3a075">flagNonZeroEqs</a> (const <a class="el" href="classSAM.html">SAM</a> &amp;sam, const <a class="el" href="ASMbase_8h.html#a983456789eb7c97a9ddbae1e7cdb9465">IntVec</a> &amp;meq)</td></tr>
-<tr class="memdesc:a5091d2ad615b7fb38f1e237abba3a075 inherit pub_methods_classSystemMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags the equations <em>meq</em> as pivots with non-zero contributions. <br /></td></tr>
-<tr class="separator:a5091d2ad615b7fb38f1e237abba3a075 inherit pub_methods_classSystemMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417dc3622956a952ab7e084cc2df9f4d inherit pub_methods_classSystemMatrix"><td class="memItemLeft" align="right" valign="top"><a id="a417dc3622956a952ab7e084cc2df9f4d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystemMatrix.html#a417dc3622956a952ab7e084cc2df9f4d">flagNonZeroEqs</a> (const <a class="el" href="ASMbase_8h.html#a983456789eb7c97a9ddbae1e7cdb9465">IntVec</a> &amp;meq={})</td></tr>
+<tr class="memdesc:a417dc3622956a952ab7e084cc2df9f4d inherit pub_methods_classSystemMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags the equations <em>meq</em> as pivots with non-zero contributions. <br /></td></tr>
+<tr class="separator:a417dc3622956a952ab7e084cc2df9f4d inherit pub_methods_classSystemMatrix"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc6dcb1520ee0cbb8af30eaadad7273 inherit pub_methods_classSystemMatrix"><td class="memItemLeft" align="right" valign="top"><a id="abcc6dcb1520ee0cbb8af30eaadad7273"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSystemMatrix.html#abcc6dcb1520ee0cbb8af30eaadad7273">flagNonZeroEqs</a> (const <a class="el" href="classSystemMatrix.html">SystemMatrix</a> &amp;B)</td></tr>
 <tr class="memdesc:abcc6dcb1520ee0cbb8af30eaadad7273 inherit pub_methods_classSystemMatrix"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags the non-zero equations from <em>B</em> as non-zero pivots in this. <br /></td></tr>
@@ -395,7 +391,7 @@ static <a class="el" href="classSystemMatrix.html">SystemMatrix</a> *&#160;</td>
 
 <p>Reimplemented from <a class="el" href="classSystemMatrix.html#a9964f54c00a3e4fa62734e696d5a0656">SystemMatrix</a>.</p>
 
-<p class="reference">References <a class="el" href="classSystemMatrix.html#a5091d2ad615b7fb38f1e237abba3a075">SystemMatrix::flagNonZeroEqs()</a>, <a class="el" href="classSystemMatrix.html#a19bbd804f9a08b78bdfc17e952fb2705">SystemMatrix::isZero()</a>, <a class="el" href="classSPRMatrix.html#a7d5a5b5e44d8427e51acd7430678a227">mpar</a>, and <a class="el" href="classSPRMatrix.html#a22c2ee38721855316a0c3ef67782a1b6">values</a>.</p>
+<p class="reference">References <a class="el" href="classSystemMatrix.html#a417dc3622956a952ab7e084cc2df9f4d">SystemMatrix::flagNonZeroEqs()</a>, <a class="el" href="classSystemMatrix.html#a19bbd804f9a08b78bdfc17e952fb2705">SystemMatrix::isZero()</a>, <a class="el" href="classSPRMatrix.html#a7d5a5b5e44d8427e51acd7430678a227">mpar</a>, and <a class="el" href="classSPRMatrix.html#a22c2ee38721855316a0c3ef67782a1b6">values</a>.</p>
 
 </div>
 </div>
@@ -442,6 +438,7 @@ static <a class="el" href="classSystemMatrix.html">SystemMatrix</a> *&#160;</td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><em>true</em> on successful assembly, otherwise <em>false</em> </dd></dl>
+<p>To be used when there is no underlying <a class="el" href="classSAM.html" title="This class contains data and functions for the assembly of FE matrices.">SAM</a> </p>
 
 <p>Implements <a class="el" href="classSystemMatrix.html#a0715da993cdc3dd925cfd01c17ee89a0">SystemMatrix</a>.</p>
 
@@ -468,7 +465,7 @@ static <a class="el" href="classSystemMatrix.html">SystemMatrix</a> *&#160;</td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><em>true</em> on successful assembly, otherwise <em>false</em> </dd></dl>
-<p>To be used when there is no associated <a class="el" href="classSAM.html" title="This class contains data and functions for the assembly of FE matrices.">SAM</a> object. </p>
+<p>To be used when there is no underlying <a class="el" href="classSAM.html" title="This class contains data and functions for the assembly of FE matrices.">SAM</a> </p>
 
 </div>
 </div>
@@ -796,7 +793,7 @@ static <a class="el" href="classSystemMatrix.html">SystemMatrix</a> *&#160;</td>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><em>true</em> on successful assembly, otherwise <em>false</em> </dd></dl>
 
-<p class="reference">References <a class="el" href="classSystemMatrix.html#a5091d2ad615b7fb38f1e237abba3a075">SystemMatrix::flagNonZeroEqs()</a>, <a class="el" href="classSPRMatrix.html#a48fef5667a3508fd622a2e1195f038f5">ierr</a>, <a class="el" href="classSPRMatrix.html#aab4aed82b7269f08f89a465cf0659cdb">jWork</a>, <a class="el" href="classSAM.html#a1fbf52cdf5b422440e9fceb1c65c216e">SAM::madof</a>, <a class="el" href="classSAM.html#af86254f4848c9eeebc8e5392999581be">SAM::meqn</a>, <a class="el" href="classSAM.html#ac42c45a36f87bc79b51e87fabe9cc8a2">SAM::mmceq</a>, <a class="el" href="classSAM.html#a766c0889b1c4ba749eb57f4157ff50c3">SAM::mmnpc</a>, <a class="el" href="classSAM.html#a1dbe6c91846243bbd4d2e23f54ddd7ab">SAM::mpar</a>, <a class="el" href="classSPRMatrix.html#a7d5a5b5e44d8427e51acd7430678a227">mpar</a>, <a class="el" href="classSAM.html#a8b871266d7047afe8515a34a52d0bb0e">SAM::mpmceq</a>, <a class="el" href="classSAM.html#aa71ba0090ddb80e05f27f3c39d5d0cdd">SAM::mpmnpc</a>, <a class="el" href="classSPRMatrix.html#a8d97f2a71277b3ef022aef23978b702d">msica</a>, <a class="el" href="classSPRMatrix.html#a021f577c71a8944096564f35169b6b55">msifa</a>, <a class="el" href="classSPRMatrix.html#aa8e8e1d50f818e5cf0d221625d968d10">mtrees</a>, <a class="el" href="classSPRMatrix.html#a546b27fa99e460f693cd44fc417e25e4">mvarnc</a>, <a class="el" href="classSPRMatrix.html#a84b46b1762dcf8a6f0fb0f2c660fab73">mySam</a>, <a class="el" href="classutl_1_1matrixBase.html#a9413eb7542173715f9816dbd39eab021">utl::matrixBase&lt; T &gt;::ptr()</a>, <a class="el" href="classutl_1_1matrix.html#a97eab97c271080f8a9af61c10ba299b5">utl::matrix&lt; T &gt;::rows()</a>, <a class="el" href="classSPRMatrix.html#a9a2c7df8f029e146e1a4d735bf72f295">rWork</a>, <a class="el" href="SPRMatrix_8C.html#af00fb2006ad6650c54eed0c3020d4291">spradm_()</a>, <a class="el" href="classSAM.html#a29f7411d87cdc8b3a2c92712232cce80">SAM::ttcc</a>, and <a class="el" href="classSPRMatrix.html#a22c2ee38721855316a0c3ef67782a1b6">values</a>.</p>
+<p class="reference">References <a class="el" href="classSystemMatrix.html#a417dc3622956a952ab7e084cc2df9f4d">SystemMatrix::flagNonZeroEqs()</a>, <a class="el" href="classSPRMatrix.html#a48fef5667a3508fd622a2e1195f038f5">ierr</a>, <a class="el" href="classSPRMatrix.html#aab4aed82b7269f08f89a465cf0659cdb">jWork</a>, <a class="el" href="classSAM.html#a1fbf52cdf5b422440e9fceb1c65c216e">SAM::madof</a>, <a class="el" href="classSAM.html#af86254f4848c9eeebc8e5392999581be">SAM::meqn</a>, <a class="el" href="classSAM.html#ac42c45a36f87bc79b51e87fabe9cc8a2">SAM::mmceq</a>, <a class="el" href="classSAM.html#a766c0889b1c4ba749eb57f4157ff50c3">SAM::mmnpc</a>, <a class="el" href="classSAM.html#a1dbe6c91846243bbd4d2e23f54ddd7ab">SAM::mpar</a>, <a class="el" href="classSPRMatrix.html#a7d5a5b5e44d8427e51acd7430678a227">mpar</a>, <a class="el" href="classSAM.html#a8b871266d7047afe8515a34a52d0bb0e">SAM::mpmceq</a>, <a class="el" href="classSAM.html#aa71ba0090ddb80e05f27f3c39d5d0cdd">SAM::mpmnpc</a>, <a class="el" href="classSPRMatrix.html#a8d97f2a71277b3ef022aef23978b702d">msica</a>, <a class="el" href="classSPRMatrix.html#a021f577c71a8944096564f35169b6b55">msifa</a>, <a class="el" href="classSPRMatrix.html#aa8e8e1d50f818e5cf0d221625d968d10">mtrees</a>, <a class="el" href="classSPRMatrix.html#a546b27fa99e460f693cd44fc417e25e4">mvarnc</a>, <a class="el" href="classSPRMatrix.html#a84b46b1762dcf8a6f0fb0f2c660fab73">mySam</a>, <a class="el" href="classutl_1_1matrixBase.html#a9413eb7542173715f9816dbd39eab021">utl::matrixBase&lt; T &gt;::ptr()</a>, <a class="el" href="classutl_1_1matrix.html#a97eab97c271080f8a9af61c10ba299b5">utl::matrix&lt; T &gt;::rows()</a>, <a class="el" href="classSPRMatrix.html#a9a2c7df8f029e146e1a4d735bf72f295">rWork</a>, <a class="el" href="SPRMatrix_8C.html#af00fb2006ad6650c54eed0c3020d4291">spradm_()</a>, <a class="el" href="classSAM.html#a29f7411d87cdc8b3a2c92712232cce80">SAM::ttcc</a>, and <a class="el" href="classSPRMatrix.html#a22c2ee38721855316a0c3ef67782a1b6">values</a>.</p>
 
 </div>
 </div>
@@ -1022,8 +1019,8 @@ static <a class="el" href="classSystemMatrix.html">SystemMatrix</a> *&#160;</td>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/runner/work/IFEM-2/IFEM-2/src/LinAlg/<a class="el" href="SPRMatrix_8h_source.html">SPRMatrix.h</a></li>
-<li>/home/runner/work/IFEM-2/IFEM-2/src/LinAlg/<a class="el" href="SPRMatrix_8C.html">SPRMatrix.C</a></li>
+<li>src/LinAlg/<a class="el" href="SPRMatrix_8h_source.html">SPRMatrix.h</a></li>
+<li>src/LinAlg/<a class="el" href="SPRMatrix_8C.html">SPRMatrix.C</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

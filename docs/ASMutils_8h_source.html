@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IFEM: /home/runner/work/IFEM-2/IFEM-2/src/ASM/ASMutils.h Source File</title>
+<title>IFEM: src/ASM/ASMutils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceASM.html">ASM</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">typedef</span> std::pair&lt;std::string,IntVec&gt; <a class="code" href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">NodeSet</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">   29</a></span>&#160;  <span class="keyword">typedef</span> std::pair&lt;std::string,IntVec&gt; <a class="code" href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">NodeSet</a>; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="namespaceASM.html#a0f92933e2f2f6637f8a6edc70bd61b70">readMatlab</a>(std::istream&amp; is, <a class="code" href="ASMbase_8h.html#ac10d30c542fb57023e59b450f1ae83ad">IntMat</a>&amp; MNPC, std::vector&lt;Vec3&gt;&amp; nodes,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                  std::vector&lt;NodeSet&gt;&amp; nodeSets);</div>
@@ -90,7 +90,7 @@ $(function() {
 <div class="ttc" id="aclassVec3_html"><div class="ttname"><a href="classVec3.html">Vec3</a></div><div class="ttdoc">Simple class for representing a point in 3D space.</div><div class="ttdef"><b>Definition:</b> Vec3.h:27</div></div>
 <div class="ttc" id="anamespaceASM_html"><div class="ttname"><a href="namespaceASM.html">ASM</a></div><div class="ttdoc">Assembly scope.</div><div class="ttdef"><b>Definition:</b> SIMdummy.h:24</div></div>
 <div class="ttc" id="anamespaceASM_html_a0f92933e2f2f6637f8a6edc70bd61b70"><div class="ttname"><a href="namespaceASM.html#a0f92933e2f2f6637f8a6edc70bd61b70">ASM::readMatlab</a></div><div class="ttdeci">bool readMatlab(std::istream &amp;is, IntMat &amp;MNPC, std::vector&lt; Vec3 &gt; &amp;nodes, std::vector&lt; NodeSet &gt; &amp;nodeSets)</div><div class="ttdoc">Creates a mesh by reading Matlab commands from an input stream.</div><div class="ttdef"><b>Definition:</b> ASMutils.C:29</div></div>
-<div class="ttc" id="anamespaceASM_html_a95a5c4ec13448e2fd31db2b5d0f16bd0"><div class="ttname"><a href="namespaceASM.html#a95a5c4ec13448e2fd31db2b5d0f16bd0">ASM::NodeSet</a></div><div class="ttdeci">std::pair&lt; std::string, IntVec &gt; NodeSet</div><div class="ttdoc">Named set container type.</div><div class="ttdef"><b>Definition:</b> ASMbase.h:54</div></div>
+<div class="ttc" id="anamespaceASM_html_ad894e84aa47a6b703ba42a667cdf99fc"><div class="ttname"><a href="namespaceASM.html#ad894e84aa47a6b703ba42a667cdf99fc">ASM::NodeSet</a></div><div class="ttdeci">std::pair&lt; std::string, IntVec &gt; NodeSet</div><div class="ttdoc">Named node set container.</div><div class="ttdef"><b>Definition:</b> ASMutils.h:29</div></div>
 <div class="ttc" id="anamespaceASM_html_af0a855b2755116e7698d06e9222bbe57"><div class="ttname"><a href="namespaceASM.html#af0a855b2755116e7698d06e9222bbe57">ASM::readXML</a></div><div class="ttdeci">bool readXML(std::istream &amp;is, IntMat &amp;MNPC, std::vector&lt; Vec3 &gt; &amp;nodes, std::vector&lt; NodeSet &gt; &amp;nodeSets, std::vector&lt; NodeSet &gt; *elemSets=nullptr)</div><div class="ttdoc">Creates a mesh by reading XML tags from an input stream.</div><div class="ttdef"><b>Definition:</b> ASMutils.C:143</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
