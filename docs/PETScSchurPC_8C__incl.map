@@ -1,32 +1,78 @@
-<map id="src/LinAlg/PETScSchurPC.C" name="src/LinAlg/PETScSchurPC.C">
-<area shape="rect" id="node1" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="266,5,461,32"/>
-<area shape="rect" id="node2" href="$PETScSchurPC_8h.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="300,80,427,107"/>
-<area shape="rect" id="node25" href="$LinSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="868,304,989,331"/>
-<area shape="rect" id="node28" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="70,229,185,256"/>
-<area shape="rect" id="node3" href="$PETScMatrix_8h.html" title="Representation of the system matrix in PETSc format with interface to PETSc routines for assembling a..." alt="" coords="457,155,571,181"/>
-<area shape="rect" id="node27" title=" " alt="" coords="177,379,254,405"/>
-<area shape="rect" id="node4" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="412,304,595,331"/>
-<area shape="rect" id="node11" href="$SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="965,229,1090,256"/>
-<area shape="rect" id="node23" href="$PETScSupport_8h.html" title="IFEM PETSc support." alt="" coords="721,304,843,331"/>
-<area shape="rect" id="node24" href="$PETScSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="573,229,714,256"/>
-<area shape="rect" id="node26" title=" " alt="" coords="421,229,477,256"/>
-<area shape="rect" id="node5" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="525,379,617,405"/>
-<area shape="rect" id="node6" title=" " alt="" coords="791,379,842,405"/>
-<area shape="rect" id="node7" title=" " alt="" coords="642,379,685,405"/>
-<area shape="rect" id="node8" title=" " alt="" coords="709,379,767,405"/>
-<area shape="rect" id="node9" title=" " alt="" coords="361,528,424,555"/>
-<area shape="rect" id="node10" title=" " alt="" coords="431,379,501,405"/>
-<area shape="rect" id="node12" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="1090,304,1173,331"/>
-<area shape="rect" id="node22" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="968,379,1087,405"/>
-<area shape="rect" id="node13" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="1111,379,1205,405"/>
-<area shape="rect" id="node14" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="967,453,1045,480"/>
-<area shape="rect" id="node15" title=" " alt="" coords="502,528,582,555"/>
-<area shape="rect" id="node16" title=" " alt="" coords="914,528,999,555"/>
-<area shape="rect" id="node17" title=" " alt="" coords="1023,528,1090,555"/>
-<area shape="rect" id="node18" title=" " alt="" coords="1115,528,1180,555"/>
-<area shape="rect" id="node19" title=" " alt="" coords="1204,528,1267,555"/>
-<area shape="rect" id="node20" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="709,528,777,555"/>
-<area shape="rect" id="node21" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="802,528,890,555"/>
-<area shape="rect" id="node29" href="$LogStream_8h.html" title="Log stream class." alt="" coords="81,304,185,331"/>
-<area shape="rect" id="node30" title=" " alt="" coords="27,379,102,405"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSchurPC.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScSchurPC.C">
+<area shape="rect" id="Node000001" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="233,5,493,45"/>
+<area shape="rect" id="Node000002" href="$PETScSchurPC_8h.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="300,93,427,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="366,46,366,79,361,79,361,46"/>
+<area shape="rect" id="Node000025" href="$LinSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="868,313,989,339"/>
+<area shape="poly" id="edge38_Node000001_Node000025" title=" " alt="" coords="400,43,896,304,893,309,398,48"/>
+<area shape="rect" id="Node000028" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="70,240,185,265"/>
+<area shape="poly" id="edge39_Node000001_Node000028" title=" " alt="" coords="341,48,279,101,205,169,147,231,143,228,201,165,275,97,338,44"/>
+<area shape="rect" id="Node000003" href="$PETScMatrix_8h.html" title="Representation of the system matrix in PETSc format with interface to PETSc routines for assembling a..." alt="" coords="457,167,571,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,116,478,158,476,163,386,121"/>
+<area shape="rect" id="Node000027" title=" " alt="" coords="177,387,254,412"/>
+<area shape="poly" id="edge37_Node000002_Node000027" title=" " alt="" coords="360,120,230,376,225,373,355,118"/>
+<area shape="rect" id="Node000004" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="412,313,595,339"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="516,193,508,300,502,299,510,192"/>
+<area shape="rect" id="Node000011" href="$SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="965,240,1090,265"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="572,186,951,238,950,243,571,191"/>
+<area shape="rect" id="Node000023" href="$PETScSupport_8h.html" title="IFEM PETSc support." alt="" coords="721,313,843,339"/>
+<area shape="poly" id="edge23_Node000003_Node000023" title=" " alt="" coords="572,183,649,200,690,216,727,238,755,267,774,299,769,302,751,270,724,242,688,221,648,205,571,188"/>
+<area shape="rect" id="Node000024" href="$PETScSolParams_8h.html" title="Linear solver parameters for PETSc matrices." alt="" coords="573,240,714,265"/>
+<area shape="poly" id="edge25_Node000003_Node000024" title=" " alt="" coords="536,190,611,231,608,235,533,194"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="421,240,477,265"/>
+<area shape="poly" id="edge35_Node000003_Node000026" title=" " alt="" coords="505,194,470,232,466,228,501,191"/>
+<area shape="poly" id="edge36_Node000003_Node000027" title=" " alt="" coords="493,194,410,242,357,277,306,315,238,379,234,375,303,311,353,272,407,238,491,190"/>
+<area shape="rect" id="Node000005" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="525,387,617,412"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="516,337,552,375,549,378,512,341"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="791,387,842,412"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="564,336,778,384,777,389,563,341"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="642,387,685,412"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="530,336,630,381,628,385,528,341"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="709,387,767,412"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="542,336,696,383,695,388,540,341"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="361,533,424,559"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="478,341,447,360,420,388,405,421,397,457,393,520,388,520,392,456,400,419,416,385,443,356,475,337"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="431,387,501,412"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="499,340,481,376,476,373,495,338"/>
+<area shape="rect" id="Node000012" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="1090,313,1173,339"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1045,263,1104,303,1101,307,1042,268"/>
+<area shape="rect" id="Node000022" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="968,387,1087,412"/>
+<area shape="poly" id="edge22_Node000011_Node000022" title=" " alt="" coords="1030,266,1030,373,1025,373,1025,266"/>
+<area shape="rect" id="Node000013" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="1111,387,1205,412"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1138,338,1151,373,1146,375,1133,340"/>
+<area shape="rect" id="Node000014" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="967,460,1045,485"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1135,414,1044,457,1042,452,1132,410"/>
+<area shape="poly" id="edge14_Node000014_Node000009" title=" " alt="" coords="968,485,949,488,820,505,720,515,490,536,438,542,437,537,490,531,719,510,820,500,948,483,967,480"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="502,533,582,559"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="968,485,949,488,754,518,596,540,595,535,754,513,948,483,967,479"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="914,533,999,559"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="1000,487,974,524,970,521,996,484"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1023,533,1090,559"/>
+<area shape="poly" id="edge17_Node000014_Node000017" title=" " alt="" coords="1016,484,1043,521,1038,524,1012,487"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="1115,533,1180,559"/>
+<area shape="poly" id="edge18_Node000014_Node000018" title=" " alt="" coords="1030,483,1113,525,1111,529,1027,488"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="1204,533,1267,559"/>
+<area shape="poly" id="edge19_Node000014_Node000019" title=" " alt="" coords="1043,483,1191,528,1190,533,1042,488"/>
+<area shape="rect" id="Node000020" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="709,533,777,559"/>
+<area shape="poly" id="edge20_Node000014_Node000020" title=" " alt="" coords="968,487,792,534,790,529,966,482"/>
+<area shape="rect" id="Node000021" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="802,533,890,559"/>
+<area shape="poly" id="edge21_Node000014_Node000021" title=" " alt="" coords="981,488,885,530,883,525,979,483"/>
+<area shape="poly" id="edge24_Node000023_Node000009" title=" " alt="" coords="805,337,828,351,849,369,861,391,861,402,856,414,827,438,783,461,728,480,667,498,540,525,438,541,437,536,539,519,665,492,727,475,781,456,824,434,852,410,856,401,856,392,845,373,825,355,803,341"/>
+<area shape="poly" id="edge32_Node000024_Node000007" title=" " alt="" coords="647,265,662,373,657,373,642,266"/>
+<area shape="poly" id="edge33_Node000024_Node000008" title=" " alt="" coords="653,264,725,374,721,377,649,267"/>
+<area shape="poly" id="edge34_Node000024_Node000009" title=" " alt="" coords="573,265,471,284,428,298,401,315,386,338,376,365,371,393,370,421,376,476,387,520,382,521,371,477,365,422,366,392,371,363,381,336,397,311,426,293,470,279,572,259"/>
+<area shape="poly" id="edge31_Node000024_Node000023" title=" " alt="" coords="667,263,748,305,746,309,664,268"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="690,263,870,307,869,313,688,268"/>
+<area shape="poly" id="edge28_Node000025_Node000006" title=" " alt="" coords="912,341,848,381,845,377,909,336"/>
+<area shape="poly" id="edge29_Node000025_Node000008" title=" " alt="" coords="899,341,782,385,780,380,897,336"/>
+<area shape="poly" id="edge30_Node000025_Node000009" title=" " alt="" coords="926,340,908,375,878,414,850,441,825,459,761,488,711,499,623,514,438,541,438,536,622,509,710,494,760,483,822,455,847,437,875,410,903,372,921,338"/>
+<area shape="poly" id="edge27_Node000025_Node000022" title=" " alt="" coords="946,337,1002,376,999,381,943,341"/>
+<area shape="poly" id="edge41_Node000028_Node000004" title=" " alt="" coords="185,262,430,308,429,313,184,267"/>
+<area shape="poly" id="edge40_Node000028_Node000009" title=" " alt="" coords="109,268,72,294,34,329,19,350,10,370,9,390,17,411,50,447,89,476,133,499,180,516,227,527,272,535,348,542,347,547,271,541,226,533,178,521,131,504,86,481,46,451,13,413,4,391,5,369,15,347,30,326,69,289,106,263"/>
+<area shape="rect" id="Node000029" href="$LogStream_8h.html" title="Log stream class." alt="" coords="81,313,185,339"/>
+<area shape="poly" id="edge42_Node000028_Node000029" title=" " alt="" coords="131,265,133,300,128,300,125,266"/>
+<area shape="poly" id="edge46_Node000029_Node000009" title=" " alt="" coords="137,338,147,373,167,410,208,451,256,484,305,510,349,528,347,533,303,515,253,489,204,455,162,414,142,375,132,340"/>
+<area shape="poly" id="edge43_Node000029_Node000015" title=" " alt="" coords="162,336,267,384,406,460,513,524,511,529,403,465,265,389,159,341"/>
+<area shape="poly" id="edge45_Node000029_Node000027" title=" " alt="" coords="148,337,193,375,189,380,144,341"/>
+<area shape="rect" id="Node000030" title=" " alt="" coords="27,387,102,412"/>
+<area shape="poly" id="edge44_Node000029_Node000030" title=" " alt="" coords="123,341,87,378,83,375,119,337"/>
 </map>

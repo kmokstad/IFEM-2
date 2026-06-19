@@ -1,4 +1,5 @@
 <map id="SphereBlock" name="SphereBlock">
-<area shape="rect" id="node1" title="Class for sphere geometries." alt="" coords="10,80,113,107"/>
-<area shape="rect" id="node2" href="$classElementBlock.html" title="Class for storage of a standard FE grid block." alt="" coords="5,5,117,32"/>
+<area shape="rect" id="Node000001" title="Class for sphere geometries." alt="" coords="10,79,113,104"/>
+<area shape="rect" id="Node000002" href="$classElementBlock.html" title="Class for storage of a standard FE grid block." alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,44,64,79,59,79,59,44"/>
 </map>

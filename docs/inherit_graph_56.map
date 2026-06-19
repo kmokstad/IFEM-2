@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classGlobalNodes.html" title="Class establishing global node numbers for unstructed FE models." alt="" coords="5,5,111,32"/>
+<area shape="rect" id="Node000000" href="$classGlobalIntegral.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="5,80,120,105"/>
+<area shape="rect" id="Node000001" href="$classAlgEqSystem.html" title="Class for storage of general algebraic system of equations." alt="" coords="172,5,280,31"/>
+<area shape="poly" id="edge179_Node000000_Node000001" title=" " alt="" coords="100,71,167,40,192,28,194,33,169,44,103,76"/>
+<area shape="rect" id="Node000002" href="$classGlbForceVec.html" title="Class for storage of a global nodal force vector with assembly methods." alt="" coords="175,55,277,80"/>
+<area shape="poly" id="edge180_Node000000_Node000002" title=" " alt="" coords="133,79,174,73,175,78,134,84"/>
+<area shape="rect" id="Node000003" href="$classGlbNorm.html" title="Class representing integrated global norms." alt="" coords="186,104,266,129"/>
+<area shape="poly" id="edge181_Node000000_Node000003" title=" " alt="" coords="134,100,186,108,186,114,133,106"/>
+<area shape="rect" id="Node000004" href="$classReactionsOnly.html" title="Class for assembly of reaction&#45; and interface forces." alt="" coords="168,153,284,179"/>
+<area shape="poly" id="edge182_Node000000_Node000004" title=" " alt="" coords="105,109,169,138,197,151,195,156,167,143,103,114"/>
 </map>

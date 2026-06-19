@@ -1,25 +1,52 @@
-<map id="src/LinAlg/DenseMatrix.C" name="src/LinAlg/DenseMatrix.C">
-<area shape="rect" id="node1" title="Dense system matrix representation." alt="" coords="586,5,771,32"/>
-<area shape="rect" id="node2" href="$DenseMatrix_8h.html" title="Dense system matrix representation." alt="" coords="305,80,423,107"/>
-<area shape="rect" id="node16" href="$SparseMatrix_8h.html" title="Representation of the system matrix on an unstructured sparse format." alt="" coords="468,80,588,107"/>
-<area shape="rect" id="node20" href="$SAM_8h.html" title="Assembly of FE matrices into system matrices." alt="" coords="612,80,676,107"/>
-<area shape="rect" id="node21" href="$LAPack_8h.html" title="LAPack support for various platforms." alt="" coords="674,304,755,331"/>
-<area shape="rect" id="node22" title=" " alt="" coords="751,80,825,107"/>
-<area shape="rect" id="node23" title=" " alt="" coords="849,80,924,107"/>
-<area shape="rect" id="node3" href="$SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="279,155,404,181"/>
-<area shape="rect" id="node4" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="396,229,479,256"/>
-<area shape="rect" id="node15" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="254,229,373,256"/>
-<area shape="rect" id="node5" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="377,304,471,331"/>
-<area shape="rect" id="node6" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="379,379,456,405"/>
-<area shape="rect" id="node7" title=" " alt="" coords="386,453,449,480"/>
-<area shape="rect" id="node8" title=" " alt="" coords="473,453,553,480"/>
-<area shape="rect" id="node9" title=" " alt="" coords="577,453,663,480"/>
-<area shape="rect" id="node10" title=" " alt="" coords="5,453,72,480"/>
-<area shape="rect" id="node11" title=" " alt="" coords="97,453,162,480"/>
-<area shape="rect" id="node12" title=" " alt="" coords="186,453,249,480"/>
-<area shape="rect" id="node13" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="687,453,755,480"/>
-<area shape="rect" id="node14" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="273,453,361,480"/>
-<area shape="rect" id="node17" title=" " alt="" coords="508,155,559,181"/>
-<area shape="rect" id="node18" title=" " alt="" coords="583,155,625,181"/>
-<area shape="rect" id="node19" title=" " alt="" coords="428,155,484,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/DenseMatrix.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/DenseMatrix.C">
+<area shape="rect" id="Node000001" title="Dense system matrix representation." alt="" coords="553,5,804,45"/>
+<area shape="rect" id="Node000002" href="$DenseMatrix_8h.html" title="Dense system matrix representation." alt="" coords="305,93,423,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="604,48,424,93,422,87,603,43"/>
+<area shape="rect" id="Node000016" href="$SparseMatrix_8h.html" title="Representation of the system matrix on an unstructured sparse format." alt="" coords="468,93,588,119"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="644,48,564,89,561,84,641,43"/>
+<area shape="rect" id="Node000020" href="$SAM_8h.html" title="Assembly of FE matrices into system matrices." alt="" coords="612,93,676,119"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="673,47,657,82,652,79,668,44"/>
+<area shape="rect" id="Node000021" href="$LAPack_8h.html" title="LAPack support for various platforms." alt="" coords="674,313,755,339"/>
+<area shape="poly" id="edge24_Node000001_Node000021" title=" " alt="" coords="684,46,691,93,715,299,709,300,685,94,679,46"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="751,93,825,119"/>
+<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="707,43,762,83,759,87,704,48"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="849,93,924,119"/>
+<area shape="poly" id="edge27_Node000001_Node000023" title=" " alt="" coords="729,43,844,86,842,91,728,48"/>
+<area shape="rect" id="Node000003" href="$SystemMatrix_8h.html" title="General representation of system matrices and vectors." alt="" coords="279,167,404,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="363,120,352,154,347,153,358,118"/>
+<area shape="rect" id="Node000004" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="396,240,479,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="358,190,412,229,409,234,355,194"/>
+<area shape="rect" id="Node000015" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="254,240,373,265"/>
+<area shape="poly" id="edge14_Node000003_Node000015" title=" " alt="" coords="339,193,325,228,320,226,334,191"/>
+<area shape="rect" id="Node000005" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="377,313,471,339"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="438,266,431,300,426,299,433,265"/>
+<area shape="rect" id="Node000006" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="379,387,456,412"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="426,339,422,373,417,373,420,339"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="386,460,449,485"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="420,412,420,446,415,446,415,412"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="473,460,553,485"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="434,410,488,449,485,454,431,414"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="577,460,663,485"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="451,410,575,453,574,458,449,415"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,460,72,485"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="379,409,252,431,86,462,85,457,251,425,378,404"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="97,460,162,485"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="379,413,176,462,175,457,378,407"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="186,460,249,485"/>
+<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="386,415,263,458,261,453,384,410"/>
+<area shape="rect" id="Node000013" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="687,460,755,485"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="457,407,675,457,673,462,456,412"/>
+<area shape="rect" id="Node000014" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="273,460,361,485"/>
+<area shape="poly" id="edge13_Node000006_Node000014" title=" " alt="" coords="403,414,346,454,343,450,400,410"/>
+<area shape="poly" id="edge16_Node000016_Node000003" title=" " alt="" coords="499,121,385,164,384,159,497,116"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="508,167,559,192"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="532,119,534,153,529,153,526,119"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="583,167,625,192"/>
+<area shape="poly" id="edge18_Node000016_Node000018" title=" " alt="" coords="542,117,583,155,580,159,538,121"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="428,167,484,192"/>
+<area shape="poly" id="edge19_Node000016_Node000019" title=" " alt="" coords="518,121,479,159,476,155,514,117"/>
+<area shape="poly" id="edge21_Node000020_Node000004" title=" " alt="" coords="650,119,652,155,649,175,639,194,608,221,570,239,530,249,493,254,492,248,529,244,568,234,605,217,635,190,644,174,647,154,644,119"/>
+<area shape="poly" id="edge23_Node000020_Node000017" title=" " alt="" coords="628,121,565,161,562,157,625,116"/>
+<area shape="poly" id="edge22_Node000020_Node000018" title=" " alt="" coords="640,120,620,156,615,153,635,118"/>
+<area shape="poly" id="edge25_Node000021_Node000013" title=" " alt="" coords="718,339,723,446,718,446,713,339"/>
 </map>

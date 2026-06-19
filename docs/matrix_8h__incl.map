@@ -1,11 +1,19 @@
-<map id="src/LinAlg/matrix.h" name="src/LinAlg/matrix.h">
-<area shape="rect" id="node1" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="313,5,457,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,68,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="93,80,173,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="197,80,282,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="306,80,373,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="397,80,463,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="487,80,549,107"/>
-<area shape="rect" id="node8" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="573,80,641,107"/>
-<area shape="rect" id="node9" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="666,80,754,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/matrix.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/matrix.h">
+<area shape="rect" id="Node000001" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="279,5,490,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="296,48,82,96,81,91,295,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="93,93,173,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,48,183,92,182,87,324,43"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="197,93,282,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="351,48,274,89,271,84,349,43"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="306,93,373,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="376,47,355,83,351,80,371,44"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="397,93,463,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="398,44,419,80,414,83,393,47"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="487,93,549,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="418,43,488,84,485,89,415,48"/>
+<area shape="rect" id="Node000008" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="573,93,641,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="439,43,562,86,561,91,437,48"/>
+<area shape="rect" id="Node000009" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="666,93,754,119"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="463,43,653,88,652,93,462,48"/>
 </map>

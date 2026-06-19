@@ -1,3 +1,106 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classfixed.html" title="A helper class used by ASMbase::isFixed()." alt="" coords="5,5,59,32"/>
+<area shape="rect" id="Node000000" href="$classFieldFuncBase.html" title="Base class for spatial functions, defined through patch&#45;wise fields." alt="" coords="19,643,134,668"/>
+<area shape="rect" id="Node000001" href="$classFieldFuncHDF5.html" title="Base class for spatial functions, defined from a HDF5&#45;file." alt="" coords="210,992,329,1017"/>
+<area shape="poly" id="edge111_Node000000_Node000001" title=" " alt="" coords="89,680,144,849,175,933,198,978,216,990,213,994,194,981,170,935,139,850,84,682"/>
+<area shape="rect" id="Node000010" href="$classFieldFuncStream.html" title="A scalar&#45;valued spatial function, defined through scalar fields." alt="" coords="633,5,764,31"/>
+<area shape="poly" id="edge122_Node000000_Node000010" title=" " alt="" coords="89,629,152,520,202,443,262,359,332,271,411,186,498,107,592,40,632,24,634,28,595,44,501,111,414,190,336,275,266,362,206,446,157,522,93,632"/>
+<area shape="rect" id="Node000002" href="$classFieldFuncScalarBase.html" title="Base class for field functions derived from a scalar field." alt="" coords="391,992,545,1017"/>
+<area shape="poly" id="edge112_Node000001_Node000002" title=" " alt="" coords="342,1002,390,1002,390,1007,342,1007"/>
+<area shape="rect" id="Node000028" href="$classFieldsFuncBase.html" title="Base class for multi&#45;valued spatial functions, defined through fields." alt="" coords="407,1313,529,1339"/>
+<area shape="poly" id="edge116_Node000001_Node000028" title=" " alt="" coords="337,1022,345,1028,375,1063,400,1102,421,1143,437,1185,458,1261,468,1313,462,1314,453,1262,432,1187,416,1145,396,1104,371,1066,341,1032,334,1026"/>
+<area shape="rect" id="Node000003" href="$classFieldFunction.html" title="A scalar&#45;valued spatial function, defined through scalar fields." alt="" coords="645,893,753,919"/>
+<area shape="poly" id="edge113_Node000002_Node000003" title=" " alt="" coords="531,984,544,977,558,965,567,953,576,940,592,928,617,917,644,910,645,915,619,922,595,932,580,944,571,956,562,969,547,982,533,989"/>
+<area shape="rect" id="Node000042" href="$classScalarGradFieldFunction.html" title="A vector&#45;valued spatial function, defined through gradient of a scalar field." alt="" coords="609,992,788,1017"/>
+<area shape="poly" id="edge114_Node000002_Node000042" title=" " alt="" coords="559,1002,609,1002,609,1007,559,1007"/>
+<area shape="rect" id="Node000043" href="$classScalarLaplacianFieldFunction.html" title="A vector&#45;valued spatial function, defined through laplacian of a scalar field." alt="" coords="593,943,804,968"/>
+<area shape="poly" id="edge115_Node000002_Node000043" title=" " alt="" coords="541,987,638,965,639,971,542,992"/>
+<area shape="rect" id="Node000027" href="$classSTensorFieldFunction.html" title="A symmtensor&#45;valued spatial function, defined through a vector field." alt="" coords="619,1189,778,1215"/>
+<area shape="poly" id="edge117_Node000028_Node000027" title=" " alt="" coords="489,1302,534,1262,592,1225,626,1212,628,1217,595,1230,537,1267,493,1306"/>
+<area shape="rect" id="Node000029" href="$classTensorFieldFunction.html" title="A tensor&#45;valued spatial function, defined through a vector field." alt="" coords="623,1436,774,1461"/>
+<area shape="poly" id="edge118_Node000028_Node000029" title=" " alt="" coords="536,1342,547,1349,564,1368,571,1388,579,1406,595,1423,624,1437,622,1441,592,1427,574,1409,566,1390,559,1371,544,1353,533,1347"/>
+<area shape="rect" id="Node000044" href="$classVecFieldFunction.html" title="A vector&#45;valued spatial function, defined through a vector field." alt="" coords="633,1288,764,1313"/>
+<area shape="poly" id="edge119_Node000028_Node000044" title=" " alt="" coords="543,1315,633,1305,633,1310,544,1320"/>
+<area shape="rect" id="Node000032" href="$classVecGradFieldFunction.html" title="A tensor&#45;valued spatial function, defined through gradient of a vector field." alt="" coords="617,1337,780,1363"/>
+<area shape="poly" id="edge120_Node000028_Node000032" title=" " alt="" coords="544,1331,617,1339,617,1344,543,1336"/>
+<area shape="rect" id="Node000033" href="$classVecLaplacianFieldFunction.html" title="A tensor&#45;valued spatial function, defined through laplacian of a vector field." alt="" coords="602,1387,795,1412"/>
+<area shape="poly" id="edge121_Node000028_Node000033" title=" " alt="" coords="525,1341,546,1349,570,1361,594,1373,632,1384,630,1389,592,1378,568,1366,544,1354,523,1346"/>
+<area shape="rect" id="Node000024" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,886,148,926"/>
+<area shape="rect" id="Node000023" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,562,343,602"/>
+<area shape="poly" id="edge123_Node000024_Node000023" title=" " alt="" coords="94,873,254,601,258,604,99,875"/>
+<area shape="rect" id="Node000025" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,829,343,869"/>
+<area shape="poly" id="edge144_Node000024_Node000025" title=" " alt="" coords="157,879,200,866,202,871,158,885"/>
+<area shape="rect" id="Node000034" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,1242,343,1282"/>
+<area shape="poly" id="edge147_Node000024_Node000034" title=" " alt="" coords="97,937,259,1240,255,1243,93,939"/>
+<area shape="rect" id="Node000045" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,1042,343,1082"/>
+<area shape="poly" id="edge153_Node000024_Node000045" title=" " alt="" coords="104,935,145,982,198,1028,217,1040,215,1044,194,1032,141,986,100,939"/>
+<area shape="rect" id="Node000046" href="$classLinVecFunc.html" title="A vector&#45;valued linear function." alt="" coords="222,893,317,919"/>
+<area shape="poly" id="edge162_Node000024_Node000046" title=" " alt="" coords="162,903,222,903,222,909,162,909"/>
+<area shape="rect" id="Node000004" href="$classRealFunc.html" title="Scalar&#45;valued unary function of a spatial point." alt="" coords="427,499,509,524"/>
+<area shape="poly" id="edge124_Node000023_Node000004" title=" " alt="" coords="338,555,430,522,432,527,340,560"/>
+<area shape="poly" id="edge131_Node000004_Node000003" title=" " alt="" coords="473,538,479,606,497,699,513,748,534,796,561,840,595,879,618,893,645,901,644,906,616,898,592,883,557,843,529,798,508,750,492,700,474,607,467,538"/>
+<area shape="poly" id="edge130_Node000004_Node000010" title=" " alt="" coords="490,487,519,452,543,409,558,355,561,305,556,259,548,215,543,172,545,129,560,85,591,40,610,26,632,18,634,23,613,31,595,44,564,88,550,130,549,172,554,214,561,258,566,305,563,356,548,411,523,455,494,490"/>
+<area shape="rect" id="Node000005" href="$classChebyshevFunc.html" title="A scalar&#45;valued spatial function, chebyshev polynomials." alt="" coords="637,844,761,869"/>
+<area shape="poly" id="edge125_Node000004_Node000005" title=" " alt="" coords="474,537,483,598,503,677,519,719,539,759,564,797,595,829,615,842,637,849,636,854,612,847,592,833,560,800,535,762,514,721,498,678,478,599,469,538"/>
+<area shape="rect" id="Node000006" href="$classConstFunc.html" title="A scalar&#45;valued spatial function, constant in space and time." alt="" coords="654,55,743,80"/>
+<area shape="poly" id="edge126_Node000004_Node000006" title=" " alt="" coords="490,486,518,452,543,409,557,362,560,319,551,241,547,204,550,166,563,129,591,90,605,79,620,71,653,64,654,69,622,76,608,83,595,93,568,131,555,167,553,203,556,240,565,319,562,363,548,411,523,455,494,490"/>
+<area shape="rect" id="Node000007" href="$classConstTimeFunc.html" title="A scalar&#45;valued spatial function, constant in space, varying in time." alt="" coords="637,104,760,129"/>
+<area shape="poly" id="edge127_Node000004_Node000007" title=" " alt="" coords="490,486,518,451,543,409,555,369,559,333,553,267,551,235,555,204,567,172,591,139,612,124,636,116,638,121,615,129,595,143,572,174,560,205,557,235,559,266,564,333,560,371,548,411,522,454,494,490"/>
+<area shape="rect" id="Node000008" href="$classDualRealFunc.html" title="Class representing a dual field for goal&#45;oriented error estimation." alt="" coords="643,153,754,179"/>
+<area shape="poly" id="edge128_Node000004_Node000008" title=" " alt="" coords="489,486,518,451,543,409,554,377,558,347,556,293,556,267,559,241,570,215,592,188,615,172,642,165,644,170,617,177,595,192,575,218,565,242,561,267,561,293,563,347,559,378,548,411,522,454,494,490"/>
+<area shape="rect" id="Node000009" href="$classEvalFuncSpatial.html" title="A scalar&#45;valued spatial function, general function expression." alt="" coords="601,203,796,228"/>
+<area shape="poly" id="edge129_Node000004_Node000009" title=" " alt="" coords="488,487,517,451,543,409,553,384,557,361,558,318,564,278,574,258,592,237,608,226,611,230,595,241,579,261,569,280,564,319,562,361,558,385,548,411,521,454,493,490"/>
+<area shape="rect" id="Node000011" href="$classInterpolate1D.html" title="A scalar&#45;valued spatial function, linear interpolation." alt="" coords="643,252,754,277"/>
+<area shape="poly" id="edge132_Node000004_Node000011" title=" " alt="" coords="488,486,516,451,543,409,556,374,561,344,569,315,578,301,592,287,616,272,642,265,644,270,618,277,595,291,582,304,574,318,566,345,561,376,548,411,520,454,492,490"/>
+<area shape="rect" id="Node000012" href="$classLinearRotZFunc.html" title="A scalar&#45;valued spatial function, defining a rotation about the Z&#45;axis." alt="" coords="637,301,760,327"/>
+<area shape="poly" id="edge133_Node000004_Node000012" title=" " alt="" coords="486,486,543,409,563,369,574,352,592,336,613,325,636,317,638,323,615,329,595,340,578,356,568,372,548,411,490,489"/>
+<area shape="rect" id="Node000013" href="$classLinearXFunc.html" title="A scalar&#45;valued spatial function, linear in x." alt="" coords="648,351,749,376"/>
+<area shape="poly" id="edge134_Node000004_Node000013" title=" " alt="" coords="484,486,529,434,559,408,592,385,619,374,647,366,648,372,621,379,595,390,562,412,533,438,488,489"/>
+<area shape="rect" id="Node000014" href="$classLinearYFunc.html" title="A scalar&#45;valued spatial function, linear in y." alt="" coords="649,400,749,425"/>
+<area shape="poly" id="edge135_Node000004_Node000014" title=" " alt="" coords="497,488,540,460,592,434,647,418,649,423,594,439,543,465,499,493"/>
+<area shape="rect" id="Node000015" href="$classLinearZFunc.html" title="A scalar&#45;valued spatial function, linear in z." alt="" coords="648,449,749,475"/>
+<area shape="poly" id="edge136_Node000004_Node000015" title=" " alt="" coords="522,497,647,470,648,475,523,502"/>
+<area shape="rect" id="Node000016" href="$classPropertyFunc.html" title="Class to use a property as a function." alt="" coords="645,499,752,524"/>
+<area shape="poly" id="edge137_Node000004_Node000016" title=" " alt="" coords="523,509,645,509,645,514,523,514"/>
+<area shape="rect" id="Node000017" href="$classQuadraticXFunc.html" title="A scalar&#45;valued spatial function, quadratic in x." alt="" coords="637,548,761,573"/>
+<area shape="poly" id="edge138_Node000004_Node000017" title=" " alt="" coords="523,520,639,545,638,551,522,525"/>
+<area shape="rect" id="Node000018" href="$classQuadraticYFunc.html" title="A scalar&#45;valued spatial function, quadratic in y." alt="" coords="637,597,760,623"/>
+<area shape="poly" id="edge139_Node000004_Node000018" title=" " alt="" coords="500,529,543,557,594,582,638,596,636,601,592,587,541,561,497,534"/>
+<area shape="rect" id="Node000019" href="$classQuadraticZFunc.html" title="A scalar&#45;valued spatial function, quadratic in z." alt="" coords="637,647,761,672"/>
+<area shape="poly" id="edge140_Node000004_Node000019" title=" " alt="" coords="488,533,533,584,562,610,595,632,637,648,635,653,592,636,559,614,529,587,484,537"/>
+<area shape="rect" id="Node000020" href="$classSpaceTimeFunc.html" title="A scalar&#45;valued spatial function, varying in space and time." alt="" coords="637,696,761,721"/>
+<area shape="poly" id="edge141_Node000004_Node000020" title=" " alt="" coords="483,535,500,569,525,608,557,648,595,681,615,692,637,699,636,704,613,697,592,686,553,652,520,612,495,571,478,538"/>
+<area shape="rect" id="Node000021" href="$classStepXFunc.html" title="A scalar&#45;valued spatial function, step in x." alt="" coords="653,745,744,771"/>
+<area shape="poly" id="edge142_Node000004_Node000021" title=" " alt="" coords="479,537,494,580,517,632,551,686,572,710,595,730,623,745,654,753,652,758,621,750,592,735,568,714,547,689,513,635,489,582,474,538"/>
+<area shape="rect" id="Node000022" href="$classStepXYFunc.html" title="A scalar&#45;valued spatial function, step in x and y." alt="" coords="649,795,748,820"/>
+<area shape="poly" id="edge143_Node000004_Node000022" title=" " alt="" coords="476,537,488,589,510,655,545,723,568,753,595,780,621,794,650,802,649,807,619,799,592,784,564,757,541,726,505,657,483,591,471,539"/>
+<area shape="rect" id="Node000026" href="$classSTensorFunc.html" title="Symmetric tensor&#45;valued unary function of a spatial point." alt="" coords="417,893,519,919"/>
+<area shape="poly" id="edge145_Node000025_Node000026" title=" " alt="" coords="353,870,424,891,422,896,351,875"/>
+<area shape="poly" id="edge146_Node000026_Node000027" title=" " alt="" coords="534,917,547,928,568,960,576,992,575,1024,571,1056,566,1086,566,1117,574,1146,595,1176,621,1192,618,1197,591,1180,570,1149,561,1117,561,1086,565,1055,570,1024,571,993,563,962,543,932,530,921"/>
+<area shape="rect" id="Node000030" href="$classTensorFunc.html" title="Tensor&#45;valued unary function of a spatial point." alt="" coords="421,1363,515,1388"/>
+<area shape="poly" id="edge148_Node000034_Node000030" title=" " alt="" coords="305,1289,345,1320,392,1349,421,1361,419,1366,389,1354,342,1325,302,1293"/>
+<area shape="poly" id="edge150_Node000030_Node000029" title=" " alt="" coords="511,1391,594,1422,636,1433,635,1439,593,1427,509,1396"/>
+<area shape="poly" id="edge151_Node000030_Node000032" title=" " alt="" coords="529,1366,617,1356,617,1362,529,1371"/>
+<area shape="poly" id="edge152_Node000030_Node000033" title=" " alt="" coords="529,1379,602,1387,602,1392,529,1384"/>
+<area shape="rect" id="Node000031" href="$classChebyshevTensorFunc.html" title="A tensor&#45;valued spatial function, chebyshev polynomials." alt="" coords="615,1485,782,1511"/>
+<area shape="poly" id="edge149_Node000030_Node000031" title=" " alt="" coords="493,1396,537,1435,565,1455,594,1472,624,1483,622,1488,592,1476,562,1459,534,1439,489,1400"/>
+<area shape="rect" id="Node000037" href="$classVecFunc.html" title="Vector&#45;valued unary function of a spatial point." alt="" coords="431,1049,505,1075"/>
+<area shape="poly" id="edge154_Node000045_Node000037" title=" " alt="" coords="356,1059,430,1059,430,1065,356,1065"/>
+<area shape="poly" id="edge159_Node000037_Node000042" title=" " alt="" coords="518,1046,593,1027,644,1015,645,1020,594,1033,520,1052"/>
+<area shape="poly" id="edge160_Node000037_Node000043" title=" " alt="" coords="517,1043,544,1028,558,1015,567,1002,576,989,592,977,618,966,620,970,595,982,580,993,571,1005,562,1019,547,1032,520,1047"/>
+<area shape="poly" id="edge161_Node000037_Node000044" title=" " alt="" coords="479,1087,494,1129,518,1180,552,1232,572,1255,595,1274,613,1285,634,1292,632,1297,611,1290,592,1279,568,1258,547,1235,514,1183,489,1131,474,1089"/>
+<area shape="rect" id="Node000038" href="$classChebyshevVecFunc.html" title="A vector&#45;valued spatial function, chebyshev polynomials." alt="" coords="625,1091,772,1116"/>
+<area shape="poly" id="edge155_Node000037_Node000038" title=" " alt="" coords="519,1068,628,1088,627,1093,518,1074"/>
+<area shape="rect" id="Node000039" href="$classConstVecFunc.html" title="A vector&#45;valued spatial function, constant in space and time." alt="" coords="643,1140,755,1165"/>
+<area shape="poly" id="edge156_Node000037_Node000039" title=" " alt="" coords="502,1079,545,1104,594,1126,643,1140,642,1145,592,1131,543,1108,499,1084"/>
+<area shape="rect" id="Node000040" href="$classDualVecFunc.html" title="Class representing a dual vector field." alt="" coords="646,1239,751,1264"/>
+<area shape="poly" id="edge157_Node000037_Node000040" title=" " alt="" coords="483,1086,501,1118,526,1156,557,1194,595,1225,620,1237,647,1244,645,1249,618,1242,592,1230,554,1198,522,1159,496,1121,479,1088"/>
+<area shape="rect" id="Node000041" href="$classNodeVecFunc.html" title="A class that wraps a nodal field as a vector&#45;valued spatial function." alt="" coords="644,1041,753,1067"/>
+<area shape="poly" id="edge158_Node000037_Node000041" title=" " alt="" coords="519,1058,644,1053,644,1059,519,1063"/>
+<area shape="rect" id="Node000035" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="215,943,324,968"/>
+<area shape="poly" id="edge164_Node000035_Node000004" title=" " alt="" coords="334,934,341,928,379,878,409,822,431,762,446,702,461,594,464,524,469,524,466,595,451,703,436,763,414,824,384,881,345,932,338,938"/>
+<area shape="poly" id="edge165_Node000035_Node000026" title=" " alt="" coords="334,937,416,916,417,921,335,942"/>
+<area shape="poly" id="edge166_Node000035_Node000030" title=" " alt="" coords="338,971,345,978,362,1002,373,1026,380,1050,382,1074,379,1120,369,1166,359,1212,356,1257,358,1280,365,1303,376,1326,393,1350,406,1360,421,1367,419,1372,403,1365,389,1353,371,1329,360,1305,353,1281,350,1257,354,1211,364,1165,374,1119,377,1074,375,1051,368,1028,357,1005,341,981,334,975"/>
+<area shape="poly" id="edge167_Node000035_Node000037" title=" " alt="" coords="334,971,344,977,360,990,369,1003,378,1015,392,1028,431,1048,429,1053,389,1032,374,1019,365,1006,356,994,341,982,331,976"/>
+<area shape="rect" id="Node000036" href="$classFunctionSum.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="415,943,521,968"/>
+<area shape="poly" id="edge163_Node000035_Node000036" title=" " alt="" coords="338,953,415,953,415,958,338,958"/>
 </map>

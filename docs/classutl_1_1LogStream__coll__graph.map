@@ -1,9 +1,16 @@
 <map id="utl::LogStream" name="utl::LogStream">
-<area shape="rect" id="node1" title="Logging stream class." alt="" coords="117,365,235,392"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,261,184,303"/>
-<area shape="rect" id="node3" title=" " alt="" coords="13,157,168,199"/>
-<area shape="rect" id="node4" title=" " alt="" coords="211,269,315,295"/>
-<area shape="rect" id="node5" title=" " alt="" coords="193,157,338,199"/>
-<area shape="rect" id="node6" title=" " alt="" coords="180,81,351,108"/>
-<area shape="rect" id="node7" title=" " alt="" coords="212,5,319,32"/>
+<area shape="rect" id="Node000001" title="Logging stream class." alt="" coords="32,537,149,563"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="39,244,143,269"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,283,93,537,88,537,88,283"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="109,332,264,372"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="114,277,169,330,165,334,110,281"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="18,155,163,195"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,208,93,244,88,244,88,208"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,80,176,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="93,119,93,155,88,155,88,119"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="37,5,144,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="93,45,93,80,88,80,88,45"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="107,435,285,475"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="166,486,106,539,102,535,163,482"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="192,385,197,434,192,435,187,386"/>
 </map>

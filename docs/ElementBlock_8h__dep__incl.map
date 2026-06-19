@@ -1,22 +1,41 @@
-<map id="src/Utility/ElementBlock.h" name="src/Utility/ElementBlock.h">
-<area shape="rect" id="node1" title="Storage of a standard FE grid block." alt="" coords="1618,5,1809,32"/>
-<area shape="rect" id="node2" href="$SIMoutput_8C.html" title="Sub&#45;class with functionality for result output to VTF and terminal." alt="" coords="5,80,157,107"/>
-<area shape="rect" id="node3" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="182,80,327,107"/>
-<area shape="rect" id="node4" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="352,80,520,107"/>
-<area shape="rect" id="node5" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="545,80,690,107"/>
-<area shape="rect" id="node6" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="714,80,873,107"/>
-<area shape="rect" id="node7" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="897,80,1065,107"/>
-<area shape="rect" id="node8" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="1089,80,1249,107"/>
-<area shape="rect" id="node9" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="1274,80,1419,107"/>
-<area shape="rect" id="node10" href="$ASMs3DLag_8C.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="1444,80,1612,107"/>
-<area shape="rect" id="node11" href="$ASMsupel_8C.html" title="Driver for assembly of general superelements." alt="" coords="1636,80,1791,107"/>
-<area shape="rect" id="node12" href="$ASMu1DLag_8C.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="1815,80,1985,107"/>
-<area shape="rect" id="node13" href="$ASMu2DLag_8C.html" title="Assembly of unstructured 2D Lagrange FE models." alt="" coords="2009,80,2178,107"/>
-<area shape="rect" id="node14" href="$IBGeometries_8C.html" title="Physical geometries for immersed boundary simulations." alt="" coords="2202,80,2382,107"/>
-<area shape="rect" id="node15" href="$ImmersedBoundaries_8C.html" title="Utilities for immersed boundary calculations." alt="" coords="2406,80,2637,107"/>
-<area shape="rect" id="node16" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="2661,80,2827,107"/>
-<area shape="rect" id="node17" href="$ASMu2DIB_8C.html" title="Assembly of unstructured 2D spline FE models with immersed boundary." alt="" coords="2852,80,3031,107"/>
-<area shape="rect" id="node18" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="3055,80,3222,107"/>
-<area shape="rect" id="node19" href="$ElementBlock_8C.html" title="Storage of a standard FE grid block of uniform element type." alt="" coords="3247,80,3439,107"/>
-<area shape="rect" id="node20" href="$VTF_8C.html" title="Output of FE model and results to VTF file." alt="" coords="3463,80,3588,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ElementBlock.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ElementBlock.h">
+<area shape="rect" id="Node000001" title="Storage of a standard FE grid block." alt="" coords="2256,5,2437,60"/>
+<area shape="rect" id="Node000002" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="5,115,216,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2242,38,1827,44,1245,57,658,79,413,93,228,111,186,118,185,113,228,105,413,88,658,73,1245,52,1827,39,2242,32"/>
+<area shape="rect" id="Node000003" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="240,115,475,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2242,39,1873,47,1366,62,858,83,647,96,487,111,441,118,440,113,486,105,647,91,858,78,1366,56,1872,42,2242,33"/>
+<area shape="rect" id="Node000004" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="499,115,709,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="2242,39,1476,63,1040,84,859,97,722,111,680,118,679,113,721,105,859,91,1040,79,1476,58,2242,34"/>
+<area shape="rect" id="Node000005" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="733,115,957,155"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="2243,37,2013,40,1697,51,1335,73,1151,90,970,111,926,118,925,113,969,105,1150,84,1335,68,1697,46,2013,35,2243,32"/>
+<area shape="rect" id="Node000006" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="981,115,1216,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="2242,39,2052,46,1800,58,1515,79,1228,111,1184,118,1183,113,1228,105,1515,74,1799,53,2052,40,2242,34"/>
+<area shape="rect" id="Node000007" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="1240,115,1467,155"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="2242,42,1902,64,1691,84,1479,111,1437,118,1436,113,1478,105,1690,79,1902,59,2242,36"/>
+<area shape="rect" id="Node000008" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="1491,115,1701,155"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="2242,46,2000,71,1857,89,1714,111,1676,118,1675,113,1713,105,1856,84,2000,65,2242,40"/>
+<area shape="rect" id="Node000009" href="$ASMs3DLag_8C.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="1725,115,1960,155"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="2243,57,1973,111,1936,118,1935,113,1971,105,2242,52"/>
+<area shape="rect" id="Node000010" href="$ASMsupel_8C.html" title="Driver for assembly of general superelements." alt="" coords="1984,115,2205,155"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="2270,67,2143,118,2141,113,2268,63"/>
+<area shape="rect" id="Node000011" href="$ASMu1DLag_8C.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="2229,115,2464,155"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="2349,74,2349,115,2344,115,2344,74"/>
+<area shape="rect" id="Node000012" href="$ASMu2DLag_8C.html" title="Assembly of unstructured 2D Lagrange FE models." alt="" coords="2488,115,2723,155"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="2428,63,2558,113,2556,118,2426,67"/>
+<area shape="rect" id="Node000013" href="$IBGeometries_8C.html" title="Physical geometries for immersed boundary simulations." alt="" coords="2746,115,2993,155"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="2451,51,2735,105,2773,113,2772,118,2734,111,2450,56"/>
+<area shape="rect" id="Node000014" href="$ImmersedBoundaries_8C.html" title="Utilities for immersed boundary calculations." alt="" coords="3016,115,3312,155"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="2451,41,2704,68,3006,105,3055,113,3054,118,3005,111,2703,73,2451,47"/>
+<area shape="rect" id="Node000015" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="3336,115,3568,155"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="2451,35,2836,56,3080,77,3324,105,3368,113,3367,118,3324,111,3079,82,2836,62,2451,40"/>
+<area shape="rect" id="Node000016" href="$ASMu2DIB_8C.html" title="Assembly of unstructured 2D spline FE models with immersed boundary." alt="" coords="3592,115,3837,155"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="2451,33,2659,39,2940,51,3258,73,3580,105,3627,113,3626,118,3580,111,3258,78,2939,56,2659,44,2451,38"/>
+<area shape="rect" id="Node000017" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="3861,115,4093,155"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="2451,31,2700,34,3047,44,3445,66,3650,83,3850,105,3895,113,3894,118,3849,111,3649,89,3445,71,3046,49,2700,39,2451,36"/>
+<area shape="rect" id="Node000018" href="$SIMoutput_8C.html" title="Sub&#45;class with functionality for result output to VTF and terminal." alt="" coords="4117,115,4336,155"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="2451,33,2803,42,3280,57,3757,78,3955,91,4106,105,4149,113,4148,118,4105,111,3955,96,3757,83,3280,62,2802,47,2451,39"/>
+<area shape="rect" id="Node000019" href="$ElementBlock_8C.html" title="Storage of a standard FE grid block of uniform element type." alt="" coords="4360,108,4541,163"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="2451,32,2845,38,3394,50,3945,72,4175,87,4348,105,4360,107,4359,113,4348,111,4174,92,3945,77,3394,56,2845,43,2451,38"/>
+<area shape="rect" id="Node000020" href="$VTF_8C.html" title="Output of FE model and results to VTF file." alt="" coords="4566,115,4757,155"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="2451,32,2882,37,3490,49,4104,71,4360,86,4554,105,4593,113,4592,118,4553,111,4360,92,4104,76,3489,54,2882,42,2451,37"/>
 </map>

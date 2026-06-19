@@ -1,5 +1,7 @@
-<map id="src/ASM/GlobalIntegral.h" name="src/ASM/GlobalIntegral.h">
-<area shape="rect" id="node1" title="Abstract interface for classes representing integrated quantities." alt="" coords="5,5,188,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="20,80,83,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="107,80,177,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlobalIntegral.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlobalIntegral.h">
+<area shape="rect" id="Node000001" title="Abstract interface for classes representing integrated quantities." alt="" coords="5,5,253,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="53,93,115,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,47,100,83,95,80,116,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="139,93,210,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,44,163,80,159,83,138,47"/>
 </map>

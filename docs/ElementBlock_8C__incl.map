@@ -1,21 +1,46 @@
-<map id="src/Utility/ElementBlock.C" name="src/Utility/ElementBlock.C">
-<area shape="rect" id="node1" title="Storage of a standard FE grid block of uniform element type." alt="" coords="406,5,598,32"/>
-<area shape="rect" id="node2" href="$ElementBlock_8h.html" title="Storage of a standard FE grid block." alt="" coords="208,80,332,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="670,379,755,405"/>
-<area shape="rect" id="node17" href="$Vec3Oper_8h.html" title="Global algebraic operators involving Vec3 objects." alt="" coords="369,155,464,181"/>
-<area shape="rect" id="node18" href="$Tensor_8h.html" title="Representation of second&#45;order tensors with some basic operations." alt="" coords="13,304,87,331"/>
-<area shape="rect" id="node19" title=" " alt="" coords="590,80,665,107"/>
-<area shape="rect" id="node3" href="$Point_8h.html" title="Representation of points in 3D space with coordinates and parameters." alt="" coords="111,229,178,256"/>
-<area shape="rect" id="node8" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="182,155,265,181"/>
-<area shape="rect" id="node16" title=" " alt="" coords="289,155,345,181"/>
-<area shape="rect" id="node4" href="$Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="112,304,177,331"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,379,68,405"/>
-<area shape="rect" id="node6" title=" " alt="" coords="93,379,173,405"/>
-<area shape="rect" id="node7" title=" " alt="" coords="197,379,260,405"/>
-<area shape="rect" id="node9" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="243,229,337,256"/>
-<area shape="rect" id="node10" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="318,304,395,331"/>
-<area shape="rect" id="node12" title=" " alt="" coords="285,379,351,405"/>
-<area shape="rect" id="node13" title=" " alt="" coords="376,379,441,405"/>
-<area shape="rect" id="node14" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="465,379,533,405"/>
-<area shape="rect" id="node15" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="558,379,646,405"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ElementBlock.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ElementBlock.C">
+<area shape="rect" id="Node000001" title="Storage of a standard FE grid block of uniform element type." alt="" coords="411,5,593,60"/>
+<area shape="rect" id="Node000002" href="$ElementBlock_8h.html" title="Storage of a standard FE grid block." alt="" coords="208,108,332,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="432,63,315,106,313,101,430,58"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="670,401,755,427"/>
+<area shape="poly" id="edge24_Node000001_Node000011" title=" " alt="" coords="518,59,542,119,552,155,555,193,555,268,558,291,567,311,579,329,595,346,632,373,670,393,668,398,630,378,591,350,575,332,562,313,553,292,550,269,550,193,546,156,537,121,513,61"/>
+<area shape="rect" id="Node000017" href="$Vec3Oper_8h.html" title="Global algebraic operators involving Vec3 objects." alt="" coords="369,181,464,207"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="490,61,432,171,427,168,486,59"/>
+<area shape="rect" id="Node000018" href="$Tensor_8h.html" title="Representation of second&#45;order tensors with some basic operations." alt="" coords="13,328,87,353"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="507,60,508,92,505,131,496,171,478,208,441,253,402,283,361,301,318,310,220,317,164,322,101,331,101,325,163,316,220,312,317,305,360,296,399,278,437,249,473,205,490,169,500,130,503,92,502,61"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="590,108,665,133"/>
+<area shape="poly" id="edge25_Node000001_Node000019" title=" " alt="" coords="542,58,601,98,598,102,539,62"/>
+<area shape="rect" id="Node000003" href="$Point_8h.html" title="Representation of points in 3D space with coordinates and parameters." alt="" coords="111,255,178,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,136,204,155,172,183,157,212,150,242,145,240,152,210,168,180,201,150,237,131"/>
+<area shape="rect" id="Node000008" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="182,181,265,207"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="265,135,241,171,236,168,260,132"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="289,181,345,207"/>
+<area shape="poly" id="edge18_Node000002_Node000016" title=" " alt="" coords="280,132,304,168,299,171,275,135"/>
+<area shape="rect" id="Node000004" href="$Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="112,328,177,353"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="147,280,147,314,142,314,142,280"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,401,68,427"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="129,356,67,396,64,391,126,351"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="93,401,173,427"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="145,354,140,388,134,387,140,353"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="197,401,260,427"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="160,351,206,390,203,394,156,355"/>
+<area shape="rect" id="Node000009" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="243,255,337,280"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="236,205,272,243,268,246,232,209"/>
+<area shape="rect" id="Node000010" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="318,328,395,353"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="303,279,338,316,335,320,299,282"/>
+<area shape="poly" id="edge10_Node000010_Node000005" title=" " alt="" coords="318,352,82,404,81,399,317,347"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="321,356,183,400,181,395,320,351"/>
+<area shape="poly" id="edge15_Node000010_Node000007" title=" " alt="" coords="337,356,263,397,261,392,335,351"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="396,347,657,398,656,404,395,352"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="285,401,351,427"/>
+<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="353,355,333,391,328,388,348,352"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="376,401,441,427"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="367,352,394,389,390,392,363,355"/>
+<area shape="rect" id="Node000014" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="465,401,533,427"/>
+<area shape="poly" id="edge16_Node000010_Node000014" title=" " alt="" coords="381,351,465,393,463,397,378,356"/>
+<area shape="rect" id="Node000015" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="558,401,646,427"/>
+<area shape="poly" id="edge17_Node000010_Node000015" title=" " alt="" coords="396,351,550,395,549,400,395,356"/>
+<area shape="poly" id="edge20_Node000017_Node000010" title=" " alt="" coords="414,208,369,316,364,314,409,206"/>
+<area shape="poly" id="edge22_Node000018_Node000005" title=" " alt="" coords="50,354,44,388,39,387,45,353"/>
+<area shape="poly" id="edge23_Node000018_Node000006" title=" " alt="" coords="65,351,110,390,107,394,62,355"/>
 </map>

@@ -1,6 +1,9 @@
 <map id="ASMmxBase" name="ASMmxBase">
-<area shape="rect" id="node1" title="Base class for spline&#45;based mixed finite element assembly drivers." alt="" coords="206,124,310,151"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,13,164,39"/>
-<area shape="rect" id="node3" title=" " alt="" coords="189,13,327,39"/>
-<area shape="rect" id="node4" title=" " alt="" coords="351,5,517,47"/>
+<area shape="rect" id="Node000001" title="Base class for spline&#45;based mixed finite element assembly drivers." alt="" coords="196,123,300,148"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,144,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,43,191,96,230,120,228,125,188,101,103,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="169,13,327,38"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,52,251,122,245,122,245,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="352,5,517,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="398,55,325,101,276,125,274,120,323,96,396,51"/>
 </map>

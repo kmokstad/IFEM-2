@@ -1,5 +1,7 @@
 <map id="ISTLMatrix" name="ISTLMatrix">
-<area shape="rect" id="node1" title="Class for representing the system matrix in ISTL format." alt="" coords="17,155,107,181"/>
-<area shape="rect" id="node2" href="$classSparseMatrix.html" title="Class for representing a system matrix on an unstructured sparse form." alt="" coords="8,80,116,107"/>
-<area shape="rect" id="node3" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="Node000001" title="Class for representing the system matrix in ISTL format." alt="" coords="17,152,107,177"/>
+<area shape="rect" id="Node000002" href="$classSparseMatrix.html" title="Class for representing a system matrix on an unstructured sparse form." alt="" coords="8,79,116,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,118,65,152,59,152,59,118"/>
+<area shape="rect" id="Node000003" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="5,5,119,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,44,65,79,59,79,59,44"/>
 </map>

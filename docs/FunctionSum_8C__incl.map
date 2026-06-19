@@ -1,18 +1,39 @@
-<map id="src/SIM/FunctionSum.C" name="src/SIM/FunctionSum.C">
-<area shape="rect" id="node1" title="Unary spatial function as a sum of other spatial functions." alt="" coords="375,5,546,32"/>
-<area shape="rect" id="node2" href="$FunctionSum_8h.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="451,80,569,107"/>
-<area shape="rect" id="node5" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="349,304,426,331"/>
-<area shape="rect" id="node3" href="$Function_8h.html" title="General functions with arbitrary argument and value type." alt="" coords="512,155,601,181"/>
-<area shape="rect" id="node4" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="403,229,497,256"/>
-<area shape="rect" id="node14" href="$Tensor_8h.html" title="Representation of second&#45;order tensors with some basic operations." alt="" coords="675,304,750,331"/>
-<area shape="rect" id="node15" href="$Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="585,304,651,331"/>
-<area shape="rect" id="node16" title=" " alt="" coords="521,229,592,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="587,379,649,405"/>
-<area shape="rect" id="node7" title=" " alt="" coords="674,379,754,405"/>
-<area shape="rect" id="node8" title=" " alt="" coords="299,379,385,405"/>
-<area shape="rect" id="node9" title=" " alt="" coords="409,379,475,405"/>
-<area shape="rect" id="node10" title=" " alt="" coords="5,379,71,405"/>
-<area shape="rect" id="node11" title=" " alt="" coords="500,379,563,405"/>
-<area shape="rect" id="node12" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="95,379,163,405"/>
-<area shape="rect" id="node13" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="187,379,275,405"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/FunctionSum.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/FunctionSum.C">
+<area shape="rect" id="Node000001" title="Unary spatial function as a sum of other spatial functions." alt="" coords="343,5,579,45"/>
+<area shape="rect" id="Node000002" href="$FunctionSum_8h.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="451,93,569,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="475,44,498,80,493,83,470,47"/>
+<area shape="rect" id="Node000005" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="349,313,426,339"/>
+<area shape="poly" id="edge21_Node000001_Node000005" title=" " alt="" coords="455,47,424,130,407,184,394,240,389,300,384,299,389,240,402,183,419,128,450,45"/>
+<area shape="rect" id="Node000003" href="$Function_8h.html" title="General functions with arbitrary argument and value type." alt="" coords="512,167,601,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="520,118,544,154,539,157,515,120"/>
+<area shape="rect" id="Node000004" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="403,240,497,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="541,194,480,235,477,230,538,190"/>
+<area shape="rect" id="Node000014" href="$Tensor_8h.html" title="Representation of second&#45;order tensors with some basic operations." alt="" coords="675,313,750,339"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="572,190,628,238,693,301,690,305,624,242,569,194"/>
+<area shape="rect" id="Node000015" href="$Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="585,313,651,339"/>
+<area shape="poly" id="edge16_Node000003_Node000015" title=" " alt="" coords="571,190,590,212,607,239,616,270,620,299,615,300,611,271,602,241,586,215,567,194"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="521,240,592,265"/>
+<area shape="poly" id="edge20_Node000003_Node000016" title=" " alt="" coords="559,192,559,226,554,226,554,192"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="442,267,409,305,405,301,438,264"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="587,387,649,412"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="425,336,574,382,573,387,424,341"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="674,387,754,412"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="427,333,661,384,660,389,425,338"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="299,387,385,412"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="382,340,359,377,354,374,378,338"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="409,387,475,412"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="398,337,427,374,423,377,394,341"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,387,71,412"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="349,337,85,389,84,384,348,331"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="500,387,563,412"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="412,336,497,378,494,383,409,341"/>
+<area shape="rect" id="Node000012" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="95,387,163,412"/>
+<area shape="poly" id="edge11_Node000005_Node000012" title=" " alt="" coords="349,340,177,388,175,383,348,335"/>
+<area shape="rect" id="Node000013" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="187,387,275,412"/>
+<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="363,341,270,383,268,378,361,336"/>
+<area shape="poly" id="edge14_Node000014_Node000006" title=" " alt="" coords="699,341,646,380,643,376,696,337"/>
+<area shape="poly" id="edge15_Node000014_Node000007" title=" " alt="" coords="716,339,716,373,711,373,710,339"/>
+<area shape="poly" id="edge17_Node000015_Node000006" title=" " alt="" coords="621,339,621,373,615,373,615,339"/>
+<area shape="poly" id="edge18_Node000015_Node000007" title=" " alt="" coords="635,337,689,376,686,380,632,341"/>
+<area shape="poly" id="edge19_Node000015_Node000011" title=" " alt="" coords="606,341,558,380,554,376,602,337"/>
 </map>

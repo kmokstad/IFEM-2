@@ -1,102 +1,241 @@
 <map id="SIMsupel" name="SIMsupel">
-<area shape="rect" id="node1" title="Solution driver for general superelement FEM analysis." alt="" coords="1231,1420,1313,1447"/>
-<area shape="rect" id="node2" href="$classSIMdummy.html" title=" " alt="" coords="1147,1265,1346,1292"/>
-<area shape="rect" id="node3" href="$classSIMgeneric.html" title="Generic SIM class with some added functionalities." alt="" coords="1267,1125,1362,1152"/>
-<area shape="rect" id="node98" href="$structSIMsupel_1_1SuperElm.html" title="Struct with superelement data." alt="" coords="1297,1215,1447,1241"/>
-<area shape="rect" id="node4" href="$classSIMoutput.html" title="Sub&#45;class with additional functionality for result output." alt="" coords="1271,1049,1359,1076"/>
-<area shape="rect" id="node5" href="$classSIMinput.html" title="Sub&#45;class with functionality for model input and setup." alt="" coords="3101,960,3179,987"/>
-<area shape="rect" id="node6" href="$classSIMbase.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="2599,863,2676,890"/>
-<area shape="rect" id="node7" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="1909,745,1995,771"/>
-<area shape="rect" id="node8" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="2235,613,2349,639"/>
-<area shape="rect" id="node9" href="$classSIMoptions.html" title="Class for encapsulation of general simulation options." alt="" coords="1793,357,1887,383"/>
-<area shape="rect" id="node10" title=" " alt="" coords="2077,109,2163,136"/>
-<area shape="rect" id="node12" title=" " alt="" coords="1581,222,1793,263"/>
-<area shape="rect" id="node19" href="$classDomainDecomposition.html" title="Class containing domain decomposition related partitioning." alt="" coords="4029,491,4200,518"/>
-<area shape="rect" id="node32" title=" " alt="" coords="1931,222,2165,263"/>
-<area shape="rect" id="node35" href="$structSIMdependency_1_1Dependency.html" title="Struct holding information about an inter&#45;SIM dependency." alt="" coords="2125,491,2339,518"/>
-<area shape="rect" id="node48" href="$structSIMbase_1_1DumpData.html" title="A struct with data for system matrix/vector dumps." alt="" coords="2989,229,3144,256"/>
-<area shape="rect" id="node51" title=" " alt="" coords="2189,222,2352,263"/>
-<area shape="rect" id="node70" title=" " alt="" coords="2536,222,2699,263"/>
-<area shape="rect" id="node82" title=" " alt="" coords="3456,222,3619,263"/>
-<area shape="rect" id="node87" title=" " alt="" coords="3171,737,3333,779"/>
-<area shape="rect" id="node95" title=" " alt="" coords="565,605,728,647"/>
-<area shape="rect" id="node96" title=" " alt="" coords="3385,297,3551,324"/>
-<area shape="rect" id="node11" title=" " alt="" coords="2051,5,2189,47"/>
-<area shape="rect" id="node13" href="$classProcessAdm.html" title="Class for administration of MPI processes in IFEM library." alt="" coords="3914,613,4017,639"/>
-<area shape="rect" id="node73" href="$classAlgEqSystem.html" title="Class for storage of general algebraic system of equations." alt="" coords="4237,745,4345,771"/>
-<area shape="rect" id="node14" href="$classutl_1_1LogStream.html" title="Logging stream class." alt="" coords="3817,491,3935,518"/>
-<area shape="rect" id="node15" title=" " alt="" coords="3787,349,3965,391"/>
-<area shape="rect" id="node16" title=" " alt="" coords="3965,222,4120,263"/>
-<area shape="rect" id="node17" title=" " alt="" coords="3659,357,3763,383"/>
-<area shape="rect" id="node18" title=" " alt="" coords="3795,222,3941,263"/>
-<area shape="rect" id="node20" title=" " alt="" coords="4733,109,4883,136"/>
-<area shape="rect" id="node26" href="$structDomainDecomposition_1_1BlockInfo.html" title="Struct with information per matrix block." alt="" coords="4195,222,4365,263"/>
-<area shape="rect" id="node21" href="$classSAMpatch.html" title="This is a sub&#45;class of SAM with added functionality for spline models." alt="" coords="3989,357,4077,383"/>
-<area shape="rect" id="node22" href="$classSAM.html" title="This class contains data and functions for the assembly of FE matrices." alt="" coords="5010,229,5062,256"/>
-<area shape="rect" id="node23" title=" " alt="" coords="5427,109,5576,136"/>
-<area shape="rect" id="node24" title=" " alt="" coords="2723,229,2915,256"/>
-<area shape="rect" id="node25" title=" " alt="" coords="4153,349,4407,391"/>
-<area shape="rect" id="node27" title=" " alt="" coords="3403,109,3520,136"/>
-<area shape="rect" id="node28" title=" " alt="" coords="4131,109,4269,136"/>
-<area shape="rect" id="node68" href="$classIntegrandBase.html" title="Base class representing a system level integrated quantity." alt="" coords="2586,357,2702,383"/>
-<area shape="rect" id="node29" title=" " alt="" coords="4483,349,4754,391"/>
-<area shape="rect" id="node30" href="$structASM_1_1Interface.html" title="Struct for representing a domain interface." alt="" coords="5112,229,5229,256"/>
-<area shape="rect" id="node81" title=" " alt="" coords="5095,552,5311,579"/>
-<area shape="rect" id="node31" href="$classSIMdependency.html" title="Class administering inter&#45;SIM field dependencies." alt="" coords="1979,357,2104,383"/>
-<area shape="rect" id="node33" title=" " alt="" coords="3213,109,3379,136"/>
-<area shape="rect" id="node34" title=" " alt="" coords="2008,613,2211,639"/>
-<area shape="rect" id="node36" title=" " alt="" coords="795,679,994,706"/>
-<area shape="rect" id="node37" href="$classVecFunc.html" title="Vector&#45;valued unary function of a spatial point." alt="" coords="1231,491,1305,518"/>
-<area shape="rect" id="node55" href="$classAnaSol.html" title="Class for analytical solution fields (primary and secondary solution)." alt="" coords="1176,745,1243,771"/>
-<area shape="rect" id="node63" title=" " alt="" coords="1034,613,1219,639"/>
-<area shape="rect" id="node38" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="1197,349,1344,391"/>
-<area shape="rect" id="node39" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="1071,222,1214,263"/>
-<area shape="rect" id="node58" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="1513,349,1660,391"/>
-<area shape="rect" id="node60" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="856,349,1003,391"/>
-<area shape="rect" id="node62" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="1027,349,1173,391"/>
-<area shape="rect" id="node40" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="1372,357,1481,383"/>
-<area shape="rect" id="node46" title=" " alt="" coords="1647,679,1865,706"/>
-<area shape="rect" id="node57" href="$classRealFunc.html" title="Scalar&#45;valued unary function of a spatial point." alt="" coords="1395,491,1477,518"/>
-<area shape="rect" id="node59" href="$classSTensorFunc.html" title="Symmetric tensor&#45;valued unary function of a spatial point." alt="" coords="878,491,981,518"/>
-<area shape="rect" id="node61" href="$classTensorFunc.html" title="Tensor&#45;valued unary function of a spatial point." alt="" coords="1053,491,1147,518"/>
-<area shape="rect" id="node41" title=" " alt="" coords="2285,745,2461,771"/>
-<area shape="rect" id="node42" href="$structProperty.html" title="Struct for representing a distributed physical property." alt="" coords="2373,613,2451,639"/>
-<area shape="rect" id="node43" title=" " alt="" coords="2805,745,3032,771"/>
-<area shape="rect" id="node44" href="$classTractionFunc.html" title="Vector&#45;valued binary function of a spatial point and normal vector." alt="" coords="2922,613,3025,639"/>
-<area shape="rect" id="node45" href="$classutl_1_1Function2.html" title=" " alt="" coords="2908,484,3068,525"/>
-<area shape="rect" id="node47" title=" " alt="" coords="3031,416,3193,457"/>
-<area shape="rect" id="node49" href="$classLinSolParams.html" title="Class for linear solver parameters." alt="" coords="2667,745,2776,771"/>
-<area shape="rect" id="node50" href="$classSettingMap.html" title="A key&#45;value store for settings." alt="" coords="2415,357,2511,383"/>
-<area shape="rect" id="node53" href="$classLinSolParams_1_1BlockParams.html" title="Linear solver settings for a block of the linear system." alt="" coords="2682,491,2883,518"/>
-<area shape="rect" id="node52" title=" " alt="" coords="2705,605,2898,647"/>
-<area shape="rect" id="node54" title=" " alt="" coords="2727,349,2945,391"/>
-<area shape="rect" id="node56" title=" " alt="" coords="1341,613,1531,639"/>
-<area shape="rect" id="node64" title=" " alt="" coords="1402,679,1606,706"/>
-<area shape="rect" id="node65" title=" " alt="" coords="3358,745,3533,771"/>
-<area shape="rect" id="node66" title=" " alt="" coords="3342,613,3471,639"/>
-<area shape="rect" id="node67" title=" " alt="" coords="3387,491,3426,518"/>
-<area shape="rect" id="node80" title=" " alt="" coords="2519,672,2668,713"/>
-<area shape="rect" id="node69" href="$classIntegrand.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="2427,229,2511,256"/>
-<area shape="rect" id="node71" href="$classutl_1_1vector.html" title="A vector class with some added algebraic operations." alt="" coords="3062,109,3189,136"/>
-<area shape="rect" id="node72" title=" " alt="" coords="3219,229,3381,256"/>
-<area shape="rect" id="node74" href="$classGlobalIntegral.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="4233,613,4348,639"/>
-<area shape="rect" id="node75" title=" " alt="" coords="4695,552,4918,579"/>
-<area shape="rect" id="node76" href="$classSystemVector.html" title="Base class for representing a system vector on different formats." alt="" coords="4916,357,5028,383"/>
-<area shape="rect" id="node78" href="$structAlgEqSystem_1_1SysMatrixPair.html" title="Struct defining a coefficient matrix and an associated RHS&#45;vector." alt="" coords="4645,491,4851,518"/>
-<area shape="rect" id="node77" title=" " alt="" coords="4468,605,4660,647"/>
-<area shape="rect" id="node79" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="4778,357,4891,383"/>
-<area shape="rect" id="node83" title=" " alt="" coords="3544,109,3653,136"/>
-<area shape="rect" id="node84" title=" " alt="" coords="3579,13,3618,39"/>
-<area shape="rect" id="node85" title=" " alt="" coords="2881,863,3053,890"/>
-<area shape="rect" id="node86" href="$classModelGenerator.html" title="Base class for model generators for FEM simulators." alt="" coords="3077,863,3203,890"/>
-<area shape="rect" id="node88" title=" " alt="" coords="1094,960,1277,987"/>
-<area shape="rect" id="node89" href="$classVTF.html" title="Class for output of FE model and results to VTF file." alt="" coords="735,960,782,987"/>
-<area shape="rect" id="node90" title=" " alt="" coords="768,863,1008,890"/>
-<area shape="rect" id="node91" title=" " alt="" coords="1032,856,1267,897"/>
-<area shape="rect" id="node92" title=" " alt="" coords="43,863,227,890"/>
-<area shape="rect" id="node93" title=" " alt="" coords="251,863,491,890"/>
-<area shape="rect" id="node94" title=" " alt="" coords="515,856,743,897"/>
-<area shape="rect" id="node97" title=" " alt="" coords="1291,1316,1456,1357"/>
-<area shape="rect" id="node99" href="$classutl_1_1matrix.html" title=" " alt="" coords="1387,1125,1536,1152"/>
-<area shape="rect" id="node100" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="1383,1049,1543,1076"/>
+<area shape="rect" id="Node000001" title="Solution driver for general superelement FEM analysis." alt="" coords="1233,1411,1314,1436"/>
+<area shape="rect" id="Node000002" href="$classSIMdummy.html" title=" " alt="" coords="1149,1259,1347,1284"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1255,1297,1274,1410,1269,1411,1250,1298"/>
+<area shape="rect" id="Node000003" href="$classSIMgeneric.html" title="Generic SIM class with some added functionalities." alt="" coords="1267,1121,1362,1147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1305,1160,1256,1260,1251,1257,1301,1158"/>
+<area shape="rect" id="Node000125" href="$structSIMsupel_1_1SuperElm.html" title="Struct with superelement data." alt="" coords="1299,1209,1450,1235"/>
+<area shape="poly" id="edge139_Node000125_Node000003" title=" " alt="" coords="1333,1157,1368,1207,1364,1210,1329,1160"/>
+<area shape="rect" id="Node000004" href="$classSIMoutput.html" title="Sub&#45;class with additional functionality for result output." alt="" coords="1271,1047,1359,1072"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1317,1086,1317,1121,1312,1121,1312,1086"/>
+<area shape="rect" id="Node000005" href="$classSIMinput.html" title="Sub&#45;class with functionality for model input and setup." alt="" coords="1685,959,1763,984"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1672,986,1360,1051,1359,1046,1670,981"/>
+<area shape="rect" id="Node000006" href="$classSIMbase.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="3483,863,3560,889"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="3469,883,1764,971,1763,965,3469,877"/>
+<area shape="rect" id="Node000007" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="3425,731,3511,757"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="3480,768,3519,862,3514,864,3475,770"/>
+<area shape="rect" id="Node000008" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="3375,601,3489,627"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="3439,640,3453,699,3465,730,3460,732,3448,701,3434,641"/>
+<area shape="rect" id="Node000009" href="$classSIMoptions.html" title="Class for encapsulation of general simulation options." alt="" coords="3139,350,3234,375"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="3223,380,3256,405,3286,436,3308,473,3326,518,3335,556,3344,592,3365,635,3386,664,3411,690,3455,729,3451,733,3407,694,3382,667,3360,637,3339,594,3330,557,3321,520,3303,476,3282,439,3253,409,3220,384"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="3469,108,3555,133"/>
+<area shape="poly" id="edge28_Node000007_Node000010" title=" " alt="" coords="3455,126,3349,133,3223,147,3163,159,3110,173,3068,191,3041,212,3033,226,3032,238,3041,268,3062,312,3097,366,3136,415,3171,448,3194,458,3216,459,3239,460,3263,473,3282,492,3296,510,3310,547,3320,588,3338,635,3354,669,3362,683,3376,698,3403,716,3431,729,3429,734,3400,721,3373,702,3358,686,3350,672,3334,637,3315,589,3305,549,3291,513,3278,495,3260,477,3237,465,3216,464,3193,463,3168,453,3132,419,3092,369,3057,315,3036,270,3027,239,3028,224,3037,209,3065,186,3108,168,3162,153,3222,142,3349,128,3455,121"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="3456,127,3402,134,3342,149,3282,174,3255,192,3231,212,3209,246,3196,285,3190,322,3189,350,3184,350,3185,322,3191,284,3204,244,3227,209,3252,187,3280,170,3340,144,3401,129,3455,122"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="3307,220,3519,260"/>
+<area shape="poly" id="edge12_Node000012_Node000010" title=" " alt="" coords="3489,144,3474,159,3427,221,3423,218,3470,156,3485,140"/>
+<area shape="rect" id="Node000021" href="$classDomainDecomposition.html" title="Class containing domain decomposition related partitioning." alt="" coords="3915,482,4085,507"/>
+<area shape="poly" id="edge27_Node000021_Node000010" title=" " alt="" coords="3570,133,3656,160,3762,203,3817,230,3872,262,3923,299,3970,341,3983,357,3992,376,4002,416,4005,453,4004,482,3999,482,4000,454,3997,417,3987,378,3978,360,3966,344,3920,303,3869,267,3815,235,3760,207,3654,165,3568,138"/>
+<area shape="rect" id="Node000052" title=" " alt="" coords="4697,220,4932,260"/>
+<area shape="poly" id="edge31_Node000052_Node000010" title=" " alt="" coords="3569,120,4018,130,4275,140,4463,155,4541,167,4619,184,4751,217,4750,223,4618,189,4540,173,4462,160,4274,145,4017,135,3569,125"/>
+<area shape="rect" id="Node000055" href="$structSIMdependency_1_1Dependency.html" title="Struct holding information about an inter&#45;SIM dependency." alt="" coords="4336,482,4549,507"/>
+<area shape="poly" id="edge37_Node000055_Node000010" title=" " alt="" coords="3569,119,3698,120,3860,124,4017,135,4082,144,4130,155,4225,186,4298,217,4330,238,4360,265,4390,298,4421,341,4438,379,4446,418,4447,482,4441,482,4440,419,4433,380,4416,344,4386,302,4357,268,4327,242,4296,222,4223,191,4129,160,4081,149,4017,140,3860,129,3698,125,3569,124"/>
+<area shape="rect" id="Node000073" title=" " alt="" coords="5260,343,5423,383"/>
+<area shape="poly" id="edge57_Node000073_Node000010" title=" " alt="" coords="3569,120,4351,130,4773,141,4917,147,4987,155,5029,175,5078,207,5165,267,5304,340,5302,345,5163,272,5075,212,5026,180,4986,160,4917,153,4773,146,4351,136,3569,125"/>
+<area shape="rect" id="Node000091" href="$structSIMbase_1_1DumpData.html" title="A struct with data for system matrix/vector dumps." alt="" coords="3564,601,3719,627"/>
+<area shape="poly" id="edge84_Node000091_Node000010" title=" " alt="" coords="3534,143,3540,157,3545,183,3546,216,3543,248,3534,271,3414,308,3296,345,3289,363,3297,381,3318,405,3338,420,3360,429,3384,433,3436,437,3499,448,3528,453,3552,453,3575,457,3599,473,3622,504,3635,540,3642,575,3644,601,3639,601,3637,575,3630,542,3617,506,3596,477,3573,462,3552,458,3528,458,3498,453,3436,442,3383,438,3359,434,3336,425,3314,409,3292,384,3284,363,3293,341,3412,303,3530,267,3538,247,3541,216,3539,183,3535,158,3529,146"/>
+<area shape="rect" id="Node000102" title=" " alt="" coords="4031,220,4193,260"/>
+<area shape="poly" id="edge103_Node000102_Node000010" title=" " alt="" coords="3569,119,3675,120,3804,125,3926,136,3975,144,4013,155,4038,168,4062,184,4098,218,4094,222,4058,188,4036,172,4011,160,3974,149,3925,141,3803,131,3675,126,3569,124"/>
+<area shape="rect" id="Node000109" title=" " alt="" coords="1373,220,1536,260"/>
+<area shape="poly" id="edge112_Node000109_Node000010" title=" " alt="" coords="3455,124,3033,123,2405,126,1820,137,1621,146,1559,153,1526,160,1507,172,1491,188,1467,221,1463,218,1487,184,1504,168,1524,155,1558,147,1621,141,1820,131,2405,121,3033,118,3455,119"/>
+<area shape="rect" id="Node000114" title=" " alt="" coords="1541,724,1704,764"/>
+<area shape="poly" id="edge119_Node000114_Node000010" title=" " alt="" coords="3455,125,3027,131,2397,148,2088,163,1827,183,1725,195,1647,209,1597,224,1585,232,1581,239,1581,615,1585,645,1593,675,1614,723,1609,725,1588,677,1579,646,1576,615,1576,238,1581,228,1595,219,1646,203,1724,190,1827,177,2088,157,2397,143,3027,125,3455,120"/>
+<area shape="rect" id="Node000116" title=" " alt="" coords="1239,594,1401,634"/>
+<area shape="poly" id="edge124_Node000116_Node000010" title=" " alt="" coords="3455,125,2386,135,1788,146,1583,152,1483,160,1430,169,1383,179,1365,187,1351,198,1342,215,1339,239,1339,496,1335,550,1327,594,1322,593,1329,549,1333,496,1333,238,1337,214,1347,195,1362,182,1381,173,1429,164,1482,155,1583,147,1787,140,2386,130,3455,120"/>
+<area shape="rect" id="Node000117" title=" " alt="" coords="5911,293,6076,319"/>
+<area shape="poly" id="edge127_Node000117_Node000010" title=" " alt="" coords="3569,119,4287,125,4724,136,4907,144,5046,155,5121,168,5196,184,5311,197,5426,208,5710,252,5933,291,5932,296,5709,257,5425,213,5310,202,5196,189,5120,174,5045,160,4907,149,4724,141,4287,131,3569,125"/>
+<area shape="poly" id="edge136_Node000125_Node000010" title=" " alt="" coords="3455,125,2724,132,1560,151,977,166,481,186,285,197,135,211,40,225,15,233,8,240,8,1135,10,1140,18,1145,50,1155,167,1173,339,1187,545,1198,976,1212,1299,1217,1299,1223,976,1217,544,1204,339,1193,167,1178,49,1160,16,1149,6,1143,3,1136,3,238,13,228,38,220,135,205,285,192,480,180,977,160,1560,145,2724,126,3455,120"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="3443,5,3581,45"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="3515,59,3515,108,3509,108,3509,59"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="3367,269,3209,352,3207,348,3364,264"/>
+<area shape="rect" id="Node000013" href="$classProcessAdm.html" title="Class for administration of MPI processes in IFEM library." alt="" coords="3743,601,3846,627"/>
+<area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="3751,634,3731,639,3674,642,3599,640,3528,644,3500,651,3481,662,3471,677,3466,696,3468,731,3463,731,3461,696,3466,675,3477,658,3498,646,3527,639,3599,635,3674,636,3730,633,3750,628"/>
+<area shape="rect" id="Node000092" href="$classAlgEqSystem.html" title="Class for storage of general algebraic system of equations." alt="" coords="4851,731,4959,757"/>
+<area shape="poly" id="edge98_Node000092_Node000013" title=" " alt="" coords="3826,631,3896,667,3938,684,3982,697,4060,711,4164,721,4414,734,4666,739,4851,740,4851,746,4666,745,4414,739,4163,726,4059,716,3981,703,3937,689,3894,672,3824,636"/>
+<area shape="rect" id="Node000014" href="$classutl_1_1LogStream.html" title="Logging stream class." alt="" coords="3660,482,3777,507"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="3736,517,3789,600,3785,603,3731,520"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="3556,350,3660,375"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="3629,384,3711,480,3707,483,3625,387"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="3353,343,3532,383"/>
+<area shape="poly" id="edge16_Node000014_Node000019" title=" " alt="" coords="3481,388,3529,419,3584,448,3629,466,3673,479,3671,484,3627,471,3582,453,3526,423,3478,393"/>
+<area shape="poly" id="edge17_Node000013_Node000021" title=" " alt="" coords="3970,516,3816,603,3814,599,3967,512"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="3685,343,3955,383"/>
+<area shape="poly" id="edge18_Node000021_Node000022" title=" " alt="" coords="3836,394,3854,423,3878,449,3909,467,3943,479,3941,484,3907,472,3874,453,3849,426,3831,397"/>
+<area shape="rect" id="Node000023" href="$structASM_1_1Interface.html" title="Struct for representing a domain interface." alt="" coords="3051,227,3168,253"/>
+<area shape="poly" id="edge19_Node000022_Node000023" title=" " alt="" coords="3150,255,3187,267,3237,277,3277,282,3368,291,3700,340,3699,345,3368,296,3276,287,3237,282,3186,272,3148,260"/>
+<area shape="rect" id="Node000113" title=" " alt="" coords="2021,416,2237,441"/>
+<area shape="poly" id="edge117_Node000113_Node000023" title=" " alt="" coords="3037,244,2925,250,2783,265,2706,278,2628,295,2551,317,2477,345,2462,354,2452,365,2441,375,2425,385,2376,400,2336,404,2295,405,2244,409,2190,419,2189,413,2244,404,2295,399,2336,399,2375,395,2423,380,2438,371,2448,361,2459,350,2475,340,2549,312,2626,290,2705,273,2782,260,2925,244,3037,239"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="4847,350,4998,375"/>
+<area shape="poly" id="edge121_Node000004_Node000024" title=" " alt="" coords="4987,376,5011,380,5104,385,5155,391,5176,396,5192,405,5211,424,5221,443,5225,466,5225,493,5225,974,5213,985,5181,994,5062,1009,4876,1021,4636,1030,4032,1043,3337,1048,2017,1048,1567,1047,1371,1049,1360,1051,1359,1046,1370,1044,1567,1042,2017,1043,3337,1043,4032,1037,4636,1025,4876,1016,5061,1003,5180,988,5211,980,5220,972,5220,493,5220,466,5216,445,5207,427,5189,409,5175,401,5154,396,5104,390,5010,385,4986,381"/>
+<area shape="poly" id="edge87_Node000006_Node000024" title=" " alt="" coords="4897,386,4870,409,4831,453,4781,496,4739,526,4643,594,4617,617,4590,638,4523,679,4452,716,4379,747,4304,775,4151,817,4001,847,3860,865,3735,875,3560,878,3560,873,3735,869,3859,860,4000,841,4150,812,4302,769,4377,742,4450,711,4520,675,4586,634,4613,613,4640,590,4736,522,4778,492,4827,449,4866,405,4894,382"/>
+<area shape="poly" id="edge20_Node000021_Node000024" title=" " alt="" coords="4859,381,4748,409,4719,421,4698,433,4677,444,4647,453,4594,462,4528,467,4374,470,4219,472,4099,477,4053,485,4052,479,4098,472,4219,466,4374,465,4528,461,4594,456,4646,448,4675,439,4696,428,4717,416,4746,404,4857,376"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="5743,350,5881,375"/>
+<area shape="poly" id="edge86_Node000006_Node000025" title=" " alt="" coords="5811,389,5804,493,5804,746,5798,758,5781,768,5718,787,5621,803,5494,817,5172,840,4794,856,4402,867,4038,873,3560,877,3560,872,4038,868,4402,861,4794,851,5172,835,5493,812,5620,798,5717,782,5778,764,5794,754,5799,745,5799,493,5806,388"/>
+<area shape="poly" id="edge21_Node000021_Node000025" title=" " alt="" coords="5757,381,5731,385,5590,388,5356,386,5124,390,5039,397,5009,402,4991,409,4982,418,4978,430,4974,442,4963,453,4915,461,4816,466,4532,472,4099,477,4052,485,4051,479,4098,472,4532,467,4816,461,4914,456,4960,448,4969,439,4973,428,4977,415,4988,404,5008,397,5038,392,5124,385,5356,381,5590,382,5730,380,5756,376"/>
+<area shape="rect" id="Node000071" href="$classIntegrandBase.html" title="Base class representing a system level integrated quantity." alt="" coords="5458,482,5574,507"/>
+<area shape="poly" id="edge59_Node000071_Node000025" title=" " alt="" coords="5777,384,5625,453,5547,484,5545,479,5623,448,5775,379"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="4151,343,4406,383"/>
+<area shape="poly" id="edge22_Node000021_Node000026" title=" " alt="" coords="4227,391,4026,484,4023,480,4225,386"/>
+<area shape="rect" id="Node000029" href="$classSAMpatch.html" title="This is a sub&#45;class of SAM with added functionality for spline models." alt="" coords="4481,350,4569,375"/>
+<area shape="poly" id="edge23_Node000021_Node000029" title=" " alt="" coords="4479,382,4367,417,4233,453,4166,466,4099,477,4060,485,4059,479,4098,472,4165,461,4231,448,4366,412,4478,377"/>
+<area shape="rect" id="Node000030" href="$classSAM.html" title="This class contains data and functions for the assembly of FE matrices." alt="" coords="5210,227,5262,253"/>
+<area shape="poly" id="edge99_Node000006_Node000030" title=" " alt="" coords="5261,259,5276,267,5318,275,5391,282,5589,296,5784,313,5855,325,5879,332,5895,341,5912,360,5920,379,5921,427,5921,745,5919,777,5911,802,5899,822,5882,836,5862,846,5839,851,5784,853,5653,838,5582,832,5512,835,5324,850,5073,861,4478,874,3911,878,3560,877,3560,872,3911,872,4478,868,5073,856,5324,845,5512,829,5582,827,5653,833,5784,847,5838,846,5860,841,5879,832,5895,818,5906,800,5913,776,5916,745,5916,427,5915,380,5908,362,5892,345,5877,337,5854,330,5783,319,5588,301,5391,288,5317,281,5274,272,5258,263"/>
+<area shape="poly" id="edge24_Node000029_Node000030" title=" " alt="" coords="5197,251,5067,272,4985,279,4920,282,4857,285,4775,296,4681,317,4589,345,4564,352,4562,347,4587,340,4680,312,4774,291,4856,280,4920,276,4984,274,5066,267,5196,246"/>
+<area shape="poly" id="edge97_Node000092_Node000030" title=" " alt="" coords="5240,267,5244,407,5251,496,5258,572,5255,606,5245,639,5225,671,5192,702,5163,710,5102,720,4960,739,4959,733,5101,714,5162,705,5189,698,5220,667,5240,637,5250,605,5253,572,5246,497,5239,407,5234,267"/>
+<area shape="rect" id="Node000031" title=" " alt="" coords="5161,108,5311,133"/>
+<area shape="poly" id="edge25_Node000030_Node000031" title=" " alt="" coords="5239,147,5239,227,5233,227,5233,147"/>
+<area shape="rect" id="Node000032" title=" " alt="" coords="4481,227,4673,253"/>
+<area shape="poly" id="edge26_Node000029_Node000032" title=" " alt="" coords="4568,266,4556,294,4532,351,4527,349,4551,292,4564,264"/>
+<area shape="poly" id="edge36_Node000055_Node000032" title=" " alt="" coords="4592,264,4601,293,4605,319,4604,341,4597,361,4584,384,4557,417,4525,445,4466,484,4463,480,4522,441,4553,413,4579,381,4592,359,4599,340,4600,319,4596,294,4587,266"/>
+<area shape="rect" id="Node000051" href="$classSIMdependency.html" title="Class administering inter&#45;SIM field dependencies." alt="" coords="4697,350,4823,375"/>
+<area shape="poly" id="edge29_Node000006_Node000051" title=" " alt="" coords="4739,387,4722,408,4710,437,4705,462,4699,487,4685,516,4617,580,4544,638,4477,672,4408,703,4263,755,4117,796,3975,826,3842,848,3725,862,3560,876,3560,870,3724,857,3841,842,3974,821,4116,790,4262,750,4406,698,4475,668,4541,634,4613,576,4681,513,4694,485,4700,461,4705,435,4718,405,4735,384"/>
+<area shape="poly" id="edge35_Node000055_Node000051" title=" " alt="" coords="4702,381,4646,397,4613,409,4604,419,4599,430,4594,441,4583,453,4548,472,4512,484,4510,479,4546,467,4580,449,4589,438,4594,427,4600,416,4611,404,4645,392,4701,376"/>
+<area shape="poly" id="edge30_Node000051_Node000052" title=" " alt="" coords="4803,273,4768,351,4763,349,4798,271"/>
+<area shape="rect" id="Node000053" title=" " alt="" coords="4883,108,5048,133"/>
+<area shape="poly" id="edge32_Node000052_Node000053" title=" " alt="" coords="4941,144,4841,222,4837,218,4938,140"/>
+<area shape="poly" id="edge96_Node000092_Node000053" title=" " alt="" coords="5063,128,5118,138,5140,146,5155,155,5170,174,5175,193,5175,239,5175,616,5169,648,5152,675,5127,696,5096,713,5062,725,5026,734,4960,743,4960,738,5025,728,5061,720,5094,708,5124,692,5148,671,5164,646,5169,615,5169,239,5170,194,5165,177,5152,159,5138,151,5116,144,5062,133"/>
+<area shape="rect" id="Node000054" title=" " alt="" coords="4328,601,4531,627"/>
+<area shape="poly" id="edge33_Node000051_Node000054" title=" " alt="" coords="4463,593,4506,566,4574,509,4639,449,4659,426,4681,405,4733,373,4736,378,4684,409,4663,430,4643,453,4578,513,4510,570,4466,597"/>
+<area shape="poly" id="edge34_Node000054_Node000055" title=" " alt="" coords="4442,521,4433,601,4428,601,4437,521"/>
+<area shape="rect" id="Node000056" title=" " alt="" coords="3224,731,3400,757"/>
+<area shape="poly" id="edge38_Node000006_Node000056" title=" " alt="" coords="3336,764,3375,797,3421,830,3489,861,3487,866,3419,834,3371,801,3332,768"/>
+<area shape="rect" id="Node000057" href="$structProperty.html" title="Struct for representing a distributed physical property." alt="" coords="3163,601,3240,627"/>
+<area shape="poly" id="edge39_Node000056_Node000057" title=" " alt="" coords="3197,641,3196,670,3198,685,3205,698,3224,717,3249,729,3246,734,3221,721,3201,702,3193,687,3190,671,3192,640"/>
+<area shape="rect" id="Node000058" title=" " alt="" coords="1817,667,2021,693"/>
+<area shape="poly" id="edge40_Node000006_Node000058" title=" " alt="" coords="1948,698,1997,730,2056,762,2146,804,2187,817,2240,829,2357,845,2512,857,2883,869,3244,873,3482,872,3482,878,3244,878,2883,875,2512,862,2356,850,2240,835,2185,822,2144,808,2053,766,1995,734,1945,703"/>
+<area shape="rect" id="Node000059" href="$classRealFunc.html" title="Scalar&#45;valued unary function of a spatial point." alt="" coords="1805,482,1886,507"/>
+<area shape="poly" id="edge41_Node000058_Node000059" title=" " alt="" coords="1846,521,1847,576,1853,606,1865,635,1880,652,1898,665,1894,669,1876,656,1860,637,1848,608,1842,576,1840,521"/>
+<area shape="rect" id="Node000078" title=" " alt="" coords="2079,601,2270,627"/>
+<area shape="poly" id="edge66_Node000078_Node000059" title=" " alt="" coords="1893,508,1908,512,1966,517,2013,515,2059,517,2085,523,2113,536,2133,550,2149,567,2171,600,2167,603,2145,571,2129,554,2111,541,2083,529,2058,522,2013,520,1966,523,1908,517,1892,514"/>
+<area shape="poly" id="edge125_Node000116_Node000059" title=" " alt="" coords="1792,511,1402,597,1401,592,1791,505"/>
+<area shape="rect" id="Node000060" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="1772,343,1919,383"/>
+<area shape="poly" id="edge42_Node000059_Node000060" title=" " alt="" coords="1848,397,1848,482,1843,482,1843,397"/>
+<area shape="rect" id="Node000061" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="1774,220,1917,260"/>
+<area shape="poly" id="edge43_Node000060_Node000061" title=" " alt="" coords="1848,273,1848,342,1843,342,1843,273"/>
+<area shape="rect" id="Node000062" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="2657,350,2767,375"/>
+<area shape="poly" id="edge79_Node000006_Node000062" title=" " alt="" coords="2747,380,2805,419,2837,444,2865,473,2903,519,2930,559,2949,602,2967,659,2969,678,2969,692,2964,724,2960,746,2959,754,2964,762,2978,777,2998,790,3053,814,3123,832,3202,846,3361,864,3483,871,3482,876,3360,869,3201,851,3122,837,3052,819,2995,795,2974,781,2959,766,2954,755,2954,745,2959,724,2963,691,2964,678,2961,661,2944,604,2925,561,2899,523,2861,476,2833,448,2802,423,2744,384"/>
+<area shape="poly" id="edge44_Node000059_Node000062" title=" " alt="" coords="2660,381,2643,385,2569,398,2495,409,2373,433,2250,453,2154,461,2078,462,2003,465,1908,477,1879,484,1878,479,1908,472,2003,459,2078,457,2153,456,2249,448,2372,428,2494,404,2568,393,2642,380,2659,376"/>
+<area shape="rect" id="Node000064" href="$classVecFunc.html" title="Vector&#45;valued unary function of a spatial point." alt="" coords="2349,482,2424,507"/>
+<area shape="poly" id="edge50_Node000064_Node000062" title=" " alt="" coords="2672,383,2416,484,2414,479,2670,378"/>
+<area shape="rect" id="Node000080" href="$classTensorFunc.html" title="Tensor&#45;valued unary function of a spatial point." alt="" coords="2727,601,2822,627"/>
+<area shape="poly" id="edge74_Node000080_Node000062" title=" " alt="" coords="2721,388,2752,514,2774,601,2769,602,2747,515,2715,389"/>
+<area shape="rect" id="Node000085" href="$classSTensorFunc.html" title="Symmetric tensor&#45;valued unary function of a spatial point." alt="" coords="2601,601,2703,627"/>
+<area shape="poly" id="edge78_Node000085_Node000062" title=" " alt="" coords="2707,389,2701,407,2674,520,2657,602,2652,600,2669,519,2696,406,2701,388"/>
+<area shape="rect" id="Node000089" title=" " alt="" coords="2744,667,2963,693"/>
+<area shape="poly" id="edge81_Node000089_Node000062" title=" " alt="" coords="2734,384,2749,405,2776,458,2800,514,2820,552,2837,591,2848,633,2854,667,2849,668,2843,634,2832,593,2815,554,2795,516,2772,461,2744,408,2729,388"/>
+<area shape="rect" id="Node000063" title=" " alt="" coords="2125,667,2323,693"/>
+<area shape="poly" id="edge45_Node000006_Node000063" title=" " alt="" coords="2265,696,2432,762,2533,801,2578,816,2638,829,2715,840,2819,849,3067,861,3483,872,3483,877,3067,866,2818,854,2715,845,2637,835,2577,821,2532,806,2430,766,2263,701"/>
+<area shape="poly" id="edge46_Node000063_Node000064" title=" " alt="" coords="2335,501,2161,515,2083,527,2057,533,2043,541,2038,550,2037,562,2043,591,2057,617,2070,634,2084,643,2107,651,2161,665,2160,670,2105,656,2082,647,2066,638,2052,620,2038,593,2031,563,2033,549,2039,537,2055,528,2082,521,2161,510,2335,496"/>
+<area shape="rect" id="Node000077" href="$classAnaSol.html" title="Class for analytical solution fields (primary and secondary solution)." alt="" coords="2516,731,2583,757"/>
+<area shape="poly" id="edge69_Node000077_Node000064" title=" " alt="" coords="2425,512,2459,537,2480,560,2498,587,2524,643,2541,694,2550,731,2545,732,2536,696,2519,645,2493,589,2476,564,2456,541,2422,516"/>
+<area shape="rect" id="Node000079" title=" " alt="" coords="2294,601,2479,627"/>
+<area shape="poly" id="edge68_Node000079_Node000064" title=" " alt="" coords="2389,521,2389,601,2384,601,2384,521"/>
+<area shape="rect" id="Node000065" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="2265,343,2412,383"/>
+<area shape="poly" id="edge47_Node000064_Node000065" title=" " alt="" coords="2353,395,2385,481,2380,483,2348,397"/>
+<area shape="rect" id="Node000066" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="2301,220,2443,260"/>
+<area shape="poly" id="edge48_Node000065_Node000066" title=" " alt="" coords="2366,274,2347,343,2341,342,2361,273"/>
+<area shape="rect" id="Node000067" href="$classVec3.html" title="Simple class for representing a point in 3D space." alt="" coords="2223,227,2276,253"/>
+<area shape="poly" id="edge49_Node000065_Node000067" title=" " alt="" coords="2268,263,2327,341,2323,344,2264,266"/>
+<area shape="rect" id="Node000068" title=" " alt="" coords="2973,731,3200,757"/>
+<area shape="poly" id="edge51_Node000006_Node000068" title=" " alt="" coords="3124,760,3203,795,3298,829,3397,853,3483,867,3482,872,3396,858,3297,835,3201,800,3121,765"/>
+<area shape="rect" id="Node000069" href="$classTractionFunc.html" title="Vector&#45;valued binary function of a spatial point and normal vector." alt="" coords="3035,601,3138,627"/>
+<area shape="poly" id="edge52_Node000068_Node000069" title=" " alt="" coords="3089,641,3089,731,3084,731,3084,641"/>
+<area shape="rect" id="Node000070" href="$classutl_1_1Function2.html" title=" " alt="" coords="3089,475,3249,515"/>
+<area shape="poly" id="edge53_Node000069_Node000070" title=" " alt="" coords="3150,527,3097,602,3093,599,3146,524"/>
+<area shape="poly" id="edge54_Node000006_Node000071" title=" " alt="" coords="5490,517,5411,578,5366,618,5323,662,5312,683,5306,692,5296,702,5270,716,5247,720,5223,721,5194,727,5102,757,5032,786,4961,812,4867,835,4744,850,4580,861,4188,874,3809,878,3560,878,3560,872,3809,873,4188,869,4580,856,4743,845,4866,829,4960,807,5030,781,5100,752,5193,721,5222,716,5246,715,5268,711,5293,698,5302,689,5307,680,5319,658,5362,615,5408,574,5487,513"/>
+<area shape="rect" id="Node000076" title=" " alt="" coords="5413,660,5563,700"/>
+<area shape="poly" id="edge63_Node000076_Node000071" title=" " alt="" coords="5515,521,5494,660,5488,659,5510,520"/>
+<area shape="rect" id="Node000072" href="$classIntegrand.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="5634,350,5718,375"/>
+<area shape="poly" id="edge55_Node000071_Node000072" title=" " alt="" coords="5656,388,5583,453,5537,484,5534,480,5580,449,5653,384"/>
+<area shape="poly" id="edge56_Node000071_Node000073" title=" " alt="" coords="5376,389,5452,449,5499,480,5496,484,5449,453,5373,394"/>
+<area shape="rect" id="Node000074" href="$classutl_1_1vector.html" title="A vector class with some added algebraic operations." alt="" coords="5286,227,5413,253"/>
+<area shape="poly" id="edge58_Node000073_Node000074" title=" " alt="" coords="5350,267,5345,343,5340,342,5345,267"/>
+<area shape="rect" id="Node000075" title=" " alt="" coords="5447,350,5609,375"/>
+<area shape="poly" id="edge61_Node000075_Node000074" title=" " alt="" coords="5379,258,5512,347,5509,352,5376,263"/>
+<area shape="poly" id="edge60_Node000071_Node000075" title=" " alt="" coords="5528,389,5520,482,5514,481,5523,389"/>
+<area shape="poly" id="edge62_Node000006_Node000076" title=" " alt="" coords="5450,710,5399,741,5333,776,5259,809,5181,835,5074,848,4892,858,4398,871,3890,876,3560,877,3560,872,3890,871,4398,865,4892,853,5073,843,5179,829,5257,804,5331,771,5396,736,5448,705"/>
+<area shape="poly" id="edge64_Node000006_Node000077" title=" " alt="" coords="2586,760,2670,797,2721,815,2774,829,2838,840,2923,848,3129,861,3482,871,3482,877,3129,866,2923,853,2837,845,2773,835,2720,820,2668,802,2583,765"/>
+<area shape="poly" id="edge65_Node000077_Node000078" title=" " alt="" coords="2260,628,2294,640,2326,658,2336,668,2341,679,2346,689,2355,698,2386,712,2413,716,2443,717,2479,721,2516,731,2515,736,2478,727,2442,722,2413,721,2385,717,2352,702,2341,692,2336,681,2331,671,2322,662,2292,645,2258,633"/>
+<area shape="poly" id="edge67_Node000077_Node000079" title=" " alt="" coords="2401,638,2420,673,2438,698,2471,714,2516,730,2515,735,2469,719,2434,702,2415,676,2396,641"/>
+<area shape="poly" id="edge70_Node000077_Node000080" title=" " alt="" coords="2731,634,2663,662,2655,671,2652,681,2648,691,2639,702,2612,721,2584,734,2582,729,2610,716,2635,698,2643,688,2647,679,2651,669,2660,658,2729,629"/>
+<area shape="rect" id="Node000081" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="2919,475,3065,515"/>
+<area shape="poly" id="edge71_Node000080_Node000081" title=" " alt="" coords="2947,523,2798,603,2795,599,2944,519"/>
+<area shape="rect" id="Node000082" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="2921,343,3063,383"/>
+<area shape="poly" id="edge72_Node000081_Node000082" title=" " alt="" coords="2995,396,2995,475,2989,475,2989,396"/>
+<area shape="rect" id="Node000083" href="$classTensor.html" title="Simple class for representing a non&#45;symmetric second&#45;order tensor." alt="" coords="2832,350,2896,375"/>
+<area shape="poly" id="edge73_Node000081_Node000083" title=" " alt="" coords="2887,383,2975,472,2971,476,2883,387"/>
+<area shape="poly" id="edge75_Node000077_Node000085" title=" " alt="" coords="2609,635,2591,647,2575,662,2565,679,2558,698,2553,732,2547,731,2553,697,2560,677,2571,658,2588,642,2607,630"/>
+<area shape="rect" id="Node000086" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="2483,475,2629,515"/>
+<area shape="poly" id="edge76_Node000085_Node000086" title=" " alt="" coords="2582,524,2644,599,2640,602,2578,527"/>
+<area shape="rect" id="Node000087" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="2487,343,2630,383"/>
+<area shape="poly" id="edge77_Node000086_Node000087" title=" " alt="" coords="2561,397,2559,475,2554,475,2555,396"/>
+<area shape="poly" id="edge80_Node000006_Node000089" title=" " alt="" coords="2852,707,2852,735,2859,763,2869,787,2881,804,2896,817,2918,830,2952,838,3010,846,3172,858,3483,871,3482,876,3172,863,3009,851,2950,843,2916,834,2893,821,2877,807,2865,789,2853,765,2847,735,2847,707"/>
+<area shape="rect" id="Node000090" title=" " alt="" coords="3587,724,3749,764"/>
+<area shape="poly" id="edge82_Node000006_Node000090" title=" " alt="" coords="3638,775,3536,865,3533,861,3634,771"/>
+<area shape="poly" id="edge83_Node000090_Node000091" title=" " alt="" coords="3649,640,3667,723,3661,724,3644,641"/>
+<area shape="rect" id="Node000028" title=" " alt="" coords="3468,482,3585,507"/>
+<area shape="poly" id="edge88_Node000006_Node000028" title=" " alt="" coords="3529,522,3527,764,3524,863,3519,863,3521,764,3524,522"/>
+<area shape="poly" id="edge85_Node000091_Node000028" title=" " alt="" coords="3540,518,3555,543,3574,566,3596,585,3620,599,3617,603,3593,589,3570,570,3551,546,3536,521"/>
+<area shape="poly" id="edge89_Node000006_Node000092" title=" " alt="" coords="4868,765,4770,802,4710,820,4648,835,4547,848,4412,858,4088,871,3773,876,3560,877,3560,872,3773,871,4088,865,4411,853,4546,843,4648,829,4708,815,4768,797,4866,760"/>
+<area shape="rect" id="Node000093" href="$classGlobalIntegral.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="4743,601,4857,627"/>
+<area shape="poly" id="edge90_Node000092_Node000093" title=" " alt="" coords="4820,636,4898,730,4894,733,4816,639"/>
+<area shape="rect" id="Node000094" title=" " alt="" coords="4943,594,5135,634"/>
+<area shape="poly" id="edge91_Node000092_Node000094" title=" " alt="" coords="5011,646,4919,733,4916,729,5007,642"/>
+<area shape="rect" id="Node000095" href="$structAlgEqSystem_1_1SysMatrixPair.html" title="Struct defining a coefficient matrix and an associated RHS&#45;vector." alt="" coords="4929,482,5135,507"/>
+<area shape="poly" id="edge92_Node000094_Node000095" title=" " alt="" coords="5036,521,5040,594,5035,594,5031,521"/>
+<area shape="rect" id="Node000098" href="$classSystemVector.html" title="Base class for representing a system vector on different formats." alt="" coords="5023,350,5135,375"/>
+<area shape="poly" id="edge93_Node000095_Node000098" title=" " alt="" coords="5073,390,5051,452,5039,483,5034,481,5045,450,5068,388"/>
+<area shape="rect" id="Node000099" title=" " alt="" coords="4783,541,5006,566"/>
+<area shape="poly" id="edge95_Node000099_Node000098" title=" " alt="" coords="5026,382,5011,385,4974,388,4944,386,4917,389,4905,396,4893,408,4883,424,4878,441,4877,478,4884,513,4892,540,4887,541,4879,515,4872,479,4873,440,4878,422,4889,405,4902,392,4916,384,4944,381,4974,383,5010,380,5025,376"/>
+<area shape="poly" id="edge94_Node000092_Node000099" title=" " alt="" coords="4899,580,4907,731,4902,731,4893,580"/>
+<area shape="rect" id="Node000100" href="$classLinSolParams.html" title="Class for linear solver parameters." alt="" coords="3829,731,3939,757"/>
+<area shape="poly" id="edge100_Node000006_Node000100" title=" " alt="" coords="3849,765,3774,799,3685,835,3620,854,3561,869,3560,864,3619,849,3683,829,3772,794,3847,760"/>
+<area shape="rect" id="Node000101" href="$classSettingMap.html" title="A key&#45;value store for settings." alt="" coords="4031,350,4127,375"/>
+<area shape="poly" id="edge101_Node000100_Node000101" title=" " alt="" coords="4017,377,3910,396,3851,408,3852,455,3861,552,3885,731,3880,732,3856,552,3846,455,3847,405,3908,391,4016,372"/>
+<area shape="rect" id="Node000104" href="$classLinSolParams_1_1BlockParams.html" title="Linear solver settings for a block of the linear system." alt="" coords="4110,482,4311,507"/>
+<area shape="poly" id="edge106_Node000104_Node000101" title=" " alt="" coords="4128,377,4169,392,4194,405,4205,424,4212,445,4214,482,4209,482,4206,446,4200,426,4190,409,4167,397,4126,382"/>
+<area shape="poly" id="edge102_Node000101_Node000102" title=" " alt="" coords="4106,274,4084,350,4079,349,4101,272"/>
+<area shape="rect" id="Node000103" title=" " alt="" coords="4083,594,4277,634"/>
+<area shape="poly" id="edge104_Node000100_Node000103" title=" " alt="" coords="4138,643,4083,673,4021,702,3928,734,3927,729,4019,698,4080,669,4135,639"/>
+<area shape="poly" id="edge105_Node000103_Node000104" title=" " alt="" coords="4207,522,4188,595,4182,593,4202,520"/>
+<area shape="rect" id="Node000107" title=" " alt="" coords="2139,731,2314,757"/>
+<area shape="poly" id="edge107_Node000006_Node000107" title=" " alt="" coords="2238,768,2258,802,2272,818,2288,830,2345,839,2467,848,2828,861,3482,872,3482,877,2828,866,2467,853,2345,845,2286,834,2268,821,2254,805,2234,771"/>
+<area shape="rect" id="Node000034" title=" " alt="" coords="1874,601,2003,627"/>
+<area shape="poly" id="edge108_Node000107_Node000034" title=" " alt="" coords="1982,630,2004,642,2025,658,2033,669,2037,680,2041,689,2050,698,2093,720,2140,733,2139,738,2091,725,2046,702,2037,692,2032,682,2028,672,2021,662,2001,647,1980,635"/>
+<area shape="poly" id="edge120_Node000114_Node000034" title=" " alt="" coords="1860,618,1793,621,1723,628,1663,641,1641,651,1626,662,1618,676,1616,691,1619,723,1614,724,1610,691,1613,674,1622,658,1638,646,1661,636,1722,623,1792,616,1860,613"/>
+<area shape="rect" id="Node000035" title=" " alt="" coords="1919,482,1958,507"/>
+<area shape="poly" id="edge109_Node000034_Node000035" title=" " alt="" coords="1941,521,1941,601,1936,601,1936,521"/>
+<area shape="rect" id="Node000108" href="$classModelGenerator.html" title="Base class for model generators for FEM simulators." alt="" coords="1487,863,1614,889"/>
+<area shape="poly" id="edge110_Node000005_Node000108" title=" " alt="" coords="1585,893,1704,956,1701,961,1583,897"/>
+<area shape="poly" id="edge111_Node000005_Node000109" title=" " alt="" coords="1455,273,1452,361,1452,877,1458,893,1477,908,1505,921,1539,933,1616,951,1685,962,1684,968,1615,956,1538,938,1503,926,1474,913,1454,896,1447,878,1447,361,1450,273"/>
+<area shape="rect" id="Node000110" title=" " alt="" coords="1196,108,1305,133"/>
+<area shape="poly" id="edge113_Node000109_Node000110" title=" " alt="" coords="1284,138,1423,218,1421,222,1281,142"/>
+<area shape="rect" id="Node000111" title=" " alt="" coords="1231,13,1270,38"/>
+<area shape="poly" id="edge114_Node000110_Node000111" title=" " alt="" coords="1253,52,1253,108,1248,108,1248,52"/>
+<area shape="rect" id="Node000112" title=" " alt="" coords="1638,863,1810,889"/>
+<area shape="poly" id="edge115_Node000005_Node000112" title=" " alt="" coords="1727,902,1727,959,1721,959,1721,902"/>
+<area shape="poly" id="edge116_Node000005_Node000113" title=" " alt="" coords="2008,436,1882,449,1830,461,1795,477,1741,525,1723,550,1709,576,1701,603,1700,633,1705,664,1717,699,1739,733,1769,758,1836,797,1865,815,1885,836,1891,849,1893,863,1890,879,1882,897,1859,926,1829,946,1796,959,1764,967,1763,962,1794,954,1826,941,1856,922,1878,895,1885,878,1887,863,1886,850,1881,839,1861,819,1833,802,1766,763,1735,736,1712,701,1700,666,1695,633,1696,602,1704,574,1718,547,1738,521,1792,472,1828,456,1882,444,2007,431"/>
+<area shape="poly" id="edge118_Node000005_Node000114" title=" " alt="" coords="1707,766,1740,781,1772,800,1802,825,1825,855,1833,878,1830,899,1818,918,1799,937,1779,951,1758,961,1756,956,1776,946,1796,933,1813,915,1825,897,1828,878,1820,857,1798,828,1769,805,1737,786,1705,771"/>
+<area shape="rect" id="Node000115" title=" " alt="" coords="1094,959,1277,984"/>
+<area shape="poly" id="edge122_Node000004_Node000115" title=" " alt="" coords="1204,993,1232,1020,1279,1044,1277,1049,1229,1025,1200,997"/>
+<area shape="poly" id="edge123_Node000004_Node000116" title=" " alt="" coords="1321,648,1317,743,1317,973,1317,1046,1312,1046,1312,973,1312,743,1315,648"/>
+<area shape="poly" id="edge126_Node000004_Node000117" title=" " alt="" coords="5996,332,5996,427,5996,973,5993,984,5985,994,5954,1011,5907,1023,5846,1032,5693,1042,5513,1043,5158,1033,4945,1025,4275,1028,3157,1026,2040,1030,1621,1037,1472,1042,1371,1049,1360,1051,1359,1046,1370,1044,1471,1037,1621,1032,2040,1025,3157,1021,4275,1023,4945,1020,5158,1027,5513,1038,5692,1036,5846,1027,5906,1018,5952,1006,5981,990,5988,982,5991,972,5991,427,5991,332"/>
+<area shape="rect" id="Node000118" href="$classVTF.html" title="Class for output of FE model and results to VTF file." alt="" coords="751,959,798,984"/>
+<area shape="poly" id="edge128_Node000004_Node000118" title=" " alt="" coords="812,976,1271,1048,1270,1054,811,981"/>
+<area shape="rect" id="Node000119" title=" " alt="" coords="779,856,1013,896"/>
+<area shape="poly" id="edge129_Node000118_Node000119" title=" " alt="" coords="862,907,791,961,788,956,859,902"/>
+<area shape="rect" id="Node000120" title=" " alt="" coords="1038,856,1266,896"/>
+<area shape="poly" id="edge130_Node000118_Node000120" title=" " alt="" coords="1063,902,799,967,798,962,1062,897"/>
+<area shape="rect" id="Node000121" title=" " alt="" coords="43,863,283,889"/>
+<area shape="poly" id="edge131_Node000118_Node000121" title=" " alt="" coords="243,888,514,932,752,964,751,970,513,937,242,894"/>
+<area shape="rect" id="Node000122" title=" " alt="" coords="307,863,547,889"/>
+<area shape="poly" id="edge132_Node000118_Node000122" title=" " alt="" coords="483,890,642,932,752,961,750,966,641,937,482,895"/>
+<area shape="rect" id="Node000123" title=" " alt="" coords="571,863,755,889"/>
+<area shape="poly" id="edge133_Node000118_Node000123" title=" " alt="" coords="689,896,763,956,759,961,685,900"/>
+<area shape="rect" id="Node000124" title=" " alt="" coords="1292,1308,1457,1348"/>
+<area shape="poly" id="edge134_Node000001_Node000124" title=" " alt="" coords="1346,1359,1288,1412,1284,1408,1342,1355"/>
+<area shape="poly" id="edge135_Node000124_Node000125" title=" " alt="" coords="1377,1248,1377,1308,1372,1308,1372,1248"/>
+<area shape="rect" id="Node000126" href="$classutl_1_1matrix.html" title=" " alt="" coords="1387,1121,1536,1147"/>
+<area shape="poly" id="edge137_Node000125_Node000126" title=" " alt="" coords="1442,1158,1389,1211,1385,1207,1438,1154"/>
+<area shape="rect" id="Node000127" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="1383,1047,1543,1072"/>
+<area shape="poly" id="edge138_Node000126_Node000127" title=" " alt="" coords="1465,1086,1464,1121,1459,1121,1460,1086"/>
 </map>

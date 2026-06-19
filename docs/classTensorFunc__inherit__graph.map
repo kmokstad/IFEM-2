@@ -1,10 +1,17 @@
 <map id="TensorFunc" name="TensorFunc">
-<area shape="rect" id="node1" title="Tensor&#45;valued unary function of a spatial point." alt="" coords="391,81,485,108"/>
-<area shape="rect" id="node5" href="$classChebyshevTensorFunc.html" title="A tensor&#45;valued spatial function, chebyshev polynomials." alt="" coords="547,5,713,32"/>
-<area shape="rect" id="node6" href="$classTensorFieldFunction.html" title="A tensor&#45;valued spatial function, defined through a vector field." alt="" coords="555,56,705,83"/>
-<area shape="rect" id="node7" href="$classVecGradFieldFunction.html" title="A tensor&#45;valued spatial function, defined through gradient of a vector field." alt="" coords="549,107,711,133"/>
-<area shape="rect" id="node8" href="$classVecLaplacianFieldFunction.html" title="A tensor&#45;valued spatial function, defined through laplacian of a vector field." alt="" coords="533,157,727,184"/>
-<area shape="rect" id="node2" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,45,343,86"/>
-<area shape="rect" id="node3" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,45,148,86"/>
-<area shape="rect" id="node4" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="215,111,324,137"/>
+<area shape="rect" id="Node000001" title="Tensor&#45;valued unary function of a spatial point." alt="" coords="391,80,485,105"/>
+<area shape="rect" id="Node000005" href="$classChebyshevTensorFunc.html" title="A tensor&#45;valued spatial function, chebyshev polynomials." alt="" coords="547,5,713,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="470,70,532,40,568,28,569,33,534,44,473,75"/>
+<area shape="rect" id="Node000006" href="$classTensorFieldFunction.html" title="A tensor&#45;valued spatial function, defined through a vector field." alt="" coords="555,55,705,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="499,82,554,75,555,80,500,87"/>
+<area shape="rect" id="Node000007" href="$classVecGradFieldFunction.html" title="A tensor&#45;valued spatial function, defined through gradient of a vector field." alt="" coords="549,104,711,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="499,98,549,104,548,109,499,103"/>
+<area shape="rect" id="Node000008" href="$classVecLaplacianFieldFunction.html" title="A tensor&#45;valued spatial function, defined through laplacian of a vector field." alt="" coords="533,153,727,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="473,110,534,140,570,151,568,156,532,144,471,115"/>
+<area shape="rect" id="Node000002" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,43,343,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,76,391,82,390,87,356,81"/>
+<area shape="rect" id="Node000003" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,43,148,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,61,196,61,196,66,162,66"/>
+<area shape="rect" id="Node000004" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="215,108,324,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="337,107,390,98,391,103,338,112"/>
 </map>

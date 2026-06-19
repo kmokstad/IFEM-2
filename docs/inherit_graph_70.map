@@ -1,10 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classLocalIntegral.html" title="Abstract base class representing an element level integrated quantity." alt="" coords="5,107,112,133"/>
-<area shape="rect" id="node2" href="$classElmMats.html" title="Class collecting the element matrices associated with a FEM problem." alt="" coords="162,81,241,108"/>
-<area shape="rect" id="node8" href="$classElmNorm.html" title="Class representing integrated norm quantities over an element." alt="" coords="160,132,243,159"/>
-<area shape="rect" id="node3" href="$classBDFMats.html" title="Class representing the element matrices for a dynamic FEM problem using backward difference formulae ..." alt="" coords="309,5,390,32"/>
-<area shape="rect" id="node4" href="$classBlockElmMats.html" title="Class representing the block element matrices for a FEM problem." alt="" coords="292,56,407,83"/>
-<area shape="rect" id="node5" href="$classL2Mats.html" title="Local integral container class for L2&#45;projections." alt="" coords="315,107,384,133"/>
-<area shape="rect" id="node6" href="$classNewmarkMats.html" title="Class representing the element matrices for a dynamic FEM problem based on Newmark time integration." alt="" coords="291,157,408,184"/>
-<area shape="rect" id="node7" href="$classHHTMats.html" title="Class representing the element matrices for a dynamic FEM problem based on Hilber&#45;Hughes&#45;Taylor time ..." alt="" coords="456,157,539,184"/>
+<area shape="rect" id="Node000000" href="$classLocalIntegral.html" title="Abstract base class representing an element level integrated quantity." alt="" coords="5,80,112,105"/>
+<area shape="rect" id="Node000001" href="$classElmMats.html" title="Class collecting the element matrices associated with a FEM problem." alt="" coords="162,55,241,80"/>
+<area shape="poly" id="edge195_Node000000_Node000001" title=" " alt="" coords="125,78,161,72,162,77,126,83"/>
+<area shape="rect" id="Node000006" href="$classElmNorm.html" title="Class representing integrated norm quantities over an element." alt="" coords="160,104,243,129"/>
+<area shape="poly" id="edge200_Node000000_Node000006" title=" " alt="" coords="126,101,160,107,159,112,125,107"/>
+<area shape="rect" id="Node000002" href="$classBDFMats.html" title="Class representing the element matrices for a dynamic FEM problem using backward difference formulae ..." alt="" coords="309,5,390,31"/>
+<area shape="poly" id="edge196_Node000001_Node000002" title=" " alt="" coords="252,48,309,28,311,33,254,53"/>
+<area shape="rect" id="Node000003" href="$classBlockElmMats.html" title="Class representing the block element matrices for a FEM problem." alt="" coords="292,55,407,80"/>
+<area shape="poly" id="edge197_Node000001_Node000003" title=" " alt="" coords="254,65,291,65,291,70,254,70"/>
+<area shape="rect" id="Node000004" href="$classNewmarkMats.html" title="Class representing the element matrices for a dynamic FEM problem based on Newmark time integration." alt="" coords="291,104,408,129"/>
+<area shape="poly" id="edge198_Node000001_Node000004" title=" " alt="" coords="254,82,311,101,309,106,252,87"/>
+<area shape="rect" id="Node000005" href="$classHHTMats.html" title="Class representing the element matrices for a dynamic FEM problem based on Hilber&#45;Hughes&#45;Taylor time ..." alt="" coords="456,104,539,129"/>
+<area shape="poly" id="edge199_Node000004_Node000005" title=" " alt="" coords="422,114,456,114,456,119,422,119"/>
 </map>

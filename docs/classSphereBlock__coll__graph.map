@@ -1,11 +1,19 @@
 <map id="SphereBlock" name="SphereBlock">
-<area shape="rect" id="node1" title="Class for sphere geometries." alt="" coords="299,364,402,391"/>
-<area shape="rect" id="node2" href="$classElementBlock.html" title="Class for storage of a standard FE grid block." alt="" coords="295,288,407,315"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,184,160,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="21,95,144,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="63,5,102,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="185,184,343,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="368,184,507,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="531,184,683,211"/>
-<area shape="rect" id="node9" href="$classVec3.html" title="Simple class for representing a point in 3D space." alt="" coords="580,95,633,121"/>
+<area shape="rect" id="Node000001" title="Class for sphere geometries." alt="" coords="335,359,438,384"/>
+<area shape="rect" id="Node000002" href="$classElementBlock.html" title="Class for storage of a standard FE grid block." alt="" coords="331,284,443,309"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="389,324,389,358,384,358,384,324"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,181,157,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,209,262,257,344,281,343,287,261,263,123,214"/>
+<area shape="rect" id="Node000004" href="$classVec3.html" title="Simple class for representing a point in 3D space." alt="" coords="55,93,108,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="84,133,84,181,79,181,79,133"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="181,181,336,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="286,213,374,282,371,286,282,217"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="197,93,320,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="261,133,261,181,256,181,256,133"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="239,5,278,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="261,45,261,93,256,93,256,45"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="360,181,499,207"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="421,220,394,285,389,283,417,218"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="523,181,682,207"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="570,215,472,262,416,286,414,282,470,258,567,210"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="SIMmultiCpl" name="SIMmultiCpl">
-<area shape="rect" id="node1" title="Class for monolithic coupled simulators." alt="" coords="12,155,113,181"/>
-<area shape="rect" id="node2" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="19,80,106,107"/>
-<area shape="rect" id="node3" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="Node000001" title="Class for monolithic coupled simulators." alt="" coords="12,152,113,177"/>
+<area shape="rect" id="Node000002" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="19,79,106,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,118,65,152,60,152,60,118"/>
+<area shape="rect" id="Node000003" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="5,5,120,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,44,65,79,60,79,60,44"/>
 </map>

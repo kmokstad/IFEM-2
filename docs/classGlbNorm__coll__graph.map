@@ -1,6 +1,9 @@
 <map id="GlbNorm" name="GlbNorm">
-<area shape="rect" id="node1" title="Class representing integrated global norms." alt="" coords="44,184,124,211"/>
-<area shape="rect" id="node2" href="$classGlobalIntegral.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="5,95,120,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="145,95,274,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="190,5,229,32"/>
+<area shape="rect" id="Node000001" title="Class representing integrated global norms." alt="" coords="44,181,124,207"/>
+<area shape="rect" id="Node000002" href="$classGlobalIntegral.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="5,93,120,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,131,84,180,78,181,66,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="145,93,274,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,129,103,183,100,179,180,124"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="190,5,229,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="212,45,212,93,207,93,207,45"/>
 </map>

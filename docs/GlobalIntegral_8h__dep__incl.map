@@ -1,38 +1,75 @@
-<map id="src/ASM/GlobalIntegral.h" name="src/ASM/GlobalIntegral.h">
-<area shape="rect" id="node1" title="Abstract interface for classes representing integrated quantities." alt="" coords="2617,5,2799,32"/>
-<area shape="rect" id="node2" href="$AlgEqSystem_8h.html" title="Storage of an algebraic equation system for a FEM problem." alt="" coords="539,80,715,107"/>
-<area shape="rect" id="node6" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="739,80,885,107"/>
-<area shape="rect" id="node7" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="909,80,1077,107"/>
-<area shape="rect" id="node8" href="$ASMs1DSpec_8C.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="1101,80,1277,107"/>
-<area shape="rect" id="node9" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="1302,80,1447,107"/>
-<area shape="rect" id="node10" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="1472,80,1640,107"/>
-<area shape="rect" id="node11" href="$ASMs2Dmx_8C.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="1665,80,1831,107"/>
-<area shape="rect" id="node12" href="$ASMs2DmxLag_8C.html" title="Driver for assembly of structured 2D Lagrange mixed FE models." alt="" coords="1856,80,2045,107"/>
-<area shape="rect" id="node13" href="$ASMs2DSpec_8C.html" title="Driver for assembly of structured 2D Spectral FE models." alt="" coords="2069,80,2245,107"/>
-<area shape="rect" id="node14" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="2269,80,2429,107"/>
-<area shape="rect" id="node15" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="2454,80,2599,107"/>
-<area shape="rect" id="node16" href="$ASMs3DLag_8C.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="2624,80,2792,107"/>
-<area shape="rect" id="node17" href="$ASMs3Dmx_8C.html" title="Driver for assembly of structured 3D spline mixed FE models." alt="" coords="2817,80,2983,107"/>
-<area shape="rect" id="node18" href="$ASMs3DmxLag_8C.html" title="Driver for assembly of structured 3D Lagrange mixed FE models." alt="" coords="3008,80,3197,107"/>
-<area shape="rect" id="node19" href="$ASMs3DSpec_8C.html" title="Driver for assembly of structured 3D Spectral FE models." alt="" coords="3221,80,3397,107"/>
-<area shape="rect" id="node20" href="$ASMstruct_8C.html" title="Base class for structured spline&#45;based FE assembly drivers." alt="" coords="3421,80,3579,107"/>
-<area shape="rect" id="node21" href="$ASMsupel_8C.html" title="Driver for assembly of general superelements." alt="" coords="3603,80,3757,107"/>
-<area shape="rect" id="node22" href="$ASMu2DLag_8C.html" title="Assembly of unstructured 2D Lagrange FE models." alt="" coords="3782,80,3951,107"/>
-<area shape="rect" id="node23" href="$GlbForceVec_8h.html" title="Storage of a global nodal force vector for a FEM problem." alt="" coords="3976,80,4147,107"/>
-<area shape="rect" id="node27" href="$GlbL2projector_8C.html" title="General integrand for L2&#45;projection of secondary solutions." alt="" coords="4171,80,4357,107"/>
-<area shape="rect" id="node28" href="$GlbNorm_8h.html" title="Representation of integrated global norm quantities." alt="" coords="159,80,307,107"/>
-<area shape="rect" id="node30" href="$IntegrandBase_8C.html" title="Base classes representing FEM integrands." alt="" coords="4381,80,4566,107"/>
-<area shape="rect" id="node31" href="$ReactionsOnly_8h.html" title="Global integral class for reaction&#45; and interface force calculation." alt="" coords="331,80,514,107"/>
-<area shape="rect" id="node33" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="4590,80,4757,107"/>
-<area shape="rect" id="node34" href="$ASMu2Dmx_8C.html" title="Driver for assembly of unstructured 2D spline mixed FE models." alt="" coords="4781,80,4968,107"/>
-<area shape="rect" id="node35" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="4993,80,5159,107"/>
-<area shape="rect" id="node36" href="$ASMu3Dmx_8C.html" title="Driver for assembly of unstructured 3D spline mixed FE models." alt="" coords="5184,80,5371,107"/>
-<area shape="rect" id="node3" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="179,155,320,181"/>
-<area shape="rect" id="node4" href="$SIMmodal_8C.html" title="Assembly of modal FEM system." alt="" coords="551,155,702,181"/>
-<area shape="rect" id="node5" href="$AlgEqSystem_8C.html" title="Storage of an algebraic equation system for a FEM problem." alt="" coords="726,155,903,181"/>
-<area shape="rect" id="node24" href="$ForceIntegrator_8C.html" title="Driver for integration of boundary and nodal forces." alt="" coords="3768,155,3952,181"/>
-<area shape="rect" id="node25" href="$GlbForceVec_8C.html" title="Storage of a global nodal force vector for a FEM problem." alt="" coords="3976,155,4147,181"/>
-<area shape="rect" id="node26" href="$HDF5Writer_8C.html" title="Output of model and results to HDF5 file." alt="" coords="4171,155,4349,181"/>
-<area shape="rect" id="node29" href="$GlbNorm_8C.html" title="Representation of integrated norm quantities over an element." alt="" coords="5,155,155,181"/>
-<area shape="rect" id="node32" href="$ReactionsOnly_8C.html" title="Global integral sub&#45;class for reaction force integration." alt="" coords="345,155,527,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlobalIntegral.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlobalIntegral.h">
+<area shape="rect" id="Node000001" title="Abstract interface for classes representing integrated quantities." alt="" coords="3332,5,3580,45"/>
+<area shape="rect" id="Node000002" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="5,93,216,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="3318,30,2696,33,1803,43,895,63,515,77,228,96,216,97,216,92,228,91,515,72,895,57,1803,38,2696,28,3318,24"/>
+<area shape="rect" id="Node000003" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="240,93,475,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="3318,30,2741,35,1923,47,1095,67,749,80,487,96,475,97,475,92,486,91,748,75,1094,61,1923,42,2741,30,3318,25"/>
+<area shape="rect" id="Node000004" href="$ASMs1DSpec_8C.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="499,93,741,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="3318,31,2788,37,2047,50,1301,69,989,81,754,96,742,97,741,92,753,91,989,76,1301,64,2047,44,2788,32,3318,25"/>
+<area shape="rect" id="Node000005" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="765,93,976,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="3318,31,2829,37,2156,49,1482,69,1201,81,988,96,976,97,976,92,988,91,1201,76,1482,63,2156,44,2829,32,3318,25"/>
+<area shape="rect" id="Node000006" href="$ASMs2DLag_8C.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="1000,93,1235,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="3318,31,2278,53,1683,72,1435,83,1247,96,1235,97,1235,92,1246,91,1435,78,1682,67,2277,48,3318,26"/>
+<area shape="rect" id="Node000007" href="$ASMs2DSpec_8C.html" title="Driver for assembly of structured 2D Spectral FE models." alt="" coords="1259,93,1501,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="3318,29,2997,32,2550,41,2036,61,1772,76,1514,96,1502,97,1501,92,1513,91,1772,71,2035,56,2550,35,2997,26,3318,24"/>
+<area shape="rect" id="Node000008" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="1525,93,1752,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="3318,30,3034,33,2649,43,2209,63,1984,78,1764,96,1752,97,1752,92,1764,91,1984,72,2209,58,2648,38,3034,28,3318,24"/>
+<area shape="rect" id="Node000009" href="$ASMs2Dmx_8C.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="1776,93,2008,133"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="3318,31,3074,37,2752,48,2388,67,2020,96,2008,97,2008,92,2020,91,2387,62,2751,43,3074,32,3318,26"/>
+<area shape="rect" id="Node000010" href="$ASMs2DmxLag_8C.html" title="Driver for assembly of structured 2D Lagrange mixed FE models." alt="" coords="2033,93,2287,133"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="3319,34,2866,55,2584,73,2300,96,2288,97,2287,92,2300,91,2583,67,2865,50,3318,29"/>
+<area shape="rect" id="Node000011" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="2312,93,2523,133"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="3318,36,2963,57,2749,74,2535,96,2523,97,2522,92,2534,91,2748,69,2963,52,3318,30"/>
+<area shape="rect" id="Node000012" href="$ASMs3DLag_8C.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="2547,93,2781,133"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="3319,41,3074,65,2794,96,2782,97,2781,92,2793,91,3073,60,3318,36"/>
+<area shape="rect" id="Node000013" href="$ASMs3DSpec_8C.html" title="Driver for assembly of structured 3D Spectral FE models." alt="" coords="2805,93,3048,133"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="3327,50,3043,96,3042,91,3326,45"/>
+<area shape="rect" id="Node000014" href="$ASMs3Dmx_8C.html" title="Driver for assembly of structured 3D spline mixed FE models." alt="" coords="3072,93,3304,133"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="3385,52,3247,96,3246,91,3383,47"/>
+<area shape="rect" id="Node000015" href="$ASMs3DmxLag_8C.html" title="Driver for assembly of structured 3D Lagrange mixed FE models." alt="" coords="3329,93,3583,133"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="3459,59,3459,93,3453,93,3453,59"/>
+<area shape="rect" id="Node000016" href="$ASMstruct_8C.html" title="Base class for structured spline&#45;based FE assembly drivers." alt="" coords="3607,93,3830,133"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="3527,47,3662,91,3660,96,3526,52"/>
+<area shape="rect" id="Node000017" href="$ASMsupel_8C.html" title="Driver for assembly of general superelements." alt="" coords="3855,93,4076,133"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="3581,45,3855,91,3854,96,3581,50"/>
+<area shape="rect" id="Node000018" href="$ASMu2DLag_8C.html" title="Assembly of unstructured 2D Lagrange FE models." alt="" coords="4100,93,4335,133"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="3594,37,3825,61,4088,91,4100,92,4100,98,4088,96,3825,66,3593,42"/>
+<area shape="rect" id="Node000019" href="$AlgEqSystem_8h.html" title="Storage of an algebraic equation system for a FEM problem." alt="" coords="4359,93,4601,133"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="3594,32,3936,54,4347,91,4359,92,4358,97,4346,96,3936,60,3593,37"/>
+<area shape="rect" id="Node000023" href="$GlbForceVec_8h.html" title="Storage of a global nodal force vector for a FEM problem." alt="" coords="5137,93,5373,133"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="3594,25,3874,29,4255,39,4687,59,4909,73,5126,91,5137,92,5136,97,5125,96,4908,78,4687,64,4254,44,3874,34,3594,30"/>
+<area shape="rect" id="Node000027" href="$GlbL2projector_8C.html" title="General integrands for global L2&#45;projection." alt="" coords="5397,93,5648,133"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="3594,24,3913,27,4357,36,4867,56,5129,71,5386,91,5397,92,5397,97,5385,96,5129,77,4867,62,4357,42,3913,32,3594,29"/>
+<area shape="rect" id="Node000028" href="$GlbNorm_8h.html" title="Representation of integrated global norm quantities." alt="" coords="4626,93,4841,133"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="3594,28,4047,47,4330,65,4614,91,4626,92,4625,97,4613,96,4329,71,4047,52,3593,33"/>
+<area shape="rect" id="Node000030" href="$IntegrandBase_8C.html" title="Base classes representing FEM integrands." alt="" coords="5672,93,5923,133"/>
+<area shape="poly" id="edge30_Node000001_Node000030" title=" " alt="" coords="3594,23,3954,24,4465,32,5057,53,5362,69,5660,91,5672,92,5671,97,5660,96,5362,75,5057,58,4465,38,3954,30,3594,28"/>
+<area shape="rect" id="Node000031" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="5947,93,6179,133"/>
+<area shape="poly" id="edge31_Node000001_Node000031" title=" " alt="" coords="3594,26,4085,32,4761,45,5438,65,5721,77,5935,91,5947,92,5946,97,5934,96,5720,82,5438,70,4761,51,4085,38,3593,31"/>
+<area shape="rect" id="Node000032" href="$ASMu2Dmx_8C.html" title="Driver for assembly of unstructured 2D spline mixed FE models." alt="" coords="6203,93,6456,133"/>
+<area shape="poly" id="edge32_Node000001_Node000032" title=" " alt="" coords="3594,25,4131,32,4881,45,5636,64,5952,76,6191,91,6203,92,6202,97,6190,96,5951,82,5636,69,4880,50,4131,37,3594,31"/>
+<area shape="rect" id="Node000033" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="6480,93,6712,133"/>
+<area shape="poly" id="edge33_Node000001_Node000033" title=" " alt="" coords="3594,25,4179,30,5009,41,5851,61,6202,74,6468,91,6480,92,6480,97,6468,96,6202,80,5851,66,5009,46,4179,35,3594,30"/>
+<area shape="rect" id="Node000034" href="$ASMu3Dmx_8C.html" title="Driver for assembly of unstructured 3D spline mixed FE models." alt="" coords="6736,93,6989,133"/>
+<area shape="poly" id="edge34_Node000001_Node000034" title=" " alt="" coords="3594,25,4223,30,5128,41,6048,61,6433,74,6724,91,6736,92,6736,97,6724,96,6433,79,6048,66,5128,46,4223,35,3594,30"/>
+<area shape="rect" id="Node000035" href="$ReactionsOnly_8h.html" title="Global integral class for reaction&#45; and interface force calculation." alt="" coords="4865,93,5113,133"/>
+<area shape="poly" id="edge35_Node000001_Node000035" title=" " alt="" coords="3594,27,4145,45,4497,64,4852,91,4865,92,4865,97,4852,96,4497,69,4145,50,3594,32"/>
+<area shape="rect" id="Node000020" href="$AlgEqSystem_8C.html" title="Storage of an algebraic equation system for a FEM problem." alt="" coords="3887,189,4129,229"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="4372,139,4104,191,4103,186,4371,133"/>
+<area shape="rect" id="Node000021" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="4395,189,4602,229"/>
+<area shape="poly" id="edge20_Node000019_Node000021" title=" " alt="" coords="4489,146,4498,188,4492,189,4484,147"/>
+<area shape="rect" id="Node000022" href="$SIMmodal_8C.html" title="Assembly of modal FEM system." alt="" coords="4154,189,4371,229"/>
+<area shape="poly" id="edge21_Node000019_Node000022" title=" " alt="" coords="4425,141,4308,191,4306,186,4423,136"/>
+<area shape="rect" id="Node000024" href="$GlbForceVec_8C.html" title="Storage of a global nodal force vector for a FEM problem." alt="" coords="5137,189,5375,229"/>
+<area shape="poly" id="edge23_Node000023_Node000024" title=" " alt="" coords="5258,147,5258,189,5253,189,5252,147"/>
+<area shape="rect" id="Node000025" href="$ForceIntegrator_8C.html" title="Driver for integration of boundary and nodal forces." alt="" coords="5399,189,5649,229"/>
+<area shape="poly" id="edge24_Node000023_Node000025" title=" " alt="" coords="5323,135,5470,186,5469,191,5321,140"/>
+<area shape="rect" id="Node000026" href="$HDF5Writer_8C.html" title="Output of model and results to HDF5 file." alt="" coords="5673,181,5855,236"/>
+<area shape="poly" id="edge25_Node000023_Node000026" title=" " alt="" coords="5387,132,5662,179,5673,181,5672,186,5661,184,5386,138"/>
+<area shape="poly" id="edge29_Node000028_Node000021" title=" " alt="" coords="4674,141,4547,191,4545,186,4672,136"/>
+<area shape="rect" id="Node000029" href="$GlbNorm_8C.html" title="Representation of integrated norm quantities over an element." alt="" coords="4626,189,4841,229"/>
+<area shape="poly" id="edge28_Node000028_Node000029" title=" " alt="" coords="4736,147,4736,189,4731,189,4731,147"/>
+<area shape="poly" id="edge37_Node000035_Node000021" title=" " alt="" coords="4863,138,4614,184,4579,191,4578,186,4613,179,4862,133"/>
+<area shape="rect" id="Node000036" href="$ReactionsOnly_8C.html" title="Global integral sub&#45;class for reaction force integration." alt="" coords="4865,189,5114,229"/>
+<area shape="poly" id="edge36_Node000035_Node000036" title=" " alt="" coords="4992,147,4992,189,4987,189,4987,147"/>
 </map>

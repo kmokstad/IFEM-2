@@ -1,8 +1,13 @@
 <map id="GenAlphaSIM" name="GenAlphaSIM">
-<area shape="rect" id="node1" title="Generalized&#45;alpha driver for dynamic isogeometric FEM simulators." alt="" coords="59,304,168,331"/>
-<area shape="rect" id="node2" href="$classNewmarkSIM.html" title="Newmark&#45;based solution driver for dynamic isogeometric FEM simulators." alt="" coords="59,229,168,256"/>
-<area shape="rect" id="node3" href="$classMultiStepSIM.html" title="Base class for multi&#45;step solution drivers." alt="" coords="59,155,167,181"/>
-<area shape="rect" id="node4" href="$classSIMsolution.html" title="Solution vector container with serialization support." alt="" coords="5,80,104,107"/>
-<area shape="rect" id="node5" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="129,80,215,107"/>
-<area shape="rect" id="node6" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="115,5,229,32"/>
+<area shape="rect" id="Node000001" title="Generalized&#45;alpha driver for dynamic isogeometric FEM simulators." alt="" coords="59,299,168,324"/>
+<area shape="rect" id="Node000002" href="$classNewmarkSIM.html" title="Newmark&#45;based solution driver for dynamic isogeometric FEM simulators." alt="" coords="59,225,168,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,264,116,299,111,299,111,264"/>
+<area shape="rect" id="Node000003" href="$classMultiStepSIM.html" title="Base class for multi&#45;step solution drivers." alt="" coords="59,152,167,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,191,116,225,111,225,111,191"/>
+<area shape="rect" id="Node000004" href="$classSIMsolution.html" title="Solution vector container with serialization support." alt="" coords="5,79,104,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="75,113,106,150,102,154,71,116"/>
+<area shape="rect" id="Node000005" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="129,79,215,104"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="156,116,125,154,121,150,152,113"/>
+<area shape="rect" id="Node000006" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="115,5,229,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="175,44,175,79,169,79,169,44"/>
 </map>

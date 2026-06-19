@@ -1,9 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classModelGenerator.html" title="Base class for model generators for FEM simulators." alt="" coords="5,132,132,159"/>
-<area shape="rect" id="node2" href="$classDefaultGeometry1D.html" title="Default model generator for 1D FEM simulators." alt="" coords="210,5,363,32"/>
-<area shape="rect" id="node3" href="$classDefaultGeometry2D.html" title="Default model generator for 2D FEM simulators." alt="" coords="210,56,363,83"/>
-<area shape="rect" id="node4" href="$classDefaultGeometry3D.html" title="Default model generator for 3D FEM simulators." alt="" coords="210,107,363,133"/>
-<area shape="rect" id="node5" href="$classMultiPatchModelGenerator1D.html" title="1D multi&#45;patch model generator for FEM simulators." alt="" coords="180,157,393,184"/>
-<area shape="rect" id="node6" href="$classMultiPatchModelGenerator2D.html" title="2D multi&#45;patch model generator for FEM simulators." alt="" coords="180,208,393,235"/>
-<area shape="rect" id="node7" href="$classMultiPatchModelGenerator3D.html" title="3D multi&#45;patch model generator for FEM simulators." alt="" coords="180,259,393,285"/>
+<area shape="rect" id="Node000000" href="$classModelGenerator.html" title="Base class for model generators for FEM simulators." alt="" coords="5,129,132,155"/>
+<area shape="rect" id="Node000001" href="$classDefaultGeometry1D.html" title="Default model generator for 1D FEM simulators." alt="" coords="210,5,363,31"/>
+<area shape="poly" id="edge201_Node000000_Node000001" title=" " alt="" coords="87,117,126,77,151,57,179,40,209,28,211,33,181,44,155,61,130,81,91,121"/>
+<area shape="rect" id="Node000002" href="$classDefaultGeometry2D.html" title="Default model generator for 2D FEM simulators." alt="" coords="210,55,363,80"/>
+<area shape="poly" id="edge202_Node000000_Node000002" title=" " alt="" coords="105,121,179,89,219,78,220,83,181,94,107,126"/>
+<area shape="rect" id="Node000003" href="$classDefaultGeometry3D.html" title="Default model generator for 3D FEM simulators." alt="" coords="210,104,363,129"/>
+<area shape="poly" id="edge203_Node000000_Node000003" title=" " alt="" coords="145,130,210,123,210,128,146,136"/>
+<area shape="rect" id="Node000004" href="$classMultiPatchModelGenerator1D.html" title="1D multi&#45;patch model generator for FEM simulators." alt="" coords="180,153,393,179"/>
+<area shape="poly" id="edge204_Node000000_Node000004" title=" " alt="" coords="146,148,180,152,179,157,146,153"/>
+<area shape="rect" id="Node000005" href="$classMultiPatchModelGenerator2D.html" title="2D multi&#45;patch model generator for FEM simulators." alt="" coords="180,203,393,228"/>
+<area shape="poly" id="edge205_Node000000_Node000005" title=" " alt="" coords="109,158,181,187,225,200,224,205,179,193,107,163"/>
+<area shape="rect" id="Node000006" href="$classMultiPatchModelGenerator3D.html" title="3D multi&#45;patch model generator for FEM simulators." alt="" coords="180,252,393,277"/>
+<area shape="poly" id="edge206_Node000000_Node000006" title=" " alt="" coords="91,163,131,201,155,221,181,237,213,249,211,254,179,242,152,225,127,205,88,167"/>
 </map>

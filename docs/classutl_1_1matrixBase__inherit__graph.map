@@ -1,9 +1,15 @@
 <map id="utl::matrixBase&lt; T &gt;" name="utl::matrixBase&lt; T &gt;">
-<area shape="rect" id="node1" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="5,132,165,159"/>
-<area shape="rect" id="node2" href="$classutl_1_1matrix.html" title=" " alt="" coords="221,5,371,32"/>
-<area shape="rect" id="node3" href="$classutl_1_1matrix3d.html" title=" " alt="" coords="213,56,379,83"/>
-<area shape="rect" id="node4" href="$classutl_1_1matrix4d.html" title=" " alt="" coords="213,107,379,133"/>
-<area shape="rect" id="node5" href="$classutl_1_1matrix.html" title="Two&#45;dimensional rectangular matrix with some algebraic operations." alt="" coords="232,157,360,184"/>
-<area shape="rect" id="node6" href="$classutl_1_1matrix3d.html" title="Three&#45;dimensional rectangular matrix with some algebraic operations." alt="" coords="224,208,368,235"/>
-<area shape="rect" id="node7" href="$classutl_1_1matrix4d.html" title="Four&#45;dimensional rectangular matrix with some algebraic operations." alt="" coords="224,259,368,285"/>
+<area shape="rect" id="Node000001" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="5,129,165,155"/>
+<area shape="rect" id="Node000002" href="$classutl_1_1matrix.html" title=" " alt="" coords="221,5,371,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,118,154,78,212,40,240,28,242,33,215,44,157,82,111,122"/>
+<area shape="rect" id="Node000003" href="$classutl_1_1matrix3d.html" title=" " alt="" coords="213,55,379,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,121,212,89,248,78,250,83,214,94,130,126"/>
+<area shape="rect" id="Node000004" href="$classutl_1_1matrix4d.html" title=" " alt="" coords="213,104,379,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,128,213,124,214,129,180,133"/>
+<area shape="rect" id="Node000005" href="$classutl_1_1matrix.html" title="Two&#45;dimensional rectangular matrix with some algebraic operations." alt="" coords="232,153,360,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="180,150,232,156,232,161,179,155"/>
+<area shape="rect" id="Node000006" href="$classutl_1_1matrix3d.html" title="Three&#45;dimensional rectangular matrix with some algebraic operations." alt="" coords="224,203,368,228"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="132,157,214,187,253,200,251,205,212,193,131,162"/>
+<area shape="rect" id="Node000007" href="$classutl_1_1matrix4d.html" title="Four&#45;dimensional rectangular matrix with some algebraic operations." alt="" coords="224,252,368,277"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="112,162,157,200,215,237,245,249,243,254,212,242,154,204,108,166"/>
 </map>

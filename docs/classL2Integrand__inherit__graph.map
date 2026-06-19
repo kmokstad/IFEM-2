@@ -1,5 +1,7 @@
 <map id="L2Integrand" name="L2Integrand">
-<area shape="rect" id="node1" title="Abstract class for evaluating integrand or function." alt="" coords="97,5,195,32"/>
-<area shape="rect" id="node2" href="$classL2FuncIntegrand.html" title="Evaluation class for functions." alt="" coords="5,80,135,107"/>
-<area shape="rect" id="node3" href="$classL2ProbIntegrand.html" title="Evaluation class for secondary solutions of an integrand." alt="" coords="159,80,287,107"/>
+<area shape="rect" id="Node000001" title="Abstract class for evaluating integrand or function." alt="" coords="97,5,195,31"/>
+<area shape="rect" id="Node000002" href="$classL2FuncIntegrand.html" title="Evaluation class for functions." alt="" coords="5,79,135,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,42,84,80,81,76,122,38"/>
+<area shape="rect" id="Node000003" href="$classL2ProbIntegrand.html" title="Evaluation class for secondary solutions of an integrand." alt="" coords="159,79,287,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,38,212,76,209,80,167,42"/>
 </map>

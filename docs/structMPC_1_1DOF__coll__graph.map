@@ -1,5 +1,9 @@
 <map id="MPC::DOF" name="MPC::DOF">
-<area shape="rect" id="node1" title="A struct representing one term in a multi&#45;point constraint equation." alt="" coords="113,5,200,32"/>
-<area shape="rect" id="node2" href="$classMPC.html" title="A class representing a general multi&#45;point constraint equation." alt="" coords="131,184,182,211"/>
-<area shape="rect" id="node3" title=" " alt="" coords="63,95,250,121"/>
+<area shape="rect" id="Node000001" title="A struct representing one term in a multi&#45;point constraint equation." alt="" coords="113,5,200,31"/>
+<area shape="rect" id="Node000002" href="$classMPC.html" title="A class representing a general multi&#45;point constraint equation." alt="" coords="131,181,182,207"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="101,35,52,57,31,74,14,95,8,112,12,127,24,140,42,153,88,172,132,185,131,190,86,177,40,157,21,144,8,129,3,111,9,92,27,70,50,53,99,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="63,93,250,119"/>
+<area shape="poly" id="edge4_Node000003_Node000001" title=" " alt="" coords="159,45,159,93,154,93,154,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,175,221,161,245,142,260,119,262,107,259,94,247,74,230,57,188,33,191,28,233,52,251,70,264,92,267,107,265,121,249,145,224,165,196,180"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="159,133,159,181,154,181,154,133"/>
 </map>

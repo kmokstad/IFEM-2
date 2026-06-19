@@ -1,7 +1,11 @@
 <map id="Immersed::Geometry" name="Immersed::Geometry">
-<area shape="rect" id="node1" title="Interface class representing a geometric object." alt="" coords="81,5,242,32"/>
-<area shape="rect" id="node2" href="$classGeoFunc2D.html" title="Class describing the immersed boundary as a scalar function." alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="$classHole2D.html" title="Class representing the perforated plate benchmark." alt="" coords="126,80,197,107"/>
-<area shape="rect" id="node5" href="$classPerforatedPlate2D.html" title="Class representing a plate perforated by multiple holes." alt="" coords="221,80,363,107"/>
-<area shape="rect" id="node4" href="$classOval2D.html" title="Class representing a plate perforated by an oval hole." alt="" coords="126,155,197,181"/>
+<area shape="rect" id="Node000001" title="Interface class representing a geometric object." alt="" coords="81,5,242,31"/>
+<area shape="rect" id="Node000002" href="$classGeoFunc2D.html" title="Class describing the immersed boundary as a scalar function." alt="" coords="5,79,101,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,40,72,81,70,76,131,36"/>
+<area shape="rect" id="Node000003" href="$classHole2D.html" title="Class representing the perforated plate benchmark." alt="" coords="126,79,197,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,44,164,79,159,79,159,44"/>
+<area shape="rect" id="Node000005" href="$classPerforatedPlate2D.html" title="Class representing a plate perforated by multiple holes." alt="" coords="221,79,363,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="196,35,272,76,269,81,193,40"/>
+<area shape="rect" id="Node000004" href="$classOval2D.html" title="Class representing a plate perforated by an oval hole." alt="" coords="126,152,197,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="164,118,164,152,159,152,159,118"/>
 </map>

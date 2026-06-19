@@ -1,5 +1,7 @@
-<map id="src/ASM/ASMs2DIB.h" name="src/ASM/ASMs2DIB.h">
-<area shape="rect" id="node1" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="83,5,240,32"/>
-<area shape="rect" id="node2" href="$ASM2D_8C.html" title="Abstract interface for 2D patches." alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node3" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="169,80,327,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs2DIB.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs2DIB.h">
+<area shape="rect" id="Node000001" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="115,5,337,45"/>
+<area shape="rect" id="Node000002" href="$ASM2D_8C.html" title="Abstract interface for 2D patches." alt="" coords="5,93,209,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,56,135,95,132,91,187,51"/>
+<area shape="rect" id="Node000003" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="234,93,458,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,51,321,91,318,95,262,56"/>
 </map>

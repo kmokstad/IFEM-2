@@ -1,5 +1,7 @@
-<map id="Apps/Common/SIMSolver.h" name="Apps/Common/SIMSolver.h">
-<area shape="rect" id="node1" title="SIM solver class template." alt="" coords="145,5,342,32"/>
-<area shape="rect" id="node2" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node3" href="$SIMSolverTS_8h.html" title="Time&#45;slab adaptive SIM solver class template." alt="" coords="260,80,475,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMSolver.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMSolver.h">
+<area shape="rect" id="Node000001" title="SIM solver class template." alt="" coords="130,5,365,45"/>
+<area shape="rect" id="Node000002" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="5,93,228,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,55,155,95,152,91,208,51"/>
+<area shape="rect" id="Node000003" href="$SIMSolverTS_8h.html" title="Time&#45;slab adaptive SIM solver class template." alt="" coords="253,101,503,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="287,51,353,98,350,103,284,56"/>
 </map>

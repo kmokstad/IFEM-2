@@ -1,5 +1,7 @@
-<map id="src/Utility/ScopedLogger.C" name="src/Utility/ScopedLogger.C">
-<area shape="rect" id="node1" title="Scoped logger implementations." alt="" coords="5,5,197,32"/>
-<area shape="rect" id="node2" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="39,80,163,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="61,155,141,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ScopedLogger.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ScopedLogger.C">
+<area shape="rect" id="Node000001" title="Scoped logger implementations." alt="" coords="5,5,187,60"/>
+<area shape="rect" id="Node000002" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="34,108,158,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,60,99,94,93,94,93,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="56,181,136,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,134,99,168,93,168,93,134"/>
 </map>

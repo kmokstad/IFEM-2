@@ -1,6 +1,9 @@
 <map id="SIMCoupledSI&lt; T1, T2 &gt;" name="SIMCoupledSI&lt; T1, T2 &gt;">
-<area shape="rect" id="node1" title="Template class for semi&#45;implicitly coupled simulators." alt="" coords="49,185,230,212"/>
-<area shape="rect" id="node2" href="$classSIMCoupled.html" title="Template class for coupled simulators." alt="" coords="5,96,175,123"/>
-<area shape="rect" id="node3" href="$classScalarFunc.html" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="199,96,291,123"/>
-<area shape="rect" id="node4" href="$classutl_1_1Function.html" title=" " alt="" coords="169,5,320,47"/>
+<area shape="rect" id="Node000001" title="Template class for semi&#45;implicitly coupled simulators." alt="" coords="49,183,230,208"/>
+<area shape="rect" id="Node000002" href="$classSIMCoupled.html" title="Template class for coupled simulators." alt="" coords="5,95,175,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,131,135,181,130,183,101,133"/>
+<area shape="rect" id="Node000003" href="$classScalarFunc.html" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="199,95,291,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,131,155,184,152,180,218,127"/>
+<area shape="rect" id="Node000004" href="$classutl_1_1Function.html" title=" " alt="" coords="169,5,320,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,59,247,94,242,94,242,59"/>
 </map>

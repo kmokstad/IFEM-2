@@ -1,6 +1,9 @@
 <map id="SAM" name="SAM">
-<area shape="rect" id="node1" title="This class contains data and functions for the assembly of FE matrices." alt="" coords="83,5,135,32"/>
-<area shape="rect" id="node2" href="$classSAMmodal.html" title="A simple SAM class for diagonal systems." alt="" coords="5,80,99,107"/>
-<area shape="rect" id="node3" href="$classSAMpatch.html" title="This is a sub&#45;class of SAM with added functionality for spline models." alt="" coords="123,80,211,107"/>
-<area shape="rect" id="node4" href="$classSAMpatchPETSc.html" title="This is a sub&#45;class of SAMpatch with support for parallel processing." alt="" coords="103,155,230,181"/>
+<area shape="rect" id="Node000001" title="This class contains data and functions for the assembly of FE matrices." alt="" coords="83,5,135,31"/>
+<area shape="rect" id="Node000002" href="$classSAMmodal.html" title="A simple SAM class for diagonal systems." alt="" coords="5,79,99,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,43,63,80,59,77,89,40"/>
+<area shape="rect" id="Node000003" href="$classSAMpatch.html" title="This is a sub&#45;class of SAM with added functionality for spline models." alt="" coords="123,79,211,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,40,159,77,155,80,125,43"/>
+<area shape="rect" id="Node000004" href="$classSAMpatchPETSc.html" title="This is a sub&#45;class of SAMpatch with support for parallel processing." alt="" coords="103,152,230,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,118,169,152,164,152,164,118"/>
 </map>

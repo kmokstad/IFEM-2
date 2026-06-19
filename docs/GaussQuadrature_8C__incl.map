@@ -1,5 +1,7 @@
-<map id="src/Utility/GaussQuadrature.C" name="src/Utility/GaussQuadrature.C">
-<area shape="rect" id="node1" title="Gaussian quadrature rules in one dimension." alt="" coords="39,5,254,32"/>
-<area shape="rect" id="node2" href="$GaussQuadrature_8h.html" title="Gaussian quadrature rules in one dimension." alt="" coords="5,80,152,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="176,80,256,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/GaussQuadrature.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/GaussQuadrature.C">
+<area shape="rect" id="Node000001" title="Gaussian quadrature rules in one dimension." alt="" coords="56,5,237,60"/>
+<area shape="rect" id="Node000002" href="$GaussQuadrature_8h.html" title="Gaussian quadrature rules in one dimension." alt="" coords="5,108,152,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,62,99,99,94,95,124,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,108,256,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,58,200,95,196,99,166,62"/>
 </map>

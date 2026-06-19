@@ -1,8 +1,14 @@
-<map id="Apps/Common/EqualOrderOperators.h" name="Apps/Common/EqualOrderOperators.h">
-<area shape="rect" id="node1" title="Various equal&#45;ordered discrete operators." alt="" coords="241,5,510,32"/>
-<area shape="rect" id="node2" href="$CompatibleOperators_8C.html" title="Various weak, discrete div&#45;compatible operators." alt="" coords="5,155,279,181"/>
-<area shape="rect" id="node3" href="$CompatibleOperators_8h.html" title="Various weak, div&#45;compatible discrete operators." alt="" coords="93,80,365,107"/>
-<area shape="rect" id="node4" href="$EqualOrderOperators_8C.html" title="Various discrete equal&#45;ordered operators." alt="" coords="388,80,659,107"/>
-<area shape="rect" id="node5" href="$PiolaOperators_8h.html" title="Various weak, discrete Piola&#45;mapped operators." alt="" coords="683,80,913,107"/>
-<area shape="rect" id="node6" href="$PiolaOperators_8C.html" title="Various weak, discrete Piola&#45;mapped operators." alt="" coords="683,155,913,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/EqualOrderOperators.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/EqualOrderOperators.h">
+<area shape="rect" id="Node000001" title="Various equal&#45;ordered discrete operators." alt="" coords="212,5,443,60"/>
+<area shape="rect" id="Node000002" href="$CompatibleOperators_8C.html" title="Various weak, discrete div&#45;compatible operators." alt="" coords="5,211,239,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,59,120,81,91,95,72,110,66,121,64,133,69,160,82,186,99,209,95,212,77,189,63,162,58,133,61,119,68,106,88,90,119,76,198,54"/>
+<area shape="rect" id="Node000003" href="$CompatibleOperators_8h.html" title="Various weak, div&#45;compatible discrete operators." alt="" coords="83,108,316,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,70,235,110,231,106,282,66"/>
+<area shape="rect" id="Node000004" href="$EqualOrderOperators_8C.html" title="Various discrete equal&#45;ordered operators." alt="" coords="340,108,571,163"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="373,66,423,106,420,110,370,70"/>
+<area shape="rect" id="Node000005" href="$PiolaOperators_8h.html" title="Various weak, discrete Piola&#45;mapped operators." alt="" coords="595,115,862,155"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="446,61,654,113,653,118,444,66"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="173,175,144,212,140,209,169,172"/>
+<area shape="rect" id="Node000006" href="$PiolaOperators_8C.html" title="Various weak, discrete Piola&#45;mapped operators." alt="" coords="595,218,862,258"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="731,169,731,218,726,218,726,169"/>
 </map>

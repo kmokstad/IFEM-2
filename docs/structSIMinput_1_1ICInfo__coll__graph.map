@@ -1,5 +1,7 @@
 <map id="SIMinput::ICInfo" name="SIMinput::ICInfo">
-<area shape="rect" id="node1" title="Struct holding information about an initial condition." alt="" coords="12,229,137,256"/>
-<area shape="rect" id="node2" title=" " alt="" coords="31,96,118,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,144,47"/>
+<area shape="rect" id="Node000001" title="Struct holding information about an initial condition." alt="" coords="12,227,137,252"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="31,95,118,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,134,77,226,72,226,72,134"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,59,77,94,72,94,72,59"/>
 </map>

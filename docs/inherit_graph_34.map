@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classControlFIFO.html" title="This class enables simple application control over a FIFO." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="Node000000" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="5,5,131,31"/>
+<area shape="rect" id="Node000001" href="$classDataExporter.html" title="Administer and write data using DataWriters." alt="" coords="179,5,287,31"/>
+<area shape="poly" id="edge91_Node000000_Node000001" title=" " alt="" coords="145,15,178,15,178,21,145,21"/>
 </map>

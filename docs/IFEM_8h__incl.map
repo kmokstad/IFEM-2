@@ -1,14 +1,26 @@
-<map id="Release/IFEM.h" name="Release/IFEM.h">
-<area shape="rect" id="node1" title="Initialization of the IFEM library." alt="" coords="400,5,523,32"/>
-<area shape="rect" id="node2" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="255,80,361,107"/>
-<area shape="rect" id="node7" href="$LogStream_8h.html" title="Log stream class." alt="" coords="548,80,652,107"/>
-<area shape="rect" id="node12" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="399,80,523,107"/>
-<area shape="rect" id="node3" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="5,155,112,181"/>
-<area shape="rect" id="node4" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="137,155,255,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="279,155,337,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="361,155,412,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="436,155,516,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="540,155,615,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="639,155,716,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="741,155,803,181"/>
+<map id="IFEM.h" name="IFEM.h">
+<area shape="rect" id="Node000001" title="Initialization of the IFEM library." alt="" coords="428,5,495,31"/>
+<area shape="rect" id="Node000002" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="255,79,361,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="438,33,346,75,344,70,436,28"/>
+<area shape="rect" id="Node000007" href="$LogStream_8h.html" title="Log stream class." alt="" coords="548,79,652,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="485,28,566,70,564,75,482,33"/>
+<area shape="rect" id="Node000012" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="399,79,523,104"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="464,31,464,65,459,65,459,31"/>
+<area shape="rect" id="Node000003" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="5,152,112,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,107,113,151,112,146,267,101"/>
+<area shape="rect" id="Node000004" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="137,152,255,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="291,106,228,147,225,142,289,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="279,152,337,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="311,104,311,138,305,138,305,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="361,152,412,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="322,102,366,141,362,145,319,106"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="436,152,516,177"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="581,106,509,147,507,143,579,102"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="540,152,615,177"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="599,105,588,140,583,138,594,104"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="639,152,716,177"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="614,102,656,141,653,144,611,106"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="741,152,803,177"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="629,102,732,144,730,149,627,106"/>
+<area shape="poly" id="edge12_Node000012_Node000008" title=" " alt="" coords="466,104,473,138,468,139,461,105"/>
 </map>

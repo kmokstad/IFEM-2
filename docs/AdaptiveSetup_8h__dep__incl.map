@@ -1,7 +1,11 @@
-<map id="src/SIM/AdaptiveSetup.h" name="src/SIM/AdaptiveSetup.h">
-<area shape="rect" id="node1" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="105,5,285,32"/>
-<area shape="rect" id="node2" href="$AdaptiveSetup_8C.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="5,80,187,107"/>
-<area shape="rect" id="node3" href="$AdaptiveSIM_8h.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="211,80,378,107"/>
-<area shape="rect" id="node4" href="$AdaptiveSIM_8C.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="99,155,267,181"/>
-<area shape="rect" id="node5" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="291,155,522,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/AdaptiveSetup.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/AdaptiveSetup.h">
+<area shape="rect" id="Node000001" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="251,5,497,45"/>
+<area shape="rect" id="Node000002" href="$AdaptiveSIM_8h.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="125,93,359,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,55,273,95,270,91,332,51"/>
+<area shape="rect" id="Node000005" href="$AdaptiveSetup_8C.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="383,93,629,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="416,51,478,91,475,95,413,55"/>
+<area shape="rect" id="Node000003" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="5,181,228,236"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="207,144,154,183,150,179,204,139"/>
+<area shape="rect" id="Node000004" href="$AdaptiveSIM_8C.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="251,189,486,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="280,139,345,186,341,191,277,144"/>
 </map>

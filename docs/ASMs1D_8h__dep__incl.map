@@ -1,15 +1,29 @@
-<map id="src/ASM/ASMs1D.h" name="src/ASM/ASMs1D.h">
-<area shape="rect" id="node1" title="Driver for assembly of structured 1D spline FE models." alt="" coords="597,5,741,32"/>
-<area shape="rect" id="node2" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="225,87,371,114"/>
-<area shape="rect" id="node3" href="$ASMs1DC1_8h.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="588,87,749,114"/>
-<area shape="rect" id="node6" href="$ASMs1DLag_8h.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="395,87,561,114"/>
-<area shape="rect" id="node12" href="$MultiPatchModelGenerator_8C.html" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="774,80,1003,121"/>
-<area shape="rect" id="node13" href="$SIMNodalConstraint_8C.html" title="Base class for simulators constraining a topologyset to a given node." alt="" coords="1028,87,1291,114"/>
-<area shape="rect" id="node4" href="$ASM1D_8C.html" title="Abstract interface for 1D patches." alt="" coords="499,244,638,271"/>
-<area shape="rect" id="node5" href="$ASMs1DC1_8C.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="590,169,753,196"/>
-<area shape="rect" id="node7" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="198,169,366,196"/>
-<area shape="rect" id="node8" href="$ASMs1DSpec_8h.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="391,169,565,196"/>
-<area shape="rect" id="node10" href="$ASMu1DLag_8h.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="6,169,174,196"/>
-<area shape="rect" id="node9" href="$ASMs1DSpec_8C.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="299,244,475,271"/>
-<area shape="rect" id="node11" href="$ASMu1DLag_8C.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="5,244,175,271"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs1D.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ASMs1D.h">
+<area shape="rect" id="Node000001" title="Driver for assembly of structured 1D spline FE models." alt="" coords="501,5,712,45"/>
+<area shape="rect" id="Node000002" href="$MultiPatchModelGenerator_8C.html" title="Multi&#45;patch model generators for NURBS&#45;based FEM simulators." alt="" coords="5,93,232,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="488,50,245,96,233,98,232,93,243,91,487,45"/>
+<area shape="rect" id="Node000003" href="$SIMNodalConstraint_8C.html" title="Base class for simulators constraining a topologyset to a given node." alt="" coords="257,93,477,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="546,53,435,96,433,91,545,48"/>
+<area shape="rect" id="Node000004" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="501,101,712,141"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="609,59,609,101,604,101,604,59"/>
+<area shape="rect" id="Node000005" href="$ASMs1DC1_8h.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="1131,101,1357,141"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="726,41,1131,100,1130,105,725,47"/>
+<area shape="rect" id="Node000008" href="$ASMs1DLag_8h.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="737,101,970,141"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="670,48,804,98,803,103,668,53"/>
+<area shape="rect" id="Node000006" href="$ASM1D_8C.html" title="Abstract interface for 1D patches." alt="" coords="1007,284,1211,324"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1307,144,1340,162,1367,184,1376,197,1381,210,1380,224,1373,238,1348,256,1309,271,1212,292,1211,287,1307,266,1345,251,1369,234,1375,222,1376,211,1371,199,1363,188,1337,167,1304,149"/>
+<area shape="rect" id="Node000007" href="$ASMs1DC1_8C.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="1130,196,1358,236"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1247,154,1247,196,1241,196,1241,154"/>
+<area shape="rect" id="Node000009" href="$ASMs1DLag_8C.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="605,196,840,236"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="817,151,751,198,748,194,814,147"/>
+<area shape="rect" id="Node000010" href="$ASMs1DSpec_8h.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="865,196,1106,236"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="893,147,960,194,957,198,890,151"/>
+<area shape="rect" id="Node000012" href="$ASMu1DLag_8h.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="347,196,581,236"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="762,146,543,199,542,193,761,141"/>
+<area shape="poly" id="edge10_Node000010_Node000006" title=" " alt="" coords="1026,242,1083,282,1080,286,1023,246"/>
+<area shape="rect" id="Node000011" href="$ASMs1DSpec_8C.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="740,284,983,324"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="948,246,890,286,887,282,945,242"/>
+<area shape="poly" id="edge13_Node000012_Node000006" title=" " alt="" coords="595,234,797,257,995,281,1007,283,1006,288,994,287,796,262,595,239"/>
+<area shape="rect" id="Node000013" href="$ASMu1DLag_8C.html" title="Assembly of unstructured 1D Lagrange FE models." alt="" coords="347,284,581,324"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="467,250,467,284,461,284,461,250"/>
 </map>

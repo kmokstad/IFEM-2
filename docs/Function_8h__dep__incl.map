@@ -1,47 +1,105 @@
-<map id="src/Utility/Function.h" name="src/Utility/Function.h">
-<area shape="rect" id="node1" title="General functions with arbitrary argument and value type." alt="" coords="2042,5,2198,32"/>
-<area shape="rect" id="node2" href="$FunctionSum_8h.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="202,80,371,107"/>
-<area shape="rect" id="node5" href="$NodeVecFunc_8h.html" title="Vector function wrapper for a nodal field." alt="" coords="6,80,178,107"/>
-<area shape="rect" id="node7" href="$SIMgeneric_8C.html" title="Generic SIM class with some added functionalities." alt="" coords="395,80,554,107"/>
-<area shape="rect" id="node8" href="$ASMbase_8C.html" title="Base class for spline&#45;based finite element (FE) assembly drivers." alt="" coords="578,80,729,107"/>
-<area shape="rect" id="node9" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="753,80,898,107"/>
-<area shape="rect" id="node10" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="922,80,1067,107"/>
-<area shape="rect" id="node11" href="$ASMs2DC1_8C.html" title="Driver for assembly of C1&#45;continuous structured 2D spline FE models." alt="" coords="1092,80,1255,107"/>
-<area shape="rect" id="node12" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="1279,80,1425,107"/>
-<area shape="rect" id="node13" href="$DualField_8h.html" title="Representation of dual fields for goal&#45;oriented error estimation." alt="" coords="1449,80,1599,107"/>
-<area shape="rect" id="node15" href="$GlbL2projector_8C.html" title="General integrand for L2&#45;projection of secondary solutions." alt="" coords="1623,80,1809,107"/>
-<area shape="rect" id="node16" href="$IBGeometries_8C.html" title="Physical geometries for immersed boundary simulations." alt="" coords="1833,80,2013,107"/>
-<area shape="rect" id="node17" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="2037,80,2203,107"/>
-<area shape="rect" id="node18" href="$ASMu2Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="2228,80,2449,107"/>
-<area shape="rect" id="node19" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="2474,80,2641,107"/>
-<area shape="rect" id="node20" href="$ASMu3Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="2665,80,2887,107"/>
-<area shape="rect" id="node21" href="$Chebyshev_8h.html" title="Evaluation of Chebyshev polynomials." alt="" coords="3422,155,3594,181"/>
-<area shape="rect" id="node24" href="$ExprFunctions_8h.html" title="Expression function implementations." alt="" coords="3205,155,3397,181"/>
-<area shape="rect" id="node27" href="$Functions_8h.html" title="Specific function implementations." alt="" coords="2911,80,3073,107"/>
-<area shape="rect" id="node34" href="$SplineUtils_8C.html" title="Various utility functions on spline objects." alt="" coords="3199,80,3371,107"/>
-<area shape="rect" id="node35" href="$TensorFunction_8h.html" title="Spatial tensor&#45;valued functions." alt="" coords="3683,80,3882,107"/>
-<area shape="rect" id="node42" href="$TextureProperties_8h.html" title="Properties defined through a texture map." alt="" coords="4449,80,4663,107"/>
-<area shape="rect" id="node44" href="$TractionField_8h.html" title="Function interfaces for representation of explicit traction fields." alt="" coords="4242,80,4425,107"/>
-<area shape="rect" id="node45" href="$VTF_8C.html" title="Output of FE model and results to VTF file." alt="" coords="4688,80,4813,107"/>
-<area shape="rect" id="node3" href="$FunctionSum_8C.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="203,155,373,181"/>
-<area shape="rect" id="node4" href="$SIMinput_8C.html" title="Sub&#45;class with functionality for model input and setup." alt="" coords="1367,155,1510,181"/>
-<area shape="rect" id="node6" href="$NodeVecFunc_8C.html" title="Vector function wrapper for a nodal field." alt="" coords="5,155,179,181"/>
-<area shape="rect" id="node14" href="$DualField_8C.html" title="Representation of dual fields for goal&#45;oriented error estimation." alt="" coords="1535,155,1687,181"/>
-<area shape="rect" id="node22" href="$Chebyshev_8C.html" title="Evaluation of Chebyshev polynomials." alt="" coords="3421,229,3595,256"/>
-<area shape="rect" id="node23" href="$Functions_8C.html" title="Specific function implementations." alt="" coords="4001,229,4165,256"/>
-<area shape="rect" id="node25" href="$AnaSol_8C.html" title="Analytical solution fields (primary and secondary)." alt="" coords="2317,229,2464,256"/>
-<area shape="rect" id="node26" href="$ExprFunctions_8C.html" title="Expression function implementations." alt="" coords="2999,229,3193,256"/>
-<area shape="rect" id="node28" href="$AdaptiveSetup_8C.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="2121,155,2303,181"/>
-<area shape="rect" id="node29" href="$SIM1D_8C.html" title="Solution driver for 1D NURBS&#45;based FEM analysis." alt="" coords="2327,155,2455,181"/>
-<area shape="rect" id="node30" href="$SIM2D_8C.html" title="Solution driver for 2D NURBS&#45;based FEM analysis." alt="" coords="3772,229,3900,256"/>
-<area shape="rect" id="node31" href="$SIM3D_8C.html" title="Solution driver for 3D NURBS&#45;based FEM analysis." alt="" coords="2479,155,2607,181"/>
-<area shape="rect" id="node32" href="$SIMoutput_8C.html" title="Sub&#45;class with functionality for result output to VTF and terminal." alt="" coords="3029,155,3181,181"/>
-<area shape="rect" id="node33" href="$SIMCoupledSI_8h.html" title="Template for a semi&#45;implicit coupling of two nonlinear solvers." alt="" coords="2631,155,2854,181"/>
-<area shape="rect" id="node36" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="3619,155,3760,181"/>
-<area shape="rect" id="node37" href="$IntegrandBase_8C.html" title="Base classes representing FEM integrands." alt="" coords="3785,155,3970,181"/>
-<area shape="rect" id="node38" href="$FieldFunctions_8h.html" title="Field function implementations." alt="" coords="4267,155,4461,181"/>
-<area shape="rect" id="node40" href="$TensorFunction_8C.html" title="Spatial tensor&#45;valued functions." alt="" coords="3994,155,4193,181"/>
-<area shape="rect" id="node41" href="$TractionField_8C.html" title="Function interfaces for representation of explicit traction fields." alt="" coords="4485,155,4669,181"/>
-<area shape="rect" id="node39" href="$FieldFunctions_8C.html" title="Field function implementations." alt="" coords="4267,229,4461,256"/>
-<area shape="rect" id="node43" href="$TextureProperties_8C.html" title="Properties defined through a texture map." alt="" coords="4744,155,4960,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/Function.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/Function.h">
+<area shape="rect" id="Node000001" title="General functions with arbitrary argument and value type." alt="" coords="2772,5,2953,60"/>
+<area shape="rect" id="Node000002" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="5,115,216,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2759,37,2255,40,1522,51,1138,60,776,73,464,90,228,111,186,118,185,113,228,105,463,84,776,68,1137,55,1522,46,2255,35,2759,32"/>
+<area shape="rect" id="Node000003" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="240,115,451,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2758,37,2294,42,1630,54,957,76,675,91,463,111,421,118,420,113,462,105,675,86,956,70,1630,48,2294,37,2758,32"/>
+<area shape="rect" id="Node000004" href="$ASMs2DC1_8C.html" title="Driver for assembly of C1&#45;continuous structured 2D spline FE models." alt="" coords="475,115,703,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="2758,38,2338,45,1748,58,1152,80,904,94,716,111,671,118,670,113,716,105,904,89,1152,74,1748,53,2338,39,2758,33"/>
+<area shape="rect" id="Node000005" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="728,115,939,155"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="2759,38,2380,45,1858,59,1334,81,1116,95,951,111,909,118,908,113,950,105,1116,89,1334,76,1858,54,2380,40,2758,33"/>
+<area shape="rect" id="Node000006" href="$DualField_8h.html" title="Representation of dual fields for goal&#45;oriented error estimation." alt="" coords="963,115,1181,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="2758,39,1971,63,1522,84,1335,97,1194,111,1150,118,1150,113,1193,105,1335,91,1522,79,1971,58,2758,34"/>
+<area shape="rect" id="Node000009" href="$GlbL2projector_8C.html" title="General integrands for global L2&#45;projection." alt="" coords="1205,115,1456,155"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="2758,37,2526,42,2206,53,1839,75,1652,91,1468,111,1420,118,1419,113,1468,105,1651,86,1839,70,2206,48,2526,37,2758,32"/>
+<area shape="rect" id="Node000010" href="$IBGeometries_8C.html" title="Physical geometries for immersed boundary simulations." alt="" coords="1481,115,1727,155"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="2758,39,2567,46,2314,59,2028,80,1740,111,1694,118,1693,113,1740,105,2028,75,2314,54,2567,41,2758,34"/>
+<area shape="rect" id="Node000011" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="1752,115,1984,155"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="2759,42,2419,65,2208,84,1996,111,1954,118,1953,113,1996,105,2207,79,2418,59,2758,36"/>
+<area shape="rect" id="Node000012" href="$ASMu2Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="2009,115,2295,155"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="2759,50,2308,111,2262,118,2261,113,2308,105,2758,44"/>
+<area shape="rect" id="Node000013" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="2320,115,2552,155"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="2759,61,2516,118,2515,113,2758,56"/>
+<area shape="rect" id="Node000014" href="$ASMu3Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="2577,115,2863,155"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="2816,70,2749,117,2745,113,2813,66"/>
+<area shape="rect" id="Node000015" href="$FunctionSum_8h.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="2888,115,3123,155"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="2913,66,2980,113,2977,117,2910,70"/>
+<area shape="rect" id="Node000017" href="$NodeVecFunc_8h.html" title="Vector function wrapper for a nodal field." alt="" coords="3147,115,3386,155"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="2968,57,3191,113,3190,118,2966,62"/>
+<area shape="rect" id="Node000019" href="$SIMgeneric_8C.html" title="Generic SIM class with some added functionalities." alt="" coords="3411,115,3635,155"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="2967,44,3168,70,3399,105,3438,113,3437,118,3398,111,3167,75,2967,49"/>
+<area shape="rect" id="Node000020" href="$Chebyshev_8h.html" title="Evaluation of Chebyshev polynomials." alt="" coords="4420,211,4601,265"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="2967,35,3205,44,3494,59,3753,79,3845,92,3900,106,3918,119,3928,134,3938,148,3955,160,4018,186,4074,199,4125,204,4174,203,4278,198,4339,199,4408,208,4420,210,4419,215,4408,213,4338,205,4278,203,4175,209,4125,210,4073,205,4017,191,3952,165,3934,152,3924,137,3914,122,3898,110,3844,97,3752,85,3494,64,3205,49,2967,40"/>
+<area shape="rect" id="Node000023" href="$ExprFunctions_8h.html" title="Expression function implementations." alt="" coords="4215,211,4396,265"/>
+<area shape="poly" id="edge23_Node000001_Node000023" title=" " alt="" coords="2967,30,3176,32,3434,42,3562,51,3679,64,3779,82,3853,106,3872,118,3883,133,3893,148,3911,160,3951,178,3987,189,4052,196,4119,197,4203,208,4215,211,4214,216,4202,213,4119,203,4052,201,3986,194,3950,183,3908,165,3890,151,3879,136,3868,122,3851,110,3778,87,3679,70,3561,56,3434,47,3176,37,2967,36"/>
+<area shape="rect" id="Node000026" href="$Functions_8h.html" title="Specific function implementations." alt="" coords="3659,108,3840,163"/>
+<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="2968,36,3274,58,3460,78,3647,105,3659,108,3658,113,3646,111,3460,83,3273,63,2967,41"/>
+<area shape="rect" id="Node000034" href="$SplineUtils_8C.html" title="Various utility functions on spline objects." alt="" coords="3965,108,4147,163"/>
+<area shape="poly" id="edge39_Node000001_Node000034" title=" " alt="" coords="2967,33,3152,38,3396,50,3671,72,3947,105,3965,109,3964,114,3946,111,3670,77,3396,55,3152,43,2967,38"/>
+<area shape="rect" id="Node000035" href="$TensorFunction_8h.html" title="Spatial tensor&#45;valued functions." alt="" coords="4748,108,4929,163"/>
+<area shape="poly" id="edge40_Node000001_Node000035" title=" " alt="" coords="2967,37,4748,127,4747,132,2967,42"/>
+<area shape="rect" id="Node000042" href="$TextureProperties_8h.html" title="Properties defined through a texture map." alt="" coords="5479,108,5660,163"/>
+<area shape="poly" id="edge53_Node000001_Node000042" title=" " alt="" coords="2967,31,3467,33,4190,43,4570,52,4927,65,5235,82,5467,105,5479,107,5478,112,5466,111,5234,88,4927,70,4570,57,4190,48,3466,39,2967,37"/>
+<area shape="rect" id="Node000044" href="$TractionField_8h.html" title="Function interfaces for representation of explicit traction fields." alt="" coords="5273,108,5455,163"/>
+<area shape="poly" id="edge55_Node000001_Node000044" title=" " alt="" coords="2967,34,3784,59,4356,80,4941,105,5273,125,5273,130,4941,111,4356,85,3784,64,2967,39"/>
+<area shape="rect" id="Node000045" href="$VTF_8C.html" title="Output of FE model and results to VTF file." alt="" coords="5685,115,5875,155"/>
+<area shape="poly" id="edge58_Node000001_Node000045" title=" " alt="" coords="2967,31,3501,33,4284,41,4697,51,5085,64,5420,82,5672,105,5712,113,5711,118,5672,111,5419,87,5085,69,4697,56,4284,47,3501,38,2967,36"/>
+<area shape="rect" id="Node000007" href="$DualField_8C.html" title="Representation of dual fields for goal&#45;oriented error estimation." alt="" coords="963,218,1181,258"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1075,169,1075,218,1069,218,1069,169"/>
+<area shape="rect" id="Node000008" href="$SIMinput_8C.html" title="Sub&#45;class with functionality for model input and setup." alt="" coords="2039,218,2249,258"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1164,155,1194,160,1320,174,1427,181,1610,184,1793,186,1901,193,2027,208,2068,215,2067,221,2026,213,1900,199,1793,191,1610,189,1427,187,1319,180,1193,165,1164,161"/>
+<area shape="poly" id="edge16_Node000015_Node000008" title=" " alt="" coords="2907,160,2876,165,2704,183,2569,188,2434,194,2262,213,2222,221,2221,215,2261,208,2433,189,2568,183,2703,178,2876,160,2906,155"/>
+<area shape="rect" id="Node000016" href="$FunctionSum_8C.html" title="Unary spatial function as a sum of other spatial functions." alt="" coords="1779,218,2015,258"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="2908,160,2876,165,2748,179,2638,186,2452,189,2266,192,2157,200,2028,213,1983,221,1982,215,2028,208,2156,194,2266,187,2452,184,2638,181,2747,174,2876,160,2907,155"/>
+<area shape="rect" id="Node000018" href="$NodeVecFunc_8C.html" title="Vector function wrapper for a nodal field." alt="" coords="2273,218,2511,258"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="3166,160,3135,165,2964,183,2829,189,2695,195,2524,213,2480,221,2479,215,2524,208,2695,190,2829,184,2963,178,3134,160,3166,155"/>
+<area shape="rect" id="Node000021" href="$Chebyshev_8C.html" title="Evaluation of Chebyshev polynomials." alt="" coords="4324,313,4505,368"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="4478,277,4442,315,4438,311,4474,273"/>
+<area shape="rect" id="Node000022" href="$Functions_8C.html" title="Specific function implementations." alt="" coords="4748,313,4929,368"/>
+<area shape="poly" id="edge22_Node000020_Node000022" title=" " alt="" coords="4610,267,4754,311,4752,316,4609,272"/>
+<area shape="poly" id="edge26_Node000023_Node000022" title=" " alt="" coords="4410,263,4503,278,4575,287,4647,295,4736,311,4748,313,4747,318,4736,316,4646,301,4574,292,4502,284,4409,268"/>
+<area shape="rect" id="Node000024" href="$AnaSol_8C.html" title="Analytical solution fields (primary and secondary)." alt="" coords="3833,313,4015,368"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="4202,269,4015,318,4014,313,4201,264"/>
+<area shape="rect" id="Node000025" href="$ExprFunctions_8C.html" title="Expression function implementations." alt="" coords="3059,313,3240,368"/>
+<area shape="poly" id="edge25_Node000023_Node000025" title=" " alt="" coords="4201,268,4064,287,3924,303,3653,325,3416,336,3240,341,3240,336,3416,331,3653,319,3923,298,4063,282,4201,263"/>
+<area shape="poly" id="edge34_Node000026_Node000008" title=" " alt="" coords="3645,165,3435,189,3256,198,3099,198,2952,192,2805,187,2648,185,2470,193,2262,213,2219,221,2218,215,2261,208,2470,187,2648,180,2805,181,2952,187,3099,192,3256,193,3435,183,3644,160"/>
+<area shape="poly" id="edge38_Node000026_Node000022" title=" " alt="" coords="3830,166,3869,185,3907,209,3923,224,3934,239,3944,252,3961,263,3994,275,4032,284,4124,296,4230,302,4343,303,4565,302,4660,304,4736,311,4748,313,4747,318,4736,316,4660,309,4565,307,4343,309,4230,307,4123,302,4031,289,3992,280,3959,268,3940,256,3929,242,3919,227,3904,213,3867,190,3828,171"/>
+<area shape="poly" id="edge36_Node000026_Node000024" title=" " alt="" coords="3645,165,3471,169,3216,170,3088,174,2975,181,2890,194,2862,202,2846,213,2837,225,2834,238,2837,251,2846,263,2859,269,2886,276,2977,288,3256,309,3576,324,3833,334,3833,339,3576,329,3256,314,2977,293,2885,281,2857,274,2842,267,2832,253,2829,238,2832,223,2842,209,2860,198,2889,188,2975,176,3088,168,3216,165,3471,163,3645,160"/>
+<area shape="poly" id="edge37_Node000026_Node000025" title=" " alt="" coords="3645,165,3467,169,3206,170,3075,173,2960,180,2873,193,2844,202,2827,213,2817,226,2812,239,2812,250,2816,260,2836,279,2870,294,2913,307,2961,317,3059,330,3058,335,2960,322,2912,312,2868,299,2833,283,2811,263,2806,251,2807,238,2812,224,2824,209,2842,197,2872,188,2959,175,3075,168,3206,164,3467,163,3645,160"/>
+<area shape="rect" id="Node000027" href="$SIMCoupledSI_8h.html" title="Template for a semi&#45;implicit coupling of two nonlinear solvers." alt="" coords="2856,218,3115,258"/>
+<area shape="poly" id="edge28_Node000026_Node000027" title=" " alt="" coords="3645,165,3500,185,3385,192,3272,198,3128,213,3082,221,3081,215,3128,208,3271,193,3385,187,3499,179,3645,160"/>
+<area shape="rect" id="Node000028" href="$ASMbase_8C.html" title="Base class for spline&#45;based finite element (FE) assembly drivers." alt="" coords="3139,218,3357,258"/>
+<area shape="poly" id="edge29_Node000026_Node000028" title=" " alt="" coords="3645,166,3506,190,3370,213,3334,221,3333,215,3369,208,3505,185,3644,160"/>
+<area shape="rect" id="Node000029" href="$AdaptiveSetup_8C.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="3381,218,3627,258"/>
+<area shape="poly" id="edge30_Node000026_Node000029" title=" " alt="" coords="3674,170,3551,220,3549,215,3672,165"/>
+<area shape="rect" id="Node000030" href="$SIM1D_8C.html" title="Solution driver for 1D NURBS&#45;based FEM analysis." alt="" coords="3652,218,3847,258"/>
+<area shape="poly" id="edge31_Node000026_Node000030" title=" " alt="" coords="3752,177,3752,218,3747,218,3747,177"/>
+<area shape="rect" id="Node000031" href="$SIM2D_8C.html" title="Solution driver for 2D NURBS&#45;based FEM analysis." alt="" coords="4529,321,4724,361"/>
+<area shape="poly" id="edge32_Node000026_Node000031" title=" " alt="" coords="3805,168,3860,209,3877,225,3888,239,3899,252,3917,263,3972,280,4043,290,4125,296,4213,299,4385,302,4459,305,4518,311,4555,318,4554,323,4517,316,4458,310,4385,307,4213,305,4125,302,4043,296,3971,285,3915,268,3896,256,3884,243,3873,228,3857,213,3802,173"/>
+<area shape="rect" id="Node000032" href="$SIM3D_8C.html" title="Solution driver for 3D NURBS&#45;based FEM analysis." alt="" coords="2536,218,2731,258"/>
+<area shape="poly" id="edge33_Node000026_Node000032" title=" " alt="" coords="3645,165,3509,182,3393,190,3195,191,2999,191,2884,198,2750,213,2709,221,2708,215,2749,208,2884,193,2999,186,3195,186,3393,185,3509,177,3644,160"/>
+<area shape="rect" id="Node000033" href="$SIMoutput_8C.html" title="Sub&#45;class with functionality for result output to VTF and terminal." alt="" coords="3972,218,4191,258"/>
+<area shape="poly" id="edge35_Node000026_Node000033" title=" " alt="" coords="3850,164,4020,215,4018,220,3848,169"/>
+<area shape="poly" id="edge44_Node000035_Node000020" title=" " alt="" coords="4741,169,4597,213,4595,208,4739,164"/>
+<area shape="poly" id="edge50_Node000035_Node000022" title=" " alt="" coords="4943,134,5069,140,5133,148,5191,160,5238,177,5256,187,5269,200,5276,214,5277,230,5271,248,5258,267,5233,285,5198,296,5155,303,5108,307,5013,310,4942,316,4930,318,4929,313,4941,311,5013,305,5107,302,5154,298,5197,291,5231,280,5254,263,5267,245,5272,229,5271,215,5264,203,5252,192,5235,182,5189,165,5132,153,5068,146,4943,139"/>
+<area shape="poly" id="edge45_Node000035_Node000023" title=" " alt="" coords="4735,155,4580,180,4409,213,4397,216,4396,211,4407,208,4579,175,4734,150"/>
+<area shape="poly" id="edge43_Node000035_Node000033" title=" " alt="" coords="4735,148,4491,174,4203,213,4164,221,4163,215,4202,208,4491,168,4734,143"/>
+<area shape="rect" id="Node000036" href="$IntegrandBase_8C.html" title="Base classes representing FEM integrands." alt="" coords="5319,218,5569,258"/>
+<area shape="poly" id="edge41_Node000035_Node000036" title=" " alt="" coords="4943,150,5300,208,5342,215,5341,221,5300,213,4942,155"/>
+<area shape="rect" id="Node000037" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="4626,218,4833,258"/>
+<area shape="poly" id="edge42_Node000035_Node000037" title=" " alt="" coords="4802,174,4752,220,4748,216,4798,170"/>
+<area shape="rect" id="Node000038" href="$FieldFunctions_8h.html" title="Field function implementations." alt="" coords="4857,211,5039,265"/>
+<area shape="poly" id="edge46_Node000035_Node000038" title=" " alt="" coords="4879,170,4921,209,4918,213,4876,174"/>
+<area shape="rect" id="Node000040" href="$TensorFunction_8C.html" title="Spatial tensor&#45;valued functions." alt="" coords="5063,211,5244,265"/>
+<area shape="poly" id="edge51_Node000035_Node000040" title=" " alt="" coords="4934,164,5072,208,5071,213,4932,169"/>
+<area shape="rect" id="Node000041" href="$TractionField_8C.html" title="Function interfaces for representation of explicit traction fields." alt="" coords="5593,211,5775,265"/>
+<area shape="poly" id="edge52_Node000035_Node000041" title=" " alt="" coords="4943,140,5232,162,5407,182,5582,208,5593,210,5592,215,5581,213,5406,187,5232,167,4943,145"/>
+<area shape="poly" id="edge49_Node000038_Node000022" title=" " alt="" coords="4911,277,4869,315,4865,311,4907,273"/>
+<area shape="poly" id="edge47_Node000038_Node000031" title=" " alt="" coords="4852,272,4688,323,4686,318,4851,267"/>
+<area shape="rect" id="Node000039" href="$FieldFunctions_8C.html" title="Field function implementations." alt="" coords="4953,313,5135,368"/>
+<area shape="poly" id="edge48_Node000038_Node000039" title=" " alt="" coords="4984,273,5021,311,5017,315,4981,277"/>
+<area shape="rect" id="Node000043" href="$TextureProperties_8C.html" title="Properties defined through a texture map." alt="" coords="5849,211,6031,265"/>
+<area shape="poly" id="edge54_Node000042_Node000043" title=" " alt="" coords="5674,162,5850,210,5848,215,5672,167"/>
+<area shape="poly" id="edge56_Node000044_Node000022" title=" " alt="" coords="5469,160,5532,168,5600,173,5725,182,5773,191,5790,198,5803,207,5811,218,5811,232,5804,248,5788,267,5769,279,5736,289,5641,302,5515,309,5375,312,5104,312,5002,313,4942,316,4930,318,4929,313,4941,311,5002,307,5104,307,5375,307,5515,304,5640,297,5735,284,5766,275,5785,263,5799,246,5806,231,5805,220,5800,210,5788,203,5771,196,5724,187,5599,178,5532,173,5468,165"/>
+<area shape="poly" id="edge57_Node000044_Node000041" title=" " alt="" coords="5461,164,5601,208,5600,213,5459,169"/>
 </map>

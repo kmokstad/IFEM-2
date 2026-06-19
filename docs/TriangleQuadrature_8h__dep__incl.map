@@ -1,5 +1,7 @@
-<map id="src/Utility/TriangleQuadrature.h" name="src/Utility/TriangleQuadrature.h">
-<area shape="rect" id="node1" title="Triangle quadrature rules." alt="" coords="81,5,306,32"/>
-<area shape="rect" id="node2" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$TriangleQuadrature_8C.html" title="Triangle quadrature rules." alt="" coords="189,80,416,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/TriangleQuadrature.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/TriangleQuadrature.h">
+<area shape="rect" id="Node000001" title="Triangle quadrature rules." alt="" coords="141,5,323,60"/>
+<area shape="rect" id="Node000002" href="$ASMs2DTri_8C.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="5,115,232,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,71,142,117,138,113,190,67"/>
+<area shape="rect" id="Node000003" href="$TriangleQuadrature_8C.html" title="Triangle quadrature rules." alt="" coords="256,108,437,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="274,67,318,106,315,110,271,71"/>
 </map>

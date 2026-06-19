@@ -1,9 +1,15 @@
 <map id="TextureProperties" name="TextureProperties">
-<area shape="rect" id="node1" title="Class containing a set of properties defined through a texture map." alt="" coords="93,393,229,420"/>
-<area shape="rect" id="node2" title=" " alt="" coords="52,289,271,331"/>
-<area shape="rect" id="node3" title=" " alt="" coords="49,193,135,219"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,81,144,123"/>
-<area shape="rect" id="node5" href="$structTextureProperties_1_1Property.html" title="Struct holding information about a property." alt="" coords="169,185,313,227"/>
-<area shape="rect" id="node6" href="$classutl_1_1matrix3d.html" title=" " alt="" coords="168,89,333,115"/>
-<area shape="rect" id="node7" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="171,5,331,32"/>
+<area shape="rect" id="Node000001" title="Class containing a set of properties defined through a texture map." alt="" coords="93,388,229,413"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="52,285,271,325"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,339,164,388,159,388,159,339"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="49,190,135,215"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,225,150,284,146,287,105,228"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,80,144,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="83,133,93,189,87,190,78,134"/>
+<area shape="rect" id="Node000005" href="$structTextureProperties_1_1Property.html" title="Struct holding information about a property." alt="" coords="169,183,313,223"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="220,235,178,287,174,284,216,232"/>
+<area shape="rect" id="Node000006" href="$classutl_1_1matrix3d.html" title=" " alt="" coords="168,87,333,113"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="251,127,246,183,240,182,246,126"/>
+<area shape="rect" id="Node000007" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="171,5,331,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="253,44,253,87,248,87,248,44"/>
 </map>

@@ -1,3 +1,81 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structASM_1_1Interface.html" title="Struct for representing a domain interface." alt="" coords="5,5,123,32"/>
+<area shape="rect" id="Node000000" href="$classASM1D.html" title="Abstract interface for 1D spline patches." alt="" coords="176,55,245,80"/>
+<area shape="rect" id="Node000001" href="$classASMs1D.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="327,55,403,80"/>
+<area shape="poly" id="edge33_Node000000_Node000001" title=" " alt="" coords="259,65,327,65,327,70,259,70"/>
+<area shape="rect" id="Node000002" href="$classASMs1DC1.html" title="Driver for assembly of C1&#45;continuous structured 1D spline FE models." alt="" coords="469,5,563,31"/>
+<area shape="poly" id="edge34_Node000001_Node000002" title=" " alt="" coords="416,48,476,28,477,33,418,53"/>
+<area shape="rect" id="Node000003" href="$classASMs1DLag.html" title="Driver for assembly of 1D Lagrange FE models." alt="" coords="467,55,565,80"/>
+<area shape="poly" id="edge35_Node000001_Node000003" title=" " alt="" coords="417,65,466,65,466,70,417,70"/>
+<area shape="rect" id="Node000004" href="$classASMs1DSpec.html" title="Driver for assembly of structured 1D Spectral FE models." alt="" coords="620,5,727,31"/>
+<area shape="poly" id="edge36_Node000003_Node000004" title=" " alt="" coords="569,48,631,28,633,33,571,53"/>
+<area shape="rect" id="Node000005" href="$classASMu1DLag.html" title="Driver for assembly of unstructured 1D Lagrange FE models." alt="" coords="623,55,723,80"/>
+<area shape="poly" id="edge37_Node000003_Node000005" title=" " alt="" coords="579,65,623,65,623,70,579,70"/>
+<area shape="rect" id="Node000016" href="$classASM2D.html" title="Abstract interface for 2D spline patches." alt="" coords="176,275,245,300"/>
+<area shape="rect" id="Node000013" href="$classASMs2D.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="327,207,403,232"/>
+<area shape="poly" id="edge38_Node000016_Node000013" title=" " alt="" coords="252,267,334,230,337,235,254,272"/>
+<area shape="rect" id="Node000017" href="$classASMu2D.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="327,348,404,373"/>
+<area shape="poly" id="edge47_Node000016_Node000017" title=" " alt="" coords="252,304,338,345,336,350,249,308"/>
+<area shape="rect" id="Node000014" href="$classASMs2DC1.html" title="Driver for assembly of C1&#45;continuous structured 2D spline FE models." alt="" coords="469,153,563,179"/>
+<area shape="poly" id="edge39_Node000013_Node000014" title=" " alt="" coords="414,199,479,176,480,181,416,205"/>
+<area shape="rect" id="Node000015" href="$classASMs2DIB.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="471,203,561,228"/>
+<area shape="poly" id="edge40_Node000013_Node000015" title=" " alt="" coords="417,215,471,214,471,219,417,221"/>
+<area shape="rect" id="Node000007" href="$classASMs2DLag.html" title="Driver for assembly of structured 2D Lagrange FE models." alt="" coords="467,104,565,129"/>
+<area shape="poly" id="edge41_Node000013_Node000007" title=" " alt="" coords="390,195,465,138,485,127,488,132,468,143,393,200"/>
+<area shape="rect" id="Node000012" href="$classASMs2Dmx.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="467,252,565,277"/>
+<area shape="poly" id="edge46_Node000013_Node000012" title=" " alt="" coords="417,232,474,249,472,254,416,237"/>
+<area shape="rect" id="Node000008" href="$classASMs2DSpec.html" title="Driver for assembly of structured 2D Spectral FE models." alt="" coords="620,104,727,129"/>
+<area shape="poly" id="edge42_Node000007_Node000008" title=" " alt="" coords="579,114,620,114,620,119,579,119"/>
+<area shape="rect" id="Node000009" href="$classASMs2DTri.html" title="Driver for assembly of structured 2D triangle&#45;based FE models." alt="" coords="628,153,719,179"/>
+<area shape="poly" id="edge43_Node000007_Node000009" title=" " alt="" coords="571,131,633,151,631,156,569,136"/>
+<area shape="rect" id="Node000010" href="$classASMs2DmxLag.html" title="Driver for assembly of structured 2D Lagrange mixed FE models." alt="" coords="613,352,733,377"/>
+<area shape="poly" id="edge44_Node000007_Node000010" title=" " alt="" coords="563,135,567,139,668,350,664,353,563,142,560,139"/>
+<area shape="rect" id="Node000034" href="$classASMu2DLag.html" title="Driver for assembly of unstructured 2D Lagrange FE models." alt="" coords="623,203,723,228"/>
+<area shape="poly" id="edge45_Node000007_Node000034" title=" " alt="" coords="560,134,567,139,582,152,591,164,601,176,615,188,637,200,635,205,612,192,597,179,587,167,578,155,564,143,557,138"/>
+<area shape="rect" id="Node000018" href="$classASMu2DC1.html" title="Driver for assembly of C1&#45;continuous 2D LR&#45;spline FE models." alt="" coords="469,301,563,327"/>
+<area shape="poly" id="edge48_Node000017_Node000018" title=" " alt="" coords="416,342,473,324,475,329,418,347"/>
+<area shape="rect" id="Node000019" href="$classASMu2DIB.html" title="Assembly of unstructured 2D spline FE models with immersed boundaries." alt="" coords="471,351,561,376"/>
+<area shape="poly" id="edge49_Node000017_Node000019" title=" " alt="" coords="417,359,471,360,470,365,417,364"/>
+<area shape="rect" id="Node000020" href="$classASMu2Dmx.html" title="Driver for assembly of unstructured 2D spline mixed FE models." alt="" coords="467,400,565,425"/>
+<area shape="poly" id="edge50_Node000017_Node000020" title=" " alt="" coords="417,375,479,397,477,402,415,380"/>
+<area shape="rect" id="Node000024" href="$classASM3D.html" title="Abstract interface for 3D spline patches." alt="" coords="176,500,245,525"/>
+<area shape="rect" id="Node000025" href="$classASMs3D.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="327,549,403,575"/>
+<area shape="poly" id="edge51_Node000024_Node000025" title=" " alt="" coords="259,525,328,547,326,553,258,530"/>
+<area shape="rect" id="Node000022" href="$classASMu3D.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="327,500,404,525"/>
+<area shape="poly" id="edge56_Node000024_Node000022" title=" " alt="" coords="259,510,326,510,326,515,259,515"/>
+<area shape="rect" id="Node000026" href="$classASMs3DLag.html" title="Driver for assembly of structured 3D Lagrange FE models." alt="" coords="467,551,565,576"/>
+<area shape="poly" id="edge52_Node000025_Node000026" title=" " alt="" coords="417,560,466,560,466,566,417,565"/>
+<area shape="rect" id="Node000029" href="$classASMs3Dmx.html" title="Driver for assembly of structured 3D spline mixed FE models." alt="" coords="467,652,565,677"/>
+<area shape="poly" id="edge55_Node000025_Node000029" title=" " alt="" coords="398,581,468,630,496,649,493,654,465,635,394,585"/>
+<area shape="rect" id="Node000027" href="$classASMs3DSpec.html" title="Driver for assembly of structured 3D Spectral FE models." alt="" coords="620,551,727,576"/>
+<area shape="poly" id="edge53_Node000026_Node000027" title=" " alt="" coords="579,561,620,561,620,566,579,566"/>
+<area shape="rect" id="Node000028" href="$classASMs3DmxLag.html" title="Driver for assembly of structured 3D Lagrange mixed FE models." alt="" coords="613,600,733,625"/>
+<area shape="poly" id="edge54_Node000026_Node000028" title=" " alt="" coords="571,578,633,597,631,602,569,583"/>
+<area shape="rect" id="Node000023" href="$classASMu3Dmx.html" title="Driver for assembly of unstructured 3D spline mixed FE models." alt="" coords="467,501,565,527"/>
+<area shape="poly" id="edge57_Node000022_Node000023" title=" " alt="" coords="417,510,466,511,466,516,417,516"/>
+<area shape="rect" id="Node000031" href="$classASMbase.html" title="Base class for spline&#45;based finite element (FE) assembly drivers." alt="" coords="16,348,99,373"/>
+<area shape="rect" id="Node000021" href="$classASMLRSpline.html" title="Base class for LR B&#45;spline FE assembly drivers." alt="" coords="157,348,264,373"/>
+<area shape="poly" id="edge58_Node000031_Node000021" title=" " alt="" coords="112,358,157,358,157,363,112,363"/>
+<area shape="rect" id="Node000030" href="$classASMstruct.html" title="Base class for structured spline&#45;based FE assembly drivers." alt="" coords="167,219,255,244"/>
+<area shape="poly" id="edge61_Node000031_Node000030" title=" " alt="" coords="77,336,112,299,156,260,183,242,186,246,159,264,116,302,81,339"/>
+<area shape="rect" id="Node000032" href="$classASMsupel.html" title="Driver for assembly of general superelements." alt="" coords="167,549,254,575"/>
+<area shape="poly" id="edge65_Node000031_Node000032" title=" " alt="" coords="70,385,102,459,128,500,159,536,175,547,172,551,156,540,123,503,97,461,65,387"/>
+<area shape="poly" id="edge59_Node000021_Node000017" title=" " alt="" coords="278,358,326,358,326,363,278,363"/>
+<area shape="poly" id="edge60_Node000021_Node000022" title=" " alt="" coords="228,384,264,435,287,462,314,487,332,498,329,502,310,491,283,466,259,438,224,387"/>
+<area shape="poly" id="edge62_Node000030_Node000001" title=" " alt="" coords="232,207,262,171,275,148,283,129,293,110,310,89,327,78,330,82,314,93,297,113,288,131,280,151,266,174,236,210"/>
+<area shape="poly" id="edge63_Node000030_Node000013" title=" " alt="" coords="268,224,327,220,327,225,268,230"/>
+<area shape="poly" id="edge64_Node000030_Node000025" title=" " alt="" coords="257,250,266,260,286,298,293,334,293,368,289,402,285,434,285,467,294,501,314,536,329,549,325,553,310,540,289,503,280,468,279,434,283,401,288,368,288,335,281,300,262,264,253,254"/>
+<area shape="rect" id="Node000006" href="$classASMLagBase.html" title="Common base class for Lagrange FE models." alt="" coords="312,104,419,129"/>
+<area shape="poly" id="edge66_Node000006_Node000003" title=" " alt="" coords="417,97,475,78,477,83,418,102"/>
+<area shape="poly" id="edge67_Node000006_Node000007" title=" " alt="" coords="433,114,466,114,466,119,433,119"/>
+<area shape="poly" id="edge68_Node000006_Node000026" title=" " alt="" coords="389,139,406,164,421,193,436,245,439,291,432,374,429,413,431,452,443,493,469,538,481,549,477,553,465,541,438,495,426,453,424,413,427,374,434,291,430,246,416,195,402,167,385,142"/>
+<area shape="rect" id="Node000011" href="$classASMmxBase.html" title="Base class for spline&#45;based mixed finite element assembly drivers." alt="" coords="313,451,417,476"/>
+<area shape="poly" id="edge70_Node000011_Node000010" title=" " alt="" coords="431,460,497,453,564,435,591,423,617,407,656,375,660,380,620,411,594,427,566,441,498,458,431,465"/>
+<area shape="poly" id="edge69_Node000011_Node000012" title=" " alt="" coords="382,438,416,385,429,357,436,334,446,311,465,287,480,275,483,280,469,291,451,314,441,335,434,359,421,387,386,441"/>
+<area shape="poly" id="edge73_Node000011_Node000020" title=" " alt="" coords="416,444,476,423,478,428,418,449"/>
+<area shape="poly" id="edge72_Node000011_Node000028" title=" " alt="" coords="414,481,421,487,431,500,438,514,443,540,450,565,457,576,468,586,502,604,540,614,578,618,613,617,613,623,577,623,539,619,500,609,465,591,452,579,445,567,438,542,433,516,427,503,417,491,411,485"/>
+<area shape="poly" id="edge71_Node000011_Node000029" title=" " alt="" coords="416,482,421,487,434,506,442,524,447,559,451,594,457,612,469,631,490,650,487,654,465,634,452,614,446,595,441,560,437,526,429,509,417,490,412,486"/>
+<area shape="poly" id="edge74_Node000011_Node000023" title=" " alt="" coords="418,478,478,499,476,504,416,483"/>
+<area shape="rect" id="Node000033" href="$classASMunstruct.html" title="Abstract interface for unstructured spline patches." alt="" coords="5,201,109,227"/>
+<area shape="poly" id="edge76_Node000033_Node000001" title=" " alt="" coords="96,193,311,89,335,78,337,83,313,94,98,198"/>
+<area shape="poly" id="edge75_Node000033_Node000021" title=" " alt="" coords="83,235,159,309,197,346,194,350,155,313,79,238"/>
 </map>

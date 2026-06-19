@@ -1,6 +1,9 @@
-<map id="src/ASM/SplineField3D.h" name="src/ASM/SplineField3D.h">
-<area shape="rect" id="node1" title="Class for spline&#45;based finite element scalar fields in 3D." alt="" coords="147,5,326,32"/>
-<area shape="rect" id="node2" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="5,80,151,107"/>
-<area shape="rect" id="node3" href="$Field_8C.html" title="Base class for scalar fields." alt="" coords="175,80,298,107"/>
-<area shape="rect" id="node4" href="$SplineField3D_8C.html" title="Class for spline&#45;based finite element scalar field in 3D." alt="" coords="323,80,503,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/SplineField3D.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/SplineField3D.h">
+<area shape="rect" id="Node000001" title="Class for spline&#45;based finite element scalar fields in 3D." alt="" coords="212,5,457,45"/>
+<area shape="rect" id="Node000002" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="5,93,216,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,53,161,96,159,91,272,48"/>
+<area shape="rect" id="Node000003" href="$Field_8C.html" title="Base class for scalar fields." alt="" coords="241,93,429,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="337,59,337,93,332,93,332,59"/>
+<area shape="rect" id="Node000004" href="$SplineField3D_8C.html" title="Class for spline&#45;based finite element scalar field in 3D." alt="" coords="453,93,699,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="401,47,524,91,522,96,399,52"/>
 </map>

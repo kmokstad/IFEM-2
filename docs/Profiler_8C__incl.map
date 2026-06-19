@@ -1,19 +1,40 @@
-<map id="src/Utility/Profiler.C" name="src/Utility/Profiler.C">
-<area shape="rect" id="node1" title="Simple profiling of computational tasks." alt="" coords="413,5,560,32"/>
-<area shape="rect" id="node2" href="$Profiler_8h.html" title="Simple profiling of computational tasks." alt="" coords="419,155,498,181"/>
-<area shape="rect" id="node8" href="$IFEM_8h.html" title="Initialization of the IFEM library." alt="" coords="327,80,393,107"/>
-<area shape="rect" id="node16" href="$LinAlgInit_8h.html" title="Initializer for linear algebra packages." alt="" coords="482,80,577,107"/>
-<area shape="rect" id="node17" title=" " alt="" coords="601,80,692,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="293,229,373,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="555,229,613,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="206,229,269,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="480,229,531,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="397,229,456,256"/>
-<area shape="rect" id="node9" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="531,155,637,181"/>
-<area shape="rect" id="node12" href="$LogStream_8h.html" title="Log stream class." alt="" coords="143,155,247,181"/>
-<area shape="rect" id="node15" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="271,155,395,181"/>
-<area shape="rect" id="node10" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="637,229,744,256"/>
-<area shape="rect" id="node11" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="769,229,887,256"/>
-<area shape="rect" id="node13" title=" " alt="" coords="107,229,181,256"/>
-<area shape="rect" id="node14" title=" " alt="" coords="5,229,83,256"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/Profiler.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/Profiler.C">
+<area shape="rect" id="Node000001" title="Simple profiling of computational tasks." alt="" coords="396,5,577,60"/>
+<area shape="rect" id="Node000002" href="$Profiler_8h.html" title="Simple profiling of computational tasks." alt="" coords="419,181,498,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="482,61,472,108,464,168,458,167,467,108,477,60"/>
+<area shape="rect" id="Node000008" href="$IFEM_8h.html" title="Initialization of the IFEM library." alt="" coords="327,108,393,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="449,62,390,102,387,98,446,58"/>
+<area shape="rect" id="Node000016" href="$LinAlgInit_8h.html" title="Initializer for linear algebra packages." alt="" coords="482,108,577,133"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="502,59,520,94,515,97,497,61"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="601,108,692,133"/>
+<area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="537,58,614,99,612,104,534,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="293,255,373,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,209,367,250,364,245,437,204"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="555,255,613,280"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="480,204,553,245,550,250,477,209"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="206,255,269,280"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="424,209,282,254,281,249,422,204"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="480,255,531,280"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="469,206,492,242,488,245,464,208"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="397,255,456,280"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="456,208,440,243,435,241,451,206"/>
+<area shape="rect" id="Node000009" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="531,181,637,207"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="394,130,536,175,534,180,393,135"/>
+<area shape="rect" id="Node000012" href="$LogStream_8h.html" title="Log stream class." alt="" coords="143,181,247,207"/>
+<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="334,136,235,178,233,173,332,131"/>
+<area shape="rect" id="Node000015" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="271,181,395,207"/>
+<area shape="poly" id="edge18_Node000008_Node000015" title=" " alt="" coords="358,135,345,170,340,168,353,133"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="587,207,587,241,581,241,581,207"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="573,209,530,247,526,244,570,205"/>
+<area shape="rect" id="Node000010" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="637,255,744,280"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="603,204,663,245,660,249,600,209"/>
+<area shape="rect" id="Node000011" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="769,255,887,280"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="624,204,776,248,775,253,622,209"/>
+<area shape="poly" id="edge14_Node000012_Node000003" title=" " alt="" coords="218,204,300,246,297,251,216,209"/>
+<area shape="poly" id="edge17_Node000012_Node000005" title=" " alt="" coords="204,206,226,242,221,244,199,208"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="107,255,181,280"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="188,209,162,245,158,242,184,205"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="5,255,83,280"/>
+<area shape="poly" id="edge16_Node000012_Node000014" title=" " alt="" coords="172,209,82,251,80,246,169,204"/>
+<area shape="poly" id="edge19_Node000015_Node000003" title=" " alt="" coords="336,207,336,241,331,241,331,207"/>
 </map>

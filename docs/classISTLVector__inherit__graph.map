@@ -1,6 +1,9 @@
 <map id="ISTLVector" name="ISTLVector">
-<area shape="rect" id="node1" title="Class for representing the system vector in ISTL format." alt="" coords="73,155,162,181"/>
-<area shape="rect" id="node2" href="$classStdVector.html" title="Standard system vector stored as a single continuous array." alt="" coords="75,80,159,107"/>
-<area shape="rect" id="node3" href="$classSystemVector.html" title="Base class for representing a system vector on different formats." alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node4" href="$classutl_1_1vector.html" title="A vector class with some added algebraic operations." alt="" coords="142,5,205,32"/>
+<area shape="rect" id="Node000001" title="Class for representing the system vector in ISTL format." alt="" coords="73,152,162,177"/>
+<area shape="rect" id="Node000002" href="$classStdVector.html" title="Standard system vector stored as a single continuous array." alt="" coords="75,79,159,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,118,120,152,115,152,115,118"/>
+<area shape="rect" id="Node000003" href="$classSystemVector.html" title="Base class for representing a system vector on different formats." alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,40,110,77,106,80,77,43"/>
+<area shape="rect" id="Node000004" href="$classutl_1_1vector.html" title="A vector class with some added algebraic operations." alt="" coords="142,5,205,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="158,43,128,80,124,77,153,40"/>
 </map>

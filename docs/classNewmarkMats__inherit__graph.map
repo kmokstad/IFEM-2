@@ -1,6 +1,9 @@
 <map id="NewmarkMats" name="NewmarkMats">
-<area shape="rect" id="node1" title="Class representing the element matrices for a dynamic FEM problem based on Newmark time integration." alt="" coords="5,155,123,181"/>
-<area shape="rect" id="node4" href="$classHHTMats.html" title="Class representing the element matrices for a dynamic FEM problem based on Hilber&#45;Hughes&#45;Taylor time ..." alt="" coords="23,229,105,256"/>
-<area shape="rect" id="node2" href="$classElmMats.html" title="Class collecting the element matrices associated with a FEM problem." alt="" coords="25,80,103,107"/>
-<area shape="rect" id="node3" href="$classLocalIntegral.html" title="Abstract base class representing an element level integrated quantity." alt="" coords="11,5,117,32"/>
+<area shape="rect" id="Node000001" title="Class representing the element matrices for a dynamic FEM problem based on Newmark time integration." alt="" coords="5,152,123,177"/>
+<area shape="rect" id="Node000004" href="$classHHTMats.html" title="Class representing the element matrices for a dynamic FEM problem based on Hilber&#45;Hughes&#45;Taylor time ..." alt="" coords="23,225,105,251"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="67,191,67,225,61,225,61,191"/>
+<area shape="rect" id="Node000002" href="$classElmMats.html" title="Class collecting the element matrices associated with a FEM problem." alt="" coords="25,79,103,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,118,67,152,61,152,61,118"/>
+<area shape="rect" id="Node000003" href="$classLocalIntegral.html" title="Abstract base class representing an element level integrated quantity." alt="" coords="11,5,117,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,44,67,79,61,79,61,44"/>
 </map>

@@ -1,7 +1,11 @@
 <map id="ASMu3D::DirichletFace" name="ASMu3D::DirichletFace">
-<area shape="rect" id="node1" title="Struct representing an inhomogeneous Dirichlet boundary condition." alt="" coords="89,288,259,315"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,184,167,211"/>
-<area shape="rect" id="node3" title=" " alt="" coords="21,95,151,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="67,5,105,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="191,184,330,211"/>
+<area shape="rect" id="Node000001" title="Struct representing an inhomogeneous Dirichlet boundary condition." alt="" coords="26,284,195,309"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,181,144,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,219,109,283,104,285,81,220"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="169,181,330,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,217,128,286,125,282,221,213"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="185,93,314,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,133,252,181,247,181,247,133"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="230,5,269,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="252,45,252,93,247,93,247,45"/>
 </map>

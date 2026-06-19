@@ -1,11 +1,21 @@
 <map id="BasisValues" name="BasisValues">
-<area shape="rect" id="node1" title="Utility class holding a vector of basis function values." alt="" coords="139,364,239,391"/>
-<area shape="rect" id="node2" title=" " alt="" coords="39,267,169,294"/>
-<area shape="rect" id="node3" title=" " alt="" coords="85,171,123,197"/>
-<area shape="rect" id="node4" title=" " alt="" coords="193,260,362,301"/>
-<area shape="rect" id="node5" href="$structBasisFunctionVals.html" title="Struct holding basis function values and derivatives." alt="" coords="208,171,347,197"/>
-<area shape="rect" id="node6" href="$classutl_1_1matrix4d.html" title=" " alt="" coords="5,81,171,108"/>
-<area shape="rect" id="node7" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="197,5,357,32"/>
-<area shape="rect" id="node8" href="$classutl_1_1matrix3d.html" title=" " alt="" coords="195,81,360,108"/>
-<area shape="rect" id="node9" href="$classutl_1_1matrix.html" title=" " alt="" coords="384,81,533,108"/>
+<area shape="rect" id="Node000001" title="Utility class holding a vector of basis function values." alt="" coords="123,359,223,384"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,263,153,289"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,297,165,357,161,360,106,300"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="69,168,107,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,207,91,263,85,263,85,207"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="177,256,346,296"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,308,186,360,183,356,232,304"/>
+<area shape="rect" id="Node000005" href="$structBasisFunctionVals.html" title="Struct holding basis function values and derivatives." alt="" coords="192,168,331,193"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,207,264,256,259,256,259,207"/>
+<area shape="rect" id="Node000006" href="$classutl_1_1matrix.html" title=" " alt="" coords="5,80,155,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="118,109,238,165,236,170,116,114"/>
+<area shape="rect" id="Node000007" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="181,5,341,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="221,38,110,82,108,77,219,33"/>
+<area shape="rect" id="Node000008" href="$classutl_1_1matrix3d.html" title=" " alt="" coords="179,80,344,105"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="264,45,264,80,259,80,259,45"/>
+<area shape="rect" id="Node000009" href="$classutl_1_1matrix4d.html" title=" " alt="" coords="368,80,533,105"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="305,33,422,77,420,82,303,38"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="264,119,264,167,259,167,259,119"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="414,114,288,170,286,165,412,109"/>
 </map>

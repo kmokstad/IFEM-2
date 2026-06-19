@@ -1,26 +1,49 @@
-<map id="src/Utility/SplineUtils.h" name="src/Utility/SplineUtils.h">
-<area shape="rect" id="node1" title="Various utility functions on spline objects &#45; GoTools extensions." alt="" coords="2157,5,2328,32"/>
-<area shape="rect" id="node2" href="$ASMmxBase_8C.html" title="Base class for spline&#45;based mixed finite element assembly drivers." alt="" coords="5,87,179,114"/>
-<area shape="rect" id="node3" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="203,87,349,114"/>
-<area shape="rect" id="node4" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="373,87,518,114"/>
-<area shape="rect" id="node5" href="$ASMs2Dmx_8C.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="542,87,709,114"/>
-<area shape="rect" id="node6" href="$ASMs2Drecovery_8C.html" title="Recovery of secondary solutions for structured 2D spline FE models." alt="" coords="733,87,933,114"/>
-<area shape="rect" id="node7" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="958,87,1103,114"/>
-<area shape="rect" id="node8" href="$ASMs3Dmx_8C.html" title="Driver for assembly of structured 3D spline mixed FE models." alt="" coords="1127,87,1294,114"/>
-<area shape="rect" id="node9" href="$ASMs3Drecovery_8C.html" title="Recovery of secondary solutions for structured 3D spline FE models." alt="" coords="1319,87,1519,114"/>
-<area shape="rect" id="node10" href="$SplineField_8C.html" title="Utility class for spline&#45;based finite element fields." alt="" coords="1543,87,1705,114"/>
-<area shape="rect" id="node11" href="$SplineField2D_8C.html" title="Class for spline&#45;based finite element scalar field in 2D." alt="" coords="1730,87,1910,114"/>
-<area shape="rect" id="node12" href="$SplineField3D_8C.html" title="Class for spline&#45;based finite element scalar field in 3D." alt="" coords="1934,87,2114,114"/>
-<area shape="rect" id="node13" href="$SplineFields2Dmx_8C.html" title="Class for mixed spline&#45;based finite element vector fields in 2D." alt="" coords="2139,87,2347,114"/>
-<area shape="rect" id="node14" href="$SplineFields3D_8C.html" title="Class for spline&#45;based finite element vector fields in 3D." alt="" coords="2371,87,2557,114"/>
-<area shape="rect" id="node15" href="$SplineFields3Dmx_8C.html" title="Class for mixed spline&#45;based finite element vector fields in 3D." alt="" coords="2581,87,2789,114"/>
-<area shape="rect" id="node16" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="2814,87,2981,114"/>
-<area shape="rect" id="node17" href="$ASMu2Dmx_8C.html" title="Driver for assembly of unstructured 2D spline mixed FE models." alt="" coords="3005,87,3192,114"/>
-<area shape="rect" id="node18" href="$ASMu2Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="3216,87,3437,114"/>
-<area shape="rect" id="node19" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="3462,87,3629,114"/>
-<area shape="rect" id="node20" href="$ASMu3Dmx_8C.html" title="Driver for assembly of unstructured 3D spline mixed FE models." alt="" coords="3653,87,3840,114"/>
-<area shape="rect" id="node21" href="$ASMu3Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="3864,87,4085,114"/>
-<area shape="rect" id="node22" href="$LRSplineField_8C.html" title="Utility class for LR spline&#45;based finite element fields." alt="" coords="4110,87,4309,114"/>
-<area shape="rect" id="node23" href="$LRSplineFields3Dmx_8C.html" title="Class for LR spline&#45;based finite element mixed vector fields in 3D." alt="" coords="4332,80,4532,121"/>
-<area shape="rect" id="node24" href="$SplineUtils_8C.html" title="Various utility functions on spline objects." alt="" coords="4557,87,4729,114"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/SplineUtils.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/SplineUtils.h">
+<area shape="rect" id="Node000001" title="Various utility functions on spline objects &#45; GoTools extensions." alt="" coords="2937,5,3118,60"/>
+<area shape="rect" id="Node000002" href="$ASMmxBase_8C.html" title="Base class for spline&#45;based mixed finite element assembly drivers." alt="" coords="5,115,244,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2923,37,2396,41,1624,53,1218,62,836,75,506,91,257,111,209,118,208,113,256,105,506,85,835,69,1218,57,1624,47,2396,36,2923,32"/>
+<area shape="rect" id="Node000003" href="$ASMs1D_8C.html" title="Driver for assembly of structured 1D spline FE models." alt="" coords="269,115,479,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="2922,37,2435,41,1732,52,1363,62,1016,74,717,90,492,111,449,118,448,113,491,105,717,85,1016,69,1363,56,1731,47,2435,36,2922,32"/>
+<area shape="rect" id="Node000004" href="$ASMs2D_8C.html" title="Driver for assembly of structured 2D spline FE models." alt="" coords="503,115,714,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="2923,37,2476,43,1841,55,1198,77,929,92,726,111,684,118,683,113,726,105,929,87,1197,71,1841,50,2476,37,2923,32"/>
+<area shape="rect" id="Node000005" href="$ASMs2Dmx_8C.html" title="Driver for assembly of structured 2D spline mixed FE models." alt="" coords="738,115,970,155"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="2923,38,2521,45,1960,60,1396,81,1160,95,982,111,936,118,936,113,982,105,1160,89,1395,76,1960,54,2521,40,2923,33"/>
+<area shape="rect" id="Node000006" href="$ASMs2Drecovery_8C.html" title="Recovery of secondary solutions for structured 2D spline FE models." alt="" coords="994,115,1261,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="2923,36,2638,38,2230,48,1756,70,1512,88,1273,111,1222,118,1221,113,1272,105,1511,82,1755,65,2230,42,2638,33,2923,31"/>
+<area shape="rect" id="Node000007" href="$ASMs3D_8C.html" title="Driver for assembly of structured 3D spline FE models." alt="" coords="1285,115,1495,155"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="2923,36,2672,37,2321,46,1917,69,1710,87,1508,111,1466,118,1465,113,1507,105,1709,82,1916,64,2320,41,2672,32,2923,30"/>
+<area shape="rect" id="Node000008" href="$ASMs3Dmx_8C.html" title="Driver for assembly of structured 3D spline mixed FE models." alt="" coords="1519,115,1751,155"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="2923,38,2710,43,2422,55,2095,76,1927,92,1764,111,1719,118,1718,113,1763,105,1927,86,2094,71,2422,49,2710,37,2923,32"/>
+<area shape="rect" id="Node000009" href="$ASMs3Drecovery_8C.html" title="Recovery of secondary solutions for structured 3D spline FE models." alt="" coords="1775,115,2042,155"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="2923,41,2540,64,2298,84,2054,111,2006,118,2005,113,2054,105,2297,79,2539,59,2923,36"/>
+<area shape="rect" id="Node000010" href="$ASMu2D_8C.html" title="Driver for assembly of unstructured 2D spline FE models." alt="" coords="2066,115,2298,155"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="2923,44,2645,69,2478,88,2310,111,2269,118,2268,113,2310,105,2477,83,2645,64,2923,39"/>
+<area shape="rect" id="Node000011" href="$ASMu2Dmx_8C.html" title="Driver for assembly of unstructured 2D spline mixed FE models." alt="" coords="2322,115,2575,155"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="2924,54,2588,111,2548,118,2547,113,2587,105,2923,48"/>
+<area shape="rect" id="Node000012" href="$ASMu2Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="2600,115,2887,155"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="2941,67,2798,118,2796,113,2940,62"/>
+<area shape="rect" id="Node000013" href="$ASMu3D_8C.html" title="Driver for assembly of unstructured 3D spline FE models." alt="" coords="2911,115,3143,155"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="3030,74,3030,115,3025,115,3025,74"/>
+<area shape="rect" id="Node000014" href="$ASMu3Dmx_8C.html" title="Driver for assembly of unstructured 3D spline mixed FE models." alt="" coords="3167,115,3421,155"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="3110,62,3245,113,3243,118,3109,67"/>
+<area shape="rect" id="Node000015" href="$ASMu3Drecovery_8C.html" title="Recovery techniques for unstructured LR B&#45;splines." alt="" coords="3445,115,3732,155"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="3132,50,3484,113,3483,118,3131,55"/>
+<area shape="rect" id="Node000016" href="$LRSplineField_8C.html" title="Utility class for LR spline&#45;based finite element fields." alt="" coords="3756,108,3976,163"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="3132,39,3410,63,3578,82,3745,105,3756,107,3755,112,3744,111,3577,87,3409,68,3132,44"/>
+<area shape="rect" id="Node000017" href="$LRSplineFields3Dmx_8C.html" title="Class for LR spline&#45;based finite element mixed vector fields in 3D." alt="" coords="4000,108,4220,163"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="3132,35,3511,56,3749,76,3989,105,4000,107,3999,112,3988,111,3749,82,3510,61,3132,40"/>
+<area shape="rect" id="Node000018" href="$SplineField_8C.html" title="Utility class for spline&#45;based finite element fields." alt="" coords="4244,115,4472,155"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="3132,33,3335,38,3609,50,3919,72,4233,105,4277,113,4276,118,4232,111,3919,77,3609,56,3335,43,3131,38"/>
+<area shape="rect" id="Node000019" href="$SplineField2D_8C.html" title="Class for spline&#45;based finite element scalar field in 2D." alt="" coords="4496,115,4743,155"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="3132,32,3373,35,3709,46,4094,68,4292,85,4485,105,4532,113,4532,118,4484,111,4291,90,4094,74,3709,52,3373,41,3132,37"/>
+<area shape="rect" id="Node000020" href="$SplineField3D_8C.html" title="Class for spline&#45;based finite element scalar field in 3D." alt="" coords="4767,115,5013,155"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="3132,30,3413,32,3815,41,4044,50,4281,63,4521,81,4756,105,4804,113,4803,118,4755,111,4521,87,4281,69,4044,55,3815,46,3413,37,3132,36"/>
+<area shape="rect" id="Node000021" href="$SplineFields2Dmx_8C.html" title="Class for mixed spline&#45;based finite element vector fields in 2D." alt="" coords="5038,115,5313,155"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="3132,33,4073,57,4623,79,4852,91,5026,105,5080,113,5079,118,5026,111,4852,97,4623,84,4073,63,3132,39"/>
+<area shape="rect" id="Node000022" href="$SplineFields3D_8C.html" title="Class for spline&#45;based finite element vector fields in 3D." alt="" coords="5337,115,5590,155"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="3132,33,3578,39,4212,53,4854,75,5122,89,5325,105,5375,113,5374,118,5324,111,5122,94,4854,80,4212,58,3578,45,3132,38"/>
+<area shape="rect" id="Node000023" href="$SplineFields3Dmx_8C.html" title="Class for mixed spline&#45;based finite element vector fields in 3D." alt="" coords="5614,115,5889,155"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="3132,32,3626,39,4340,52,5068,74,5372,88,5602,105,5656,113,5656,118,5602,111,5372,93,5068,79,4340,57,3626,44,3132,38"/>
+<area shape="rect" id="Node000024" href="$SplineUtils_8C.html" title="Various utility functions on spline objects." alt="" coords="5913,108,6094,163"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="3132,31,3677,31,4478,39,4901,48,5299,62,5642,80,5784,92,5901,105,5913,107,5912,112,5900,111,5783,97,5642,86,5299,67,4901,53,4478,45,3677,37,3132,36"/>
 </map>

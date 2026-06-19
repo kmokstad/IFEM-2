@@ -1,4 +1,5 @@
-<map id="Apps/Common/SIMconfigure.h" name="Apps/Common/SIMconfigure.h">
-<area shape="rect" id="node1" title="SIM solver configurator." alt="" coords="5,5,223,32"/>
-<area shape="rect" id="node2" href="$SIMSemi3D_8h.html" title="Solution driver for plane&#45;decoupled solvers." alt="" coords="10,80,218,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMconfigure.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMconfigure.h">
+<area shape="rect" id="Node000001" title="SIM solver configurator." alt="" coords="5,5,260,45"/>
+<area shape="rect" id="Node000002" href="$SIMSemi3D_8h.html" title="Solution driver for plane&#45;decoupled solvers." alt="" coords="10,93,255,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,59,135,93,130,93,130,59"/>
 </map>

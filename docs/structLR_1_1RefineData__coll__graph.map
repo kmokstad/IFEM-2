@@ -1,8 +1,13 @@
 <map id="LR::RefineData" name="LR::RefineData">
-<area shape="rect" id="node1" title="A struct of data to control the mesh refinement." alt="" coords="201,288,320,315"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,184,156,211"/>
-<area shape="rect" id="node3" title=" " alt="" coords="180,184,341,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="196,95,325,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="241,5,280,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="366,184,505,211"/>
+<area shape="rect" id="Node000001" title="A struct of data to control the mesh refinement." alt="" coords="185,284,303,309"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,181,144,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,212,175,258,221,282,218,286,172,262,100,217"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="169,181,319,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,221,247,284,241,284,241,221"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="343,181,505,207"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="393,216,266,286,263,282,390,211"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="359,93,489,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="427,133,427,181,421,181,421,133"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="405,5,443,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="427,45,427,93,421,93,421,45"/>
 </map>

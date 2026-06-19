@@ -1,13 +1,23 @@
 <map id="VecFunc" name="VecFunc">
-<area shape="rect" id="node1" title="Vector&#45;valued unary function of a spatial point." alt="" coords="391,157,465,184"/>
-<area shape="rect" id="node5" href="$classChebyshevVecFunc.html" title="A vector&#45;valued spatial function, chebyshev polynomials." alt="" coords="545,5,692,32"/>
-<area shape="rect" id="node6" href="$classConstVecFunc.html" title="A vector&#45;valued spatial function, constant in space and time." alt="" coords="563,56,675,83"/>
-<area shape="rect" id="node7" href="$classDualVecFunc.html" title="Class representing a dual vector field." alt="" coords="566,107,671,133"/>
-<area shape="rect" id="node8" href="$classNodeVecFunc.html" title="A class that wraps a nodal field as a vector&#45;valued spatial function." alt="" coords="564,157,673,184"/>
-<area shape="rect" id="node9" href="$classScalarGradFieldFunction.html" title="A vector&#45;valued spatial function, defined through gradient of a scalar field." alt="" coords="529,208,708,235"/>
-<area shape="rect" id="node10" href="$classScalarLaplacianFieldFunction.html" title="A vector&#45;valued spatial function, defined through laplacian of a scalar field." alt="" coords="513,259,724,285"/>
-<area shape="rect" id="node11" href="$classVecFieldFunction.html" title="A vector&#45;valued spatial function, defined through a vector field." alt="" coords="553,309,684,336"/>
-<area shape="rect" id="node2" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,121,343,162"/>
-<area shape="rect" id="node3" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,121,148,162"/>
-<area shape="rect" id="node4" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="215,187,324,213"/>
+<area shape="rect" id="Node000001" title="Vector&#45;valued unary function of a spatial point." alt="" coords="391,153,465,179"/>
+<area shape="rect" id="Node000005" href="$classChebyshevVecFunc.html" title="A vector&#45;valued spatial function, chebyshev polynomials." alt="" coords="545,5,692,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="437,139,466,88,487,62,512,40,544,25,546,30,515,44,490,66,470,91,442,142"/>
+<area shape="rect" id="Node000006" href="$classConstVecFunc.html" title="A vector&#45;valued spatial function, constant in space and time." alt="" coords="563,55,675,80"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="447,141,476,114,512,89,562,72,563,77,515,94,479,118,451,145"/>
+<area shape="rect" id="Node000007" href="$classDualVecFunc.html" title="Class representing a dual vector field." alt="" coords="566,104,671,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="478,149,513,139,565,126,567,131,514,145,479,154"/>
+<area shape="rect" id="Node000008" href="$classNodeVecFunc.html" title="A class that wraps a nodal field as a vector&#45;valued spatial function." alt="" coords="564,153,673,179"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="479,163,564,163,564,169,479,169"/>
+<area shape="rect" id="Node000009" href="$classScalarGradFieldFunction.html" title="A vector&#45;valued spatial function, defined through gradient of a scalar field." alt="" coords="529,203,708,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="479,179,514,189,559,200,558,205,513,194,478,184"/>
+<area shape="rect" id="Node000010" href="$classScalarLaplacianFieldFunction.html" title="A vector&#45;valued spatial function, defined through laplacian of a scalar field." alt="" coords="513,252,724,277"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="451,187,479,214,515,238,543,250,541,254,512,243,476,218,447,191"/>
+<area shape="rect" id="Node000011" href="$classVecFieldFunction.html" title="A vector&#45;valued spatial function, defined through a vector field." alt="" coords="553,301,684,327"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="442,190,470,241,490,266,515,288,533,298,554,305,552,310,531,303,512,292,487,270,466,244,437,193"/>
+<area shape="rect" id="Node000002" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="196,117,343,157"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="356,150,391,157,390,162,355,155"/>
+<area shape="rect" id="Node000003" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,117,148,157"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,134,196,134,196,139,162,139"/>
+<area shape="rect" id="Node000004" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="215,181,324,207"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="337,179,390,170,391,175,338,185"/>
 </map>

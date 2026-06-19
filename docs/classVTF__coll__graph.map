@@ -1,8 +1,13 @@
 <map id="VTF" name="VTF">
-<area shape="rect" id="node1" title="Class for output of FE model and results to VTF file." alt="" coords="365,123,412,149"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,245,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="8,57,243,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="33,123,217,149"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,173,245,200"/>
-<area shape="rect" id="node6" title=" " alt="" coords="11,225,239,266"/>
+<area shape="rect" id="Node000001" title="Class for output of FE model and results to VTF file." alt="" coords="365,134,412,159"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="8,5,243,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,47,300,64,343,89,366,110,382,132,378,135,362,114,340,93,297,69,251,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="11,69,239,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="254,104,342,124,366,133,364,138,341,129,253,109"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,134,245,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="259,144,365,144,365,149,259,149"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,183,245,209"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="258,181,341,164,364,155,366,160,342,169,259,186"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="33,233,217,258"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="231,236,287,224,340,200,363,180,378,158,383,161,366,184,343,205,289,229,232,242"/>
 </map>

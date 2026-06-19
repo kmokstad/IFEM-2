@@ -1,4 +1,5 @@
 <map id="SplineFields3Dmx" name="SplineFields3Dmx">
-<area shape="rect" id="node1" title="Class for mixed spline&#45;based finite element vector fields in 3D." alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node2" href="$classFields.html" title="Base class for vector fields." alt="" coords="45,5,105,32"/>
+<area shape="rect" id="Node000001" title="Class for mixed spline&#45;based finite element vector fields in 3D." alt="" coords="5,79,144,104"/>
+<area shape="rect" id="Node000002" href="$classFields.html" title="Base class for vector fields." alt="" coords="45,5,105,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,44,77,79,72,79,72,44"/>
 </map>

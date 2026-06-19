@@ -1,5 +1,7 @@
 <map id="LRSplineField3D" name="LRSplineField3D">
-<area shape="rect" id="node1" title="Class for LR spline&#45;based finite element scalar fields in 3D." alt="" coords="5,155,132,181"/>
-<area shape="rect" id="node2" href="$classFieldBase.html" title="Base class for scalar fields." alt="" coords="26,80,111,107"/>
-<area shape="rect" id="node3" href="$classField.html" title="Interface class for scalar fields." alt="" coords="42,5,95,32"/>
+<area shape="rect" id="Node000001" title="Class for LR spline&#45;based finite element scalar fields in 3D." alt="" coords="5,152,132,177"/>
+<area shape="rect" id="Node000002" href="$classFieldBase.html" title="Base class for scalar fields." alt="" coords="26,79,111,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,118,71,152,66,152,66,118"/>
+<area shape="rect" id="Node000003" href="$classField.html" title="Interface class for scalar fields." alt="" coords="42,5,95,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,44,71,79,66,79,66,44"/>
 </map>

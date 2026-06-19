@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classExprEval_1_1FunctionList.html" title=" " alt="" coords="5,5,171,47"/>
+<area shape="rect" id="Node000000" href="$classEvalFunctions.html" title="A base class for multi&#45;component expression functions." alt="" coords="5,5,188,31"/>
+<area shape="rect" id="Node000001" href="$classEvalMultiFunction.html" title="A general spatial expression function of any return type." alt="" coords="236,23,427,63"/>
+<area shape="poly" id="edge102_Node000000_Node000001" title=" " alt="" coords="202,27,236,30,235,36,202,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="50,55,143,80"/>
+<area shape="poly" id="edge103_Node000002_Node000001" title=" " alt="" coords="157,59,236,50,236,56,158,64"/>
 </map>

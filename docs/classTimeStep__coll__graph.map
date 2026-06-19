@@ -1,5 +1,7 @@
 <map id="TimeStep" name="TimeStep">
-<area shape="rect" id="node1" title="Class for encapsulation of general time stepping parameters." alt="" coords="93,95,177,121"/>
-<area shape="rect" id="node2" href="$structTimeDomain.html" title="Struct representing the time domain." alt="" coords="5,5,112,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="137,5,287,32"/>
+<area shape="rect" id="Node000001" title="Class for encapsulation of general time stepping parameters." alt="" coords="93,93,177,119"/>
+<area shape="rect" id="Node000002" href="$structTimeDomain.html" title="Struct representing the time domain." alt="" coords="5,5,112,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,39,126,91,122,95,76,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="137,5,287,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,43,147,95,143,91,190,39"/>
 </map>

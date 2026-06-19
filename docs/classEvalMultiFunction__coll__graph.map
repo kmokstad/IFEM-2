@@ -1,7 +1,49 @@
 <map id="EvalMultiFunction&lt; ParentFunc, Ret, Scalar &gt;" name="EvalMultiFunction&lt; ParentFunc, Ret, Scalar &gt;">
-<area shape="rect" id="node1" title="A general spatial expression function of any return type." alt="" coords="5,289,196,331"/>
-<area shape="rect" id="node2" title=" " alt="" coords="38,213,131,240"/>
-<area shape="rect" id="node3" href="$classEvalFunctions.html" title="A base class for multi&#45;component expression functions." alt="" coords="156,213,339,240"/>
-<area shape="rect" id="node4" title=" " alt="" coords="150,109,345,151"/>
-<area shape="rect" id="node5" title=" " alt="" coords="151,5,343,47"/>
+<area shape="rect" id="Node000001" title="A general spatial expression function of any return type." alt="" coords="1152,23,1343,63"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="959,5,1052,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1066,22,1152,31,1151,36,1065,27"/>
+<area shape="rect" id="Node000003" href="$classEvalFunctions.html" title="A base class for multi&#45;component expression functions." alt="" coords="914,55,1097,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1110,54,1152,50,1152,55,1111,60"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="567,47,761,87"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="775,65,913,65,913,70,775,70"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="241,159,433,199"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="399,152,546,97,585,85,586,90,548,102,401,157"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="579,112,749,167"/>
+<area shape="poly" id="edge22_Node000022_Node000005" title=" " alt="" coords="447,163,578,147,578,152,448,169"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="579,191,749,245"/>
+<area shape="poly" id="edge24_Node000023_Node000005" title=" " alt="" coords="448,190,578,205,578,211,447,195"/>
+<area shape="rect" id="Node000006" href="$classEvalFuncSpatial.html" title="A scalar&#45;valued spatial function, general function expression." alt="" coords="908,356,1103,381"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="940,355,883,342,788,324,714,314,639,301,546,275,453,239,375,202,378,197,455,234,548,270,640,295,714,308,789,319,885,337,942,350"/>
+<area shape="rect" id="Node000007" href="$classRealFunc.html" title="Scalar&#45;valued unary function of a spatial point." alt="" coords="623,336,705,361"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="719,349,908,360,908,366,718,354"/>
+<area shape="rect" id="Node000008" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="264,271,411,311"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="425,304,624,339,623,344,424,309"/>
+<area shape="rect" id="Node000009" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="17,271,159,311"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="173,289,264,289,264,294,173,294"/>
+<area shape="rect" id="Node000010" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="283,336,392,361"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="406,346,623,346,623,351,406,351"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="550,386,778,426"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="791,389,907,377,908,382,792,395"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="242,386,433,426"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="446,403,550,403,550,409,446,409"/>
+<area shape="rect" id="Node000013" href="$classExprEval_1_1Expression.html" title=" " alt="" coords="9,386,167,426"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="181,403,242,403,242,409,181,409"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="547,450,781,490"/>
+<area shape="poly" id="edge13_Node000006_Node000014" title=" " alt="" coords="751,444,781,435,883,406,967,379,968,384,885,411,782,441,752,449"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="242,450,433,490"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="446,467,546,467,546,473,446,473"/>
+<area shape="rect" id="Node000016" href="$classExprEval_1_1FunctionList.html" title=" " alt="" coords="5,450,171,490"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="184,467,242,467,242,473,184,473"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="556,514,772,554"/>
+<area shape="poly" id="edge16_Node000006_Node000017" title=" " alt="" coords="758,507,780,500,842,471,900,438,986,379,989,384,903,442,845,476,782,504,760,512"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="242,514,433,554"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="447,531,556,531,556,537,447,537"/>
+<area shape="rect" id="Node000019" href="$classExprEval_1_1ValueList.html" title=" " alt="" coords="15,514,161,554"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="175,531,242,531,242,537,175,537"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="559,578,769,618"/>
+<area shape="poly" id="edge19_Node000006_Node000020" title=" " alt="" coords="759,571,823,545,854,528,882,508,918,475,949,439,994,380,998,383,954,442,922,479,886,512,857,533,825,550,761,576"/>
+<area shape="rect" id="Node000021" href="$structEvalFuncSpatial_1_1Arg.html" title="A struct representing a spatial function argument." alt="" coords="247,578,427,618"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="441,595,559,595,559,601,441,601"/>
+<area shape="poly" id="edge21_Node000006_Node000022" title=" " alt="" coords="764,159,826,183,886,217,924,251,956,290,999,354,994,357,952,293,920,255,882,221,824,188,762,164"/>
+<area shape="poly" id="edge23_Node000006_Node000023" title=" " alt="" coords="764,226,825,241,885,264,919,285,950,309,995,354,991,358,947,313,916,289,883,268,823,246,763,232"/>
 </map>

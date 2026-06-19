@@ -1,9 +1,15 @@
-<map id="src/ASM/ImmersedBoundaries.h" name="src/ASM/ImmersedBoundaries.h">
-<area shape="rect" id="node1" title="Utilities for immersed boundary calculations." alt="" coords="163,5,393,32"/>
-<area shape="rect" id="node2" href="$SIM2D_8C.html" title="Solution driver for 2D NURBS&#45;based FEM analysis." alt="" coords="37,80,165,107"/>
-<area shape="rect" id="node3" href="$IBGeometries_8h.html" title="Physical geometries for immersed boundary simulations." alt="" coords="189,80,367,107"/>
-<area shape="rect" id="node7" href="$ImmersedBoundaries_8C.html" title="Utilities for immersed boundary calculations." alt="" coords="392,80,623,107"/>
-<area shape="rect" id="node4" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="5,155,164,181"/>
-<area shape="rect" id="node5" href="$IBGeometries_8C.html" title="Physical geometries for immersed boundary simulations." alt="" coords="188,155,368,181"/>
-<area shape="rect" id="node6" href="$ASMu2DIB_8C.html" title="Assembly of unstructured 2D spline FE models with immersed boundary." alt="" coords="393,155,571,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ImmersedBoundaries.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ImmersedBoundaries.h">
+<area shape="rect" id="Node000001" title="Utilities for immersed boundary calculations." alt="" coords="523,5,818,45"/>
+<area shape="rect" id="Node000002" href="$IBGeometries_8h.html" title="Physical geometries for immersed boundary simulations." alt="" coords="253,93,499,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="594,52,441,96,440,91,592,47"/>
+<area shape="rect" id="Node000006" href="$ImmersedBoundaries_8C.html" title="Utilities for immersed boundary calculations." alt="" coords="523,93,819,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="673,59,673,93,668,93,668,59"/>
+<area shape="rect" id="Node000007" href="$SIM2D_8C.html" title="Solution driver for 2D NURBS&#45;based FEM analysis." alt="" coords="843,93,1037,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="744,47,882,91,880,96,742,52"/>
+<area shape="rect" id="Node000003" href="$ASMs2DIB_8C.html" title="Assembly of structured 2D spline FE models with immersed boundaries." alt="" coords="5,181,229,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="307,140,175,184,173,179,305,135"/>
+<area shape="rect" id="Node000004" href="$IBGeometries_8C.html" title="Physical geometries for immersed boundary simulations." alt="" coords="253,181,499,221"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="379,147,379,181,373,181,373,147"/>
+<area shape="rect" id="Node000005" href="$ASMu2DIB_8C.html" title="Assembly of unstructured 2D spline FE models with immersed boundary." alt="" coords="524,181,769,221"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="449,135,588,179,587,184,448,140"/>
 </map>

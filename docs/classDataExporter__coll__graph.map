@@ -1,11 +1,21 @@
 <map id="DataExporter" name="DataExporter">
-<area shape="rect" id="node1" title="Administer and write data using DataWriters." alt="" coords="1067,117,1175,143"/>
-<area shape="rect" id="node2" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="785,58,911,85"/>
-<area shape="rect" id="node3" title=" " alt="" coords="747,175,949,202"/>
-<area shape="rect" id="node4" href="$classDataWriter.html" title="Stores and reads data from a file." alt="" coords="500,178,593,205"/>
-<area shape="rect" id="node5" title=" " alt="" coords="221,117,307,143"/>
-<area shape="rect" id="node7" title=" " alt="" coords="752,109,944,151"/>
-<area shape="rect" id="node8" href="$structDataExporter_1_1FileEntry.html" title="A structure holding information about registered fields." alt="" coords="460,65,633,91"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,109,144,151"/>
-<area shape="rect" id="node9" title=" " alt="" coords="193,5,335,47"/>
+<area shape="rect" id="Node000001" title="Administer and write data using DataWriters." alt="" coords="1067,117,1175,142"/>
+<area shape="rect" id="Node000002" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="785,59,911,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="925,83,1043,107,1073,114,1072,119,1042,112,924,88"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="752,109,944,149"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="958,127,1066,127,1066,132,958,132"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="221,117,307,142"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="321,127,752,127,752,132,321,132"/>
+<area shape="rect" id="Node000006" href="$structDataExporter_1_1FileEntry.html" title="A structure holding information about registered fields." alt="" coords="460,65,633,90"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="321,116,476,87,477,93,322,122"/>
+<area shape="rect" id="Node000009" href="$classDataWriter.html" title="Stores and reads data from a file." alt="" coords="500,178,593,203"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="310,144,359,160,433,175,500,184,500,189,432,180,358,165,309,150"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,109,144,149"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="158,127,220,127,220,132,158,132"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="635,90,752,110,751,115,634,95"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="193,5,335,45"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="349,38,478,62,477,67,348,43"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="747,175,949,201"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="931,170,1042,147,1072,139,1073,145,1043,152,932,175"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="607,187,746,186,746,192,607,193"/>
 </map>

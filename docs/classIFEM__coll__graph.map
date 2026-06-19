@@ -1,18 +1,44 @@
 <map id="IFEM" name="IFEM">
-<area shape="rect" id="node1" title="Class holding global IFEM configuration." alt="" coords="1260,176,1315,203"/>
-<area shape="rect" id="node2" href="$classSIMoptions.html" title="Class for encapsulation of general simulation options." alt="" coords="1005,91,1099,117"/>
-<area shape="rect" id="node3" title=" " alt="" coords="415,121,502,148"/>
-<area shape="rect" id="node5" title=" " alt="" coords="649,83,861,125"/>
-<area shape="rect" id="node7" href="$classControlFIFO.html" title="This class enables simple application control over a FIFO." alt="" coords="1003,212,1101,239"/>
-<area shape="rect" id="node8" title=" " alt="" coords="674,213,837,254"/>
-<area shape="rect" id="node4" title=" " alt="" coords="177,114,316,155"/>
-<area shape="rect" id="node6" title=" " alt="" coords="975,146,1129,187"/>
-<area shape="rect" id="node9" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="396,231,521,257"/>
-<area shape="rect" id="node10" href="$classutl_1_1LogStream.html" title="Logging stream class." alt="" coords="993,289,1111,316"/>
-<area shape="rect" id="node11" title=" " alt="" coords="666,282,845,323"/>
-<area shape="rect" id="node12" title=" " alt="" coords="381,282,536,323"/>
-<area shape="rect" id="node13" title=" " alt="" coords="703,349,807,376"/>
-<area shape="rect" id="node14" title=" " alt="" coords="386,347,531,389"/>
-<area shape="rect" id="node15" title=" " alt="" coords="161,355,332,381"/>
-<area shape="rect" id="node16" title=" " alt="" coords="5,355,112,381"/>
+<area shape="rect" id="Node000001" title="Class holding global IFEM configuration." alt="" coords="1760,142,1815,167"/>
+<area shape="rect" id="Node000002" href="$classutl_1_1LogStream.html" title="Logging stream class." alt="" coords="1512,47,1629,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1624,75,1679,96,1737,122,1768,140,1766,144,1735,126,1677,101,1623,80"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="615,41,719,66"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="733,38,829,25,964,17,1069,16,1309,25,1399,28,1488,37,1524,45,1523,50,1488,43,1399,33,1309,31,1069,22,964,23,830,31,733,43"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="829,40,984,80"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="733,52,829,55,829,61,733,58"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="381,33,527,73"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="541,51,615,51,615,56,541,56"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="161,74,332,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="339,69,381,62,381,68,340,74"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="381,97,527,137"/>
+<area shape="poly" id="edge13_Node000012_Node000005" title=" " alt="" coords="346,99,381,104,380,109,345,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,74,112,99"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="126,84,161,84,161,89,126,89"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="1114,40,1293,80"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1306,57,1512,57,1512,63,1306,63"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="998,57,1114,57,1114,63,998,63"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="1333,105,1488,145"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="1502,130,1760,150,1759,155,1502,135"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="836,105,977,130"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="991,116,1333,121,1333,127,991,121"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="576,97,759,137"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="773,115,836,115,836,120,773,120"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="541,115,576,115,576,120,541,120"/>
+<area shape="rect" id="Node000013" href="$classSIMoptions.html" title="Class for encapsulation of general simulation options." alt="" coords="1523,201,1618,226"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="1631,200,1735,173,1759,164,1761,169,1737,179,1632,205"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="863,302,950,327"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="948,294,1017,268,1097,247,1217,229,1336,218,1523,211,1523,216,1336,223,1217,234,1098,252,1019,273,950,299"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="1097,261,1309,301"/>
+<area shape="poly" id="edge18_Node000016_Node000014" title=" " alt="" coords="964,306,1097,291,1097,296,964,311"/>
+<area shape="rect" id="Node000017" href="$classControlFIFO.html" title="This class enables simple application control over a FIFO." alt="" coords="1521,327,1620,353"/>
+<area shape="poly" id="edge20_Node000017_Node000014" title=" " alt="" coords="964,317,1097,325,1335,333,1521,337,1521,342,1335,339,1097,331,964,322"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="1122,388,1285,428"/>
+<area shape="poly" id="edge22_Node000018_Node000014" title=" " alt="" coords="938,333,971,353,1009,371,1066,387,1122,398,1122,403,1065,392,1007,376,969,358,935,337"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="598,295,737,335"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="751,312,863,312,863,317,751,317"/>
+<area shape="poly" id="edge17_Node000013_Node000016" title=" " alt="" coords="1323,271,1404,261,1487,244,1542,224,1544,229,1489,249,1405,266,1323,277"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="1602,318,1665,273,1734,215,1775,166,1779,169,1738,219,1669,277,1605,322"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="1298,400,1391,390,1487,371,1542,350,1544,355,1489,376,1391,395,1299,405"/>
+<area shape="rect" id="Node000019" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="844,407,969,433"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="983,418,1073,416,1122,413,1122,418,1073,421,983,423"/>
 </map>

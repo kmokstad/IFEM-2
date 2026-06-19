@@ -1,11 +1,19 @@
 <map id="ScalarFunc" name="ScalarFunc">
-<area shape="rect" id="node1" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="465,95,557,121"/>
-<area shape="rect" id="node3" href="$classConstantFunc.html" title="A scalar&#45;valued constant function." alt="" coords="5,169,116,196"/>
-<area shape="rect" id="node4" href="$classDiracFunc.html" title="A scalar&#45;valued dirac function." alt="" coords="140,169,227,196"/>
-<area shape="rect" id="node5" href="$classEvalFuncScalar.html" title="A scalar&#45;valued function, general expression." alt="" coords="251,169,441,196"/>
-<area shape="rect" id="node6" href="$classLinearFunc.html" title="A scalar&#45;valued linear function." alt="" coords="465,169,557,196"/>
-<area shape="rect" id="node7" href="$classRampFunc.html" title="A scalar&#45;valued ramp function, linear up to xmax." alt="" coords="582,169,673,196"/>
-<area shape="rect" id="node8" href="$classSineFunc.html" title="A scalar&#45;valued sinusoidal function." alt="" coords="697,169,777,196"/>
-<area shape="rect" id="node9" href="$classStepFunc.html" title="A scalar&#45;valued step function." alt="" coords="801,169,883,196"/>
-<area shape="rect" id="node2" href="$classutl_1_1Function.html" title=" " alt="" coords="436,5,587,47"/>
+<area shape="rect" id="Node000001" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="465,93,557,119"/>
+<area shape="rect" id="Node000003" href="$classConstantFunc.html" title="A scalar&#45;valued constant function." alt="" coords="5,167,116,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="452,119,128,169,117,171,116,166,127,164,451,114"/>
+<area shape="rect" id="Node000004" href="$classDiracFunc.html" title="A scalar&#45;valued dirac function." alt="" coords="140,167,227,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="452,123,227,171,226,166,451,118"/>
+<area shape="rect" id="Node000005" href="$classEvalFuncScalar.html" title="A scalar&#45;valued function, general expression." alt="" coords="251,167,441,192"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="473,126,374,169,372,164,471,122"/>
+<area shape="rect" id="Node000006" href="$classLinearFunc.html" title="A scalar&#45;valued linear function." alt="" coords="465,167,557,192"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="514,132,514,167,509,167,509,132"/>
+<area shape="rect" id="Node000007" href="$classRampFunc.html" title="A scalar&#45;valued ramp function, linear up to xmax." alt="" coords="582,167,673,192"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="543,123,610,164,607,169,540,128"/>
+<area shape="rect" id="Node000008" href="$classSineFunc.html" title="A scalar&#45;valued sinusoidal function." alt="" coords="697,167,777,192"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="561,120,701,164,699,169,560,125"/>
+<area shape="rect" id="Node000009" href="$classStepFunc.html" title="A scalar&#45;valued step function." alt="" coords="801,167,883,192"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="571,117,802,167,801,172,570,123"/>
+<area shape="rect" id="Node000002" href="$classutl_1_1Function.html" title=" " alt="" coords="436,5,587,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="514,59,514,93,509,93,509,59"/>
 </map>

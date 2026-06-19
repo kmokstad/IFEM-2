@@ -1,5 +1,7 @@
-<map id="src/Utility/StbImage.C" name="src/Utility/StbImage.C">
-<area shape="rect" id="node1" title="Singleton wrapper for stb_image." alt="" coords="33,5,197,32"/>
-<area shape="rect" id="node2" href="$StbImage_8h.html" title="Singleton wrapper for stb_image." alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="126,80,229,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/StbImage.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/StbImage.C">
+<area shape="rect" id="Node000001" title="Singleton wrapper for stb_image." alt="" coords="24,5,205,60"/>
+<area shape="rect" id="Node000002" href="$StbImage_8h.html" title="Singleton wrapper for stb_image." alt="" coords="5,108,101,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,62,72,98,68,95,94,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="126,108,229,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,58,163,95,158,98,132,62"/>
 </map>

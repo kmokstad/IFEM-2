@@ -1,4 +1,19 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classutl_1_1Function.html" title=" " alt="" coords="5,5,157,47"/>
-<area shape="rect" id="node2" href="$classutl_1_1SpatialFunction.html" title="Base class for unary spatial function of arbitrary result type." alt="" coords="205,5,352,47"/>
+<area shape="rect" id="Node000000" href="$classutl_1_1Function.html" title=" " alt="" coords="5,146,156,186"/>
+<area shape="rect" id="Node000001" href="$classScalarFunc.html" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="204,153,296,179"/>
+<area shape="poly" id="edge238_Node000000_Node000001" title=" " alt="" coords="170,163,204,163,204,169,170,169"/>
+<area shape="rect" id="Node000002" href="$classConstantFunc.html" title="A scalar&#45;valued constant function." alt="" coords="384,5,495,31"/>
+<area shape="poly" id="edge239_Node000001_Node000002" title=" " alt="" coords="261,140,293,89,316,62,343,40,362,30,383,23,384,28,364,34,345,44,319,66,297,92,266,143"/>
+<area shape="rect" id="Node000003" href="$classDiracFunc.html" title="A scalar&#45;valued dirac function." alt="" coords="396,55,483,80"/>
+<area shape="poly" id="edge240_Node000001_Node000003" title=" " alt="" coords="272,141,304,114,343,89,395,72,397,77,345,94,307,118,275,145"/>
+<area shape="rect" id="Node000004" href="$classEvalFuncScalar.html" title="A scalar&#45;valued function, general expression." alt="" coords="344,104,535,129"/>
+<area shape="poly" id="edge241_Node000001_Node000004" title=" " alt="" coords="309,147,343,138,387,127,388,132,345,143,310,153"/>
+<area shape="rect" id="Node000005" href="$classLinearFunc.html" title="A scalar&#45;valued linear function." alt="" coords="393,153,485,179"/>
+<area shape="poly" id="edge242_Node000001_Node000005" title=" " alt="" coords="310,163,393,163,393,169,310,169"/>
+<area shape="rect" id="Node000006" href="$classRampFunc.html" title="A scalar&#45;valued ramp function, linear up to xmax." alt="" coords="394,203,485,228"/>
+<area shape="poly" id="edge243_Node000001_Node000006" title=" " alt="" coords="310,179,394,201,393,206,308,184"/>
+<area shape="rect" id="Node000007" href="$classSineFunc.html" title="A scalar&#45;valued sinusoidal function." alt="" coords="399,252,479,277"/>
+<area shape="poly" id="edge244_Node000001_Node000007" title=" " alt="" coords="276,186,307,213,345,237,372,248,400,255,399,261,371,253,343,242,304,217,272,190"/>
+<area shape="rect" id="Node000008" href="$classStepFunc.html" title="A scalar&#45;valued step function." alt="" coords="399,301,480,327"/>
+<area shape="poly" id="edge245_Node000001_Node000008" title=" " alt="" coords="266,189,298,239,320,265,345,286,372,299,399,307,398,312,370,304,343,291,316,269,293,242,261,192"/>
 </map>

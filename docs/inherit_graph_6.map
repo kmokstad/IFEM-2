@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structASMbase_1_1BC.html" title="Struct for boundary condition codes." alt="" coords="5,5,113,32"/>
+<area shape="rect" id="Node000000" href="$classASM_1_1InterfaceChecker.html" title="Base class to check for internal boundary integrand contributions." alt="" coords="5,55,175,80"/>
+<area shape="rect" id="Node000001" href="$classASMs2D_1_1InterfaceChecker.html" title="Base class that checks if an element has interface contributions." alt="" coords="223,5,417,31"/>
+<area shape="poly" id="edge77_Node000000_Node000001" title=" " alt="" coords="162,49,259,28,260,33,163,54"/>
+<area shape="rect" id="Node000003" href="$classASMs3D_1_1InterfaceChecker.html" title="Base class that checks if an element has interface contributions." alt="" coords="223,55,417,80"/>
+<area shape="poly" id="edge79_Node000000_Node000003" title=" " alt="" coords="188,65,223,65,223,70,188,70"/>
+<area shape="rect" id="Node000004" href="$classASMu2D_1_1InterfaceChecker.html" title="Base class that checks if an element has interface contributions." alt="" coords="223,104,417,129"/>
+<area shape="poly" id="edge80_Node000000_Node000004" title=" " alt="" coords="163,80,260,101,259,107,162,85"/>
+<area shape="rect" id="Node000002" href="$classASMs2DIB_1_1Intersected.html" title="Class that checks if an element has interface contributions." alt="" coords="465,5,636,31"/>
+<area shape="poly" id="edge78_Node000001_Node000002" title=" " alt="" coords="431,15,465,15,465,21,431,21"/>
 </map>

@@ -1,6 +1,10 @@
 <map id="SIMoptions" name="SIMoptions">
-<area shape="rect" id="node1" title="Class for encapsulation of general simulation options." alt="" coords="27,307,122,333"/>
-<area shape="rect" id="node2" title=" " alt="" coords="31,96,118,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="145,194,357,235"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,144,47"/>
+<area shape="rect" id="Node000001" title="Class for encapsulation of general simulation options." alt="" coords="27,304,122,329"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="31,95,118,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,134,69,183,69,241,76,304,70,304,64,241,64,183,69,133"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="145,192,357,232"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="107,125,219,189,217,194,105,129"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,59,77,94,72,94,72,59"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,241,96,306,93,301,205,236"/>
 </map>

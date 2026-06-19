@@ -1,6 +1,9 @@
 <map id="SIMSemi3D&lt; PlaneSolver &gt;" name="SIMSemi3D&lt; PlaneSolver &gt;">
-<area shape="rect" id="node1" title="Driver class for plane&#45;decoupled 3D problems." alt="" coords="26,155,230,181"/>
-<area shape="rect" id="node2" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="19,80,106,107"/>
-<area shape="rect" id="node3" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="5,5,120,32"/>
-<area shape="rect" id="node4" href="$classSIMdependency.html" title="Class administering inter&#45;SIM field dependencies." alt="" coords="131,80,256,107"/>
+<area shape="rect" id="Node000001" title="Driver class for plane&#45;decoupled 3D problems." alt="" coords="26,152,230,177"/>
+<area shape="rect" id="Node000002" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="19,79,106,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,113,119,150,115,154,81,116"/>
+<area shape="rect" id="Node000003" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="5,5,120,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,44,65,79,60,79,60,44"/>
+<area shape="rect" id="Node000004" href="$classSIMdependency.html" title="Class administering inter&#45;SIM field dependencies." alt="" coords="131,79,256,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,116,141,154,137,150,171,113"/>
 </map>

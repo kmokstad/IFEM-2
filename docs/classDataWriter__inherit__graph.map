@@ -1,4 +1,5 @@
 <map id="DataWriter" name="DataWriter">
-<area shape="rect" id="node1" title="Stores and reads data from a file." alt="" coords="8,5,101,32"/>
-<area shape="rect" id="node2" href="$classHDF5Writer.html" title="Write data to a HDF5 file." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="Node000001" title="Stores and reads data from a file." alt="" coords="8,5,101,31"/>
+<area shape="rect" id="Node000002" href="$classHDF5Writer.html" title="Write data to a HDF5 file." alt="" coords="5,79,104,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,44,57,79,52,79,52,44"/>
 </map>

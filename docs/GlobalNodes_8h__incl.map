@@ -1,6 +1,9 @@
-<map id="src/ASM/LR/GlobalNodes.h" name="src/ASM/LR/GlobalNodes.h">
-<area shape="rect" id="node1" title="Simple global node establishment for unstructured FE models." alt="" coords="124,5,317,32"/>
-<area shape="rect" id="node2" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="5,80,97,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="121,80,320,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="344,80,407,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/LR/GlobalNodes.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/LR/GlobalNodes.h">
+<area shape="rect" id="Node000001" title="Simple global node establishment for unstructured FE models." alt="" coords="91,5,350,45"/>
+<area shape="rect" id="Node000002" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="5,93,97,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,48,90,90,88,85,179,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="121,93,320,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,46,223,79,218,79,218,46"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="344,93,407,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="259,43,342,85,339,89,257,48"/>
 </map>

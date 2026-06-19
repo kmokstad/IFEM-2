@@ -1,6 +1,9 @@
 <map id="SIMSolverAdapInternal&lt; T1 &gt;" name="SIMSolverAdapInternal&lt; T1 &gt;">
-<area shape="rect" id="node1" title="Template class for adaptive simulator drivers which handle adaptation internally." alt="" coords="5,229,176,271"/>
-<area shape="rect" id="node2" href="$classSIMSolverStat.html" title="Template class for stationary simulator drivers." alt="" coords="11,155,170,181"/>
-<area shape="rect" id="node3" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="47,80,134,107"/>
-<area shape="rect" id="node4" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="33,5,148,32"/>
+<area shape="rect" id="Node000001" title="Template class for adaptive simulator drivers which handle adaptation internally." alt="" coords="5,225,176,265"/>
+<area shape="rect" id="Node000002" href="$classSIMSolverStat.html" title="Template class for stationary simulator drivers." alt="" coords="11,152,170,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,191,93,225,88,225,88,191"/>
+<area shape="rect" id="Node000003" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="47,79,134,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,118,93,152,88,152,88,118"/>
+<area shape="rect" id="Node000004" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="33,5,148,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="93,44,93,79,88,79,88,44"/>
 </map>

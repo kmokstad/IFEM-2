@@ -1,5 +1,7 @@
 <map id="StepFunc" name="StepFunc">
-<area shape="rect" id="node1" title="A scalar&#45;valued step function." alt="" coords="40,169,121,196"/>
-<area shape="rect" id="node2" href="$classScalarFunc.html" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="35,95,127,121"/>
-<area shape="rect" id="node3" href="$classutl_1_1Function.html" title=" " alt="" coords="5,5,156,47"/>
+<area shape="rect" id="Node000001" title="A scalar&#45;valued step function." alt="" coords="40,167,121,192"/>
+<area shape="rect" id="Node000002" href="$classScalarFunc.html" title="Scalar&#45;valued unary function of a scalar value." alt="" coords="35,93,127,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,132,83,167,78,167,78,132"/>
+<area shape="rect" id="Node000003" href="$classutl_1_1Function.html" title=" " alt="" coords="5,5,156,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,59,83,93,78,93,78,59"/>
 </map>

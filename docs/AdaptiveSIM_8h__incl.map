@@ -1,30 +1,68 @@
-<map id="src/SIM/AdaptiveSIM.h" name="src/SIM/AdaptiveSIM.h">
-<area shape="rect" id="node1" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="533,5,699,32"/>
-<area shape="rect" id="node2" href="$SIMadmin_8h.html" title="Administration base class for FEM simulators." alt="" coords="511,155,609,181"/>
-<area shape="rect" id="node19" href="$AdaptiveSetup_8h.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="606,80,735,107"/>
-<area shape="rect" id="node3" href="$XMLInputBase_8h.html" title="Base class for XML input parsing functionality." alt="" coords="326,229,453,256"/>
-<area shape="rect" id="node5" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="235,304,341,331"/>
-<area shape="rect" id="node8" title=" " alt="" coords="279,379,337,405"/>
-<area shape="rect" id="node10" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="571,229,685,256"/>
-<area shape="rect" id="node16" title=" " alt="" coords="1003,379,1083,405"/>
-<area shape="rect" id="node4" title=" " alt="" coords="437,379,499,405"/>
-<area shape="rect" id="node6" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="5,379,112,405"/>
-<area shape="rect" id="node7" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="137,379,255,405"/>
-<area shape="rect" id="node9" title=" " alt="" coords="361,379,412,405"/>
-<area shape="rect" id="node11" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="559,304,742,331"/>
-<area shape="rect" id="node15" href="$LogStream_8h.html" title="Log stream class." alt="" coords="788,304,892,331"/>
-<area shape="rect" id="node12" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="523,379,615,405"/>
-<area shape="rect" id="node13" title=" " alt="" coords="640,379,683,405"/>
-<area shape="rect" id="node14" title=" " alt="" coords="707,379,778,405"/>
-<area shape="rect" id="node17" title=" " alt="" coords="803,379,877,405"/>
-<area shape="rect" id="node18" title=" " alt="" coords="901,379,979,405"/>
-<area shape="rect" id="node20" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="792,155,875,181"/>
-<area shape="rect" id="node21" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="1140,229,1233,256"/>
-<area shape="rect" id="node22" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="1211,304,1288,331"/>
-<area shape="rect" id="node23" title=" " alt="" coords="1107,379,1192,405"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1216,379,1283,405"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1307,379,1373,405"/>
-<area shape="rect" id="node26" title=" " alt="" coords="1397,379,1459,405"/>
-<area shape="rect" id="node27" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="1483,379,1551,405"/>
-<area shape="rect" id="node28" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="1576,379,1664,405"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/AdaptiveSIM.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/AdaptiveSIM.h">
+<area shape="rect" id="Node000001" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="659,5,893,45"/>
+<area shape="rect" id="Node000002" href="$SIMadmin_8h.html" title="Administration base class for FEM simulators." alt="" coords="511,167,609,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="751,48,589,161,586,156,748,43"/>
+<area shape="rect" id="Node000019" href="$AdaptiveSetup_8h.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="769,93,898,119"/>
+<area shape="poly" id="edge25_Node000001_Node000019" title=" " alt="" coords="792,44,819,80,815,84,788,47"/>
+<area shape="rect" id="Node000003" href="$XMLInputBase_8h.html" title="Base class for XML input parsing functionality." alt="" coords="326,240,453,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="534,194,431,237,429,232,532,190"/>
+<area shape="rect" id="Node000005" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="235,313,341,339"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="511,189,399,209,348,224,315,242,305,254,298,269,292,300,286,299,293,267,301,252,312,238,346,219,398,204,510,184"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="279,387,337,412"/>
+<area shape="poly" id="edge24_Node000002_Node000008" title=" " alt="" coords="549,194,466,267,334,379,331,375,462,263,545,190"/>
+<area shape="rect" id="Node000010" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="571,240,685,265"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="573,190,609,228,605,232,569,194"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="1003,387,1083,412"/>
+<area shape="poly" id="edge23_Node000002_Node000016" title=" " alt="" coords="596,189,734,238,820,272,905,311,965,344,1016,377,1013,381,963,349,903,316,818,277,732,243,595,195"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="437,387,499,412"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="398,265,458,373,453,376,393,267"/>
+<area shape="rect" id="Node000006" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="5,387,112,412"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="252,341,110,385,108,380,250,336"/>
+<area shape="rect" id="Node000007" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="137,387,255,412"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="275,341,223,380,220,376,272,337"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="294,338,304,373,299,374,289,340"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="361,387,412,412"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="305,337,361,376,358,381,302,341"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="612,267,548,315,488,378,485,374,545,311,609,263"/>
+<area shape="rect" id="Node000011" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="559,313,742,339"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="634,265,645,299,640,301,629,266"/>
+<area shape="rect" id="Node000015" href="$LogStream_8h.html" title="Log stream class." alt="" coords="788,313,892,339"/>
+<area shape="poly" id="edge18_Node000010_Node000015" title=" " alt="" coords="663,263,794,306,792,311,661,268"/>
+<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="622,341,512,384,510,379,620,336"/>
+<area shape="poly" id="edge15_Node000011_Node000008" title=" " alt="" coords="586,341,351,389,350,384,585,336"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="606,341,426,389,425,384,604,336"/>
+<area shape="rect" id="Node000012" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="523,387,615,412"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="639,341,595,380,591,376,636,337"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="640,387,683,412"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="655,339,660,373,655,374,650,339"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="707,387,778,412"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="667,337,719,376,715,380,664,341"/>
+<area shape="poly" id="edge22_Node000015_Node000004" title=" " alt="" coords="788,338,667,359,513,389,512,384,666,353,787,333"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="873,336,998,380,996,385,872,341"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="803,387,877,412"/>
+<area shape="poly" id="edge20_Node000015_Node000017" title=" " alt="" coords="843,339,843,373,837,373,837,339"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="901,387,979,412"/>
+<area shape="poly" id="edge21_Node000015_Node000018" title=" " alt="" coords="858,337,914,376,911,381,855,341"/>
+<area shape="rect" id="Node000020" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="792,167,875,192"/>
+<area shape="poly" id="edge26_Node000019_Node000020" title=" " alt="" coords="836,119,836,153,831,153,831,119"/>
+<area shape="rect" id="Node000029" title=" " alt="" coords="899,167,959,192"/>
+<area shape="poly" id="edge37_Node000019_Node000029" title=" " alt="" coords="850,117,904,156,901,160,847,121"/>
+<area shape="rect" id="Node000021" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="1140,240,1233,265"/>
+<area shape="poly" id="edge27_Node000020_Node000021" title=" " alt="" coords="876,187,889,189,1127,237,1126,242,887,195,875,192"/>
+<area shape="rect" id="Node000022" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="1211,313,1288,339"/>
+<area shape="poly" id="edge28_Node000021_Node000022" title=" " alt="" coords="1199,264,1232,301,1228,305,1195,267"/>
+<area shape="poly" id="edge29_Node000022_Node000004" title=" " alt="" coords="1211,331,1094,334,924,344,722,361,513,389,513,384,722,356,923,338,1094,329,1210,325"/>
+<area shape="poly" id="edge30_Node000022_Node000016" title=" " alt="" coords="1217,341,1090,385,1088,380,1215,336"/>
+<area shape="rect" id="Node000023" title=" " alt="" coords="1107,387,1192,412"/>
+<area shape="poly" id="edge31_Node000022_Node000023" title=" " alt="" coords="1235,341,1178,381,1175,376,1232,337"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="1216,387,1283,412"/>
+<area shape="poly" id="edge32_Node000022_Node000024" title=" " alt="" coords="1252,339,1252,373,1247,373,1247,339"/>
+<area shape="rect" id="Node000025" title=" " alt="" coords="1307,387,1373,412"/>
+<area shape="poly" id="edge33_Node000022_Node000025" title=" " alt="" coords="1266,337,1316,376,1313,380,1262,341"/>
+<area shape="rect" id="Node000026" title=" " alt="" coords="1397,387,1459,412"/>
+<area shape="poly" id="edge34_Node000022_Node000026" title=" " alt="" coords="1279,336,1387,379,1385,384,1277,341"/>
+<area shape="rect" id="Node000027" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="1483,387,1551,412"/>
+<area shape="poly" id="edge35_Node000022_Node000027" title=" " alt="" coords="1289,335,1471,383,1469,388,1288,340"/>
+<area shape="rect" id="Node000028" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="1576,387,1664,412"/>
+<area shape="poly" id="edge36_Node000022_Node000028" title=" " alt="" coords="1289,332,1563,384,1562,389,1288,337"/>
 </map>

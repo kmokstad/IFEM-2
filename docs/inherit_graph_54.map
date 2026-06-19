@@ -1,3 +1,25 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classGaussQuadrature.html" title="Gaussian quadrature rules in one dimension." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="Node000000" href="$classFields.html" title="Base class for vector fields." alt="" coords="5,252,65,277"/>
+<area shape="rect" id="Node000001" href="$classLRSplineFields2D.html" title="Class for LR spline&#45;based finite element vector fields in 2D." alt="" coords="123,5,258,31"/>
+<area shape="poly" id="edge168_Node000000_Node000001" title=" " alt="" coords="36,237,41,195,54,142,77,88,92,62,112,40,128,29,131,33,115,44,97,66,81,90,59,143,47,196,41,238"/>
+<area shape="rect" id="Node000002" href="$classLRSplineFields2Dmx.html" title="Class for mixed LR spline&#45;based finite element vector fields in 2D." alt="" coords="113,55,268,80"/>
+<area shape="poly" id="edge169_Node000000_Node000002" title=" " alt="" coords="39,238,47,204,61,164,82,124,112,89,129,78,132,82,115,93,87,127,66,167,52,206,44,239"/>
+<area shape="rect" id="Node000003" href="$classLRSplineFields3D.html" title="Class for LR spline&#45;based finite element vector fields in 3D." alt="" coords="123,104,258,129"/>
+<area shape="poly" id="edge170_Node000000_Node000003" title=" " alt="" coords="44,238,69,188,88,161,112,139,132,127,134,132,115,143,93,165,74,190,49,240"/>
+<area shape="rect" id="Node000004" href="$classLRSplineFields3Dmx.html" title="Class for LR spline&#45;based finite element vector fields in 3D." alt="" coords="113,153,268,179"/>
+<area shape="poly" id="edge171_Node000000_Node000004" title=" " alt="" coords="54,239,80,213,112,188,137,176,139,181,115,192,83,217,57,243"/>
+<area shape="rect" id="Node000005" href="$classLagrangeFields2D.html" title="Class for Lagrange&#45;based finite element vector fields in 2D." alt="" coords="121,203,260,228"/>
+<area shape="poly" id="edge172_Node000000_Node000005" title=" " alt="" coords="77,248,113,237,148,226,149,231,114,242,79,253"/>
+<area shape="rect" id="Node000006" href="$classLagrangeFields3D.html" title="Class for Lagrange&#45;based finite element vector fields in 3D." alt="" coords="121,252,260,277"/>
+<area shape="poly" id="edge173_Node000000_Node000006" title=" " alt="" coords="79,262,121,262,121,267,79,267"/>
+<area shape="rect" id="Node000007" href="$classSplineFields1D.html" title="Class for spline&#45;based finite element vector fields in 1D." alt="" coords="131,301,250,327"/>
+<area shape="poly" id="edge174_Node000000_Node000007" title=" " alt="" coords="79,276,151,299,149,304,78,281"/>
+<area shape="rect" id="Node000008" href="$classSplineFields2D.html" title="Class for spline&#45;based finite element vector fields in 2D." alt="" coords="131,351,250,376"/>
+<area shape="poly" id="edge175_Node000000_Node000008" title=" " alt="" coords="58,286,84,312,115,336,142,348,139,353,112,340,80,316,54,290"/>
+<area shape="rect" id="Node000009" href="$classSplineFields2Dmx.html" title="Class for mixed spline&#45;based finite element vector fields in 2D." alt="" coords="121,400,260,425"/>
+<area shape="poly" id="edge176_Node000000_Node000009" title=" " alt="" coords="49,289,74,338,93,363,115,385,137,398,134,402,112,389,89,367,70,341,44,291"/>
+<area shape="rect" id="Node000010" href="$classSplineFields3D.html" title="Class for spline&#45;based finite element vector fields in 3D." alt="" coords="131,449,250,475"/>
+<area shape="poly" id="edge177_Node000000_Node000010" title=" " alt="" coords="44,290,52,323,66,362,87,401,115,435,134,447,131,451,112,439,83,404,62,364,47,324,39,291"/>
+<area shape="rect" id="Node000011" href="$classSplineFields3Dmx.html" title="Class for mixed spline&#45;based finite element vector fields in 3D." alt="" coords="121,499,260,524"/>
+<area shape="poly" id="edge178_Node000000_Node000011" title=" " alt="" coords="41,291,47,333,60,385,82,438,97,462,115,484,133,496,130,501,112,488,92,466,77,441,55,387,42,334,36,292"/>
 </map>

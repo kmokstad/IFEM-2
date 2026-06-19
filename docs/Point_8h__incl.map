@@ -1,7 +1,11 @@
-<map id="src/Utility/Point.h" name="src/Utility/Point.h">
-<area shape="rect" id="node1" title="Representation of points in 3D space with coordinates and parameters." alt="" coords="65,5,200,32"/>
-<area shape="rect" id="node2" href="$Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="100,80,165,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,68,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="93,155,173,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="197,155,260,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/Point.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/Point.h">
+<area shape="rect" id="Node000001" title="Representation of points in 3D space with coordinates and parameters." alt="" coords="42,5,223,60"/>
+<area shape="rect" id="Node000002" href="$Vec3_8h.html" title="Representation of a point in 3D space with some basic operations." alt="" coords="100,108,165,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,60,135,94,130,94,130,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,181,68,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,136,65,175,62,171,116,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="93,181,173,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="135,134,135,168,130,168,130,134"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="197,181,260,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="150,131,203,171,200,175,147,136"/>
 </map>

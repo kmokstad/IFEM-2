@@ -1,4 +1,5 @@
-<map id="src/SIM/NewmarkNLSIM.h" name="src/SIM/NewmarkNLSIM.h">
-<area shape="rect" id="node1" title="Nonlinear solution driver for isogeometric dynamic FEM simulators." alt="" coords="6,5,195,32"/>
-<area shape="rect" id="node2" href="$NewmarkNLSIM_8C.html" title="Newmark solution driver for isogeometric dynamic FEM simulators." alt="" coords="5,80,196,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/NewmarkNLSIM.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/NewmarkNLSIM.h">
+<area shape="rect" id="Node000001" title="Nonlinear solution driver for isogeometric dynamic FEM simulators." alt="" coords="6,5,261,45"/>
+<area shape="rect" id="Node000002" href="$NewmarkNLSIM_8C.html" title="Newmark solution driver for isogeometric dynamic FEM simulators." alt="" coords="5,93,261,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,59,136,93,131,93,131,59"/>
 </map>

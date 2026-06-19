@@ -1,10 +1,17 @@
 <map id="ChebyshevFunc" name="ChebyshevFunc">
-<area shape="rect" id="node1" title="A scalar&#45;valued spatial function, chebyshev polynomials." alt="" coords="656,129,780,155"/>
-<area shape="rect" id="node2" href="$classRealFunc.html" title="Scalar&#45;valued unary function of a spatial point." alt="" coords="433,49,515,75"/>
-<area shape="rect" id="node3" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="197,5,344,47"/>
-<area shape="rect" id="node4" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,5,148,47"/>
-<area shape="rect" id="node5" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="216,71,325,98"/>
-<area shape="rect" id="node6" title=" " alt="" coords="399,99,549,126"/>
-<area shape="rect" id="node7" title=" " alt="" coords="393,151,555,192"/>
-<area shape="rect" id="node8" title=" " alt="" coords="401,217,547,243"/>
+<area shape="rect" id="Node000001" title="A scalar&#45;valued spatial function, chebyshev polynomials." alt="" coords="656,122,780,147"/>
+<area shape="rect" id="Node000002" href="$classRealFunc.html" title="Scalar&#45;valued unary function of a spatial point." alt="" coords="433,47,515,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="529,69,633,97,689,119,687,124,631,103,527,74"/>
+<area shape="rect" id="Node000003" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="197,5,344,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,38,433,51,433,56,357,43"/>
+<area shape="rect" id="Node000004" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="5,5,148,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="162,23,197,23,197,28,162,28"/>
+<area shape="rect" id="Node000005" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="216,70,325,95"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="339,72,432,62,433,67,339,78"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="399,97,549,122"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="563,116,656,126,656,131,563,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="401,146,547,171"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="561,156,632,151,666,145,667,150,632,156,561,161"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="393,196,555,236"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="567,194,631,175,693,145,696,150,633,180,569,199"/>
 </map>

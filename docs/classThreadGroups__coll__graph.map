@@ -1,6 +1,9 @@
 <map id="ThreadGroups" name="ThreadGroups">
-<area shape="rect" id="node1" title="Class containing threading group partitioning." alt="" coords="29,273,143,300"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,184,167,211"/>
-<area shape="rect" id="node3" title=" " alt="" coords="21,95,151,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="67,5,105,32"/>
+<area shape="rect" id="Node000001" title="Class containing threading group partitioning." alt="" coords="29,269,143,295"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,181,167,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,221,89,269,83,269,83,221"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="21,93,151,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,133,89,181,83,181,83,133"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="67,5,105,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="89,45,89,93,83,93,83,45"/>
 </map>

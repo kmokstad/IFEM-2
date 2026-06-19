@@ -1,5 +1,7 @@
-<map id="src/Utility/ThreadGroups.h" name="src/Utility/ThreadGroups.h">
-<area shape="rect" id="node1" title="Threading group partitioning." alt="" coords="5,5,197,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="25,80,87,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="111,80,182,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ThreadGroups.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ThreadGroups.h">
+<area shape="rect" id="Node000001" title="Threading group partitioning." alt="" coords="5,5,187,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="19,108,82,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,61,65,97,61,95,80,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="106,108,177,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,59,131,95,127,97,107,61"/>
 </map>

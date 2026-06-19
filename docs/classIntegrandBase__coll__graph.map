@@ -1,10 +1,18 @@
 <map id="IntegrandBase" name="IntegrandBase">
-<area shape="rect" id="node1" title="Base class representing a system level integrated quantity." alt="" coords="708,91,824,117"/>
-<area shape="rect" id="node2" href="$classIntegrand.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="473,5,557,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="433,57,596,98"/>
-<area shape="rect" id="node4" title=" " alt="" coords="213,32,300,59"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,25,144,66"/>
-<area shape="rect" id="node6" href="$classutl_1_1vector.html" title="A vector class with some added algebraic operations." alt="" coords="193,103,320,129"/>
-<area shape="rect" id="node8" title=" " alt="" coords="433,123,596,149"/>
-<area shape="rect" id="node7" title=" " alt="" coords="445,173,584,200"/>
+<area shape="rect" id="Node000001" title="Base class representing a system level integrated quantity." alt="" coords="708,89,824,115"/>
+<area shape="rect" id="Node000002" href="$classIntegrand.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="473,5,557,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="571,30,685,65,738,87,736,92,683,70,569,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="433,55,596,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="610,83,708,93,707,99,609,88"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="213,29,300,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="314,47,433,62,433,67,313,52"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,22,144,62"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="158,39,213,39,213,45,158,45"/>
+<area shape="rect" id="Node000006" href="$classutl_1_1vector.html" title="A vector class with some added algebraic operations." alt="" coords="193,99,320,124"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="334,98,433,84,434,89,334,103"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="433,120,596,145"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="318,124,344,129,433,133,433,138,344,134,317,130"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="445,169,584,195"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="594,164,683,138,740,112,742,117,685,143,595,169"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="609,119,684,110,707,107,708,112,684,115,610,124"/>
 </map>

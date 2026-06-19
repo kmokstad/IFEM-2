@@ -1,6 +1,9 @@
 <map id="AlgEqSystem::SysMatrixPair" name="AlgEqSystem::SysMatrixPair">
-<area shape="rect" id="node1" title="Struct defining a coefficient matrix and an associated RHS&#45;vector." alt="" coords="45,184,251,211"/>
-<area shape="rect" id="node2" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="23,95,137,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,155,32"/>
-<area shape="rect" id="node4" href="$classSystemVector.html" title="Base class for representing a system vector on different formats." alt="" coords="161,95,273,121"/>
+<area shape="rect" id="Node000001" title="Struct defining a coefficient matrix and an associated RHS&#45;vector." alt="" coords="45,181,251,207"/>
+<area shape="rect" id="Node000002" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="23,93,137,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,128,141,179,136,182,96,131"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,155,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,45,83,93,77,93,77,45"/>
+<area shape="rect" id="Node000004" href="$classSystemVector.html" title="Base class for representing a system vector on different formats." alt="" coords="161,93,273,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,131,160,182,156,179,197,128"/>
 </map>

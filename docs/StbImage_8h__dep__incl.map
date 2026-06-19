@@ -1,5 +1,7 @@
-<map id="src/Utility/StbImage.h" name="src/Utility/StbImage.h">
-<area shape="rect" id="node1" title="Singleton wrapper for stb_image." alt="" coords="113,5,275,32"/>
-<area shape="rect" id="node2" href="$StbImage_8C.html" title="Singleton wrapper for stb_image." alt="" coords="5,80,169,107"/>
-<area shape="rect" id="node3" href="$TextureProperties_8C.html" title="Properties defined through a texture map." alt="" coords="194,80,410,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/StbImage.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/StbImage.h">
+<area shape="rect" id="Node000001" title="Singleton wrapper for stb_image." alt="" coords="108,5,289,60"/>
+<area shape="rect" id="Node000002" href="$StbImage_8C.html" title="Singleton wrapper for stb_image." alt="" coords="5,108,187,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,72,125,110,121,106,160,68"/>
+<area shape="rect" id="Node000003" href="$TextureProperties_8C.html" title="Properties defined through a texture map." alt="" coords="211,108,392,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,68,276,106,273,110,233,72"/>
 </map>

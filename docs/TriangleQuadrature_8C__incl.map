@@ -1,5 +1,7 @@
-<map id="src/Utility/TriangleQuadrature.C" name="src/Utility/TriangleQuadrature.C">
-<area shape="rect" id="node1" title="Triangle quadrature rules." alt="" coords="43,5,270,32"/>
-<area shape="rect" id="node2" href="$TriangleQuadrature_8h.html" title="Triangle quadrature rules." alt="" coords="5,80,164,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="189,80,269,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/TriangleQuadrature.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/TriangleQuadrature.C">
+<area shape="rect" id="Node000001" title="Triangle quadrature rules." alt="" coords="66,5,247,60"/>
+<area shape="rect" id="Node000002" href="$TriangleQuadrature_8h.html" title="Triangle quadrature rules." alt="" coords="5,108,164,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,62,105,99,101,96,133,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="189,108,269,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,58,212,96,208,99,177,62"/>
 </map>

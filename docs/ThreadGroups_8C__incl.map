@@ -1,20 +1,40 @@
-<map id="src/Utility/ThreadGroups.C" name="src/Utility/ThreadGroups.C">
-<area shape="rect" id="node1" title="Threading group partitioning." alt="" coords="742,5,935,32"/>
-<area shape="rect" id="node2" href="$ThreadGroups_8h.html" title="Threading group partitioning." alt="" coords="405,80,531,107"/>
-<area shape="rect" id="node5" href="$IFEM_8h.html" title="Initialization of the IFEM library." alt="" coords="612,80,679,107"/>
-<area shape="rect" id="node12" title=" " alt="" coords="724,229,804,256"/>
-<area shape="rect" id="node16" title=" " alt="" coords="836,80,921,107"/>
-<area shape="rect" id="node17" title=" " alt="" coords="945,80,1004,107"/>
-<area shape="rect" id="node18" title=" " alt="" coords="1028,80,1103,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="437,229,499,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="135,155,206,181"/>
-<area shape="rect" id="node6" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="231,155,337,181"/>
-<area shape="rect" id="node11" href="$LogStream_8h.html" title="Log stream class." alt="" coords="508,155,612,181"/>
-<area shape="rect" id="node15" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="637,155,761,181"/>
-<area shape="rect" id="node7" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="163,229,269,256"/>
-<area shape="rect" id="node8" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="294,229,413,256"/>
-<area shape="rect" id="node9" title=" " alt="" coords="5,229,64,256"/>
-<area shape="rect" id="node10" title=" " alt="" coords="88,229,139,256"/>
-<area shape="rect" id="node13" title=" " alt="" coords="625,229,700,256"/>
-<area shape="rect" id="node14" title=" " alt="" coords="524,229,601,256"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ThreadGroups.C" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/Utility/ThreadGroups.C">
+<area shape="rect" id="Node000001" title="Threading group partitioning." alt="" coords="748,5,929,60"/>
+<area shape="rect" id="Node000002" href="$ThreadGroups_8h.html" title="Threading group partitioning." alt="" coords="405,108,531,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="749,57,531,107,530,102,747,52"/>
+<area shape="rect" id="Node000005" href="$IFEM_8h.html" title="Initialization of the IFEM library." alt="" coords="612,108,679,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="781,63,685,105,682,100,779,58"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="724,255,804,280"/>
+<area shape="poly" id="edge20_Node000001_Node000012" title=" " alt="" coords="833,61,774,242,769,240,828,59"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="836,108,921,133"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="853,59,870,94,865,97,848,61"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="945,108,1004,133"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="882,58,946,98,943,103,879,62"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="1028,108,1103,133"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="909,58,1023,101,1021,106,907,63"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="437,255,499,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="471,134,471,241,465,241,465,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="135,181,206,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="421,136,220,184,219,179,420,131"/>
+<area shape="rect" id="Node000006" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="231,181,337,207"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="612,131,351,182,350,177,611,126"/>
+<area shape="rect" id="Node000011" href="$LogStream_8h.html" title="Log stream class." alt="" coords="508,181,612,207"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="633,135,586,175,583,170,630,131"/>
+<area shape="rect" id="Node000015" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="637,181,761,207"/>
+<area shape="poly" id="edge15_Node000005_Node000015" title=" " alt="" coords="656,132,684,169,680,172,652,135"/>
+<area shape="rect" id="Node000007" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="163,255,269,280"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="275,209,239,246,235,243,271,205"/>
+<area shape="rect" id="Node000008" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="294,255,413,280"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="297,205,335,243,331,247,294,209"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,255,64,280"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="245,209,78,257,76,251,243,204"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="88,255,139,280"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="258,209,152,253,150,248,256,204"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="547,209,495,248,492,244,544,205"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="594,204,719,248,717,253,592,209"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="625,255,700,280"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="578,204,636,244,633,249,575,209"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="524,255,601,280"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="563,207,564,241,559,241,558,207"/>
+<area shape="poly" id="edge16_Node000015_Node000012" title=" " alt="" coords="711,205,746,243,742,246,707,209"/>
 </map>

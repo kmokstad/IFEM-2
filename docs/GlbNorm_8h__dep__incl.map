@@ -1,5 +1,7 @@
-<map id="src/ASM/GlbNorm.h" name="src/ASM/GlbNorm.h">
-<area shape="rect" id="node1" title="Representation of integrated global norm quantities." alt="" coords="86,5,234,32"/>
-<area shape="rect" id="node2" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="5,80,147,107"/>
-<area shape="rect" id="node3" href="$GlbNorm_8C.html" title="Representation of integrated norm quantities over an element." alt="" coords="171,80,320,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlbNorm.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/GlbNorm.h">
+<area shape="rect" id="Node000001" title="Representation of integrated global norm quantities." alt="" coords="123,5,337,45"/>
+<area shape="rect" id="Node000002" href="$GlbNorm_8C.html" title="Representation of integrated norm quantities over an element." alt="" coords="5,93,220,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,56,140,95,137,91,191,52"/>
+<area shape="rect" id="Node000003" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="244,93,451,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,52,323,91,320,95,266,56"/>
 </map>

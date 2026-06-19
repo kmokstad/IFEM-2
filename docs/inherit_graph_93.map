@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structSIMbase_1_1DumpData.html" title="A struct with data for system matrix/vector dumps." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="Node000000" href="$classSettingMap.html" title="A key&#45;value store for settings." alt="" coords="5,31,101,56"/>
+<area shape="rect" id="Node000001" href="$classLinSolParams.html" title="Class for linear solver parameters." alt="" coords="195,5,305,31"/>
+<area shape="poly" id="edge214_Node000000_Node000001" title=" " alt="" coords="115,33,195,22,196,28,115,38"/>
+<area shape="rect" id="Node000002" href="$classLinSolParams_1_1BlockParams.html" title="Linear solver settings for a block of the linear system." alt="" coords="149,55,351,80"/>
+<area shape="poly" id="edge215_Node000000_Node000002" title=" " alt="" coords="115,48,150,52,149,58,115,53"/>
 </map>

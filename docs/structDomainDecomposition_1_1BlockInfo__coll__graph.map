@@ -1,6 +1,9 @@
 <map id="DomainDecomposition::BlockInfo" name="DomainDecomposition::BlockInfo">
-<area shape="rect" id="node1" title="Struct with information per matrix block." alt="" coords="154,95,325,136"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,156,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="181,5,298,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="322,5,461,32"/>
+<area shape="rect" id="Node000001" title="Struct with information per matrix block." alt="" coords="141,93,312,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,144,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,35,197,91,194,95,103,40"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="168,5,285,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,44,229,93,224,93,224,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="310,5,461,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="356,40,260,95,258,91,353,35"/>
 </map>

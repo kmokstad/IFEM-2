@@ -1,7 +1,11 @@
 <map id="SystemVector" name="SystemVector">
-<area shape="rect" id="node1" title="Base class for representing a system vector on different formats." alt="" coords="64,5,176,32"/>
-<area shape="rect" id="node2" href="$classPETScVectors.html" title="Class for representing a set of system vectors in PETSc format." alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node3" href="$classStdVector.html" title="Standard system vector stored as a single continuous array." alt="" coords="139,80,223,107"/>
-<area shape="rect" id="node4" href="$classISTLVector.html" title="Class for representing the system vector in ISTL format." alt="" coords="77,155,166,181"/>
-<area shape="rect" id="node5" href="$classPETScVector.html" title="Class for representing the system vector in PETSc format." alt="" coords="190,155,293,181"/>
+<area shape="rect" id="Node000001" title="Base class for representing a system vector on different formats." alt="" coords="64,5,176,31"/>
+<area shape="rect" id="Node000002" href="$classPETScVectors.html" title="Class for representing a set of system vectors in PETSc format." alt="" coords="5,79,115,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,43,72,80,68,77,99,40"/>
+<area shape="rect" id="Node000003" href="$classStdVector.html" title="Standard system vector stored as a single continuous array." alt="" coords="139,79,223,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,40,173,77,169,80,137,43"/>
+<area shape="rect" id="Node000004" href="$classISTLVector.html" title="Class for representing the system vector in ISTL format." alt="" coords="77,152,166,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,116,133,154,129,150,161,113"/>
+<area shape="rect" id="Node000005" href="$classPETScVector.html" title="Class for representing the system vector in PETSc format." alt="" coords="190,152,293,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="202,113,234,150,230,154,198,116"/>
 </map>

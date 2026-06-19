@@ -1,10 +1,17 @@
 <map id="STensorFieldFunction" name="STensorFieldFunction">
-<area shape="rect" id="node1" title="A symmtensor&#45;valued spatial function, defined through a vector field." alt="" coords="219,259,378,285"/>
-<area shape="rect" id="node2" href="$classSTensorFunc.html" title="Symmetric tensor&#45;valued unary function of a spatial point." alt="" coords="179,184,282,211"/>
-<area shape="rect" id="node3" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="5,95,152,136"/>
-<area shape="rect" id="node4" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="7,5,150,47"/>
-<area shape="rect" id="node5" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="176,102,285,129"/>
-<area shape="rect" id="node6" href="$classFieldsFuncBase.html" title="Base class for multi&#45;valued spatial functions, defined through fields." alt="" coords="307,184,429,211"/>
-<area shape="rect" id="node7" href="$classFieldFuncHDF5.html" title="Base class for spatial functions, defined from a HDF5&#45;file." alt="" coords="310,102,429,129"/>
-<area shape="rect" id="node8" href="$classFieldFuncBase.html" title="Base class for spatial functions, defined through patch&#45;wise fields." alt="" coords="312,13,427,39"/>
+<area shape="rect" id="Node000001" title="A symmtensor&#45;valued spatial function, defined through a vector field." alt="" coords="219,255,378,280"/>
+<area shape="rect" id="Node000002" href="$classSTensorFunc.html" title="Symmetric tensor&#45;valued unary function of a spatial point." alt="" coords="179,181,282,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,215,290,253,286,256,249,218"/>
+<area shape="rect" id="Node000003" href="$classutl_1_1SpatialFunction.html" title=" " alt="" coords="5,93,152,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,137,209,179,207,184,126,142"/>
+<area shape="rect" id="Node000004" href="$classutl_1_1Function.html" title="Base class for unary functions of arbitrary result and argument type." alt="" coords="7,5,150,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="81,59,81,93,76,93,76,59"/>
+<area shape="rect" id="Node000005" href="$classFunctionBase.html" title="Base class for unary spatial functions of arbitrary result type." alt="" coords="176,101,285,126"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="233,140,233,181,228,181,228,140"/>
+<area shape="rect" id="Node000006" href="$classFieldsFuncBase.html" title="Base class for multi&#45;valued spatial functions, defined through fields." alt="" coords="307,181,429,207"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="349,219,312,256,308,253,345,215"/>
+<area shape="rect" id="Node000007" href="$classFieldFuncHDF5.html" title="Base class for spatial functions, defined from a HDF5&#45;file." alt="" coords="310,101,429,126"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="372,140,371,181,366,181,366,140"/>
+<area shape="rect" id="Node000008" href="$classFieldFuncBase.html" title="Base class for spatial functions, defined through patch&#45;wise fields." alt="" coords="312,13,427,38"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="372,52,372,100,367,100,367,52"/>
 </map>

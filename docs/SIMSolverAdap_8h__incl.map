@@ -1,42 +1,109 @@
-<map id="Apps/Common/SIMSolverAdap.h" name="Apps/Common/SIMSolverAdap.h">
-<area shape="rect" id="node1" title="Stationary, adaptive SIM solver class template." alt="" coords="596,5,827,32"/>
-<area shape="rect" id="node2" href="$SIMSolver_8h.html" title="SIM solver class template." alt="" coords="527,155,626,181"/>
-<area shape="rect" id="node22" href="$TimeStep_8h.html" title="Class for encapsulation of general time stepping parameters." alt="" coords="578,379,674,405"/>
-<area shape="rect" id="node30" href="$AdaptiveSIM_8h.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="752,80,868,107"/>
-<area shape="rect" id="node3" href="$IFEM_8h.html" title="Initialization of the IFEM library." alt="" coords="607,304,674,331"/>
-<area shape="rect" id="node15" href="$SIMadmin_8h.html" title="Administration base class for FEM simulators." alt="" coords="761,229,859,256"/>
-<area shape="rect" id="node24" href="$HDF5Restart_8h.html" title="Output of restart data to HDF5." alt="" coords="150,229,267,256"/>
-<area shape="rect" id="node26" href="$HDF5Writer_8h.html" title="Output of model and results to HDF5 file." alt="" coords="341,229,450,256"/>
-<area shape="rect" id="node29" title=" " alt="" coords="531,229,623,256"/>
-<area shape="rect" id="node4" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="109,379,215,405"/>
-<area shape="rect" id="node9" href="$LogStream_8h.html" title="Log stream class." alt="" coords="898,379,1002,405"/>
-<area shape="rect" id="node14" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="699,379,823,405"/>
-<area shape="rect" id="node5" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="149,453,255,480"/>
-<area shape="rect" id="node6" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="5,453,124,480"/>
-<area shape="rect" id="node7" title=" " alt="" coords="461,453,519,480"/>
-<area shape="rect" id="node8" title=" " alt="" coords="301,453,351,480"/>
-<area shape="rect" id="node10" title=" " alt="" coords="730,453,810,480"/>
-<area shape="rect" id="node11" title=" " alt="" coords="834,453,909,480"/>
-<area shape="rect" id="node12" title=" " alt="" coords="933,453,1010,480"/>
-<area shape="rect" id="node13" title=" " alt="" coords="1035,453,1097,480"/>
-<area shape="rect" id="node16" href="$XMLInputBase_8h.html" title="Base class for XML input parsing functionality." alt="" coords="915,304,1041,331"/>
-<area shape="rect" id="node17" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="1074,304,1189,331"/>
-<area shape="rect" id="node18" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="1179,379,1361,405"/>
-<area shape="rect" id="node19" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="1121,453,1213,480"/>
-<area shape="rect" id="node20" title=" " alt="" coords="1238,453,1281,480"/>
-<area shape="rect" id="node21" title=" " alt="" coords="1305,453,1376,480"/>
-<area shape="rect" id="node23" href="$TimeDomain_8h.html" title="Time domain representation for time&#45;dependent and nonlinear solvers." alt="" coords="567,453,685,480"/>
-<area shape="rect" id="node25" href="$HDF5Base_8h.html" title="Base class for interacting with HDF5 files." alt="" coords="157,304,260,331"/>
-<area shape="rect" id="node27" href="$DataExporter_8h.html" title="Administer and write data using DataWriters." alt="" coords="336,304,455,331"/>
-<area shape="rect" id="node28" href="$ControlFIFO_8h.html" title="Application control over a FIFO." alt="" coords="291,379,401,405"/>
-<area shape="rect" id="node31" href="$AdaptiveSetup_8h.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="853,155,983,181"/>
-<area shape="rect" id="node32" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="1119,229,1202,256"/>
-<area shape="rect" id="node33" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="1350,304,1443,331"/>
-<area shape="rect" id="node34" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="1505,379,1582,405"/>
-<area shape="rect" id="node35" title=" " alt="" coords="1401,453,1486,480"/>
-<area shape="rect" id="node36" title=" " alt="" coords="1510,453,1577,480"/>
-<area shape="rect" id="node37" title=" " alt="" coords="1601,453,1667,480"/>
-<area shape="rect" id="node38" title=" " alt="" coords="1691,453,1753,480"/>
-<area shape="rect" id="node39" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="1777,453,1845,480"/>
-<area shape="rect" id="node40" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="1870,453,1958,480"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMSolverAdap.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMSolverAdap.h">
+<area shape="rect" id="Node000001" title="Stationary, adaptive SIM solver class template." alt="" coords="368,5,590,60"/>
+<area shape="rect" id="Node000002" href="$SIMSolver_8h.html" title="SIM solver class template." alt="" coords="343,181,442,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,61,407,171,403,168,462,59"/>
+<area shape="rect" id="Node000022" href="$TimeStep_8h.html" title="Class for encapsulation of general time stepping parameters." alt="" coords="483,401,579,427"/>
+<area shape="poly" id="edge66_Node000001_Node000022" title=" " alt="" coords="482,60,482,193,482,269,485,302,495,334,519,388,514,390,490,336,480,303,476,269,476,193,476,60"/>
+<area shape="rect" id="Node000030" href="$AdaptiveSIM_8h.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="661,108,777,133"/>
+<area shape="poly" id="edge51_Node000001_Node000030" title=" " alt="" coords="553,58,675,101,673,106,551,63"/>
+<area shape="rect" id="Node000003" href="$IFEM_8h.html" title="Initialization of the IFEM library." alt="" coords="620,328,687,353"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="415,205,622,319,620,324,412,209"/>
+<area shape="rect" id="Node000015" href="$SIMadmin_8h.html" title="Administration base class for FEM simulators." alt="" coords="670,255,768,280"/>
+<area shape="poly" id="edge15_Node000002_Node000015" title=" " alt="" coords="443,203,657,250,656,255,441,209"/>
+<area shape="poly" id="edge31_Node000002_Node000022" title=" " alt="" coords="378,209,361,223,346,240,337,260,340,279,369,318,407,351,448,376,487,394,484,399,446,380,404,355,365,322,335,281,332,259,341,238,357,219,374,205"/>
+<area shape="rect" id="Node000024" href="$HDF5Restart_8h.html" title="Output of restart data to HDF5." alt="" coords="14,255,131,280"/>
+<area shape="poly" id="edge37_Node000002_Node000024" title=" " alt="" coords="343,209,138,254,136,249,342,204"/>
+<area shape="rect" id="Node000026" href="$HDF5Writer_8h.html" title="Output of model and results to HDF5 file." alt="" coords="156,255,266,280"/>
+<area shape="poly" id="edge41_Node000002_Node000026" title=" " alt="" coords="364,209,254,252,252,247,362,204"/>
+<area shape="rect" id="Node000029" title=" " alt="" coords="349,255,441,280"/>
+<area shape="poly" id="edge50_Node000002_Node000029" title=" " alt="" coords="395,207,397,241,391,241,390,207"/>
+<area shape="rect" id="Node000004" href="$SIMoptions_8h.html" title="Class for encapsulation of general simulation options." alt="" coords="352,401,459,427"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="621,354,459,400,458,395,619,349"/>
+<area shape="rect" id="Node000009" href="$LogStream_8h.html" title="Log stream class." alt="" coords="803,401,907,427"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="687,351,810,394,809,399,685,356"/>
+<area shape="rect" id="Node000014" href="$ScopedLogger_8h.html" title="Scoped logger." alt="" coords="604,401,728,427"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="658,353,664,387,659,388,653,354"/>
+<area shape="rect" id="Node000005" href="$ASMenums_8h.html" title="Various enums for assembly scope." alt="" coords="219,475,326,500"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="385,429,307,470,305,466,383,424"/>
+<area shape="rect" id="Node000006" href="$LinAlgenums_8h.html" title="Various enums for linear algebra scope." alt="" coords="350,475,469,500"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="409,427,411,461,406,461,404,427"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="136,475,195,500"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="368,429,209,476,207,471,366,424"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="62,475,112,500"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="352,428,251,448,126,477,125,472,250,443,351,423"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="635,475,715,500"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="827,429,718,472,716,467,825,424"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="739,475,814,500"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="844,429,801,467,797,464,841,425"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="838,475,915,500"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="861,426,871,461,866,462,856,428"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1217,475,1280,500"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="908,422,921,424,1061,446,1204,472,1203,477,1060,451,920,429,907,427"/>
+<area shape="poly" id="edge14_Node000014_Node000010" title=" " alt="" coords="670,427,674,461,669,462,665,427"/>
+<area shape="poly" id="edge18_Node000015_Node000004" title=" " alt="" coords="698,282,549,356,448,399,446,394,547,351,696,278"/>
+<area shape="poly" id="edge30_Node000015_Node000007" title=" " alt="" coords="687,283,549,331,444,365,341,404,201,471,198,466,339,399,443,360,547,325,685,278"/>
+<area shape="poly" id="edge29_Node000015_Node000010" title=" " alt="" coords="727,279,738,307,748,344,752,386,749,407,743,428,728,450,708,468,705,464,724,447,738,426,744,406,746,386,743,345,733,308,722,281"/>
+<area shape="rect" id="Node000016" href="$XMLInputBase_8h.html" title="Base class for XML input parsing functionality." alt="" coords="1106,328,1233,353"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="769,274,1093,325,1092,330,768,279"/>
+<area shape="rect" id="Node000017" href="$ProcessAdm_8h.html" title="Class for administration MPI processes used by the IFEM library, in particular parallel linear algebr..." alt="" coords="884,328,999,353"/>
+<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="756,277,894,321,892,326,754,283"/>
+<area shape="poly" id="edge17_Node000016_Node000013" title=" " alt="" coords="1184,352,1205,373,1224,400,1237,431,1246,460,1241,462,1232,432,1219,403,1200,376,1181,355"/>
+<area shape="poly" id="edge28_Node000017_Node000009" title=" " alt="" coords="929,355,881,395,878,390,926,351"/>
+<area shape="poly" id="edge20_Node000017_Node000013" title=" " alt="" coords="1000,345,1084,363,1130,378,1172,399,1208,429,1235,461,1231,464,1205,433,1170,404,1128,383,1083,368,999,350"/>
+<area shape="rect" id="Node000018" href="$DomainDecomposition_8h.html" title="Domain decomposition related partitioning for FE models." alt="" coords="932,401,1114,427"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="956,351,1001,390,998,394,953,355"/>
+<area shape="poly" id="edge25_Node000018_Node000007" title=" " alt="" coords="931,428,919,429,721,441,565,444,408,452,317,462,209,478,208,472,316,456,408,447,564,439,721,436,919,424,931,423"/>
+<area shape="poly" id="edge23_Node000018_Node000008" title=" " alt="" coords="931,428,919,429,799,437,697,441,523,441,348,448,246,459,127,478,126,472,246,454,348,443,523,436,697,435,799,432,919,424,931,423"/>
+<area shape="poly" id="edge26_Node000018_Node000013" title=" " alt="" coords="1060,424,1205,470,1203,475,1058,429"/>
+<area shape="rect" id="Node000019" href="$Interface_8h.html" title="Representation of domain interfaces." alt="" coords="1101,475,1193,500"/>
+<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="1044,424,1116,465,1114,470,1042,429"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="939,475,982,500"/>
+<area shape="poly" id="edge24_Node000018_Node000020" title=" " alt="" coords="1015,429,982,466,978,462,1011,425"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="1006,475,1077,500"/>
+<area shape="poly" id="edge27_Node000018_Node000021" title=" " alt="" coords="1029,426,1038,461,1033,462,1024,428"/>
+<area shape="poly" id="edge36_Node000022_Node000007" title=" " alt="" coords="483,427,471,429,342,451,209,477,208,472,341,446,471,424,482,422"/>
+<area shape="poly" id="edge35_Node000022_Node000008" title=" " alt="" coords="483,427,471,429,376,443,300,450,224,459,126,477,125,472,223,454,299,445,375,437,471,424,482,422"/>
+<area shape="poly" id="edge33_Node000022_Node000010" title=" " alt="" coords="555,424,640,466,638,471,553,429"/>
+<area shape="poly" id="edge34_Node000022_Node000013" title=" " alt="" coords="580,422,593,424,763,440,897,444,1032,450,1111,459,1204,472,1203,477,1110,464,1031,456,897,450,762,445,592,429,579,427"/>
+<area shape="rect" id="Node000023" href="$TimeDomain_8h.html" title="Time domain representation for time&#45;dependent and nonlinear solvers." alt="" coords="493,475,612,500"/>
+<area shape="poly" id="edge32_Node000022_Node000023" title=" " alt="" coords="537,426,547,461,542,462,532,428"/>
+<area shape="poly" id="edge40_Node000024_Node000008" title=" " alt="" coords="55,282,30,302,11,329,8,340,11,353,22,384,38,414,71,463,67,466,33,417,18,386,6,354,3,340,6,327,26,298,51,278"/>
+<area shape="rect" id="Node000025" href="$HDF5Base_8h.html" title="Base class for interacting with HDF5 files." alt="" coords="21,328,124,353"/>
+<area shape="poly" id="edge38_Node000024_Node000025" title=" " alt="" coords="75,280,75,314,70,314,70,280"/>
+<area shape="poly" id="edge39_Node000025_Node000007" title=" " alt="" coords="77,353,87,387,105,425,122,446,141,464,137,468,118,450,101,428,82,389,72,354"/>
+<area shape="poly" id="edge49_Node000026_Node000025" title=" " alt="" coords="190,282,108,324,106,319,188,278"/>
+<area shape="rect" id="Node000027" href="$DataExporter_8h.html" title="Administer and write data using DataWriters." alt="" coords="152,328,270,353"/>
+<area shape="poly" id="edge42_Node000026_Node000027" title=" " alt="" coords="214,280,214,314,208,314,208,280"/>
+<area shape="poly" id="edge47_Node000027_Node000007" title=" " alt="" coords="223,353,241,386,245,407,241,428,224,452,202,469,199,465,220,448,237,426,240,407,236,388,218,355"/>
+<area shape="poly" id="edge46_Node000027_Node000008" title=" " alt="" coords="174,356,137,374,120,387,105,403,93,431,89,461,84,461,88,430,101,400,116,383,134,370,172,351"/>
+<area shape="poly" id="edge48_Node000027_Node000013" title=" " alt="" coords="270,341,740,362,986,379,1075,388,1128,399,1174,426,1225,464,1222,468,1171,430,1126,404,1074,394,986,384,740,367,270,347"/>
+<area shape="rect" id="Node000028" href="$ControlFIFO_8h.html" title="Application control over a FIFO." alt="" coords="116,401,226,427"/>
+<area shape="poly" id="edge43_Node000027_Node000028" title=" " alt="" coords="207,355,187,391,182,388,202,352"/>
+<area shape="poly" id="edge44_Node000028_Node000007" title=" " alt="" coords="173,427,170,461,165,461,167,427"/>
+<area shape="poly" id="edge45_Node000028_Node000008" title=" " alt="" coords="159,429,113,468,110,463,156,425"/>
+<area shape="poly" id="edge52_Node000030_Node000015" title=" " alt="" coords="722,134,722,241,716,241,716,134"/>
+<area shape="rect" id="Node000031" href="$AdaptiveSetup_8h.html" title="Adaptive solution setup for linear and nonlinear FEM simulators." alt="" coords="921,181,1050,207"/>
+<area shape="poly" id="edge53_Node000030_Node000031" title=" " alt="" coords="763,131,930,175,928,180,761,136"/>
+<area shape="rect" id="Node000032" href="$MatVec_8h.html" title="Global algebraic operations on index 1&#45;based matrices and vectors." alt="" coords="944,255,1027,280"/>
+<area shape="poly" id="edge54_Node000031_Node000032" title=" " alt="" coords="988,207,988,241,983,241,983,207"/>
+<area shape="rect" id="Node000041" title=" " alt="" coords="1052,255,1112,280"/>
+<area shape="poly" id="edge65_Node000031_Node000041" title=" " alt="" coords="1003,205,1056,244,1053,248,1000,209"/>
+<area shape="rect" id="Node000033" href="$matrixnd_8h.html" title="Simple template classes for dense multi&#45;dimensional matrices." alt="" coords="1327,328,1420,353"/>
+<area shape="poly" id="edge55_Node000032_Node000033" title=" " alt="" coords="1028,275,1041,277,1314,327,1313,332,1040,283,1027,280"/>
+<area shape="rect" id="Node000034" href="$matrix_8h.html" title="Simple template classes for dense rectangular matrices and vectors." alt="" coords="1408,401,1486,427"/>
+<area shape="poly" id="edge56_Node000033_Node000034" title=" " alt="" coords="1388,352,1427,390,1423,394,1384,356"/>
+<area shape="poly" id="edge58_Node000034_Node000010" title=" " alt="" coords="1408,419,1129,435,933,452,729,477,728,472,932,447,1128,430,1408,414"/>
+<area shape="poly" id="edge57_Node000034_Node000013" title=" " alt="" coords="1416,429,1294,473,1292,468,1414,424"/>
+<area shape="rect" id="Node000035" title=" " alt="" coords="1304,475,1390,500"/>
+<area shape="poly" id="edge59_Node000034_Node000035" title=" " alt="" coords="1432,429,1376,469,1373,464,1429,425"/>
+<area shape="rect" id="Node000036" title=" " alt="" coords="1414,475,1480,500"/>
+<area shape="poly" id="edge60_Node000034_Node000036" title=" " alt="" coords="1450,427,1450,461,1444,461,1444,427"/>
+<area shape="rect" id="Node000037" title=" " alt="" coords="1505,475,1570,500"/>
+<area shape="poly" id="edge61_Node000034_Node000037" title=" " alt="" coords="1463,425,1513,464,1510,468,1460,429"/>
+<area shape="rect" id="Node000038" title=" " alt="" coords="1594,475,1657,500"/>
+<area shape="poly" id="edge62_Node000034_Node000038" title=" " alt="" coords="1477,424,1585,467,1583,472,1475,429"/>
+<area shape="rect" id="Node000039" href="$BLAS_8h.html" title="BLAS support for various platforms." alt="" coords="1681,475,1749,500"/>
+<area shape="poly" id="edge63_Node000034_Node000039" title=" " alt="" coords="1487,423,1668,471,1667,476,1485,428"/>
+<area shape="rect" id="Node000040" href="$print__tol_8h.html" title="Global parameters for controlling the print of vectors and matrices." alt="" coords="1774,475,1862,500"/>
+<area shape="poly" id="edge64_Node000034_Node000040" title=" " alt="" coords="1486,420,1760,472,1759,477,1485,425"/>
 </map>

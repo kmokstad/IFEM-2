@@ -1,6 +1,9 @@
-<map id="src/LinAlg/SPRMatrix.h" name="src/LinAlg/SPRMatrix.h">
-<area shape="rect" id="node1" title="Representation of the system matrix on the SPR&#45;format with interface to a Fortran module for assembli..." alt="" coords="173,5,341,32"/>
-<area shape="rect" id="node2" href="$EigSolver_8C.html" title="Interface to LAPack and ARPack eigenvalue solvers." alt="" coords="5,80,148,107"/>
-<area shape="rect" id="node3" href="$SPRMatrix_8C.html" title="Representation of the system matrix on the SPR&#45;format." alt="" coords="172,80,341,107"/>
-<area shape="rect" id="node4" href="$SystemMatrix_8C.html" title="General representation of the system matrix on different forms." alt="" coords="365,80,559,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/SPRMatrix.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/SPRMatrix.h">
+<area shape="rect" id="Node000001" title="Representation of the system matrix on the SPR&#45;format with interface to a Fortran module for assembli..." alt="" coords="237,5,472,45"/>
+<area shape="rect" id="Node000002" href="$EigSolver_8C.html" title="Interface to LAPack and ARPack eigenvalue solvers." alt="" coords="5,93,213,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,52,164,96,162,91,287,47"/>
+<area shape="rect" id="Node000003" href="$SPRMatrix_8C.html" title="Representation of the system matrix on the SPR&#45;format." alt="" coords="237,93,472,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="357,59,357,93,352,93,352,59"/>
+<area shape="rect" id="Node000004" href="$SystemMatrix_8C.html" title="General representation of the system matrix on different forms." alt="" coords="496,93,755,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="428,47,567,91,565,96,426,52"/>
 </map>

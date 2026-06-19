@@ -1,4 +1,5 @@
 <map id="SIMNodalConstraint&lt; Dim &gt;" name="SIMNodalConstraint&lt; Dim &gt;">
-<area shape="rect" id="node1" title="Inherit this class to equip your SIM with nodal constraints." alt="" coords="5,80,156,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="56,5,105,32"/>
+<area shape="rect" id="Node000001" title="Inherit this class to equip your SIM with nodal constraints." alt="" coords="5,79,156,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="56,5,105,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,44,83,79,78,79,78,44"/>
 </map>

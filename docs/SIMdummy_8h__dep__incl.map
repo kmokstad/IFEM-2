@@ -1,5 +1,7 @@
-<map id="src/SIM/SIMdummy.h" name="src/SIM/SIMdummy.h">
-<area shape="rect" id="node1" title="Dummy SIM template class for drivers not associated with a FE model." alt="" coords="5,5,163,32"/>
-<area shape="rect" id="node2" href="$SIMsupel_8h.html" title="Solution driver for general superelement FEM analysis." alt="" coords="12,80,156,107"/>
-<area shape="rect" id="node3" href="$SIMsupel_8C.html" title="Solution driver for general superelement FEM analysis." alt="" coords="11,155,157,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/SIMdummy.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/SIMdummy.h">
+<area shape="rect" id="Node000001" title="Dummy SIM template class for drivers not associated with a FE model." alt="" coords="5,5,228,45"/>
+<area shape="rect" id="Node000002" href="$SIMsupel_8h.html" title="Solution driver for general superelement FEM analysis." alt="" coords="11,93,222,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,59,119,93,114,93,114,59"/>
+<area shape="rect" id="Node000003" href="$SIMsupel_8C.html" title="Solution driver for general superelement FEM analysis." alt="" coords="11,181,222,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,147,119,181,114,181,114,147"/>
 </map>

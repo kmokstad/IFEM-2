@@ -1,9 +1,15 @@
 <map id="SPRMatrix" name="SPRMatrix">
-<area shape="rect" id="node1" title="Class for representing the system matrix on the SPR&#45;format." alt="" coords="277,213,366,240"/>
-<area shape="rect" id="node2" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="23,109,137,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,155,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="161,109,311,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="335,109,481,136"/>
-<area shape="rect" id="node6" href="$classSAM.html" title="This class contains data and functions for the assembly of FE matrices." alt="" coords="505,109,557,136"/>
-<area shape="rect" id="node7" title=" " alt="" coords="456,5,605,32"/>
+<area shape="rect" id="Node000001" title="Class for representing the system matrix on the SPR&#45;format." alt="" coords="274,211,363,236"/>
+<area shape="rect" id="Node000002" href="$classSystemMatrix.html" title="Base class for representing a system matrix on different formats." alt="" coords="23,108,137,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,136,293,208,291,213,119,141"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,155,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,45,83,108,77,108,77,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="161,108,306,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="254,142,311,209,307,212,250,146"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="330,108,481,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="388,146,331,212,326,209,384,142"/>
+<area shape="rect" id="Node000006" href="$classSAM.html" title="This class contains data and functions for the assembly of FE matrices." alt="" coords="505,108,557,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="504,143,422,189,359,213,357,208,420,184,501,139"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="456,5,605,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="533,45,533,108,528,108,528,45"/>
 </map>

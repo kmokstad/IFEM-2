@@ -1,4 +1,5 @@
-<map id="Apps/Common/SIMMultiPatchModelGen.h" name="Apps/Common/SIMMultiPatchModelGen.h">
-<area shape="rect" id="node1" title="Base class for simulators equipped with multi&#45;patch model generators." alt="" coords="5,5,219,47"/>
-<area shape="rect" id="node2" href="$SIMMultiPatchModelGen_8C.html" title="Base class for simulators equipped with multi&#45;patch model generators." alt="" coords="5,95,219,136"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMMultiPatchModelGen.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/Apps/Utils/SIMMultiPatchModelGen.h">
+<area shape="rect" id="Node000001" title="Base class for simulators equipped with multi&#45;patch model generators." alt="" coords="5,5,220,60"/>
+<area shape="rect" id="Node000002" href="$SIMMultiPatchModelGen_8C.html" title="Base class for simulators equipped with multi&#45;patch model generators." alt="" coords="5,108,220,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,74,115,108,110,108,110,74"/>
 </map>

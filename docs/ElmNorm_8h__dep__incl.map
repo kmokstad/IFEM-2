@@ -1,6 +1,9 @@
-<map id="src/ASM/ElmNorm.h" name="src/ASM/ElmNorm.h">
-<area shape="rect" id="node1" title="Representation of integrated norm quantities over an element." alt="" coords="170,5,321,32"/>
-<area shape="rect" id="node2" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="5,80,147,107"/>
-<area shape="rect" id="node3" href="$GlbNorm_8C.html" title="Representation of integrated norm quantities over an element." alt="" coords="171,80,320,107"/>
-<area shape="rect" id="node4" href="$IntegrandBase_8C.html" title="Base classes representing FEM integrands." alt="" coords="345,80,530,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ElmNorm.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ElmNorm.h">
+<area shape="rect" id="Node000001" title="Representation of integrated norm quantities over an element." alt="" coords="261,5,479,45"/>
+<area shape="rect" id="Node000002" href="$GlbNorm_8C.html" title="Representation of integrated norm quantities over an element." alt="" coords="5,93,220,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="301,52,170,96,168,91,300,47"/>
+<area shape="rect" id="Node000003" href="$IntegrandBase_8C.html" title="Base classes representing FEM integrands." alt="" coords="245,93,495,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="373,59,373,93,367,93,367,59"/>
+<area shape="rect" id="Node000004" href="$SIMbase_8C.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="520,93,727,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="439,47,569,91,567,96,438,52"/>
 </map>

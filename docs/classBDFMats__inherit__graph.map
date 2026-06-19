@@ -1,5 +1,7 @@
 <map id="BDFMats" name="BDFMats">
-<area shape="rect" id="node1" title="Class representing the element matrices for a dynamic FEM problem using backward difference formulae ..." alt="" coords="18,155,99,181"/>
-<area shape="rect" id="node2" href="$classElmMats.html" title="Class collecting the element matrices associated with a FEM problem." alt="" coords="19,80,98,107"/>
-<area shape="rect" id="node3" href="$classLocalIntegral.html" title="Abstract base class representing an element level integrated quantity." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="Node000001" title="Class representing the element matrices for a dynamic FEM problem using backward difference formulae ..." alt="" coords="18,152,99,177"/>
+<area shape="rect" id="Node000002" href="$classElmMats.html" title="Class collecting the element matrices associated with a FEM problem." alt="" coords="19,79,98,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,118,61,152,56,152,56,118"/>
+<area shape="rect" id="Node000003" href="$classLocalIntegral.html" title="Abstract base class representing an element level integrated quantity." alt="" coords="5,5,112,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="61,44,61,79,56,79,56,44"/>
 </map>

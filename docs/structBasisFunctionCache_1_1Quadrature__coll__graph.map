@@ -1,8 +1,13 @@
 <map id="BasisFunctionCache&lt; Dim &gt;::Quadrature" name="BasisFunctionCache&lt; Dim &gt;::Quadrature">
-<area shape="rect" id="node1" title="Template struct holding information about a quadrature." alt="" coords="664,58,824,99"/>
-<area shape="rect" id="node2" title=" " alt="" coords="408,5,575,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="400,58,583,99"/>
-<area shape="rect" id="node4" title=" " alt="" coords="408,123,575,165"/>
-<area shape="rect" id="node5" title=" " alt="" coords="157,131,287,157"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,131,44,157"/>
+<area shape="rect" id="Node000001" title="Template struct holding information about a quadrature." alt="" coords="664,58,824,98"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="408,5,575,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="577,31,641,45,680,55,678,61,639,50,576,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="400,58,583,98"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="597,75,664,75,664,81,597,81"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="408,122,575,162"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="584,116,664,95,665,101,585,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="157,129,287,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="300,139,408,139,408,145,300,145"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,129,44,155"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="58,139,157,139,157,145,58,145"/>
 </map>

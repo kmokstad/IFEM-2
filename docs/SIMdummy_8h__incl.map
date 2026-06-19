@@ -1,5 +1,7 @@
-<map id="src/SIM/SIMdummy.h" name="src/SIM/SIMdummy.h">
-<area shape="rect" id="node1" title="Dummy SIM template class for drivers not associated with a FE model." alt="" coords="6,5,163,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,68,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="93,80,173,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/SIMdummy.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/SIMdummy.h">
+<area shape="rect" id="Node000001" title="Dummy SIM template class for drivers not associated with a FE model." alt="" coords="5,5,228,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="37,93,100,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,47,85,83,81,80,103,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="125,93,205,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,44,153,80,148,83,126,47"/>
 </map>

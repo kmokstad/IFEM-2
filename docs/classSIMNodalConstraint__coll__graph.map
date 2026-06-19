@@ -1,8 +1,13 @@
 <map id="SIMNodalConstraint&lt; Dim &gt;" name="SIMNodalConstraint&lt; Dim &gt;">
-<area shape="rect" id="node1" title="Inherit this class to equip your SIM with nodal constraints." alt="" coords="5,364,156,405"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,275,55,301"/>
-<area shape="rect" id="node3" title=" " alt="" coords="79,275,299,301"/>
-<area shape="rect" id="node4" href="$structTopSetToVertex.html" title="Describes a topologyset constrained to a vertex." alt="" coords="128,185,249,212"/>
-<area shape="rect" id="node5" title=" " alt="" coords="145,96,232,123"/>
-<area shape="rect" id="node6" title=" " alt="" coords="119,5,258,47"/>
+<area shape="rect" id="Node000001" title="Inherit this class to equip your SIM with nodal constraints." alt="" coords="5,359,156,399"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,271,55,296"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,307,73,357,68,360,40,309"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="79,271,299,296"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,307,104,361,101,356,163,303"/>
+<area shape="rect" id="Node000004" href="$structTopSetToVertex.html" title="Describes a topologyset constrained to a vertex." alt="" coords="128,183,249,208"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="191,222,191,270,186,270,186,222"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="145,95,232,120"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="191,134,191,182,186,182,186,134"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="119,5,258,45"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="191,59,191,94,186,94,186,59"/>
 </map>

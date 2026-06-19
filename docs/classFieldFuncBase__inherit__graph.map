@@ -1,15 +1,27 @@
 <map id="FieldFuncBase" name="FieldFuncBase">
-<area shape="rect" id="node1" title="Base class for spatial functions, defined through patch&#45;wise fields." alt="" coords="5,169,120,196"/>
-<area shape="rect" id="node2" href="$classFieldFuncHDF5.html" title="Base class for spatial functions, defined from a HDF5&#45;file." alt="" coords="174,144,293,171"/>
-<area shape="rect" id="node13" href="$classFieldFuncStream.html" title="A scalar&#45;valued spatial function, defined through scalar fields." alt="" coords="168,195,299,221"/>
-<area shape="rect" id="node3" href="$classFieldFuncScalarBase.html" title="Base class for field functions derived from a scalar field." alt="" coords="347,81,501,108"/>
-<area shape="rect" id="node7" href="$classFieldsFuncBase.html" title="Base class for multi&#45;valued spatial functions, defined through fields." alt="" coords="363,233,485,260"/>
-<area shape="rect" id="node4" href="$classFieldFunction.html" title="A scalar&#45;valued spatial function, defined through scalar fields." alt="" coords="601,5,709,32"/>
-<area shape="rect" id="node5" href="$classScalarGradFieldFunction.html" title="A vector&#45;valued spatial function, defined through gradient of a scalar field." alt="" coords="565,56,744,83"/>
-<area shape="rect" id="node6" href="$classScalarLaplacianFieldFunction.html" title="A vector&#45;valued spatial function, defined through laplacian of a scalar field." alt="" coords="549,107,760,133"/>
-<area shape="rect" id="node8" href="$classSTensorFieldFunction.html" title="A symmtensor&#45;valued spatial function, defined through a vector field." alt="" coords="575,157,734,184"/>
-<area shape="rect" id="node9" href="$classTensorFieldFunction.html" title="A tensor&#45;valued spatial function, defined through a vector field." alt="" coords="579,208,730,235"/>
-<area shape="rect" id="node10" href="$classVecFieldFunction.html" title="A vector&#45;valued spatial function, defined through a vector field." alt="" coords="589,259,720,285"/>
-<area shape="rect" id="node11" href="$classVecGradFieldFunction.html" title="A tensor&#45;valued spatial function, defined through gradient of a vector field." alt="" coords="573,309,736,336"/>
-<area shape="rect" id="node12" href="$classVecLaplacianFieldFunction.html" title="A tensor&#45;valued spatial function, defined through laplacian of a vector field." alt="" coords="558,360,751,387"/>
+<area shape="rect" id="Node000001" title="Base class for spatial functions, defined through patch&#45;wise fields." alt="" coords="5,167,120,192"/>
+<area shape="rect" id="Node000002" href="$classFieldFuncHDF5.html" title="Base class for spatial functions, defined from a HDF5&#45;file." alt="" coords="174,141,293,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,166,173,160,174,165,134,171"/>
+<area shape="rect" id="Node000013" href="$classFieldFuncStream.html" title="A scalar&#45;valued spatial function, defined through scalar fields." alt="" coords="168,191,299,216"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="134,187,168,192,168,197,134,192"/>
+<area shape="rect" id="Node000003" href="$classFieldFuncScalarBase.html" title="Base class for field functions derived from a scalar field." alt="" coords="347,80,501,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,134,383,103,385,108,288,140"/>
+<area shape="rect" id="Node000007" href="$classFieldsFuncBase.html" title="Base class for multi&#45;valued spatial functions, defined through fields." alt="" coords="363,227,485,252"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="284,169,300,176,400,224,398,229,298,180,282,174"/>
+<area shape="rect" id="Node000004" href="$classFieldFunction.html" title="A scalar&#45;valued spatial function, defined through scalar fields." alt="" coords="601,5,709,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="464,72,549,39,600,26,601,31,550,45,466,77"/>
+<area shape="rect" id="Node000005" href="$classScalarGradFieldFunction.html" title="A vector&#45;valued spatial function, defined through gradient of a scalar field." alt="" coords="565,55,744,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="515,80,565,74,565,80,516,85"/>
+<area shape="rect" id="Node000006" href="$classScalarLaplacianFieldFunction.html" title="A vector&#45;valued spatial function, defined through laplacian of a scalar field." alt="" coords="549,104,760,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="516,99,549,103,549,108,515,105"/>
+<area shape="rect" id="Node000008" href="$classSTensorFieldFunction.html" title="A symmtensor&#45;valued spatial function, defined through a vector field." alt="" coords="575,153,734,179"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="465,219,549,187,591,176,592,181,550,193,467,224"/>
+<area shape="rect" id="Node000009" href="$classTensorFieldFunction.html" title="A tensor&#45;valued spatial function, defined through a vector field." alt="" coords="579,203,730,228"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="499,229,579,220,579,226,500,234"/>
+<area shape="rect" id="Node000010" href="$classVecFieldFunction.html" title="A vector&#45;valued spatial function, defined through a vector field." alt="" coords="589,252,720,277"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="500,245,589,255,589,260,499,250"/>
+<area shape="rect" id="Node000011" href="$classVecGradFieldFunction.html" title="A tensor&#45;valued spatial function, defined through gradient of a vector field." alt="" coords="573,301,736,327"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="467,255,550,286,595,299,594,304,549,291,466,260"/>
+<area shape="rect" id="Node000012" href="$classVecLaplacianFieldFunction.html" title="A tensor&#45;valued spatial function, defined through laplacian of a vector field." alt="" coords="558,351,751,376"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="449,259,493,299,551,336,584,348,582,353,548,340,490,303,445,263"/>
 </map>

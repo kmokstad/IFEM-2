@@ -1,4 +1,5 @@
-<map id="src/ASM/ImmersedBoundaries.h" name="src/ASM/ImmersedBoundaries.h">
-<area shape="rect" id="node1" title="Utilities for immersed boundary calculations." alt="" coords="5,5,235,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="89,80,151,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ImmersedBoundaries.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/ASM/ImmersedBoundaries.h">
+<area shape="rect" id="Node000001" title="Utilities for immersed boundary calculations." alt="" coords="5,5,300,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="121,93,184,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,46,155,79,150,79,150,46"/>
 </map>

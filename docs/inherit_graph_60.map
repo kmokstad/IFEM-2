@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structInterface.html" title="A struct defining a patch interface for C1&#45;continuous models." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="Node000000" href="$classIntegrand.html" title="Abstract base class representing a system level integrated quantity." alt="" coords="5,55,89,80"/>
+<area shape="rect" id="Node000001" href="$classForceBase.html" title="Base class representing a system level boundary force quantity." alt="" coords="151,5,240,31"/>
+<area shape="poly" id="edge187_Node000000_Node000001" title=" " alt="" coords="98,48,155,28,157,33,100,53"/>
+<area shape="rect" id="Node000002" href="$classIntegrandBase.html" title="Base class representing a system level integrated quantity." alt="" coords="137,55,253,80"/>
+<area shape="poly" id="edge188_Node000000_Node000002" title=" " alt="" coords="103,65,137,65,137,70,103,70"/>
+<area shape="rect" id="Node000004" href="$classNormBase.html" title="Base class representing a system level norm quantity." alt="" coords="150,104,241,129"/>
+<area shape="poly" id="edge190_Node000000_Node000004" title=" " alt="" coords="100,82,157,101,155,106,98,87"/>
+<area shape="rect" id="Node000003" href="$classHasGravityBase.html" title="Base class representing a FEM integrand with gravity terms." alt="" coords="301,55,428,80"/>
+<area shape="poly" id="edge189_Node000002_Node000003" title=" " alt="" coords="267,65,301,65,301,70,267,70"/>
 </map>

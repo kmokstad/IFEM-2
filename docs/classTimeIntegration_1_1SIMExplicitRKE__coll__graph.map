@@ -1,8 +1,14 @@
 <map id="TimeIntegration::SIMExplicitRKE&lt; Solver &gt;" name="TimeIntegration::SIMExplicitRKE&lt; Solver &gt;">
-<area shape="rect" id="node1" title="Explicit embedded Runge&#45;Kutta based time stepping for SIM classes." alt="" coords="20,365,227,407"/>
-<area shape="rect" id="node2" href="$classTimeIntegration_1_1SIMExplicitRK.html" title="Explicit Runge&#45;Kutta based time stepping for SIM classes." alt="" coords="119,275,325,316"/>
-<area shape="rect" id="node3" href="$structTimeIntegration_1_1RKTableaux.html" title="Struct holding a Runge&#45;Kutta tableaux." alt="" coords="119,185,328,212"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,81,156,108"/>
-<area shape="rect" id="node5" href="$classutl_1_1matrix.html" title=" " alt="" coords="181,81,330,108"/>
-<area shape="rect" id="node6" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="175,5,335,32"/>
+<area shape="rect" id="Node000001" title="Explicit embedded Runge&#45;Kutta based time stepping for SIM classes." alt="" coords="86,360,293,400"/>
+<area shape="rect" id="Node000002" href="$classTimeIntegration_1_1SIMExplicitRK.html" title="Explicit Runge&#45;Kutta based time stepping for SIM classes." alt="" coords="15,271,222,311"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,320,176,358,172,362,141,323"/>
+<area shape="rect" id="Node000003" href="$structTimeIntegration_1_1RKTableaux.html" title="Struct holding a Runge&#45;Kutta tableaux." alt="" coords="13,183,222,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,222,121,270,116,271,115,222"/>
+<area shape="rect" id="Node000004" href="$classutl_1_1matrix.html" title=" " alt="" coords="11,80,160,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="96,118,116,182,111,183,91,120"/>
+<area shape="rect" id="Node000005" href="$classutl_1_1matrixBase.html" title="Common base class for multi&#45;dimensional (2D and 3D) matrices." alt="" coords="5,5,165,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="88,45,88,80,83,80,83,45"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="185,80,335,105"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="263,119,260,206,252,259,237,312,224,339,208,361,203,358,219,336,232,310,246,258,254,206,258,119"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="234,115,135,185,132,180,231,111"/>
 </map>

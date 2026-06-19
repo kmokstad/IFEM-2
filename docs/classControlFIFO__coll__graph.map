@@ -1,7 +1,12 @@
 <map id="ControlFIFO" name="ControlFIFO">
-<area shape="rect" id="node1" title="This class enables simple application control over a FIFO." alt="" coords="24,289,123,316"/>
-<area shape="rect" id="node2" title=" " alt="" coords="145,185,308,227"/>
-<area shape="rect" id="node3" title=" " alt="" coords="31,96,118,123"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,144,47"/>
-<area shape="rect" id="node5" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="164,96,289,123"/>
+<area shape="rect" id="Node000001" title="This class enables simple application control over a FIFO." alt="" coords="105,285,204,311"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="165,95,251,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,134,217,194,212,229,200,263,189,276,177,287,173,283,185,273,195,260,206,228,211,194,209,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="8,183,171,223"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="184,131,115,185,112,180,181,127"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="139,5,277,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="211,59,211,94,205,94,205,59"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="113,233,149,283,144,287,108,236"/>
+<area shape="rect" id="Node000005" href="$classControlCallback.html" title="Callback for FIFO option handling." alt="" coords="5,95,131,120"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="69,134,72,158,81,181,76,183,67,159,64,134"/>
 </map>

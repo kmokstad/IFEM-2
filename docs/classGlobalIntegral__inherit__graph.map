@@ -1,8 +1,11 @@
 <map id="GlobalIntegral" name="GlobalIntegral">
-<area shape="rect" id="node1" title="Abstract base class representing a system level integrated quantity." alt="" coords="247,5,362,32"/>
-<area shape="rect" id="node2" href="$classAlgEqSystem.html" title="Class for storage of general algebraic system of equations." alt="" coords="5,80,113,107"/>
-<area shape="rect" id="node3" href="$classGlbForceVec.html" title="Class for storage of a global nodal force vector with assembly methods." alt="" coords="137,80,240,107"/>
-<area shape="rect" id="node4" href="$classGlbNorm.html" title="Class representing integrated global norms." alt="" coords="265,80,345,107"/>
-<area shape="rect" id="node5" href="$classL2GlobalInt.html" title="Global integral container class for L2&#45;projections." alt="" coords="369,80,465,107"/>
-<area shape="rect" id="node6" href="$classReactionsOnly.html" title="Class for assembly of reaction&#45; and interface forces." alt="" coords="489,80,605,107"/>
+<area shape="rect" id="Node000001" title="Abstract base class representing a system level integrated quantity." alt="" coords="189,5,303,31"/>
+<area shape="rect" id="Node000002" href="$classAlgEqSystem.html" title="Class for storage of general algebraic system of equations." alt="" coords="5,79,113,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,38,91,81,89,76,203,33"/>
+<area shape="rect" id="Node000003" href="$classGlbForceVec.html" title="Class for storage of a global nodal force vector with assembly methods." alt="" coords="137,79,240,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,43,200,80,196,77,226,40"/>
+<area shape="rect" id="Node000004" href="$classGlbNorm.html" title="Class representing integrated global norms." alt="" coords="265,79,345,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="266,40,297,77,293,80,262,43"/>
+<area shape="rect" id="Node000005" href="$classReactionsOnly.html" title="Class for assembly of reaction&#45; and interface forces." alt="" coords="369,79,485,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="289,33,399,76,397,81,287,38"/>
 </map>

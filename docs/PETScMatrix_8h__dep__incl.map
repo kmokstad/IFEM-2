@@ -1,7 +1,12 @@
-<map id="src/LinAlg/PETScMatrix.h" name="src/LinAlg/PETScMatrix.h">
-<area shape="rect" id="node1" title="Representation of the system matrix in PETSc format with interface to PETSc routines for assembling a..." alt="" coords="148,5,331,32"/>
-<area shape="rect" id="node2" href="$SAMpatchPETSc_8C.html" title="Evaluation of global norms for distributed models." alt="" coords="5,80,201,107"/>
-<area shape="rect" id="node3" href="$PETScMatrix_8C.html" title="Representation of the system matrix in PETSc format." alt="" coords="148,155,331,181"/>
-<area shape="rect" id="node4" href="$PETScSchurPC_8h.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="277,80,471,107"/>
-<area shape="rect" id="node5" href="$PETScSchurPC_8C.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="355,155,550,181"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScMatrix.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/LinAlg/PETScMatrix.h">
+<area shape="rect" id="Node000001" title="Representation of the system matrix in PETSc format with interface to PETSc routines for assembling a..." alt="" coords="182,5,430,45"/>
+<area shape="rect" id="Node000002" href="$SAMpatchPETSc_8C.html" title="Evaluation of global norms for distributed models." alt="" coords="5,93,268,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,54,175,96,173,91,256,49"/>
+<area shape="rect" id="Node000003" href="$PETScMatrix_8C.html" title="Representation of the system matrix in PETSc format." alt="" coords="181,181,431,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,59,309,181,303,181,303,59"/>
+<area shape="rect" id="Node000004" href="$PETScSchurPC_8h.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="343,93,602,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="356,49,437,91,435,96,353,54"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="425,142,344,184,341,179,423,137"/>
+<area shape="rect" id="Node000005" href="$PETScSchurPC_8C.html" title="Schur&#45;complement preconditioner using PETSc." alt="" coords="455,181,715,221"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="510,140,561,179,558,183,507,144"/>
 </map>

@@ -1,5 +1,7 @@
-<map id="src/SIM/AdaptiveSIM.h" name="src/SIM/AdaptiveSIM.h">
-<area shape="rect" id="node1" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="118,5,285,32"/>
-<area shape="rect" id="node2" href="$AdaptiveSIM_8C.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="5,80,173,107"/>
-<area shape="rect" id="node3" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="198,80,429,107"/>
+<map id="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/AdaptiveSIM.h" name="/home/runner/work/IFEM&#45;2/IFEM&#45;2/src/SIM/AdaptiveSIM.h">
+<area shape="rect" id="Node000001" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="125,5,359,45"/>
+<area shape="rect" id="Node000002" href="$SIMSolverAdap_8h.html" title="Stationary, adaptive SIM solver class template." alt="" coords="5,93,228,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,56,154,95,150,91,204,51"/>
+<area shape="rect" id="Node000003" href="$AdaptiveSIM_8C.html" title="Adaptive solution driver for linear static FEM simulators." alt="" coords="251,101,486,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="280,51,345,98,341,103,277,56"/>
 </map>

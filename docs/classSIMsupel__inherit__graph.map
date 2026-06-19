@@ -1,11 +1,19 @@
 <map id="SIMsupel" name="SIMsupel">
-<area shape="rect" id="node1" title="Solution driver for general superelement FEM analysis." alt="" coords="87,528,169,555"/>
-<area shape="rect" id="node2" href="$classSIMdummy.html" title=" " alt="" coords="29,453,227,480"/>
-<area shape="rect" id="node3" href="$classSIMgeneric.html" title="Generic SIM class with some added functionalities." alt="" coords="81,379,175,405"/>
-<area shape="rect" id="node4" href="$classSIMoutput.html" title="Sub&#45;class with additional functionality for result output." alt="" coords="84,304,172,331"/>
-<area shape="rect" id="node5" href="$classSIMinput.html" title="Sub&#45;class with functionality for model input and setup." alt="" coords="89,229,167,256"/>
-<area shape="rect" id="node6" href="$classSIMbase.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="89,155,167,181"/>
-<area shape="rect" id="node7" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="19,80,106,107"/>
-<area shape="rect" id="node8" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="5,5,120,32"/>
-<area shape="rect" id="node9" href="$classSIMdependency.html" title="Class administering inter&#45;SIM field dependencies." alt="" coords="131,80,256,107"/>
+<area shape="rect" id="Node000001" title="Solution driver for general superelement FEM analysis." alt="" coords="87,519,169,544"/>
+<area shape="rect" id="Node000002" href="$classSIMdummy.html" title=" " alt="" coords="29,445,227,471"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,484,131,519,125,519,125,484"/>
+<area shape="rect" id="Node000003" href="$classSIMgeneric.html" title="Generic SIM class with some added functionalities." alt="" coords="81,372,175,397"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,411,131,445,125,445,125,411"/>
+<area shape="rect" id="Node000004" href="$classSIMoutput.html" title="Sub&#45;class with additional functionality for result output." alt="" coords="84,299,172,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="131,338,131,372,125,372,125,338"/>
+<area shape="rect" id="Node000005" href="$classSIMinput.html" title="Sub&#45;class with functionality for model input and setup." alt="" coords="89,225,167,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="131,264,131,299,125,299,125,264"/>
+<area shape="rect" id="Node000006" href="$classSIMbase.html" title="Base class for NURBS&#45;based FEM simulators." alt="" coords="89,152,167,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="131,191,131,225,125,225,125,191"/>
+<area shape="rect" id="Node000007" href="$classSIMadmin.html" title="Administration base class for FEM simulators." alt="" coords="19,79,106,104"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="85,113,119,150,115,154,81,116"/>
+<area shape="rect" id="Node000008" href="$classXMLInputBase.html" title="Base class for XML based input file parsing." alt="" coords="5,5,120,31"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="65,44,65,79,60,79,60,44"/>
+<area shape="rect" id="Node000009" href="$classSIMdependency.html" title="Class administering inter&#45;SIM field dependencies." alt="" coords="131,79,256,104"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="175,116,141,154,137,150,171,113"/>
 </map>
