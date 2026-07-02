@@ -454,14 +454,13 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
           // Compute Jacobian inverse of the coordinate mapping and
           // basis function derivatives w.r.t. Cartesian coordinates
           if (!fe.Jacobian(Jac,Xnod,itgBasis,bfs))
-            continue; // skip singular points
+            ok = false;
+          else if (piolaMapping)
+            fe.piolaMapping(Jac,Xnod,bfs);
 
           // Compute Hessian of coordinate mapping and 2nd order derivatives
           if (use2ndDer && !fe.Hessian(Hess,Jac,Xnod,itgBasis,bfs))
             ok = false;
-
-          if (piolaMapping)
-            fe.piolaMapping(fe.detJxW, Jac, Xnod, bfs);
 
           // Compute G-matrix
           if (integrand.getIntegrandType() & Integrand::G_MATRIX)
@@ -472,7 +471,7 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
 
           // Evaluate the integrand and accumulate element contributions
           fe.detJxW *= dA*wg[0][i]*wg[1][j];
-          if (!integrand.evalIntMx(*A,fe,time,X))
+          if (ok && !integrand.evalIntMx(*A,fe,time,X))
             ok = false;
         }
 
@@ -592,7 +591,11 @@ bool ASMu2Dmx::integrate (Integrand& integrand, int lIndex,
 
     // Initialize element quantities
     LocalIntegral* A = integrand.getLocalIntegral(elem_sizes,fe.iel,true);
-    bool ok = integrand.initElementBou(MNPC[geoEl],elem_sizes,nb,*A);
+    if (!integrand.initElementBou(MNPC[geoEl],elem_sizes,nb,*A))
+    {
+      A->destruct();
+      return false;
+    }
 
     // Get integration gauss points over this element
     this->getGaussPointParameters(gpar[t2-1],t2-1,nGP,1+geoEl,xg);
@@ -600,7 +603,8 @@ bool ASMu2Dmx::integrate (Integrand& integrand, int lIndex,
 
     // --- Integration loop over all Gauss points along the edge ---------------
 
-    for (int i = 0; i < nGP && ok; i++, fe.iGP++)
+    bool ok = true;
+    for (int i = 0; i < nGP; i++, fe.iGP++)
     {
       // Local element coordinates and parameter values
       // of current integration point
@@ -634,10 +638,9 @@ bool ASMu2Dmx::integrate (Integrand& integrand, int lIndex,
       // Compute Jacobian inverse of the coordinate mapping and
       // basis function derivatives w.r.t. Cartesian coordinates
       if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,bfs,t1,t2))
-        continue; // skip singular points
-
-      if (piolaMapping)
-        fe.piolaMapping(fe.detJxW, Jac, Xnod, bfs);
+        ok = false;
+      else if (piolaMapping)
+        fe.piolaMapping(Jac,Xnod,bfs);
 
       if (edgeDir < 0)
         normal *= -1.0;
@@ -647,7 +650,8 @@ bool ASMu2Dmx::integrate (Integrand& integrand, int lIndex,
 
       // Evaluate the integrand and accumulate element contributions
       fe.detJxW *= dS*wg[i];
-      ok = integrand.evalBouMx(*A,fe,time,X,normal);
+      if (ok && !integrand.evalBouMx(*A,fe,time,X,normal))
+        ok = false;
     }
 
     // Finalize the element quantities
@@ -722,11 +726,16 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
       return false;
 
     LocalIntegral* A = integrand.getLocalIntegral(elem_sizes, iel);
-    bool ok = integrand.initElement(MNPC[els[itgBasis-1]-1],elem_sizes,nb,*A);
+    if (!integrand.initElement(MNPC[els[itgBasis-1]-1],elem_sizes,nb,*A))
+    {
+      A->destruct();
+      return false;
+    }
     size_t origSize = A->vec.size();
 
     int bit = 8;
-    for (int iedge = 4; iedge > 0 && status > 0 && ok; iedge--, bit /= 2) {
+    bool ok = true;
+    for (int iedge = 4; iedge > 0 && status > 0; iedge--, bit /= 2) {
       if (status & bit) {
         const int edgeDir = (iedge+1)/((iedge%2) ? -2 : 2);
         const int t1 = abs(edgeDir);   // Tangent direction normal to the edge
@@ -801,7 +810,7 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
           Matrix Xnod2, Jac2;
           ok &= this->getElementCoordinates(Xnod2,els2[itgBasis-1]);
 
-          for (int g = 0; g < nGP && ok; g++, ++fe.iGP)
+          for (int g = 0; g < nGP; g++, ++fe.iGP)
           {
             // Local element coordinates and parameter values
             // of current integration point
@@ -822,7 +831,7 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
 
             // Compute basis function derivatives and the edge normal
             if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,bfs,t1,t2,nB,&Xnod2))
-              continue; // skip singular points
+              ok = false;
 
             if (edgeDir < 0)
               normal *= -1.0;
@@ -832,7 +841,8 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
 
             // Evaluate the integrand and accumulate element contributions
             fe.detJxW *= 0.5*dS*wg[g];
-            ok = integrand.evalIntMx(*A,fe,time,X,normal);
+            if (ok && !integrand.evalIntMx(*A,fe,time,X,normal))
+              ok = false;
           }
 
           if (iedge == 1 || iedge == 2)
@@ -1071,12 +1081,12 @@ bool ASMu2Dmx::evalSolution (Matrix& sField, const IntegrandBase& integrand,
     if (!fe.Jacobian(Jac,Xnod,itgBasis,bfs))
       continue; // skip singular points
 
+    if (piolaMapping)
+      fe.piolaMapping(Jac,Xnod,bfs);
+
     // Compute Hessian of coordinate mapping and 2nd order derivatives
     if (use2ndDer && !fe.Hessian(Hess,Jac,Xnod,itgBasis,bfs))
       return false;
-
-    if (piolaMapping)
-      fe.piolaMapping(fe.detJxW, Jac, Xnod, bfs);
 
     // Cartesian coordinates of current integration point
     fe.u = gpar[0][i];

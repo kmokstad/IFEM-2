@@ -1072,15 +1072,15 @@ bool ASMu3D::integrate (Integrand& integrand,
               fe.N = bfs.N;
 
               // Compute Jacobian inverse and derivatives
-              fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,bfs.dNdu);
-              if (fe.detJxW == 0.0) continue; // skip singular points
+              if (!fe.Jacobian(Jac,Xnod,bfs.dNdu))
+                ok = false;
 
               // Cartesian coordinates of current integration point
               X.assign(Xnod * fe.N);
 
               // Compute the reduced integration terms of the integrand
               fe.detJxW *= dV*wr[i]*wr[j]*wr[k];
-              if (!integrand.reducedInt(*A,fe,X))
+              if (ok && !integrand.reducedInt(*A,fe,X))
                 ok = false;
             }
       }
@@ -1110,8 +1110,8 @@ bool ASMu3D::integrate (Integrand& integrand,
             fe.N = bfs.N;
 
             // Compute Jacobian inverse of coordinate mapping and derivatives
-            fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,bfs.dNdu);
-            if (fe.detJxW == 0.0) continue; // skip singular points
+            if (!fe.Jacobian(Jac,Xnod,bfs.dNdu))
+              ok = false;
 
             // Compute Hessian of coordinate mapping and 2nd order derivatives
             if (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES)
@@ -1133,7 +1133,7 @@ bool ASMu3D::integrate (Integrand& integrand,
             // Evaluate the integrand and accumulate element contributions
             fe.detJxW *= dV*wg[0][i]*wg[1][j]*wg[2][k];
             PROFILE3("Integrand::evalInt");
-            if (!integrand.evalInt(*A,fe,time,X))
+            if (ok && !integrand.evalInt(*A,fe,time,X))
               ok = false;
           }
 
@@ -1574,43 +1574,46 @@ bool ASMu3D::evalSolution (Matrix& sField, const Vector& locSol,
   Go::BasisPts     spline0;
   Go::BasisDerivs  spline1;
   Go::BasisDerivs2 spline2;
-  int lel = -1;
+  int iel = -1;
 
   // Evaluate the primary solution field at each point
   sField.resize(nComp,nPoints);
   for (size_t i = 0; i < nPoints; i++)
   {
+    const double u = gpar[0][i];
+    const double v = gpar[1][i];
+    const double w = gpar[2][i];
+
     // Fetch element containing evaluation point.
     // Sadly, points are not always ordered in the same way as the elements.
-    int iel = lrspline->getElementContaining(gpar[0][i],gpar[1][i],gpar[2][i]);
-    if (iel < 0) {
-      std::cerr <<" *** ASMu3D::evalSolution: Element at point ("<< gpar[0][i] <<", "
-                << gpar[1][i] <<", "<< gpar[2][i] <<") not found."<< std::endl;
+    if (int jel = lrspline->getElementContaining(u,v,w); jel < 0)
+    {
+      std::cerr <<" *** ASMu3D::evalSolution: Element at point ("
+                << u <<","<< v <<","<< w <<") not found."<< std::endl;
       return false;
+    }
+    else if (jel != iel)
+    {
+      iel = jel;
+      if (deriv > 0 && !this->getElementCoordinates(Xnod,iel+1))
+        return false;
     }
 
     int nskip = MNPC[iel].size() - lrspline->getElement(iel)->nBasisFunctions();
     utl::gather(MNPC[iel],nComp,locSol,eSol,0,nskip);
-
-    if (iel != lel && deriv > 0)
-    {
-      lel = iel; // Set up control point (nodal) coordinates for current element
-      if (!this->getElementCoordinates(Xnod,iel+1))
-        return false;
-    }
 
     // Evaluate basis function values/derivatives at current parametric point
     // and multiply with control point values to get the point-wise solution
     switch (deriv) {
 
     case 0: // Evaluate the solution
-      lrspline->computeBasis(gpar[0][i],gpar[1][i],gpar[2][i],spline0,iel);
+      lrspline->computeBasis(u,v,w,spline0,iel);
       eSol.multiply(spline0.basisValues,ptSol);
       sField.fillColumn(1+i,ptSol);
       break;
 
     case 1: // Evaluate first derivatives of the solution
-      lrspline->computeBasis(gpar[0][i],gpar[1][i],gpar[2][i],spline1,iel);
+      lrspline->computeBasis(u,v,w,spline1,iel);
       SplineUtils::extractBasis(spline1,ptSol,dNdu);
       utl::Jacobian(Jac,dNdX,Xnod,dNdu);
       ptDer.multiply(eSol,dNdX);
@@ -1618,7 +1621,7 @@ bool ASMu3D::evalSolution (Matrix& sField, const Vector& locSol,
       break;
 
     case 2: // Evaluate second derivatives of the solution
-      lrspline->computeBasis(gpar[0][i],gpar[1][i],gpar[2][i],spline2,iel);
+      lrspline->computeBasis(u,v,w,spline2,iel);
       SplineUtils::extractBasis(spline2,ptSol,dNdu,d2Ndu2);
       utl::Jacobian(Jac,dNdX,Xnod,dNdu);
       utl::Hessian(Hess,d2NdX2,Jac,Xnod,d2Ndu2,dNdu);
@@ -1811,8 +1814,8 @@ bool ASMu3D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
     }
 
     // Compute the Jacobian inverse
-    fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
-    if (fe.detJxW == 0.0) continue;
+    if (!fe.Jacobian(Jac,Xnod,dNdu))
+      continue; // skip singular points
 
     // Compute Hessian of coordinate mapping and 2nd order derivatives
     if (use2ndDer)

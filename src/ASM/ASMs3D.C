@@ -2128,7 +2128,7 @@ bool ASMs3D::integrate (Integrand& integrand,
       for (size_t l = 0; l < groups[g][t].size() && ok; l++)
       {
         int iel = groups[g][t][l];
- #ifdef SP_DEBUG
+#ifdef SP_DEBUG
         if (dbgElm < 0 && 1+iel != -dbgElm)
           continue; // Skipping all elements, except for -dbgElm
 #endif
@@ -2245,14 +2245,15 @@ bool ASMs3D::integrate (Integrand& integrand,
                 fe.N = bfs.N;
 
                 // Compute Jacobian inverse and derivatives
-                fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,bfs.dNdu);
+                if (!fe.Jacobian(Jac,Xnod,bfs.dNdu))
+                  ok = false;
 
                 // Cartesian coordinates of current integration point
                 X.assign(Xnod * fe.N);
 
                 // Compute the reduced integration terms of the integrand
                 fe.detJxW *= dV*wr[i]*wr[j]*wr[k];
-                if (!integrand.reducedInt(*A,fe,X))
+                if (ok && !integrand.reducedInt(*A,fe,X))
                   ok = false;
               }
         }
@@ -2282,8 +2283,8 @@ bool ASMs3D::integrate (Integrand& integrand,
               fe.N = bfs.N;
 
               // Compute Jacobian inverse of coordinate mapping and derivatives
-              fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,bfs.dNdu);
-              if (fe.detJxW == 0.0) continue; // skip singular points
+              if (!fe.Jacobian(Jac,Xnod,bfs.dNdu))
+                ok = false;
 
               // Compute Hessian of coordinate mapping and 2nd order derivatives
               if (use2ndDer)
@@ -2307,7 +2308,7 @@ bool ASMs3D::integrate (Integrand& integrand,
 #ifndef USE_OPENMP
               PROFILE3("Integrand::evalInt");
 #endif
-              if (!integrand.evalInt(*A,fe,time,X))
+              if (ok && !integrand.evalInt(*A,fe,time,X))
                 ok = false;
             }
 
@@ -2480,8 +2481,8 @@ bool ASMs3D::integrate (Integrand& integrand,
             SplineUtils::extractBasis(spline[jp++],fe.N,dNdu);
 
           // Compute Jacobian inverse of coordinate mapping and derivatives
-          fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
-          if (fe.detJxW == 0.0) continue; // skip singular points
+          if (!fe.Jacobian(Jac,Xnod,dNdu))
+            ok = false;
 
           // Compute Hessian of coordinate mapping and 2nd order derivatives
           if (use2ndDer)
@@ -2506,7 +2507,7 @@ bool ASMs3D::integrate (Integrand& integrand,
 #ifndef USE_OPENMP
           PROFILE3("Integrand::evalInt");
 #endif
-          if (!integrand.evalInt(*A,fe,time,X))
+          if (ok && !integrand.evalInt(*A,fe,time,X))
             ok = false;
         }
 
@@ -3477,8 +3478,8 @@ bool ASMs3D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
       SplineUtils::extractBasis(spline1[i],fe.N,dNdu);
 
     // Compute the Jacobian inverse and derivatives
-    fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xtmp,dNdu);
-    if (fe.detJxW == 0.0) continue; // skip singular points
+    if (!fe.Jacobian(Jac,Xtmp,dNdu))
+      continue; // skip singular points
 
     // Compute Hessian of coordinate mapping and 2nd order derivatives
     if (use2ndDer)

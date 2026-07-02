@@ -614,7 +614,7 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
               // Compute Jacobian inverse of the coordinate mapping and
               // basis function derivatives w.r.t. Cartesian coordinates
               if (!fe.Jacobian(Jac,Xnod,itgBasis,bfs))
-                continue; // skip singular points
+                ok = false;
 
               // Compute Hessian of coordinate mapping and 2nd order derivatives
               if (use2ndDer && !fe.Hessian(Hess,Jac,Xnod,itgBasis,bfs))
@@ -629,7 +629,7 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
 
               // Evaluate the integrand and accumulate element contributions
               fe.detJxW *= dV*wg[0][i]*wg[1][j]*wg[2][k];
-              if (!integrand.evalIntMx(*A,fe,time,X))
+              if (ok && !integrand.evalIntMx(*A,fe,time,X))
                 ok = false;
             }
 
@@ -834,7 +834,7 @@ bool ASMs3Dmx::integrate (Integrand& integrand, int lIndex,
             // Compute Jacobian inverse of the coordinate mapping and
             // basis function derivatives w.r.t. Cartesian coordinates
             if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,bfs,t1,t2))
-              continue; // skip singular points
+              ok = false;
 
             if (faceDir < 0) normal *= -1.0;
 
@@ -843,7 +843,7 @@ bool ASMs3Dmx::integrate (Integrand& integrand, int lIndex,
 
             // Evaluate the integrand and accumulate element contributions
             fe.detJxW *= dA*wg[i]*wg[j];
-            if (!integrand.evalBouMx(*A,fe,time,X,normal))
+            if (ok && !integrand.evalBouMx(*A,fe,time,X,normal))
               ok = false;
           }
 
@@ -936,10 +936,10 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
         short int status = iChk.hasContribution(iel,i1,i2,i3);
         if (!status) continue; // no interface contributions for this element
 
-  #if SP_DEBUG > 3
+#if SP_DEBUG > 3
         std::cout <<"\n\nIntegrating interface terms for element "<< fe.iel
                   << std::endl;
-  #endif
+#endif
 
         // Set up control point (nodal) coordinates for current element
         if (!this->getElementCoordinates(Xnod,1+iel)) return false;
@@ -994,6 +994,7 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
             double dA = this->getParametricArea(1+iel,abs(faceDir));
             if (dA < 0.0) // topology error (probably logic error)
               ok = false;
+            if (!ok) break;
 
             // Define some loop control variables depending on which face we are on
             int nf1, j1, j2;
@@ -1007,10 +1008,10 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
 
             int ip = (j2*nGP*nf1 + j1)*nGP;
 
-            // --- Integration loop over all Gauss points along the face ---------
+            // --- Integration loop over all Gauss points along the face -------
 
-            for (int j = 0; j < nGP && ok; j++, ip += nGP*(nf1-1))
-              for (int i = 0; i < nGP && ok; i++, ip++, fe.iGP++)
+            for (int j = 0; j < nGP; j++, ip += nGP*(nf1-1))
+              for (int i = 0; i < nGP; i++, ip++, fe.iGP++)
               {
                 // Local element coordinates and parameter values
                 // of current integration point
@@ -1057,7 +1058,7 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
 
               // Compute basis function derivatives and the edge normal
               if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,bfs,t1,t2,nB))
-                continue; // skip singular points
+                ok = false;
 
               if (faceDir < 0) normal *= -1.0;
 
@@ -1066,7 +1067,8 @@ bool ASMs3Dmx::integrate (Integrand& integrand,
 
               // Evaluate the integrand and accumulate element contributions
               fe.detJxW *= 0.25*dA*wg[i]*wg[j];
-              ok = integrand.evalIntMx(*A,fe,time,X,normal);
+              if (ok && !integrand.evalIntMx(*A,fe,time,X,normal))
+                ok = false;
             }
           }
 

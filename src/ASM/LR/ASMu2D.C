@@ -535,10 +535,7 @@ bool ASMu2D::evaluateBasis (int iel, FiniteElement& fe, int derivs) const
 #endif
 
   Matrix Xnod, Jac;
-  this->getElementCoordinates(Xnod,1+iel);
-  fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
-
-  return true;
+  return this->getElementCoordinates(Xnod,1+iel) && fe.Jacobian(Jac,Xnod,dNdu);
 }
 
 
@@ -1271,8 +1268,8 @@ bool ASMu2D::integrate (Integrand& integrand,
             fe.N = bfs.N;
 
             // Compute Jacobian inverse and derivatives
-            fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,bfs.dNdu);
-            if (fe.detJxW == 0.0) continue; // skip singular points
+            if (!fe.Jacobian(Jac,Xnod,bfs.dNdu))
+              ok = false;
 
             // Store tangent vectors in fe.G for shells
             if (nsd > 2) fe.G = Jac;
@@ -1282,7 +1279,7 @@ bool ASMu2D::integrate (Integrand& integrand,
 
             // Compute the reduced integration terms of the integrand
             fe.detJxW *= dA*wr[i]*wr[j];
-            if (!integrand.reducedInt(*A,fe,X))
+            if (ok && !integrand.reducedInt(*A,fe,X))
               ok = false;
           }
       }
@@ -1319,8 +1316,8 @@ bool ASMu2D::integrate (Integrand& integrand,
 #endif
 
           // Compute Jacobian inverse of coordinate mapping and derivatives
-          fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,bfs.dNdu);
-          if (fe.detJxW == 0.0) continue; // skip singular points
+          if (!fe.Jacobian(Jac,Xnod,bfs.dNdu))
+            ok = false;
 
           // Compute Hessian of coordinate mapping and 2nd order derivatives
           if (use2ndDer)
@@ -1354,7 +1351,7 @@ bool ASMu2D::integrate (Integrand& integrand,
 #ifndef USE_OPENMP
           PROFILE3("Integrand::evalInt");
 #endif
-          if (!integrand.evalInt(*A,fe,time,X))
+          if (ok && !integrand.evalInt(*A,fe,time,X))
             ok = false;
         }
 
@@ -1522,8 +1519,8 @@ bool ASMu2D::integrate (Integrand& integrand,
           SplineUtils::extractBasis(spline1[jp],fe.N,dNdu);
 
         // Compute Jacobian inverse of coordinate mapping and derivatives
-        fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
-        if (fe.detJxW == 0.0) continue; // skip singular points
+        if (!fe.Jacobian(Jac,Xnod,dNdu))
+          ok = false;
 
         // Compute Hessian of coordinate mapping and 2nd order derivatives
         if (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES)
@@ -1551,7 +1548,7 @@ bool ASMu2D::integrate (Integrand& integrand,
 #ifndef USE_OPENMP
         PROFILE3("Integrand::evalInt");
 #endif
-        if (!integrand.evalInt(*A,fe,time,X))
+        if (ok && !integrand.evalInt(*A,fe,time,X))
           ok = false;
       }
 
@@ -2096,11 +2093,11 @@ bool ASMu2D::evalSolution (Matrix& sField, const Vector& locSol,
   fe.p = lrspline->order(0) - 1;
   fe.q = lrspline->order(1) - 1;
   Vector   ptSol;
-  Matrix   dNdu, dNdX, Jac, Xnod, eSol, ptDer;
+  Matrix   dNdu, Jac, Xnod, eSol, ptDer;
   Matrix3D d2Ndu2, d2NdX2, Hess, ptDer2;
 
   Go::BasisDerivsSf2 spline2;
-  int lel = -1;
+  int iel = -1;
 
   // Evaluate the primary solution field at each point
   sField.resize(nComp,nPoints);
@@ -2110,12 +2107,10 @@ bool ASMu2D::evalSolution (Matrix& sField, const Vector& locSol,
     // Sadly, points are not always ordered in the same way as the elements.
     fe.u = gpar[0][i];
     fe.v = gpar[1][i];
-    int iel = lrspline->getElementContaining(fe.u,fe.v);
-
-    if (iel != lel && deriv == 2)
+    if (int jel = lrspline->getElementContaining(fe.u,fe.v); jel != iel)
     {
-      lel = iel; // Set up control point (nodal) coordinates for current element
-      if (!this->getElementCoordinates(Xnod,iel+1))
+      iel = jel;
+      if (deriv == 2 && !this->getElementCoordinates(Xnod,iel+1))
         return false;
     }
 
@@ -2126,25 +2121,24 @@ bool ASMu2D::evalSolution (Matrix& sField, const Vector& locSol,
     switch (deriv)
     {
     case 0: // Evaluate the solution
-      if (!this->evaluateBasis(iel,fe,deriv))
-        return false;
-      sField.fillColumn(1+i, eSol * fe.N);
+      if (this->evaluateBasis(iel,fe,deriv))
+        sField.fillColumn(1+i, eSol * fe.N);
       break;
 
     case 1: // Evaluate first derivatives of the solution
-      if (!this->evaluateBasis(iel,fe,deriv))
-        return false;
-      ptDer.multiply(eSol,fe.dNdX);
-      sField.fillColumn(1+i,ptDer);
+      if (this->evaluateBasis(iel,fe,deriv))
+        sField.fillColumn(1+i, ptDer.multiply(eSol,fe.dNdX));
       break;
 
     case 2: // Evaluate second derivatives of the solution
       this->computeBasis(fe.u,fe.v,spline2,iel);
       SplineUtils::extractBasis(spline2,ptSol,dNdu,d2Ndu2);
-      utl::Jacobian(Jac,dNdX,Xnod,dNdu);
-      utl::Hessian(Hess,d2NdX2,Jac,Xnod,d2Ndu2,dNdu);
-      ptDer2.multiply(eSol,d2NdX2);
-      sField.fillColumn(1+i,ptDer2);
+      if (fe.Jacobian(Jac,Xnod,dNdu))
+      {
+        utl::Hessian(Hess,d2NdX2,Jac,Xnod,d2Ndu2,dNdu);
+        ptDer2.multiply(eSol,d2NdX2);
+        sField.fillColumn(1+i, ptDer2);
+      }
       break;
 
     default:
@@ -2327,7 +2321,8 @@ bool ASMu2D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
     }
 
     // Compute the Jacobian inverse
-    fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
+    if (!fe.Jacobian(Jac,Xnod,dNdu))
+      continue; // skip singular points
 
     // Compute Hessian of coordinate mapping and 2nd order derivatives
     if (use2ndDer)

@@ -325,20 +325,20 @@ TEST_CASE("TestPiolaMapping.Gradient2D")
 
   BasisValues bfs(3);
 
-  Matrix X, J, Ji, dNdX;
-  p.extractBasis(u, v, bfs.back().N, bfs.back().dNdu, bfs.back().d2Ndu2);
-  p.getElementCoordinates(X, 1);
-  Real detJ = utl::Jacobian(Ji, dNdX, X, bfs.back().dNdu, true);
-  J.multiply(X,bfs.back().dNdu); // J = X * dNdu
-  Matrix3D H;
-  H.multiply(X,bfs.back().d2Ndu2);
-
   Go::BasisDerivsSf spline1, spline2;
   b.getBasis(1)->computeBasis(u,v,spline1);
   b.getBasis(2)->computeBasis(u,v,spline2);
   MxFiniteElement fe({spline1.basisValues.size(), spline2.basisValues.size()});
   SplineUtils::extractBasis(spline1, fe.basis(1), bfs[0].dNdu);
   SplineUtils::extractBasis(spline2, fe.basis(2), bfs[1].dNdu);
+
+  Matrix X, J, Ji, dNdX;
+  p.extractBasis(u, v, bfs.back().N, bfs.back().dNdu, bfs.back().d2Ndu2);
+  p.getElementCoordinates(X, 1);
+  double detJ = fe.detJxW = utl::Jacobian(Ji, dNdX, X, bfs.back().dNdu, true);
+  J.multiply(X,bfs.back().dNdu); // J = X * dNdu
+  Matrix3D H;
+  H.multiply(X,bfs.back().d2Ndu2);
 
   const auto q = std::array<std::function<double(double)>,3> {
       [](double x) { return (1.0 - x) * (1.0 - x); },
@@ -366,7 +366,7 @@ TEST_CASE("TestPiolaMapping.Gradient2D")
     [](double x) { return 3.0 * x * x; },
   };
 
-  fe.piolaMapping(detJ, Ji, X, bfs);
+  fe.piolaMapping(Ji, X, bfs);
   std::vector<Real> det = utl::determinantGradient(J, Ji, H);
   Matrices dJdX = utl::jacobianGradient(Ji, H);
 
@@ -583,14 +583,6 @@ TEST_CASE("TestPiolaMapping.Gradient3D")
 
   BasisValues bfs(4);
 
-  Matrix X, J, Ji, dNdX;
-  Matrix3D H;
-  p.extractBasis(u, v, w, bfs.back().N, bfs.back().dNdu, bfs.back().d2Ndu2);
-  p.getElementCoordinates(X, 1);
-  Real detJ = utl::Jacobian(Ji, dNdX, X, bfs.back().dNdu, true);
-  H.multiply(X,bfs.back().d2Ndu2);
-  J.multiply(X,bfs.back().dNdu); // J = X * dNdu
-
   Go::BasisDerivs spline1, spline2, spline3;
   b.getBasis(1)->computeBasis(u,v,w,spline1);
   b.getBasis(2)->computeBasis(u,v,w,spline2);
@@ -601,6 +593,14 @@ TEST_CASE("TestPiolaMapping.Gradient3D")
   SplineUtils::extractBasis(spline1, fe.basis(1), bfs[0].dNdu);
   SplineUtils::extractBasis(spline2, fe.basis(2), bfs[1].dNdu);
   SplineUtils::extractBasis(spline3, fe.basis(3), bfs[2].dNdu);
+
+  Matrix X, J, Ji, dNdX;
+  Matrix3D H;
+  p.extractBasis(u, v, w, bfs.back().N, bfs.back().dNdu, bfs.back().d2Ndu2);
+  p.getElementCoordinates(X, 1);
+  double detJ = fe.detJxW = utl::Jacobian(Ji, dNdX, X, bfs.back().dNdu, true);
+  H.multiply(X,bfs.back().d2Ndu2);
+  J.multiply(X,bfs.back().dNdu); // J = X * dNdu
 
   const auto q = std::array<std::function<double(double)>,3> {
       [](double x) { return (1.0 - x) * (1.0 - x); },
@@ -628,7 +628,7 @@ TEST_CASE("TestPiolaMapping.Gradient3D")
     [](double x) { return 3.0 * x * x; },
   };
 
-  fe.piolaMapping(detJ, Ji, X, bfs);
+  fe.piolaMapping(Ji, X, bfs);
   std::vector<Real> det = utl::determinantGradient(J, Ji, H);
   Matrices dJdX = utl::jacobianGradient(Ji, H);
 

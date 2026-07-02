@@ -207,15 +207,14 @@ bool MxFiniteElement::Hessian (Matrix3D& Hess, const Matrix& Jac,
 }
 
 
-void MxFiniteElement::piolaMapping (const double detJ,
-                                    const Matrix& Ji,
+void MxFiniteElement::piolaMapping (const Matrix& Ji,
                                     const Matrix& Xnod,
                                     const BasisValuesPtrs& bfs)
 {
   Matrix J;
   J.multiply(Xnod,bfs.back()->dNdu);
-  this->piolaBasis(detJ, J);
-  this->piolaGradient(detJ, J, Ji, Xnod, bfs);
+  this->piolaBasis(detJxW, J);
+  this->piolaGradient(detJxW, J, Ji, Xnod, bfs);
 }
 
 

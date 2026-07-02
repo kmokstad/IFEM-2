@@ -1123,7 +1123,12 @@ bool ASMs1D::integrate (Integrand& integrand,
     double dL = 0.5*this->getKnotSpan(MNPC[iel][p1-1]);
 
     // Set up control point coordinates for current element
-    ok = this->getElementCoordinates(fe.Xn,1+iel);
+    if (!this->getElementCoordinates(fe.Xn,1+iel))
+    {
+      ok = false;
+      A->destruct();
+      break;
+    }
 
     if (integrand.getIntegrandType() & Integrand::ELEMENT_CORNERS)
       fe.h = this->getElementEnds(p1+iel,fe.XC);
@@ -1144,13 +1149,18 @@ bool ASMs1D::integrate (Integrand& integrand,
     }
 
     // Initialize element matrices
-    ok &= integrand.initElement(MNPC[iel],fe,X,nRed,*A);
+    if (!integrand.initElement(MNPC[iel],fe,X,nRed,*A))
+    {
+      ok = false;
+      A->destruct();
+      break;
+    }
 
     if (xr)
     {
       // --- Selective reduced integration loop --------------------------------
 
-      for (int i = 0; i < nRed && ok; i++)
+      for (int i = 0; i < nRed; i++)
       {
         // Local element coordinates of current integration point
         fe.xi = xr[i];
@@ -1166,14 +1176,17 @@ bool ASMs1D::integrate (Integrand& integrand,
           this->extractBasis(fe.u,fe.N,dNdu);
           // Compute Jacobian inverse and derivatives
           dNdu.multiply(dL); // Derivatives w.r.t. xi=[-1,1]
-          fe.detJxW = utl::Jacobian(Jac,fe.dNdX,fe.Xn,dNdu)*wr[i];
+          ok &= fe.Jacobian(Jac,fe.Xn,dNdu);
+
+          fe.detJxW *= wr[i];
         }
 
         // Cartesian coordinates of current integration point
         X.assign(fe.Xn * fe.N);
 
         // Compute the reduced integration terms of the integrand
-        ok = integrand.reducedInt(*A,fe,X);
+        if (ok && !integrand.reducedInt(*A,fe,X))
+          ok = false;
       }
     }
 
@@ -1183,7 +1196,7 @@ bool ASMs1D::integrate (Integrand& integrand,
     int jp = iel*ng;
     fe.iGP = firstIp + jp; // Global integration point counter
 
-    for (int i = 0; i < ng && ok; i++, fe.iGP++)
+    for (int i = 0; i < ng; i++, fe.iGP++)
     {
       // Local element coordinate of current integration point
       fe.xi = xg[i];
@@ -1205,8 +1218,9 @@ bool ASMs1D::integrate (Integrand& integrand,
       {
         // Compute derivatives in terms of physical coordinates
         dNdu.multiply(dL); // Derivatives w.r.t. xi=[-1,1]
-        fe.detJxW = utl::Jacobian(Jac,fe.dNdX,fe.Xn,dNdu)*wg[i];
-        if (fe.detJxW == 0.0) continue; // skip singular points
+        ok &= fe.Jacobian(Jac,fe.Xn,dNdu);
+
+        fe.detJxW *= wg[i];
 
         // Compute Hessian of coordinate mapping and 2nd order derivatives
         if (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES)
@@ -1311,7 +1325,11 @@ bool ASMs1D::integrate (Integrand& integrand, int lIndex,
   fe.iGP = iit == firstBp.end() ? 0 : iit->second;
 
   // Set up control point coordinates for current element
-  bool ok = this->getElementCoordinates(fe.Xn,1+iel);
+  if (!this->getElementCoordinates(fe.Xn,1+iel))
+  {
+    A->destruct();
+    return false;
+  }
 
   if (integrand.getIntegrandType() & Integrand::ELEMENT_CORNERS)
     fe.h = this->getElementEnds(iel+curv->order(),fe.XC);
@@ -1325,7 +1343,11 @@ bool ASMs1D::integrate (Integrand& integrand, int lIndex,
     fe.Te.diag(1.0);
 
   // Initialize element matrices
-  ok &= integrand.initElementBou(MNPC[iel],*A);
+  if (!integrand.initElementBou(MNPC[iel],*A))
+  {
+    A->destruct();
+    return false;
+  }
 
   Vec3 normal;
 
@@ -1353,18 +1375,17 @@ bool ASMs1D::integrate (Integrand& integrand, int lIndex,
 
   // Cartesian coordinates of current integration point
   double param[3] = { fe.u, 0.0, 0.0 };
-  Vec4 X(param,time.t);
-  X.assign(fe.Xn*fe.N);
+  Vec4   X(fe.Xn * fe.N, time.t, param);
 
   // Evaluate the integrand and accumulate element contributions
-  if (ok && !integrand.evalBou(*A,fe,time,X,normal))
-    ok = false;
+  bool ok = integrand.evalBou(*A,fe,time,X,normal);
 
   // Assembly of global system integral
   if (ok && !glInt.assemble(A->ref(),fe.iel))
     ok = false;
 
   A->destruct();
+
   return ok;
 }
 
@@ -1753,8 +1774,8 @@ bool ASMs1D::evalSolution (Matrix& sField, const IntegrandBase& integrand,
     if (!dNdu.empty())
     {
       // Compute the Jacobian inverse and derivatives
-      fe.detJxW = utl::Jacobian(Jac,fe.dNdX,Xtmp,dNdu);
-      if (fe.detJxW == 0.0) continue; // skip singular points
+      if (!fe.Jacobian(Jac,Xtmp,dNdu))
+        continue; // skip singular points
 
       // Compute Hessian of coordinate mapping and 2nd order derivatives
       if (integrand.getIntegrandType() & Integrand::SECOND_DERIVATIVES)

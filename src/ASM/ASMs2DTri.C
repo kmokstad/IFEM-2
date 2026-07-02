@@ -247,14 +247,16 @@ bool ASMs2DTri::integrate (Integrand& integrand,
             evalBasis(fe.N,dNdu,fe.xi,fe.eta);
 
             // Compute Jacobian inverse and derivatives
-            fe.detJxW = 0.5*utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
+            if (!fe.Jacobian(Jac,Xnod,dNdu))
+              ok = false;
 
             // Cartesian coordinates of current integration point
             X.assign(Xnod * fe.N);
 
+            fe.detJxW *= 0.5*wr[j];
+
             // Compute the reduced integration terms of the integrand
-            fe.detJxW *= wr[j];
-            if (!integrand.reducedInt(*A,fe,X))
+            if (ok && !integrand.reducedInt(*A,fe,X))
               ok = false;
           }
 
@@ -275,15 +277,16 @@ bool ASMs2DTri::integrate (Integrand& integrand,
           evalBasis(fe.N,dNdu,fe.xi,fe.eta);
 
           // Compute Jacobian inverse of coordinate mapping and derivatives
-          fe.detJxW = 0.5*utl::Jacobian(Jac,fe.dNdX,Xnod,dNdu);
-          if (fe.detJxW == 0.0) continue; // skip singular points
+          if (!fe.Jacobian(Jac,Xnod,dNdu))
+            ok = false;
 
           // Cartesian coordinates of current integration point
           X.assign(Xnod * fe.N);
 
+          fe.detJxW *= 0.5*wg[j];
+
           // Evaluate the integrand and accumulate element contributions
-          fe.detJxW *= wg[j];
-          if (!integrand.evalInt(*A,fe,time,X))
+          if (ok && !integrand.evalInt(*A,fe,time,X))
             ok = false;
         }
 

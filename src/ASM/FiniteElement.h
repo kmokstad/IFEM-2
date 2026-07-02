@@ -170,11 +170,10 @@ public:
                unsigned short int gBasis, const BasisValuesPtrs& bfs);
 
   //! \brief Calculates the Piola basis functions and their derivatives.
-  //! \param[in] detJ Determinant of Jacobian of the geometry mapping
   //! \param[in] Ji Inverse jacobian of the geometry mapping
   //! \param[in] Xnod Matrix of element nodal coordinates
   //! \param[in] bfs Derivatives of basis functions
-  void piolaMapping(const double detJ, const Matrix& Ji,
+  void piolaMapping(const Matrix& Ji,
                     const Matrix& Xnod, const BasisValuesPtrs& bfs);
 
   //! \brief Calculates the Piola basis functions.

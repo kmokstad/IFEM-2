@@ -476,7 +476,7 @@ bool ASMu3Dmx::integrate (Integrand& integrand,
             // Compute Jacobian inverse of the coordinate mapping and
             // basis function derivatives w.r.t. Cartesian coordinates
             if (!fe.Jacobian(Jac,Xnod,itgBasis,bfs))
-              continue; // skip singular points
+              ok = false;
 
             // Compute Hessian of coordinate mapping and 2nd order derivatives
             if (use2ndDer && !fe.Hessian(Hess,Jac,Xnod,itgBasis,bfs))
@@ -491,7 +491,7 @@ bool ASMu3Dmx::integrate (Integrand& integrand,
 
             // Evaluate the integrand and accumulate element contributions
             fe.detJxW *= dV*wg[0][i]*wg[1][j]*wg[2][k];
-            if (!integrand.evalIntMx(*A,fe,time,X))
+            if (ok && !integrand.evalIntMx(*A,fe,time,X))
               ok = false;
           }
 
@@ -632,7 +632,7 @@ bool ASMu3Dmx::integrate (Integrand& integrand, int lIndex,
     firstp += nGP*nGP;
 
     for (int j = 0; j < nGP; j++)
-      for (int i = 0; i < nGP && ok; i++, fe.iGP++)
+      for (int i = 0; i < nGP; i++, fe.iGP++)
       {
         // Local element coordinates and parameter values
         // of current integration point
@@ -670,7 +670,7 @@ bool ASMu3Dmx::integrate (Integrand& integrand, int lIndex,
 
         // Compute basis function derivatives and the face normal
         if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,bfs,t1,t2))
-          continue; // skip singular points
+          ok = false;
 
         if (faceDir < 0) normal *= -1.0;
 
@@ -683,7 +683,8 @@ bool ASMu3Dmx::integrate (Integrand& integrand, int lIndex,
 
         // Evaluate the integrand and accumulate element contributions
         fe.detJxW *= dA*wg[i]*wg[j];
-        ok = integrand.evalBouMx(*A,fe,time,X,normal);
+        if (ok && !integrand.evalBouMx(*A,fe,time,X,normal))
+          ok = false;
       }
 
     // Finalize the element quantities

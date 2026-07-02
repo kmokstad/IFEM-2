@@ -330,14 +330,14 @@ bool ASMs2DmxLag::integrate (Integrand& integrand,
 
             // Compute Jacobian inverse of coordinate mapping and derivatives
             if (!fe.Jacobian(Jac,Xnod,itgBasis,bfs))
-              continue; // skip singular points
+              ok = false;
 
             // Cartesian coordinates of current integration point
             X.assign(Xnod * fe.basis(itgBasis));
 
             // Evaluate the integrand and accumulate element contributions
             fe.detJxW *= wg[0][i]*wg[1][j];
-            if (!integrand.evalIntMx(*A,fe,time,X))
+            if (ok && !integrand.evalIntMx(*A,fe,time,X))
               ok = false;
           }
 
@@ -429,7 +429,7 @@ bool ASMs2DmxLag::integrate (Integrand& integrand, int lIndex,
       int jp = (t1 == 1 ? i2 : i1)*nGauss;
       fe.iGP = firstp + jp; // Global integration point counter
 
-      for (int i = 0; i < nGauss && ok; i++, fe.iGP++)
+      for (int i = 0; i < nGauss; i++, fe.iGP++)
       {
         // Gauss point coordinates along the edge
         xi[t1-1] = edgeDir < 0 ? -1.0 : 1.0;
@@ -445,7 +445,7 @@ bool ASMs2DmxLag::integrate (Integrand& integrand, int lIndex,
 
         // Compute basis function derivatives and the edge normal
         if (!fe.Jacobian(Jac,normal,Xnod,itgBasis,bfs,t1,t2))
-          continue; // skip singular points
+          ok = false;
 
         if (edgeDir < 0) normal *= -1.0;
 
