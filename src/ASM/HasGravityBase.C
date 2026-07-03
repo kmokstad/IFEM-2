@@ -46,7 +46,10 @@ bool HasGravityBase::parse (const tinyxml2::XMLElement* elem)
     utl::getAttribute(elem,"z",gravity.z);
     IFEM::cout <<" "<< gravity.z;
   }
-  IFEM::cout << std::endl;
 
+  if (utl::getAttribute(elem,"rampTime",rampT))
+    IFEM::cout <<"\n\tRamp-up time: "<< rampT;
+
+  IFEM::cout << std::endl;
   return true;
 }

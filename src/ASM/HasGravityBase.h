@@ -26,23 +26,20 @@ class HasGravityBase : public IntegrandBase
 {
 protected:
   //! \brief The default constructor is protected to allow sub-classes only.
-  explicit HasGravityBase(unsigned char n = 0) : IntegrandBase(n) {}
+  explicit HasGravityBase(unsigned char n = 0) : IntegrandBase(n), rampT(0.0) {}
 
 public:
   //! \brief Parses a data section from an XML-element.
   virtual bool parse(const tinyxml2::XMLElement* elem);
 
   //! \brief Defines the gravitation vector.
-  void setGravity(double gx, double gy = 0.0, double gz = 0.0)
-  { gravity.x = gx; gravity.y = gy; gravity.z = gz; }
-  //! \brief Defines the gravitation vector.
   void setGravity(const Vec3& g) { gravity = g; }
-
   //! \brief Returns the gravitation vector.
   const Vec3& getGravity() const { return gravity; }
 
 protected:
-  Vec3 gravity; //!< Gravitation vector
+  Vec3 gravity; //!< The gravitation vector
+  double rampT; //!< Ramp-up time for full gravity
 };
 
 #endif
