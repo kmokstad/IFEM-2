@@ -335,8 +335,12 @@ bool ASMs2DmxLag::integrate (Integrand& integrand,
             // Cartesian coordinates of current integration point
             X.assign(Xnod * fe.basis(itgBasis));
 
-            // Evaluate the integrand and accumulate element contributions
+            // Integration point weight
             fe.detJxW *= wg[0][i]*wg[1][j];
+            if (integrand.isAxiSymmetric())
+              fe.detJxW *= 2.0*M_PI*X.x;
+
+            // Evaluate the integrand and accumulate element contributions
             if (ok && !integrand.evalIntMx(*A,fe,time,X))
               ok = false;
           }
@@ -452,8 +456,11 @@ bool ASMs2DmxLag::integrate (Integrand& integrand, int lIndex,
         // Cartesian coordinates of current integration point
         X.assign(Xnod * fe.basis(itgBasis));
 
-        // Evaluate the integrand and accumulate element contributions
         fe.detJxW *= wg[i];
+        if (integrand.isAxiSymmetric())
+          fe.detJxW *= 2.0*M_PI*X.x;
+
+        // Evaluate the integrand and accumulate element contributions
         if (ok && !integrand.evalBouMx(*A,fe,time,X,normal))
           ok = false;
       }

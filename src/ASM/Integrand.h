@@ -180,6 +180,8 @@ public:
   virtual int getReducedIntegration(int) const { return 0; }
   //! \brief Returns the number of boundary integration points.
   virtual int getBouIntegrationPoints(int nGP) const { return nGP; }
+  //! \brief Returns \e true if this is an axial-symmetric problem.
+  virtual bool isAxiSymmetric() const { return false; }
 
   //! \brief Evaluates reduced integration terms at an interior point.
   //! \param elmInt The local integral object to receive the contributions

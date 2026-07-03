@@ -469,8 +469,12 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
           // Cartesian coordinates of current integration point
           X.assign(Xnod * (separateGeometry ? bfs.back()->N : fe.basis(itgBasis)));
 
-          // Evaluate the integrand and accumulate element contributions
+          // Integration point weight
           fe.detJxW *= dA*wg[0][i]*wg[1][j];
+          if (integrand.isAxiSymmetric())
+            fe.detJxW *= 2.0*M_PI*X.x;
+
+          // Evaluate the integrand and accumulate element contributions
           if (ok && !integrand.evalIntMx(*A,fe,time,X))
             ok = false;
         }
@@ -648,8 +652,12 @@ bool ASMu2Dmx::integrate (Integrand& integrand, int lIndex,
       // Cartesian coordinates of current integration point
       X.assign(Xnod * (separateGeometry ? bfs.back().N : fe.basis(itgBasis)));
 
-      // Evaluate the integrand and accumulate element contributions
+      // Integration point weight
       fe.detJxW *= dS*wg[i];
+      if (integrand.isAxiSymmetric())
+        fe.detJxW *= 2.0*M_PI*X.x;
+
+      // Evaluate the integrand and accumulate element contributions
       if (ok && !integrand.evalBouMx(*A,fe,time,X,normal))
         ok = false;
     }
@@ -839,8 +847,12 @@ bool ASMu2Dmx::integrate (Integrand& integrand,
             // Cartesian coordinates of current integration point
             X.assign(Xnod * fe.basis(itgBasis));
 
-            // Evaluate the integrand and accumulate element contributions
+            // Integration point weight
             fe.detJxW *= 0.5*dS*wg[g];
+            if (integrand.isAxiSymmetric())
+              fe.detJxW *= 2.0*M_PI*X.x;
+
+            // Evaluate the integrand and accumulate element contributions
             if (ok && !integrand.evalIntMx(*A,fe,time,X,normal))
               ok = false;
           }

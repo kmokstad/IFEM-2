@@ -253,7 +253,8 @@ bool ASMs2DTri::integrate (Integrand& integrand,
             // Cartesian coordinates of current integration point
             X.assign(Xnod * fe.N);
 
-            fe.detJxW *= 0.5*wr[j];
+            // Integration point weight
+            fe.detJxW *= (integrand.isAxiSymmetric() ? M_PI*X.x : 0.5) * wr[j];
 
             // Compute the reduced integration terms of the integrand
             if (ok && !integrand.reducedInt(*A,fe,X))
@@ -283,7 +284,8 @@ bool ASMs2DTri::integrate (Integrand& integrand,
           // Cartesian coordinates of current integration point
           X.assign(Xnod * fe.N);
 
-          fe.detJxW *= 0.5*wg[j];
+          // Integration point weight
+          fe.detJxW *= (integrand.isAxiSymmetric() ? M_PI*X.x : 0.5) * wg[j];
 
           // Evaluate the integrand and accumulate element contributions
           if (ok && !integrand.evalInt(*A,fe,time,X))

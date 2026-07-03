@@ -399,8 +399,12 @@ bool ASMs2DLag::integrateElm (Integrand& integrand, GlobalIntegral& glInt,
         if (!Def.empty()) integrand.setParam("u", Def * fe.N);
         if (!Vel.empty()) integrand.setParam("v", Vel * fe.N);
 
-        // Compute the reduced integration terms of the integrand
+        // Integration point weight
         fe.detJxW *= wr[i]*wr[j];
+        if (integrand.isAxiSymmetric())
+          fe.detJxW *= 2.0*M_PI*X.x;
+
+        // Compute the reduced integration terms of the integrand
         ok &= integrand.reducedInt(*A,fe,X);
       }
   }
@@ -447,8 +451,12 @@ bool ASMs2DLag::integrateElm (Integrand& integrand, GlobalIntegral& glInt,
       if (!Def.empty()) integrand.setParam("u", Def * fe.N);
       if (!Vel.empty()) integrand.setParam("v", Vel * fe.N);
 
-      // Evaluate the integrand and accumulate element contributions
+      // Integration point weight
       fe.detJxW *= wg[0][i]*wg[1][j];
+      if (integrand.isAxiSymmetric())
+        fe.detJxW *= 2.0*M_PI*X.x;
+
+      // Evaluate the integrand and accumulate element contributions
       ok &= integrand.evalInt(*A,fe,time,X);
     }
 
@@ -648,8 +656,12 @@ bool ASMs2DLag::integrate (Integrand& integrand, int lIndex,
         if (!Def.empty()) integrand.setParam("u", Def * fe.N);
         if (!Vel.empty()) integrand.setParam("v", Vel * fe.N);
 
-        // Evaluate the integrand and accumulate element contributions
+        // Integration point weight
         fe.detJxW *= wg[i];
+        if (integrand.isAxiSymmetric())
+          fe.detJxW *= 2.0*M_PI*X.x;
+
+        // Evaluate the integrand and accumulate element contributions
         if (ok && !integrand.evalBou(*A,fe,time,X,normal))
           ok = false;
       }

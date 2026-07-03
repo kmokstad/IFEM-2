@@ -1277,8 +1277,12 @@ bool ASMu2D::integrate (Integrand& integrand,
             // Cartesian coordinates of current integration point
             X.assign(Xnod * fe.N);
 
-            // Compute the reduced integration terms of the integrand
+            // Integration point weight
             fe.detJxW *= dA*wr[i]*wr[j];
+            if (integrand.isAxiSymmetric())
+              fe.detJxW *= 2.0*M_PI*X.x;
+
+            // Compute the reduced integration terms of the integrand
             if (ok && !integrand.reducedInt(*A,fe,X))
               ok = false;
           }
@@ -1346,8 +1350,12 @@ bool ASMu2D::integrate (Integrand& integrand,
           // Cartesian coordinates of current integration point
           X.assign(Xnod * fe.N);
 
-          // Evaluate the integrand and accumulate element contributions
+          // Integration point weight
           fe.detJxW *= dA*wg[0][i]*wg[1][j];
+          if (integrand.isAxiSymmetric())
+            fe.detJxW *= 2.0*M_PI*X.x;
+
+          // Evaluate the integrand and accumulate element contributions
 #ifndef USE_OPENMP
           PROFILE3("Integrand::evalInt");
 #endif
@@ -1543,8 +1551,12 @@ bool ASMu2D::integrate (Integrand& integrand,
         X.assign(Xnod * fe.N);
         X.u = elmPts[ip].data();
 
-        // Evaluate the integrand and accumulate element contributions
+        // Integration point weight
         fe.detJxW *= dA*elmPts[ip][2];
+        if (integrand.isAxiSymmetric())
+          fe.detJxW *= 2.0*M_PI*X.x;
+
+        // Evaluate the integrand and accumulate element contributions
 #ifndef USE_OPENMP
         PROFILE3("Integrand::evalInt");
 #endif
@@ -1713,8 +1725,12 @@ bool ASMu2D::integrate (Integrand& integrand, int lIndex,
       // Cartesian coordinates of current integration point
       X.assign(Xnod * fe.N);
 
-      // Evaluate the integrand and accumulate element contributions
+      // Integration point weight
       fe.detJxW *= dS*wg[i];
+      if (integrand.isAxiSymmetric())
+        fe.detJxW *= 2.0*M_PI*X.x;
+
+      // Evaluate the integrand and accumulate element contributions
       ok = integrand.evalBou(*A,fe,time,X,normal);
     }
 
@@ -1859,8 +1875,12 @@ bool ASMu2D::integrate (Integrand& integrand,
             std::cout <<"\n"<< fe;
 #endif
 
-            // Evaluate the integrand and accumulate element contributions
+            // Integration point weight
             fe.detJxW *= dS*wg[g];
+            if (integrand.isAxiSymmetric())
+              fe.detJxW *= 2.0*M_PI*X.x;
+
+            // Evaluate the integrand and accumulate element contributions
             ok = integrand.evalInt(*A,fe,time,X,normal);
           }
         }
