@@ -275,9 +275,10 @@ public:
   //! \brief Modifies the current solution vector when activating elements.
   //! \param solution Current primary solution vector
   //! \param[in] time Parameters for nonlinear/time-dependent simulations
+  //! \param[in] stressFree If \e true, let new elements be stress-free
   //! \param[in] verbose If &gt;0, print out the newly activated nodes
-  void updateForNewElements(Vector& solution, const TimeDomain& time,
-                            int verbose = 0) const;
+  bool updateForNewElements(Vector& solution, const TimeDomain& time,
+                            bool stressFree = false, int verbose = 0) const;
 
 
   // Computational methods

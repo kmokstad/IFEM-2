@@ -1025,10 +1025,16 @@ bool SIMbase::hasElementActivator (double t1, double t0) const
   the current (not yet calculated) step, are assigned initial values
   equal to the mean of the other already activated nodes,
   that are connected to the newly activated element.
+
+  If \a stressFree is \e true, the \a solution vector is not updated. Instead,
+  the initial coordinates of newly activated control/nodal points are updated
+  such that the initial configuration of the newly added elements becomes close
+  to stress-free. This may improve the convergence behaviour when activating
+  elements in the non-linear simulation with large deformations.
 */
 
-void SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
-                                    int verbose) const
+bool SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
+                                    bool stressFree, int verbose) const
 {
   // Find all elements and nodes that were active in the previous time step
   IntSet oldElms, oldNodes;
@@ -1044,12 +1050,15 @@ void SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
 
   // Find the newly activated elements and assign solution values to
   // the nodes of those elements that were inactive in the previous step
+  bool ok = true;
   for (ASMbase* pch : myModel)
     if (pch->getElementActivator())
     {
       RealArray pchSol;
       pch->extractNodeVec(solution,pchSol);
       const size_t nf = pch->getNoFields();
+      const size_t nd = pch->getNoSpaceDim();
+      Vector newSol(stressFree ? nd*pch->getNoNodes(-1) : 0);
       for (size_t iel = 1; iel <= pch->getNoElms(true); iel++)
         if (pch->isElementActive(iel-1,time.t) &&
             oldElms.find(pch->getElmID(iel)) == oldElms.end())
@@ -1093,20 +1102,32 @@ void SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
               double* ptr = solution.ptr() + nf*(nodeId-1);
               if (verbose > 0)
                 IFEM::cout <<"\n\tAssigned to new node "<< nodeId;
-              if (verbose > 1)
+              if (verbose > 1 && !stressFree)
               {
                 IFEM::cout <<" (replacing";
                 for (size_t i = 0; i < nf; i++) IFEM::cout <<" "<< ptr[i];
                 IFEM::cout <<")";
               }
-              for (size_t i = 0; i < nf; i++, ptr++)
-                if (mySam->getEquation(nodeId,i+1) > 0)
-                  *ptr = oldSol[i];
+              for (size_t i = 1; i <= nf; i++, ptr++)
+                if (mySam->getEquation(nodeId,i) > 0)
+                {
+                  if (!stressFree)
+                    *ptr = oldSol(i);
+                  else if (i <= nd)
+                    newSol(nd*inod+i) = oldSol(i);
+                }
             }
           if (verbose > 0)
             IFEM::cout << std::endl;
         }
+
+      // Update initial coordinates such that the start configuration
+      // of the new elements is (nearly) stress free
+      if (stressFree && !pch->updateCoords(newSol))
+        ok = false;
     }
+
+  return ok;
 }
 
 

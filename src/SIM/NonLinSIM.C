@@ -151,10 +151,17 @@ bool NonLinSIM::parse (const tinyxml2::XMLElement* elem)
     }
     else if (!strcasecmp(child->Value(),"fromZero"))
       fromIni = true;
-    else if ((value = utl::getValue(child,"updateNewNodes")))
-      updNewN = atoi(value);
     else if (!strcasecmp(child->Value(),"updateNewNodes"))
-      updNewN = 1;
+    {
+      if ((value = utl::getValue(child,"updateNewNodes")))
+        updNewN = std::min(atoi(value),9);
+      else
+        updNewN = 1;
+
+      bool sfree = false;
+      if (utl::getAttribute(child,"stressFree",sfree) && sfree && updNewN > 0)
+        updNewN += 10; // Use stress free-start configuration for new elements
+    }
     else if (!strcasecmp(child->Value(),"printCond"))
       rCond = 0.0; // Compute and report condition number in the iteration log
 
@@ -192,7 +199,9 @@ bool NonLinSIM::advanceStep (TimeStep& param, bool updateTime)
 {
   bool status = this->MultiStepSIM::advanceStep(param,updateTime);
   if (status && updateTime && updNewN && model.hasElementActivator())
-    model.updateForNewElements(solution.front(),param.time,updNewN-1);
+    if (!model.updateForNewElements(solution.front(),param.time,
+                                    updNewN/10, updNewN%10-1))
+      status = false;
   this->pushSolution(); // Update solution vectors between time steps
   return status;
 }
