@@ -57,6 +57,9 @@ public:
   //! \brief Returns a representative scalar equivalent of the function value.
   double getScalarValue(const Vec3& X) const override;
 
+  //! \brief Sets an additional parameter in the function.
+  void setParam(const std::string& name, double value) override;
+
 private:
   using WeightedFunc = std::pair<FunctionBase*,double>; //!< Convenience type
 
@@ -81,6 +84,11 @@ protected:
   {
     return this->FunctionSum::getScalarValue(X);
   }
+
+  //! \brief Adds a spatial function to the list of functions to sum.
+  //! \param[in] ampl Function amplitude, constant or an expression in "t"
+  //! \param[in] f Pointer to a spatial function to sum
+  void addFuncComp(const char* ampl, RealFunc* f);
 
 public:
   //! \copydoc FunctionSum::getScalarValue()

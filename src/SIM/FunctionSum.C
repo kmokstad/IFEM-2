@@ -14,6 +14,7 @@
 #include "FunctionSum.h"
 #include "Functions.h"
 #include "IFEM.h"
+#include "matrix.h"
 
 #include <sstream>
 #include <cstring>
@@ -31,18 +32,19 @@ bool FunctionSum::add (FunctionBase* f, double w)
 {
   if (comps.empty())
   {
-    comps.push_back(std::make_pair(f,w));
+    comps.emplace_back(f,w);
     ncmp = f->dim();
     return true;
   }
   else if (f->dim() == comps.front().first->dim())
   {
-    comps.push_back(std::make_pair(f,w));
+    comps.emplace_back(f,w);
     return true;
   }
 
   std::cerr <<" *** FunctionSum::add: Inconsistent dimensions "
             << f->dim() <<" != "<< comps.front().first->dim() << std::endl;
+  if (ownFunc) delete f;
   return false;
 }
 
@@ -117,6 +119,22 @@ double FunctionSum::getScalarValue (const Vec3& X) const
 }
 
 
+void FunctionSum::setParam (const std::string& name, double value)
+{
+  for (WeightedFunc& func : comps)
+    func.first->setParam(name,value);
+}
+
+
+void RealFuncSum::addFuncComp (const char* ampl, RealFunc* f)
+{
+  if (strstr(ampl,"t"))
+    this->add(new SpaceTimeFunc(f,utl::parseTimeFunc(ampl)));
+  else
+    this->add(f);
+}
+
+
 DiracSum::DiracSum (const char* input, double tol, int nsd)
 {
   if (!input || input[0] == 0)
@@ -129,7 +147,7 @@ DiracSum::DiracSum (const char* input, double tol, int nsd)
     if (cpy[i] == '\\' || cpy[i] == '|')
       cpy[i] = '\n';
 
-  IFEM::cout <<" DiracSum";
+  IFEM::cout <<" DiracSum\n";
   std::stringstream str(cpy);
   char temp[512];
   while (str.getline(temp,512))
@@ -137,19 +155,24 @@ DiracSum::DiracSum (const char* input, double tol, int nsd)
     {
       std::stringstream sline(temp);
       Vec3 X;
-      double value = 0.0;
+      std::string value;
       for (int i = 0; i < nsd; i++)
         sline >> X[i];
       sline >> value;
 
-      IFEM::cout <<"\n\t\tDirac("<< X.x;
+      IFEM::cout <<"\t\tDirac("<< X.x;
       for (int i = 1; i < nsd; i++)
         IFEM::cout <<", "<< X[i];
-      IFEM::cout <<") = "<< value;
+      IFEM::cout <<") = ";
 
-      this->add(new DiracSpaceFunc(value,X,tol,nsd));
+      double amp = 1.0;
+      if (value.find('t') == std::string::npos)
+      {
+        amp = atof(value.c_str());
+        IFEM::cout << amp << std::endl;
+      }
+      this->addFuncComp(value.c_str(), new DiracSpaceFunc(amp,X,tol,nsd));
     }
-  IFEM::cout << std::endl;
 
   free(cpy);
 }

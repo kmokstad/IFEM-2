@@ -30,7 +30,9 @@ public:
   //! \param[in] input The string to parse for function parameters
   //! \param[in] sim The simulator holding the element information
   //! \param[in] nsd Number of spatial dimensions
-  ElementSteps(const char* input, const SIMbase& sim, int nsd);
+  //! \param[in] eps Geometric tolerance
+  ElementSteps(const char* input, const SIMbase& sim,
+               int nsd, double eps = 0.001);
 };
 
 #endif

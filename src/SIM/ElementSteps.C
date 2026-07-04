@@ -22,7 +22,8 @@
 #include <cstring>
 
 
-ElementSteps::ElementSteps (const char* input, const SIMbase& sim, int nsd)
+ElementSteps::ElementSteps (const char* input, const SIMbase& sim,
+                            int nsd, double eps)
 {
   if (!input || input[0] == 0)
     return; // avoid segfault on empty string
@@ -34,7 +35,7 @@ ElementSteps::ElementSteps (const char* input, const SIMbase& sim, int nsd)
     if (cpy[i] == '\\' || cpy[i] == '|')
       cpy[i] = '\n';
 
-  IFEM::cout <<" ElementSteps";
+  IFEM::cout <<" ElementSteps\n";
   std::stringstream str(cpy);
   char temp[512];
   while (str.getline(temp,512))
@@ -42,13 +43,13 @@ ElementSteps::ElementSteps (const char* input, const SIMbase& sim, int nsd)
     {
       std::stringstream sline(temp);
       double p[3] = { 0.0, 0.0, 0.0 };
-      double value = 0.0;
+      std::string value;
       int patch = 1;
       for (int i = 0; i < nsd; i++)
         sline >> p[i];
       sline >> value >> patch;
 
-      IFEM::cout <<"\n\t\tElement("<< p[0];
+      IFEM::cout <<"\t\tElement("<< p[0];
       for (int i = 1; i < nsd; i++)
         IFEM::cout <<", "<< p[i];
       IFEM::cout <<", "<< patch <<") = "<< value;
@@ -69,9 +70,17 @@ ElementSteps::ElementSteps (const char* input, const SIMbase& sim, int nsd)
       Vec3 X0, X1;
       if (pch->getElementBBox(X0,X1,iel))
       {
-        IFEM::cout <<" -> inside([ " << X0 <<"] - ["<< X1 <<"])*"<< value;
-        this->add(new StepXYZFunc(value,X0,X1,0.001));
+        IFEM::cout <<" -> inside([ " << X0 <<"] - ["<< X1 <<"]) * ";
+        double amp = 1.0;
+        if (value.find('t') == std::string::npos)
+        {
+          amp = atof(value.c_str());
+          IFEM::cout << amp << std::endl;
+        }
+        this->addFuncComp(value.c_str(), new StepXYZFunc(amp,X0,X1,eps));
       }
+      else
+        IFEM::cout << std::endl;
     }
   IFEM::cout << std::endl;
 
