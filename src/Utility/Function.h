@@ -17,6 +17,7 @@
 #include "matrixnd.h"
 #include "Tensor.h"
 #include "Vec3.h"
+#include <string>
 #include <cstddef>
 
 
@@ -134,6 +135,9 @@ public:
   Real eval(Real x) const { return this->evaluate(x); }
   //! \brief Returns the first-derivative of the function.
   virtual Real deriv(Real) const { return Real(0); }
+
+  //! \brief Sets an additional parameter in the function.
+  virtual void setParam(const std::string&, Real) {}
 };
 
 

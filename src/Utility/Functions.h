@@ -241,11 +241,11 @@ protected:
 
 class ConstTimeFunc : public RealFunc
 {
-  const ScalarFunc* tfunc; //!< The time-dependent function value
+  ScalarFunc* tfunc; //!< The time-dependent function value
 
 public:
   //! \brief Constructor initializing the function value.
-  explicit ConstTimeFunc(const ScalarFunc* f) : tfunc(f) {}
+  explicit ConstTimeFunc(ScalarFunc* f) : tfunc(f) {}
   //! \brief The destructor frees the time function.
   virtual ~ConstTimeFunc() { delete tfunc; }
 
@@ -256,6 +256,12 @@ public:
 
   //! \brief Returns first-derivative of the function.
   Real deriv(const Vec3& X, int dir) const override;
+
+  //! \brief Sets an additional parameter in the function.
+  void setParam(const std::string& name, Real value) override
+  {
+    tfunc->setParam(name,value);
+  }
 
 protected:
   //! \brief Evaluates the time-varying function.
@@ -271,12 +277,12 @@ protected:
 
 class SpaceTimeFunc : public RealFunc
 {
-  const RealFunc*   sfunc; //!< The space-dependent term
-  const ScalarFunc* tfunc; //!< The time-dependent term
+  RealFunc*   sfunc; //!< The space-dependent term
+  ScalarFunc* tfunc; //!< The time-dependent term
 
 public:
   //! \brief Constructor initializing the function terms.
-  SpaceTimeFunc(const RealFunc* s, const ScalarFunc* t) : sfunc(s), tfunc(t) {}
+  SpaceTimeFunc(RealFunc* s, ScalarFunc* t) : sfunc(s), tfunc(t) {}
   //! \brief The destructor frees the space and time functions.
   virtual ~SpaceTimeFunc() { delete sfunc; delete tfunc; }
 
@@ -289,6 +295,13 @@ public:
   Real deriv(const Vec3& X, int dir) const override;
   //! \brief Returns second-derivative of the function.
   Real dderiv(const Vec3& X, int dir1, int dir2) const override;
+
+  //! \brief Sets an additional parameter in the function.
+  void setParam(const std::string& name, Real value) override
+  {
+    sfunc->setParam(name,value);
+    tfunc->setParam(name,value);
+  }
 
 protected:
   //! \brief Evaluates the space-time function.
@@ -685,6 +698,9 @@ protected:
 
 namespace utl
 {
+  //! \brief Checks if a string is a time-dependent expression.
+  bool isTimeExpression(const std::string& expr);
+
   //! \brief Creates a scalar-valued function by parsing a character string.
   const RealFunc* parseRealFunc(char* cline, Real A = Real(1),
                                 bool print = true);

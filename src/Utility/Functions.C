@@ -33,9 +33,8 @@ namespace
   const Real zTol = Real(1.0e-12); //!< Zero tolerance on function values
 
   //! \brief Creates a scalar function by parsing a character string.
-  const ScalarFunc* parseFunction (const char* type, char* cline,
-                                   Real C = Real(1), bool print = true,
-                                   bool parseConstant = true)
+  ScalarFunc* parseFunction (const char* type, char* cline, Real C = Real(1),
+                             bool print = true, bool parseConstant = true)
   {
     if (strncasecmp(type,"expr",4) == 0)
     {
@@ -665,6 +664,30 @@ Real Interpolate1D::deriv (const Vec3& X, int ddir) const
 
 
 /*!
+  Check if the expression is time-dependent by searching for the occurence
+  of 't' where neither the next nor the previous characters are alphanumeric.
+*/
+
+bool utl::isTimeExpression (const std::string& expr)
+{
+  auto isAlphaNum = [](char c) -> bool
+  {
+    return isalnum(static_cast<unsigned char>(c)) || c == '_';
+  };
+
+  const size_t n = expr.size();
+  for (size_t i = expr.find('t'); i < n; i = expr.find('t',i+1))
+  {
+    bool ok1 = i   == 0 || !isAlphaNum(expr[i-1]);
+    bool ok2 = i+1 == n || !isAlphaNum(expr[i+1]);
+    if (ok1 && ok2) return true;
+  }
+
+  return false;
+}
+
+
+/*!
   The functions are assumed on the general form
   \f[ f({\bf X},t) = A * g({\bf X}) * h(t) \f]
 
@@ -718,7 +741,7 @@ const RealFunc* utl::parseRealFunc (char* cline, Real A, bool print)
     quadratic = 3;
 
   Real C = A;
-  const RealFunc* f = nullptr;
+  RealFunc* f = nullptr;
   if (linear+quadratic > 0)
     cline = strtok(nullptr," "); // get first function parameter
 
@@ -871,7 +894,7 @@ const RealFunc* utl::parseRealFunc (char* cline, Real A, bool print)
 
   if (print)
     IFEM::cout <<" * ";
-  const ScalarFunc* s = parseFunction(cline,nullptr,C,print,false);
+  ScalarFunc* s = parseFunction(cline,nullptr,C,print,false);
 
   if (f)
     return new SpaceTimeFunc(f,s);

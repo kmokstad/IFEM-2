@@ -1480,6 +1480,18 @@ TEST_CASE("TestEvalFunction.isConstant")
 }
 
 
+TEST_CASE("TestEvalFunction.isTime")
+{
+  REQUIRE(!utl::isTimeExpression("2.0*x*y"));
+  REQUIRE(utl::isTimeExpression("2.0*x*y*sin(t)"));
+  REQUIRE(utl::isTimeExpression("2*t"));
+  REQUIRE(!utl::isTimeExpression("time0*x"));
+  REQUIRE(!utl::isTimeExpression("hat*x+y"));
+  REQUIRE(utl::isTimeExpression("20+5*t"));
+  REQUIRE(!utl::isTimeExpression("3+t_0"));
+}
+
+
 TEST_CASE("TestEvalFunction.Derivatives")
 {
   const char* g    = "sin(x)*sin(y)*sin(z)*sin(t)";
