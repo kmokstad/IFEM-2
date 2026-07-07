@@ -379,24 +379,19 @@ bool SIMinput::parsePeriodic (const tinyxml2::XMLElement* elem)
   if (strcasecmp(elem->Value(),"periodic") || !this->createFEMmodel())
     return false;
 
-  int patch = 0, pedir = 1;
-  utl::getAttribute(elem,"patch",patch);
-  utl::getAttribute(elem,"dir",pedir);
-  if (patch < 1 || patch > nGlPatches)
-  {
-    std::cerr <<" *** SIMinput::parse: Invalid patch index "
-              << patch <<"."<< std::endl;
-    return false;
-  }
+  int perdir = 1;
+  IntVec patches;
+  utl::getAttribute(elem,"dir",perdir);
+  this->parsePatchList(elem,patches);
+  for (int patch : patches)
+    if (ASMbase* pch = this->getPatch(patch,true); pch)
+    {
+      IFEM::cout <<"\tPeriodic "<< char('H'+perdir) <<"-direction P"<< patch
+                 << std::endl;
+      pch->closeBoundaries(perdir);
+    }
 
-  if (ASMbase* pch = this->getPatch(patch,true); pch)
-  {
-    IFEM::cout <<"\tPeriodic "<< char('H'+pedir) <<"-direction P"<< patch
-               << std::endl;
-    pch->closeBoundaries(pedir);
-  }
-
-  return true;
+  return !patches.empty();
 }
 
 
