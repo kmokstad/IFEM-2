@@ -1100,24 +1100,28 @@ bool SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
             if (int nodeId = pch->getNodeID(1+inod);
                 oldNodes.find(nodeId) == oldNodes.end())
             {
-              double* ptr = solution.ptr() + nf*(nodeId-1);
-              if (verbose > 0)
-                IFEM::cout <<"\n\tAssigned to new node "<< 1+inod
-                           <<" ["<< nodeId <<"]";
-              if (verbose > 1 && !stressFree)
+              std::vector<size_t> indices = pch->getNodeIndices(nodeId);
+              for (size_t jnod : indices)
               {
-                IFEM::cout <<" (replacing";
-                for (size_t i = 0; i < nf; i++) IFEM::cout <<" "<< ptr[i];
-                IFEM::cout <<")";
-              }
-              for (size_t i = 1; i <= nf; i++, ptr++)
-                if (mySam->getEquation(nodeId,i) > 0)
+                if (verbose > 0)
+                  IFEM::cout <<"\n\tAssigned to new node "<< jnod
+                             <<" ["<< nodeId <<"]";
+                double* ptr = solution.ptr() + nf*(nodeId-1);
+                if (verbose > 1 && !stressFree)
                 {
-                  if (stressFree && i <= nd)
-                    newSol(nd*inod+i) = oldSol(i);
-                  else
-                    *ptr = oldSol(i);
+                  IFEM::cout <<" (replacing";
+                  for (size_t i = 0; i < nf; i++) IFEM::cout <<" "<< ptr[i];
+                  IFEM::cout <<")";
                 }
+                for (size_t i = 1; i <= nf; i++, ptr++)
+                  if (mySam->getEquation(nodeId,i) > 0)
+                  {
+                    if (stressFree && i <= nd)
+                      newSol(nd*jnod-nd+i) = oldSol(i);
+                    else
+                      *ptr = oldSol(i);
+                  }
+              }
               if (stressFree)
                 newNodes[nodeId] = Vec3(oldSol.ptr(),nd);
             }
