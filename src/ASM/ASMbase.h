@@ -212,15 +212,20 @@ public:
   virtual bool getOrder(int&, int&, int&) const { return false; }
 
   //! \brief Returns local 1-based index of the node with given global number.
-  //! \details If the given node number is not present, 0 is returned.
   //! \param[in] globalNum Global node number
+  //!
+  //! \details If the given node number is not present, 0 is returned.
   virtual size_t getNodeIndex(int globalNum, bool = false) const;
+  //! \brief Returns 1-based indices for all nodes with given global number.
+  //! \param[in] globalNum Global node number
+  std::vector<size_t> getNodeIndices(int globalNum) const;
   //! \brief Returns the global node number for the given node.
   //! \param[in] inod 1-based node index local to current patch
   virtual int getNodeID(size_t inod, bool = false) const;
   //! \brief Returns local 1-based index of element with given global number.
-  //! \details If the given node number is not present, 0 is returned.
   //! \param[in] globalNum Global element number
+  //!
+  //! \details If the given element number is not present, 0 is returned.
   size_t getElmIndex(int globalNum) const;
   //! \brief Returns the global element number for the given element.
   //! \param[in] iel 1-based element index local to current patch
@@ -936,7 +941,7 @@ protected:
   //! \param[in] master 1-based local index of the master node
   //! \param[in] slave 1-based local index of the slave node to constrain
   //! \param[in] dirs Which local DOFs to constrain (1, 2, 3, 12, 23, 123)
-  void makePeriodic(size_t master, size_t slave, int dirs = 123);
+  bool makePeriodic(size_t master, size_t slave, int dirs = 123);
   //! \brief Adds a patch to the list of neighbors of this patch.
   //! \param[in] pch Pointer to the neighboring patch
   void addNeighbor(ASMbase* pch);

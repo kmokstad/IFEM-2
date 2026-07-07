@@ -274,6 +274,16 @@ size_t ASMbase::getNodeIndex (int globalNum, bool) const
 }
 
 
+std::vector<size_t> ASMbase::getNodeIndices (int globalNum) const
+{
+  std::vector<int> tmp = utl::findIndices(MLGN,globalNum);
+  std::vector<size_t> indices(tmp.size());
+  for (size_t i = 0; i < tmp.size(); i++)
+    if (tmp[i] >= 0) indices[i] = tmp[i]+1;
+  return indices;
+}
+
+
 int ASMbase::getNodeID (size_t inod, bool) const
 {
   return inod < 1 || inod > MLGN.size() ? 0 : MLGN[inod-1];
@@ -802,14 +812,17 @@ bool ASMbase::addPeriodicity (size_t master, size_t slave, int dir)
 }
 
 
-void ASMbase::makePeriodic (size_t master, size_t slave, int dirs)
+bool ASMbase::makePeriodic (size_t master, size_t slave, int dirs)
 {
   std::set<int> dofs(utl::getDigits(dirs));
   if (dofs.size() == nf && *dofs.rbegin() == nf)
     // If all DOFs are going to be coupled, assign a common global node number
-    ASMbase::collapseNodes(*this,master,*this,slave);
-  else for (int dof : dofs)
-    this->addPeriodicity(master,slave,dof);
+    return ASMbase::collapseNodes(*this,master,*this,slave);
+
+  bool ok = true;
+  for (int dof : dofs)
+    ok &= this->addPeriodicity(master,slave,dof);
+  return ok;
 }
 
 
