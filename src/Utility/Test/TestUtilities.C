@@ -228,3 +228,20 @@ TEST_CASE("TestUtilities.GetDirs")
   REQUIRE(utl::getDirs(3) == 123);
   REQUIRE(utl::getDirs(4) == 1234);
 }
+
+
+TEST_CASE("TestUtilities.FindIndex")
+{
+  std::vector<int> data = { 1, 3, 15, 10, 23, 15, 4, 8, 10, 15, 7, 2 };
+  REQUIRE(utl::findIndex(data,10) == 3);
+  REQUIRE(utl::findIndex(data,15) == 2);
+  REQUIRE(utl::findIndex(data,23) == 4);
+  REQUIRE(utl::findIndex(data,1)  == 0);
+  REQUIRE(utl::findIndex(data,2)  == 11);
+  REQUIRE(utl::findIndex(data,5)  == -1);
+  REQUIRE(utl::findIndices(data,10) == std::vector<int>{3,8});
+  REQUIRE(utl::findIndices(data,15) == std::vector<int>{2,5,9});
+  REQUIRE(utl::findIndices(data,23) == std::vector<int>{4});
+  REQUIRE(utl::findIndices(data,1)  == std::vector<int>{0});
+  REQUIRE(utl::findIndices(data,5)  == std::vector<int>{});
+}

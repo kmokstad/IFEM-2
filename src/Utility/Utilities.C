@@ -15,6 +15,7 @@
 #include "Vec3.h"
 #include "tinyxml2.h"
 #include <algorithm>
+#include <iterator>
 #include <cstdlib>
 #include <cstring>
 
@@ -533,7 +534,17 @@ int utl::findKey (const IntMap& iMap, int iVal)
 int utl::findIndex (const std::vector<int>& iVec, int iVal)
 {
   std::vector<int>::const_iterator it = std::find(iVec.begin(),iVec.end(),iVal);
-  return it == iVec.end() ? -1 : it - iVec.begin();
+  return it == iVec.end() ? -1 : std::distance(iVec.begin(),it);
+}
+
+
+std::vector<int> utl::findIndices (const std::vector<int>& iVec, int iVal)
+{
+  std::vector<int> indices;
+  std::vector<int>::const_iterator it = iVec.begin();
+  while ((it = std::find(it,iVec.end(),iVal)) != iVec.end())
+    indices.push_back(std::distance(iVec.begin(),it++));
+  return indices;
 }
 
 
