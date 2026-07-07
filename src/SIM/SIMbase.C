@@ -1059,6 +1059,7 @@ bool SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
       const size_t nf = pch->getNoFields();
       const size_t nd = pch->getNoSpaceDim();
       Vector newSol(stressFree ? nd*pch->getNoNodes(-1) : 0);
+      std::map<int,Vec3> newNodes;
       for (size_t iel = 1; iel <= pch->getNoElms(true); iel++)
         if (pch->isElementActive(iel-1,time.t) &&
             oldElms.find(pch->getElmID(iel)) == oldElms.end())
@@ -1089,8 +1090,8 @@ bool SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
           if (verbose > 0)
           {
             IFEM::cout <<"\n  Average solution of new active element "
-                       << pch->getElmID(iel) <<" (from "<< count
-                       <<" of "<< elmNodes.size() <<" nodes):";
+                       << pch->getElmID(iel) <<" in P"<< pch->idx+1 <<" (from "
+                       << count <<" of "<< elmNodes.size() <<" nodes):";
             for (double v : oldSol) IFEM::cout <<" "<< v;
           }
 
@@ -1101,7 +1102,8 @@ bool SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
             {
               double* ptr = solution.ptr() + nf*(nodeId-1);
               if (verbose > 0)
-                IFEM::cout <<"\n\tAssigned to new node "<< nodeId;
+                IFEM::cout <<"\n\tAssigned to new node "<< 1+inod
+                           <<" ["<< nodeId <<"]";
               if (verbose > 1 && !stressFree)
               {
                 IFEM::cout <<" (replacing";
@@ -1111,20 +1113,48 @@ bool SIMbase::updateForNewElements (Vector& solution, const TimeDomain& time,
               for (size_t i = 1; i <= nf; i++, ptr++)
                 if (mySam->getEquation(nodeId,i) > 0)
                 {
-                  if (!stressFree)
-                    *ptr = oldSol(i);
-                  else if (i <= nd)
+                  if (stressFree && i <= nd)
                     newSol(nd*inod+i) = oldSol(i);
+                  else
+                    *ptr = oldSol(i);
                 }
+              if (stressFree)
+                newNodes[nodeId] = Vec3(oldSol.ptr(),nd);
             }
           if (verbose > 0)
             IFEM::cout << std::endl;
         }
 
-      // Update initial coordinates such that the start configuration
-      // of the new elements is (nearly) stress free
-      if (stressFree && !pch->updateCoords(newSol))
-        ok = false;
+      if (stressFree)
+      {
+        // Update initial coordinates such that the start configuration
+        // of the new elements is (nearly) stress free
+        if (!pch->updateCoords(newSol))
+          ok = false;
+
+        // Also update the other not-yet-activated patches using the same nodes
+        for (ASMbase* qch : myModel)
+          if (qch->inActive(time.t) && qch != pch)
+          {
+            const size_t nd = qch->getNoSpaceDim();
+            newSol.resize(nd*qch->getNoNodes(-1),true);
+            for (const std::pair<const int,Vec3>& node : newNodes)
+            {
+              std::vector<size_t> indices = qch->getNodeIndices(node.first);
+              for (size_t inod : indices)
+              {
+                for (size_t i = 1; i <= nd; i++)
+                  newSol(nd*inod-nd+i) = node.second(i);
+                if (verbose > 1)
+                  IFEM::cout <<"\tAlso updating node "<< inod <<" ["
+                             << qch->getNodeID(inod) <<"] in P"<< qch->idx+1
+                             <<" with "<< node.second << std::endl;
+              }
+            }
+            if (!qch->updateCoords(newSol))
+              ok = false;
+          }
+      }
     }
 
   return ok;
