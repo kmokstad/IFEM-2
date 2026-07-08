@@ -18,31 +18,36 @@
 #include <vector>
 #include <tinyxml2.h>
 
+
 namespace {
 
-class TestXMLInputBase : public XMLInputBase
+class TestXMLInput : public XMLInputBase
 {
 public:
-  bool parse(const tinyxml2::XMLElement* elem)
+  bool parse(const tinyxml2::XMLElement* elem) override
   {
-    bool child = false;
-    while (elem) {
-      strings.push_back(elem->Value());
-      const tinyxml2::XMLAttribute* attribute = elem->FirstAttribute();
-      while (attribute)
+    auto parseElem = [&content=strings](const tinyxml2::XMLElement* elm)
+    {
+      if (!elm) return false;
+
+      content.push_back(elm->Value());
+      for (const tinyxml2::XMLAttribute* att = elm->FirstAttribute();
+           att; att = att->Next())
       {
-        strings.push_back(attribute->Name());
-        strings.push_back(attribute->Value());
-        attribute = attribute->Next();
+        content.push_back(att->Name());
+        content.push_back(att->Value());
       }
-      if (elem->GetText())
-        strings.push_back(elem->GetText());
-      if (child)
-        elem = elem->NextSiblingElement();
-      else
-        elem = elem->FirstChildElement();
-      child = true;
-    }
+      if (elm->GetText())
+        content.push_back(elm->GetText());
+
+      return true;
+    };
+
+    if (parseElem(elem))
+      for (const tinyxml2::XMLElement* child = elem->FirstChildElement();
+           child; child = child->NextSiblingElement())
+        parseElem(child);
+
     return true;
   }
 
@@ -54,16 +59,16 @@ public:
 
 TEST_CASE("TestXMLInputBase.IncludeFiles")
 {
-  TestXMLInputBase x;
-  x.readXML("src/SIM/Test/with_include.xml");
-
   const std::vector<std::string> ref = {
     "boundaryconditions",
     "dirichlet", "set", "foo", "comp", "12",
     "dirichlet", "set", "bar", "comp", "12", "type", "expression", "a*b*c",
     "neumann", "set", "foobar", "type", "constant", "1.0",
+    "neumann", "set", "barbar", "type", "constant", "2.0",
     "someothertag", "is_here"
   };
 
+  TestXMLInput x;
+  REQUIRE(x.readXML("src/SIM/Test/with_include.xml"));
   REQUIRE(x.strings == ref);
 }
