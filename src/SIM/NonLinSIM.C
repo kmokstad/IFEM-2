@@ -31,12 +31,11 @@ NonLinSIM::NonLinSIM (SIMbase& sim, CNORM n) : MultiStepSIM(sim), iteNorm(n)
   maxIncr = 2;
   maxit   = 20;
   nupdat  = fromIni ? 0 : 20;
-  prnSlow = 0;
+  prnSlow = nLinIt = 0;
   rTol    = 0.000001;
-  aTol    = 0.0;
+  aTol    = eta = 0.0;
   divgLim = 10.0;
   alpha   = alphaO = 1.0;
-  eta     = 0.0;
   updNewN = saveExL = false;
 }
 
@@ -69,7 +68,8 @@ bool NonLinSIM::parse (char* keyWord, std::istream& is)
   {
     std::istringstream cline(utl::readLine(is));
     cline >> maxit >> rTol;
-    if (cline.fail() || cline.bad()) return false;
+    if (cline.fail() || cline.bad())
+      return false;
 
     double tmp;
     cline >> tmp;
@@ -149,6 +149,8 @@ bool NonLinSIM::parse (const tinyxml2::XMLElement* elem)
         fromIni = true;
       }
     }
+    else if ((value = utl::getValue(child,"nlinit")))
+      nLinIt = atoi(value);
     else if (!strcasecmp(child->Value(),"fromZero"))
       fromIni = true;
     else if (!strcasecmp(child->Value(),"updateNewNodes"))
@@ -237,6 +239,9 @@ SIM::ConvStatus NonLinSIM::solveStep (TimeStep& param,
   if (subiter&FIRST && !model.updateDirichlet(param.time.t,&solution.front()))
     return FAILURE;
 
+  if (nLinIt > 0 && iteNorm > NONE) // Flag initial linear iteration
+    model.setIntegrationPrm(3,1.0); // without stress-stiffening
+
   bool poorConvg = false;
   bool newTangent = param.time.first || iteNorm != NONE;
   model.setMode(newTangent ? mode : RHS_ONLY, false);
@@ -288,7 +293,11 @@ SIM::ConvStatus NonLinSIM::solveStep (TimeStep& param,
         if (subiter&FIRST && param.iter == 1 && !model.updateDirichlet())
           return FAILURE;
 
-        if (param.iter > nupdat) newTangent = false;
+        if (param.iter == nLinIt)
+          model.setIntegrationPrm(3,0.0);
+        if (param.iter > nupdat)
+          newTangent = false;
+
         model.setMode(newTangent ? mode : RHS_ONLY, false);
         if (!this->assembleSystem(param.time,solution,newTangent,poorConvg))
           return model.getProblem()->diverged() ? DIVERGED : FAILURE;
@@ -517,7 +526,8 @@ void NonLinSIM::printWorst (utl::LogStream& os, double eps)
   {
     os <<"\n     Node "<< wd.first.first <<" local DOF "<< wd.first.second;
     char nodeType = model.getNodeType(wd.first.first);
-    if (nodeType != ' ') os <<" ("<< nodeType <<")";
+    if (nodeType != ' ')
+      os <<" ("<< nodeType <<")";
     os <<" :\tEnergy = "<< wd.second[0]
        <<"\tdu = "<< wd.second[1] <<"\tres = "<< wd.second[2];
     std::map<int,int>::iterator nit = slowNodes.find(wd.first.first);

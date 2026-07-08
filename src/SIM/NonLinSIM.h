@@ -130,6 +130,7 @@ protected:
   int    prnSlow; //!< How many DOFs to print out on slow convergence
   bool   saveExL; //!< If \e true, the external load vector will be saved to VTF
   char   updNewN; //!< If &gt; 0, update newly activated nodes before new step
+  int    nLinIt;  //!< Number of initial linear iterations (no geometric stiff.)
 
   std::map<int,int> slowNodes; //!< Nodes for which slow convergence is detected
 
