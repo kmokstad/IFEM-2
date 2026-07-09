@@ -43,9 +43,9 @@ namespace
       {
         if (print)
           IFEM::cout << cline;
-        EvalFuncScalar<Real>::numError = 0;
+        ExprEval::numError = 0;
         sf = new EvalFunc(cline,"t",C);
-        if (EvalFunc::numError > 0)
+        if (ExprEval::numError > 0)
         {
           delete sf;
           sf = nullptr;
@@ -956,9 +956,9 @@ RealFunc* utl::parseRealFunc (const std::string& func,
   {
     if (print)
       IFEM::cout << func;
-    EvalFunc::numError = 0;
+    ExprEval::numError = 0;
     f = new EvalFunction(func.c_str());
-    if (EvalFunc::numError > 0)
+    if (ExprEval::numError > 0)
     {
       delete f;
       f = nullptr;
@@ -1009,9 +1009,9 @@ VecFunc* utl::parseVecFunc (const std::string& func, const std::string& type,
   else if (type == "expression")
   {
     IFEM::cout <<": "<< func;
-    EvalFunc::numError = 0;
+    ExprEval::numError = 0;
     f = new VecFuncExpr(func,variables);
-    if (EvalFunc::numError > 0)
+    if (ExprEval::numError > 0)
     {
       delete f;
       f = nullptr;

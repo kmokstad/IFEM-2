@@ -27,24 +27,23 @@ namespace ExprEval {
   template<class ArgType> class Expression;
   template<class ArgType> class FunctionList;
   template<class ArgType> class ValueList;
+  extern int numError;
 }
 
 
 /*!
-  \brief A scalar-valued function, general expression.
+  \brief Common holder class for expression functions.
 */
 
-template<class Scalar>
-class EvalFuncScalar : public ScalarFunc
+template<class Scalar> class ExpressionHolder
 {
+protected:
   //! Type alias for expression tree
   using Expression = ExprEval::Expression<Scalar>;
   //! Type alias for function list
   using FunctionList = ExprEval::FunctionList<Scalar>;
   //! Type alias for value list
   using ValueList = ExprEval::ValueList<Scalar>;
-  //! Type alias for function
-  using FuncType = EvalFuncScalar<Scalar>;
 
   //! Roots of the expression tree
   std::vector< std::unique_ptr<Expression> > expr;
@@ -53,6 +52,28 @@ class EvalFuncScalar : public ScalarFunc
   //! Lists of variables and constants
   std::vector< std::unique_ptr<ValueList> >     v;
 
+  //! \brief The constructor parses the expression string.
+  explicit ExpressionHolder(const char* function);
+  //! \brief Default destructor.
+  virtual ~ExpressionHolder();
+
+  //! \brief Sets an additional parameter in the variables and/or constants.
+  void setParameter(const std::string& name, Real value);
+
+  //! \brief Evaluates the function expression.
+  Real evaluateExpression(size_t i) const;
+};
+
+
+/*!
+  \brief A scalar-valued function, general expression.
+*/
+
+template<class Scalar>
+class EvalFuncScalar : public ScalarFunc, private ExpressionHolder<Scalar>
+{
+  using FuncType = EvalFuncScalar<Scalar>; //!< Type alias for the function
+
   std::vector<Scalar*> arg; //!< Function argument values
 
   std::unique_ptr<FuncType> gradient; //!< First derivative expression
@@ -60,8 +81,6 @@ class EvalFuncScalar : public ScalarFunc
   Real dx; //!< Domain increment for calculation of numerical derivative
 
 public:
-  static int numError; //!< Error counter - set by the exception handler
-
   //! \brief The constructor parses the expression string.
   explicit EvalFuncScalar(const char* function, const char* x = "x",
                           Real eps = Real(1.0e-8));
@@ -72,6 +91,12 @@ public:
 
   //! \brief Adds an expression function for a first derivative.
   void addDerivative(const std::string& function, const char* x = "x");
+
+  //! \brief Sets an additional parameter in the function.
+  void setParam(const std::string& name, Real value) override
+  {
+    this->setParameter(name,value);
+  }
 
   //! \brief Returns whether the function is time-independent or not.
   bool isConstant() const override { return false; }
@@ -90,23 +115,9 @@ protected:
 */
 
 template<class Scalar>
-class EvalFuncSpatial : public RealFunc
+class EvalFuncSpatial : public RealFunc, private ExpressionHolder<Scalar>
 {
-  //! Type alias for expression tree
-  using Expression = ExprEval::Expression<Scalar>;
-  //! Type alias for function list
-  using FunctionList = ExprEval::FunctionList<Scalar>;
-  //! Type alias for value list
-  using ValueList = ExprEval::ValueList<Scalar>;
-  //! Type alias for function
-  using FuncType = EvalFuncSpatial<Scalar>;
-
-  //! Roots of the expression tree
-  std::vector< std::unique_ptr<Expression> > expr;
-  //! Lists of functions
-  std::vector< std::unique_ptr<FunctionList> >  f;
-  //! Lists of variables and constants
-  std::vector< std::unique_ptr<ValueList> >     v;
+  using FuncType = EvalFuncSpatial<Scalar>; //!< Type alias for the function
 
   //! \brief A struct representing a spatial function argument.
   struct Arg
@@ -116,28 +127,47 @@ class EvalFuncSpatial : public RealFunc
     Scalar* z; //!< Z-coordinate
     Scalar* t; //!< Time
 
-    //! \brief Returns a const ref to a member.
-    //! \param dir One-based index to member
-    const Scalar& get(int dir) const
+    //! \brief Assignment operator;
+    const Arg& operator=(const Vec3& X) const
+    {
+      const Vec4* Xt = dynamic_cast<const Vec4*>(&X);
+      if (x) *x = X.x;
+      if (y) *y = X.y;
+      if (z) *z = X.z;
+      if (t) *t = Xt ? Xt->t : Real(0);
+      return *this;
+    }
+
+    //! \brief Indexing operator (one-based).
+    const Scalar& operator()(int dir) const
+    {
+      static const Scalar dummy{};
+      switch (dir) {
+      case 1: return x ? *x : dummy;
+      case 2: return y ? *y : dummy;
+      case 3: return z ? *z : dummy;
+      case 4: return t ? *t : dummy;
+      }
+      return dummy; // Index out of range, error?
+    }
+
+    //! \brief Checks whether a component is defined or not.
+    bool validComp(int dir) const
     {
       switch (dir) {
-        case  1: return *x;
-        case  2: return *y;
-        case  3: return *z;
-        case  4: return *t;
-        default: return *x;
+      case 1: return x != nullptr;
+      case 2: return y != nullptr;
+      case 3: return z != nullptr;
+      case 4: return t != nullptr;
       }
+      return false;
     }
   };
 
   std::vector<Arg> arg; //!< Function argument values
 
-  //! First order derivative expressions
-  std::array<std::unique_ptr<FuncType>,4> derivative1;
-  //! Second order derivative expressions
-  std::array<std::unique_ptr<FuncType>,6> derivative2;
-
-  bool IAmConstant; //!< Indicates whether the time coordinate is given or not
+  //! First and second order derivative expressions
+  std::array<std::unique_ptr<FuncType>,10> derivative;
 
   Real dx; //!< Domain increment for calculation of numerical derivative
   Real dt; //!< Domain increment for calculation of numerical time-derivative
@@ -155,16 +185,19 @@ public:
   void addDerivative(const std::string& function, const std::string& variables,
                      int d1, int d2 = 0);
 
+  //! \brief Sets an additional parameter in the function.
+  void setParam(const std::string& name, Real value) override
+  {
+    this->setParameter(name,value);
+  }
+
   //! \brief Returns whether the function is time-independent or not.
-  bool isConstant() const override { return IAmConstant; }
+  bool isConstant() const override { return arg.empty() || !arg.front().t; }
 
   //! \brief Returns first-derivative of the function.
   Real deriv(const Vec3& X, int dir) const override;
   //! \brief Returns second-derivative of the function.
-  Real dderiv(const Vec3& X, int dir1, int dir2) const override;
-
-  //! \brief Sets an additional parameter in the function.
-  void setParam(const std::string& name, Real value) override;
+  Real dderiv(const Vec3& X, int i, int j) const override;
 
   //! \brief Evaluates first derivatives of the function.
   Vec3 gradient(const Vec3& X) const override
@@ -204,8 +237,8 @@ protected:
 
 public:
   //! \brief Adds an expression function for a first or second derivative.
-  void addDerivative(const std::string& functions,
-                     const std::string& variables, int d1, int d2 = 0);
+  void addDerivative(const std::string& functions, const std::string& variables,
+                     int d1, int d2 = 0);
 
   //! \brief Returns number of spatial dimension.
   size_t getNoSpaceDim() const { return nsd; }
@@ -221,7 +254,7 @@ protected:
   \details The function is implemented as an array of EvalFunction objects.
 */
 
-template <class ParentFunc, class Ret, class Scalar>
+template<class ParentFunc, class Ret, class Scalar>
 class EvalMultiFunction : public ParentFunc, public EvalFunctions<Scalar>
 {
   //! Type alias for the function
@@ -232,14 +265,7 @@ public:
   explicit EvalMultiFunction(const std::string& functions,
                              const std::string& variables = "",
                              const Real epsX = 1e-8,
-                             const Real epsT = 1e-12)
-    : EvalFunctions<Scalar>(functions,variables,epsX,epsT)
-  {
-    this->setNoDims();
-  }
-
-  //! \brief Empty destructor.
-  virtual ~EvalMultiFunction() {}
+                             const Real epsT = 1e-12);
 
   //! \brief Returns whether the function is time-independent or not.
   bool isConstant() const override
@@ -255,7 +281,7 @@ public:
   //! \brief Returns first-derivative of the function.
   Ret deriv(const Vec3& X, int dir) const override;
   //! \brief Returns second-derivative of the function.
-  Ret dderiv(const Vec3& X, int dir1, int dir2) const override;
+  Ret dderiv(const Vec3& X, int i, int j) const override;
 
   //! \brief Sets an additional parameter in the function.
   void setParam(const std::string& name, Real value) override
@@ -265,9 +291,6 @@ public:
   }
 
 protected:
-  //! \brief Sets the number of spatial dimensions (default implementation).
-  void setNoDims();
-
   //! \brief Evaluates the function expressions.
   Ret evaluate(const Vec3& X) const override;
 
@@ -291,8 +314,5 @@ using VecFuncExpr = EvalMultiFunction<VecFunc,Vec3,Real>;
 using TensorFuncExpr = EvalMultiFunction<TensorFunc,Tensor,Real>;
 //! Symmetric tensor-valued function expression
 using STensorFuncExpr = EvalMultiFunction<STensorFunc,SymmTensor,Real>;
-
-//! \brief Explicit instantiation of error flag.
-template<> int EvalFunc::numError;
 
 #endif
