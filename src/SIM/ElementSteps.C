@@ -71,13 +71,18 @@ ElementSteps::ElementSteps (const char* input, const SIMbase& sim,
       if (pch->getElementBBox(X0,X1,iel))
       {
         IFEM::cout <<" -> inside([ " << X0 <<"] - ["<< X1 <<"]) * ";
-        double amp = 1.0;
-        if (value.find('t') == std::string::npos)
+
+        char* endPtr = nullptr;
+        const char* ampExpr = value.c_str();
+        double ampConst = strtod(ampExpr,&endPtr);
+        if (strlen(endPtr) == 0)
         {
-          amp = atof(value.c_str());
-          IFEM::cout << amp << std::endl;
+          ampExpr = nullptr;
+          IFEM::cout << ampConst << std::endl;
         }
-        this->addFuncComp(value.c_str(), new StepXYZFunc(amp,X0,X1,eps));
+        else
+          ampConst = 1.0; // An expression was specified
+        this->addFuncComp(ampExpr, new StepXYZFunc(ampConst,X0,X1,eps));
       }
       else
         IFEM::cout << std::endl;

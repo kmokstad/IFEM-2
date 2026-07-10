@@ -128,10 +128,16 @@ void FunctionSum::setParam (const std::string& name, double value)
 
 void RealFuncSum::addFuncComp (const char* ampl, RealFunc* f)
 {
-  if (strstr(ampl,"t"))
-    this->add(new SpaceTimeFunc(f,utl::parseTimeFunc(ampl)));
-  else
-    this->add(f);
+  if (ampl)
+  {
+    if (ScalarFunc* tf = utl::parseTimeFunc(ampl); tf)
+      f = new SpaceTimeFunc(f,tf);
+    else
+      IFEM::cout <<"  ** Malformed time expression \""<< ampl <<"\","
+                 <<" the function component will remain constant."<< std::endl;
+  }
+
+  this->add(f);
 }
 
 
@@ -165,13 +171,17 @@ DiracSum::DiracSum (const char* input, double tol, int nsd)
         IFEM::cout <<", "<< X[i];
       IFEM::cout <<") = ";
 
-      double amp = 1.0;
-      if (value.find('t') == std::string::npos)
+      char* endPtr = nullptr;
+      const char* ampExpr = value.c_str();
+      double ampConst = strtod(ampExpr,&endPtr);
+      if (strlen(endPtr) == 0)
       {
-        amp = atof(value.c_str());
-        IFEM::cout << amp << std::endl;
+        ampExpr = nullptr;
+        IFEM::cout << ampConst << std::endl;
       }
-      this->addFuncComp(value.c_str(), new DiracSpaceFunc(amp,X,tol,nsd));
+      else
+        ampConst = 1.0; // An expression was specified
+      this->addFuncComp(ampExpr, new DiracSpaceFunc(ampConst,X,tol,nsd));
     }
 
   free(cpy);
