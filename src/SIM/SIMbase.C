@@ -2001,8 +2001,10 @@ bool SIMbase::solutionNorms (const TimeDomain& time,
     IFEM::cout <<"\nIntegrating solution norms ("<< name <<") ..."<< std::endl;
 
   myProblem->initIntegration(time,psol.front());
+  if (!norm->initIntegration(nIntGP,nBouGP))
+    return false;
+
   norm->initProjection(ssol.size());
-  norm->initIntegration(nIntGP,nBouGP);
 
   // Number of recovered solution components
   size_t nNodes = this->getNoNodes(1);
@@ -2375,7 +2377,7 @@ bool SIMbase::project (Matrix& ssol, const Vector& psol,
     myProblem->initIntegration(time,psol);
   }
 
-  // Initialize result point buffers within the integrand (if any).
+  // Pass current time to the integrand for solution evaluation, if needed.
   // The negative second argument is used to flag that we are going to
   // do numerical integration, possibly using integration point buffers instead
   // of the result evaluation buffers.

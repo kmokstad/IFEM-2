@@ -387,7 +387,7 @@ public:
   virtual ~NormBase();
 
   //! \brief Initializes the integrand with the number of integration points.
-  virtual void initIntegration(size_t, size_t) {}
+  virtual bool initIntegration(size_t, size_t) { return true; }
   //! \brief Sets the number of projected solutions.
   void initProjection(size_t nproj);
   //! \brief Sets a vector of LocalIntegrals to be used during norm integration.
@@ -546,9 +546,6 @@ public:
   //! \brief Assembles the global forces.
   void assemble(RealArray& force) const;
 
-  //! \brief Initializes the integrand with the number of integration points.
-  virtual void initIntegration(size_t, size_t) {}
-
   using Integrand::getLocalIntegral;
   //! \brief Returns a local integral container for the element \a iEl.
   LocalIntegral* getLocalIntegral(size_t, size_t iEl,
@@ -557,18 +554,15 @@ public:
   //! \brief Dummy implementation (only boundary integration is relevant).
   bool initElement(const std::vector<int>&,
                    LocalIntegral&) override { return false; }
-
   //! \brief Dummy implementation (only boundary integration is relevant).
   bool initElement(const std::vector<int>&,
                    const FiniteElement&, const Vec3&, size_t,
                    LocalIntegral&) override { return false; }
-
   //! \brief Dummy implementation (only boundary integration is relevant).
   bool initElement(const std::vector<int>&,
                    const std::vector<size_t>&,
                    const std::vector<size_t>&,
                    LocalIntegral&) override { return false; }
-
   //! \brief Dummy implementation (only boundary integration is relevant).
   bool initElement(const std::vector<int>&,
                    const MxFiniteElement&,
