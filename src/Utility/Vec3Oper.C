@@ -139,7 +139,7 @@ bool operator< (const Vec3& a, const Vec3& b)
 
 std::ostream& operator<< (std::ostream& os, const Vec3& a)
 {
-  return a.print(os);
+  return a.print(os,utl::zero_print_tol);
 }
 
 
