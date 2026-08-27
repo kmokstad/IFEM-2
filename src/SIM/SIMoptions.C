@@ -16,7 +16,7 @@
 #include "Profiler.h"
 #include "IFEM.h"
 #include "GlbL2projector.h"
-
+#include "print_tol.h"
 #include "tinyxml2.h"
 #ifdef HAVE_MPI
 #include <mpi.h>
@@ -373,6 +373,8 @@ bool SIMoptions::parseOldOptions (int argc, char** argv, int& i)
     ncv = atoi(argv[++i]);
   else if (!strcmp(argv[i],"-shift") && i < argc-1)
     shift = atof(argv[++i]);
+  else if (!strcmp(argv[i],"-zero_print_tol") && i < argc-1)
+    utl::zero_print_tol = atof(argv[++i]);
   else if (!strncasecmp(argv[i],"-indentprof",11))
     Profiler::indentReport = true;
   else if (!strcasecmp(argv[i],"-controller"))
