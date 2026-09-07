@@ -663,7 +663,17 @@ bool SIMoutput::writeGlvG (int& nBlock, const char* inpFile, bool append)
   if (inpFile && !this->openGlv(inpFile))
     return false;
 
-  return this->writeGlvG(nBlock,0.0,append);
+  if (int ret = this->writeGlvG(nBlock,0.0,append); ret > 0)
+    return true;
+  else if (ret < 0)
+    return false;
+
+  // Should normally never get here, just to catch potential logic errors.
+  // Simulations using the element activation feature should invoke openGlv()
+  // and the other writeGlvG() methods separately, and take proper action if
+  // no elements are activated, without failure.
+  std::cerr <<" *** SIMoutput::writeGlvG: No active elements."<< std::endl;
+  return false;
 }
 
 
@@ -678,10 +688,10 @@ bool SIMoutput::writeGlvG (int& nBlock, const char* inpFile, bool append)
   nodes such that new node blocks are not required to be written.
 */
 
-bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
+int SIMoutput::writeGlvG (int& nBlock, double time, bool append)
 {
   if (!myVtf)
-    return true; // no VTF output (silently ignore)
+    return 0; // no VTF output (silently ignore)
 
   // Get the ID list of current node blocks, if any
   IntVec nodeBlocks;
@@ -702,6 +712,7 @@ bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
   char pname[64];
 
   // Convert and write model geometry
+  int oBlock = nBlock;
   size_t pidx = i = 0;
   for (const ASMbase* pch : myModel)
   {
@@ -710,7 +721,7 @@ bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
       continue; // skip empty and inactive patches
 
     if (!(lvb = this->tesselatePatch(pidx-1)))
-      return false;
+      return -static_cast<int>(pidx);
 
     if (pch->getElementActivator())
       // Remove the elements not yet activated
@@ -739,7 +750,7 @@ bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
       // Reuse the existing node block when time > 0.0
       nodeBlock = i < static_cast<int>(nodeBlocks.size()) ? nodeBlocks[i++] : 0;
       if (!myVtf->writeGrid(lvb,pname,++nBlock,nodeBlock))
-        return false;
+        return -static_cast<int>(pidx);
     }
   }
 
@@ -752,22 +763,24 @@ bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
     // Reuse the last node block when time > 0.0 unless increased size
     nodeBlock = singlePart->getNoNodes() > nNodeLast ? 0 : nodeBlocks.back();
     if (!myVtf->writeGrid(singlePart,"FE model",++nBlock,nodeBlock))
-      return false;
+      return -1;
   }
+  else if (myVtf->empty())
+    return 0; // No active patches (yet)
 
   // Additional geometry for immersed boundaries, etc.
   myGeofs1 = nBlock;
   for (const ASMbase* pch : myModel)
     if ((lvb = pch->immersedGeometry(pname)))
       if (!myVtf->writeGrid(lvb,pname,++nBlock))
-        return false;
+        return -static_cast<int>(++pidx);
 
   // Additional geometry for spider visualization, etc.
   myGeofs2 = nBlock;
   for (const ASMbase* pch : myModel)
     if ((lvb = pch->extraGeometry(pname)))
       if (!myVtf->writeGrid(lvb,pname,++nBlock))
-        return false;
+        return -static_cast<int>(++pidx);
 
   // Additional geometry for result point visualization
   if (myPtSize > 0.0 && !myPoints.empty())
@@ -778,7 +791,7 @@ bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
         lvb->merge(CubeBlock(pt.X,myPtSize));
 
     if (!myVtf->writeGrid(lvb,"Result points",++nBlock))
-      return false;
+      return -static_cast<int>(++pidx);
   }
 
   // Additional geometry for the extra points
@@ -789,12 +802,12 @@ bool SIMoutput::writeGlvG (int& nBlock, double time, bool append)
       lvb->merge(CubeBlock(pt.second,myPtSize));
 
     if (!myVtf->writeGrid(lvb,"Extra points",++nBlock))
-      return false;
+      return -static_cast<int>(++pidx);
   }
 
   // Do not write the geometry blocks to file yet, method VTF::writeVectors()
   // might create an additional block for the point vectors
-  return true;
+  return nBlock-oBlock;
 }
 
 

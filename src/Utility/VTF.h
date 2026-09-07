@@ -190,6 +190,11 @@ public:
   const ElementBlock* getBlock(int geomID) const;
   //! \brief Returns the node block ID associated with a geometry block.
   int getNodeBlock(int geomID) const;
+  //! \brief Returns \e true if the VTF-file is empty.
+  //! \details The file is regarded as empty if no geometry blocks have
+  //! been added (via the writeGrid() method), since simulation start
+  //! or the last call to clearGeometryBlocks().
+  bool empty() const { return myBlocks.empty(); }
 
   //! \brief Adds the current FE geometry blocks to the description block.
   void writeGeometryBlocks(int iStep);

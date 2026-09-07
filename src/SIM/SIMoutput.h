@@ -79,7 +79,10 @@ public:
   //! \param nBlock Running result block counter
   //! \param[in] time The time from which this (new) geometry applies
   //! \param[in] append If \e true, append new blocks to existing ones
-  virtual bool writeGlvG(int& nBlock, double time, bool append = false);
+  //! \return Number of geometry blocks written
+  //! \return 0 if no VTF output or no active patches
+  //! \return Negative value on tesselation- or write failure
+  virtual int writeGlvG(int& nBlock, double time, bool append = false);
 
   //! \brief Writes additional, problem-specific, results to the VTF-file.
   virtual bool writeGlvA(int&, int, double, int = 1) const { return true; }
