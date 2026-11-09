@@ -1157,7 +1157,8 @@ protected:
   bool writeLagBasis(std::ostream& os, const char* type) const;
 
 public:
-  static bool fixHomogeneousDirichlet; //!< If \e true, pre-eliminate fixed DOFs
+  //! If \e true, use constraint equations also for homogeneous Dirichlet
+  static bool constrainHDirich;
 
   static int dbgElm; //!< One-based element index to print debugging info for
 

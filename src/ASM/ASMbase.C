@@ -28,7 +28,7 @@
 #include <numeric>
 
 
-bool ASMbase::fixHomogeneousDirichlet = true;
+bool ASMbase::constrainHDirich = false;
 int  ASMbase::dbgElm = 0;
 
 //! This quantity is used to scale the characteristic element sizes which are
@@ -1034,7 +1034,7 @@ bool ASMbase::constrainXnode (int node, int dof, int code)
 
 int ASMbase::prescribe (size_t inod, int dirs, int code, bool overrideD)
 {
-  if (code == 0 && fixHomogeneousDirichlet)
+  if (code == 0 && !constrainHDirich)
     return this->fix(inod,dirs);
 
   int node = this->getNodeID(inod);
