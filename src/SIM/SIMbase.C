@@ -334,14 +334,12 @@ bool SIMbase::preprocessC (const IntVec& ignored, bool fixDup, double time0)
         nprop++;
         code = p.pindx;
         dofs = abs(code%1000000);
-        bool overrideDirichlet = false;
         switch (p.pcode) {
         case Property::DIRICHLET:
+        case Property::DIRICHLET_HOM:
           code = 0;
         case Property::DIRICHLET_INHOM:
-          break;
         case Property::DIRICHLET_OVERRIDE:
-          overrideDirichlet = true;
           break;
 
         case Property::UNDEFINED:
@@ -368,8 +366,8 @@ bool SIMbase::preprocessC (const IntVec& ignored, bool fixDup, double time0)
             pbasis = -pbasis;
             myModel[p.patch-1]->addPiolaDirichlet(code);
           }
-          if (this->addConstraint(p.patch,p.lindx,p.ldim,dofs,code,nGlbNodes,
-                                  pbasis,overrideDirichlet))
+          if (this->addConstraint(p.patch,p.lindx,p.ldim,p.pcode,
+                                  dofs,code,nGlbNodes,pbasis))
             IFEM::cout << std::endl;
           else
             ++ierr;
@@ -480,8 +478,8 @@ bool SIMbase::preprocessC (const IntVec& ignored, bool fixDup, double time0)
   topological entities, such as boundary edges and faces.
 */
 
-bool SIMbase::addConstraint (int patch, int lndx, int ldim, int dirs, int code,
-                             int& ngnod, char basis, bool ovrD)
+bool SIMbase::addConstraint (int patch, int lndx, int ldim, Property::Type dtyp,
+                             int dirs, int code, int& ngnod, char basis)
 {
   if (patch < 1 || patch > static_cast<int>(myModel.size()))
   {
@@ -507,11 +505,15 @@ bool SIMbase::addConstraint (int patch, int lndx, int ldim, int dirs, int code,
   std::cout << std::endl;
 #endif
 
+  // Activate constraint equations also for homogeneous Dircichlet conditions
+  ASMbase::constrainHDirich = dtyp == Property::DIRICHLET_HOM;
+
+  ASMbase* pch = myModel[patch-1];
   if (ldim == numdim) // Constrain the whole patch (all control/nodal points)
-    myModel[patch-1]->constrainPatch(dirs,code);
+    pch->constrainPatch(dirs,code);
   else if (ldim == 4) // Explicit nodal constraints
-    myModel[patch-1]->constrainNodes(myModel[patch-1]->getNodeSet(lndx),
-                                     dirs,code,ovrD);
+    pch->constrainNodes(pch->getNodeSet(lndx),dirs,code,
+                        dtyp == Property::DIRICHLET_OVERRIDE);
   else
     return false;
 
@@ -819,6 +821,9 @@ bool SIMbase::printProblem () const
       break;
     case Property::DIRICHLET:
       std::cout <<"DIRICHLET       : ";
+      break;
+    case Property::DIRICHLET_HOM:
+      std::cout <<"DIRICHLET_HOM   : ";
       break;
     case Property::DIRICHLET_INHOM:
     case Property::DIRICHLET_OVERRIDE:

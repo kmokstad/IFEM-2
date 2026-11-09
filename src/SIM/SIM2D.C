@@ -650,7 +650,8 @@ bool SIM2D::parse (char* keyWord, std::istream& is)
 
       if (pd == 0.0)
       {
-	if (!this->addConstraint(patch,pedge,ldim,bcode%1000000,0,ngno))
+	if (!this->addConstraint(patch,pedge,ldim,Property::DIRICHLET,
+                                 bcode%1000000,0,ngno))
 	  return false;
       }
       else
@@ -659,7 +660,8 @@ bool SIM2D::parse (char* keyWord, std::istream& is)
 	while (myScalars.find(code) != myScalars.end())
 	  code += 1000000;
 
-	if (!this->addConstraint(patch,pedge,ldim,bcode%1000000,-code,ngno))
+	if (!this->addConstraint(patch,pedge,ldim,Property::DIRICHLET_INHOM,
+				 bcode%1000000,-code,ngno))
 	  return false;
 
 	IFEM::cout <<" ";
@@ -702,8 +704,9 @@ bool SIM2D::parse (char* keyWord, std::istream& is)
 }
 
 
-bool SIM2D::addConstraint (int patch, int lndx, int ldim, int dirs, int code,
-                           int& ngnod, char basis, bool ovrD)
+bool SIM2D::addConstraint (int patch, int lndx, int ldim,
+                           Property::Type dtyp, int dirs, int code,
+                           int& ngnod, char basis)
 {
   // Lambda function for error message generation
   auto&& error = [](const char* message, int idx, bool coutNL = false)
@@ -717,8 +720,8 @@ bool SIM2D::addConstraint (int patch, int lndx, int ldim, int dirs, int code,
   if (patch < 1 || patch > (int)myModel.size())
     return error("patch index",patch);
 
-  if (this->SIMbase::addConstraint(patch,lndx,abs(ldim),dirs,code,
-                                   ngnod,basis,ovrD))
+  if (this->SIMbase::addConstraint(patch,lndx,abs(ldim),
+                                   dtyp,dirs,code,ngnod,basis))
     return true;
 
   bool open = ldim < 0; // open means without its end points

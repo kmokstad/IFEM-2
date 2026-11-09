@@ -541,7 +541,8 @@ bool SIM3D::parse (char* keyWord, std::istream& is)
       }
       else if (pd == 0.0)
       {
-        if (!this->addConstraint(patch,pface,ldim,bcode%1000000,0,ngno))
+        if (!this->addConstraint(patch,pface,ldim,Property::DIRICHLET,
+                                 bcode%1000000,0,ngno))
           return false;
       }
       else
@@ -550,7 +551,8 @@ bool SIM3D::parse (char* keyWord, std::istream& is)
         while (myScalars.find(code) != myScalars.end())
           code += 1000000;
 
-        if (!this->addConstraint(patch,pface,ldim,bcode%1000000,-code,ngno))
+        if (!this->addConstraint(patch,pface,ldim,Property::DIRICHLET_INHOM,
+                                 bcode%1000000,-code,ngno))
           return false;
 
         IFEM::cout <<" ";
@@ -594,7 +596,8 @@ bool SIM3D::parse (char* keyWord, std::istream& is)
 }
 
 
-bool SIM3D::addConstraint (int patch, int lndx, int ldim, int dirs, int code,
+bool SIM3D::addConstraint (int patch, int lndx, int ldim,
+                           Property::Type dtyp, int dirs, int code,
                            int& ngnod, char basis, bool ovrD)
 {
   // Lambda function for error message generation
@@ -610,7 +613,8 @@ bool SIM3D::addConstraint (int patch, int lndx, int ldim, int dirs, int code,
     return error("patch index",patch);
 
   int aldim = abs(ldim);
-  if (this->SIMbase::addConstraint(patch,lndx,aldim,dirs,code,ngnod,basis,ovrD))
+  if (this->SIMbase::addConstraint(patch,lndx,aldim,
+                                   dtyp,dirs,code,ngnod,basis,ovrD))
     return true;
 
   bool open = ldim < 0; // open means without face edges or edge ends

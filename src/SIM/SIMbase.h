@@ -616,13 +616,14 @@ protected:
   //! \param[in] patch One-based index of the patch to receive the property
   //! \param[in] lndx Local index of the boundary item to receive the property
   //! \param[in] ldim Dimension of the boundary item to receive the property
+  //! \param[in] dtyp The type of the Dirichlet condition
   //! \param[in] dirs Which local DOFs to constrain
   //! \param[in] code In-homogeneous Dirichlet condition property code
   //! \param ngnod Total number of global nodes in the model (might be updated)
   //! \param[in] basis Which basis to apply the constraint to (mixed methods)
-  //! \param[in] ovrD If \e true, override conflicting Dirichlet conditions
-  virtual bool addConstraint(int patch, int lndx, int ldim, int dirs, int code,
-                             int& ngnod, char basis = 1, bool ovrD = false);
+  virtual bool addConstraint(int patch, int lndx, int ldim,
+                             Property::Type dtyp, int dirs, int code,
+                             int& ngnod, char basis = 1);
 
   //! \brief Preprocessing performed before the FEM model generation.
   //! \return \e false if the model asks for something that cannot be honoured
